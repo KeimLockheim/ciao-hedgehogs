@@ -3,19 +3,19 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateTopicTable extends Migration {
+class CreateServiceApplicatifsTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('topic', function(Blueprint $table) {
+		Schema::create('serviceApplicatifs', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('name', 50);
 			$table->timestamps();
+			$table->string('name', 100);
 		});
 	}
 
 	public function down()
 	{
-		Schema::drop('topic');
+		Schema::drop('serviceApplicatifs');
 	}
 }

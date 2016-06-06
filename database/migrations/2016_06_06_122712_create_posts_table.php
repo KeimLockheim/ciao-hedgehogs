@@ -3,18 +3,19 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateSecretQuestionTable extends Migration {
+class CreatePostsTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('secret_question', function(Blueprint $table) {
+		Schema::create('posts', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('name', 50);
+			$table->string('content', 1000);
+			$table->timestamps();
 		});
 	}
 
 	public function down()
 	{
-		Schema::drop('secret_question');
+		Schema::drop('posts');
 	}
 }

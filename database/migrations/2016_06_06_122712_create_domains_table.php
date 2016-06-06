@@ -3,20 +3,20 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateForumTable extends Migration {
+class CreateDomainsTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('forum', function(Blueprint $table) {
+		Schema::create('domains', function(Blueprint $table) {
 			$table->increments('id');
+			$table->string('name')->unique();
+			$table->string('content', 20000);
 			$table->timestamps();
-			$table->string('name', 45);
-			$table->string('description', 200);
 		});
 	}
 
 	public function down()
 	{
-		Schema::drop('forum');
+		Schema::drop('domains');
 	}
 }

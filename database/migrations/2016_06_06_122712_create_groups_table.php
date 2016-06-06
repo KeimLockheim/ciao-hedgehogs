@@ -3,19 +3,19 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateServiceApplicatifTable extends Migration {
+class CreateGroupsTable extends Migration {
 
 	public function up()
 	{
-		Schema::create('service_applicatif', function(Blueprint $table) {
+		Schema::create('groups', function(Blueprint $table) {
 			$table->increments('id');
+			$table->string('name', 50)->unique();
 			$table->timestamps();
-			$table->string('name', 100);
 		});
 	}
 
 	public function down()
 	{
-		Schema::drop('service_applicatif');
+		Schema::drop('groups');
 	}
 }
