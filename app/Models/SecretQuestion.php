@@ -1,6 +1,6 @@
 <?php
 
-namespace Models/secretquestion;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
