@@ -19,11 +19,6 @@ class User extends Model {
 		return $this->hasMany('App\Models\Domain','created_by');
 	}
 
-	//Retourne les forums que l'utilisateur a créé
-	public function forums(){
-		return $this->hasMany('App\Models\Forum','created_by');
-	}
-
 	//Retourne les posts que l'utilisateur a écrit
 	public function writtenPosts(){
 		return $this->hasMany('App\Models\Post','written_by');
@@ -80,7 +75,7 @@ class User extends Model {
 	{
 		$groups = $this->groups;
 		foreach($groups as $group){
-			if($group->name == $role)){
+			if($group->name == $role){
 				return true;
 			}
 		}

@@ -25,9 +25,9 @@ class Domain extends Model {
 		return $this->belongsTo('App\Models\User','created_by');
 	}
 
-	//Retourne les forums liés au domain
-	public function forums(){
-		return $this->hasMany('App\Models\Forum','domain_id');
+	//Retourne les topics liés au domain
+	public function topics(){
+		return $this->hasMany('App\Models\Topics','domain_id');
 	}
 
 	//Retourne les questions liés au domain
