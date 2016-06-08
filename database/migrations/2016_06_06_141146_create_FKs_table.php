@@ -85,6 +85,7 @@ class CreateFKsTable extends Migration
 
             $table->foreign('secretQuestion_id')->references('id')->on('secretQuestions')->onDelete('cascade');
         });
+
     }
 
     /**

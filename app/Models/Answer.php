@@ -11,8 +11,13 @@ class Answer extends Model {
 
 
 	//Retourne l'utilisateur qui a écrit la réponse
-	public function answerByUser(){
-		return $this->belongsTo('App\Models\User');
+	public function answerUser(){
+		return $this->belongsTo('App\Models\User', 'answered_by');
+	}
+
+	//Retourne la question à laquelle se rapporte la question
+	public function question(){
+		return $this->belongsTo('App\Models\Question', 'question_id');
 	}
 
 }

@@ -16,4 +16,14 @@ class Group extends Model {
 			->withTimestamps();
 	}
 
+	public function users()
+	{
+		return $this->belongsToMany('App\Models\User')->withTimestamps();
+	}
+
+	public function serviceApplicatifs()
+	{
+		return $this->belongsToMany('App\Models\ServiceApplicatif')->withTimestamps();
+	}
+
 }
