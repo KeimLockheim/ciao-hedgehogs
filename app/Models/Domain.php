@@ -16,7 +16,7 @@ class Domain extends Model {
 	}
 
 	//Retourne les domains enfants à ce domain
-	public function childrenDomains(){
+	public function subDomains(){
 		return $this->hasMany('App\Models\Domain', 'parentDomain_id');
 	}
 
