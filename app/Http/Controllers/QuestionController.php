@@ -2,14 +2,33 @@
 
 class QuestionController extends Controller {
 
-  /**
-   * Display a listing of the resource.
-   *
-   * @return Response
-   */
-  public function index()
+  public function list($domain_name)
   {
-    
+    $data=[$domain_name];
+
+    return view('view_questions', $data);
+  }
+
+  public function askQuestion($domain_id)
+  {
+    $data=[];
+
+    return view('view_askQuestion', $data);
+  }
+
+  public function answerQuestion($question_id)
+  {
+    $data=[];
+
+    return view('view_answerQuestion', $data);
+  }
+
+
+  public function show($question_id)
+  {
+    $data=[];
+
+    return view('view_question', $data);
   }
 
   /**
@@ -28,17 +47,6 @@ class QuestionController extends Controller {
    * @return Response
    */
   public function store()
-  {
-    
-  }
-
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function show($id)
   {
     
   }
