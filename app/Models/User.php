@@ -64,10 +64,27 @@ class User extends Model {
 		return $this->belongsTo('App\Models\SecretQuestion', 'secretQuestion_id');
 	}
 
-	//
+	//Retourne le userProfile relatif à ce user
+	public function userProfile(){
+		return $this->belongsTo('App\Models\UserProfile', 'user_id');
+	}
+
+	//Retourne les groupes dont le user fait parti
 	public function groups()
 	{
-		return $this->belongsToMany('App\Models\Group', 'group_user')->withTimestamps();
+		return $this->belongsToMany('App\Models\Group','group_user','user_id','group_id')->withTimestamps();
+	}
+
+	//Retourne vrai si le user fait parti du groupe passé en paramètre
+	public function hasGroup($role)
+	{
+		$groups = $this->groups;
+		foreach($groups as $group){
+			if($group->name == $role)){
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

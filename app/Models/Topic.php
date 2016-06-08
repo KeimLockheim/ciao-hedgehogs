@@ -9,11 +9,6 @@ class Topic extends Model {
 	protected $table = 'topic';
 	public $timestamps = true;
 
-	//Retourne les forums que en rapport au topic
-	public function forums(){
-		return $this->hasMany('App\Models\Forum','forum_id');
-	}
-
 	//Retourne les posts qui sont dans ce topic
 	public function posts(){
 		return $this->hasMany('App\Models\Post','topic_id');

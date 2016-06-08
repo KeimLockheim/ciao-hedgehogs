@@ -9,21 +9,24 @@ class Group extends Model {
 	protected $table = 'group';
 	public $timestamps = true;
 
+	//Retourne les servicesApplicatifs liés au group
 	public function serviceApplicatifs()
 	{
 		return $this
-			->belongsToMany('App\Models\ServiceApplicatif')
+			->belongsToMany('App\Models\serviceApplicatif','group_serviceApplicatif', 'group_id','serviceApplicatif_id')
 			->withTimestamps();
 	}
 
+	//Retourne les users liés au group
 	public function users()
 	{
-		return $this->belongsToMany('App\Models\User')->withTimestamps();
+		return $this->belongsToMany('App\Models\User','group_user','group_id','user_id')->withTimestamps();
 	}
 
-	public function serviceApplicatifs()
+	//Retourne les domains lié au group
+	public function domains()
 	{
-		return $this->belongsToMany('App\Models\ServiceApplicatif')->withTimestamps();
+		return $this->belongsToMany('App\Models\Domain','domain_group','group_id','domain_id')->withTimestamps();
 	}
 
 }

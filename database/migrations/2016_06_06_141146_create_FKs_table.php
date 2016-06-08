@@ -30,13 +30,11 @@ class CreateFKsTable extends Migration
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
         });
 
-        //forums
-        Schema::table('forums',function(Blueprint $table){
-            $table->integer('domain_id')->unsigned();
-            $table->integer('created_by')->unsigned();
+        //userProfile
+        Schema::table('userProfile',function(Blueprint $table){
+            $table->integer('user_id')->unsigned();
 
-            $table->foreign('domain_id')->references('id')->on('domains')->onDelete('cascade');
-            $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
 
         //posts
@@ -68,12 +66,12 @@ class CreateFKsTable extends Migration
 
         //topics
         Schema::table('topics',function(Blueprint $table){
-            $table->integer('forum_id')->unsigned();
+            $table->integer('domain_id')->unsigned();
             $table->integer('created_by')->unsigned();
             $table->integer('updated_by')->unsigned();
             $table->integer('validated_by')->unsigned()->nullable();
 
-            $table->foreign('forum_id')->references('id')->on('forums')->onDelete('cascade');
+            $table->foreign('domain_id')->references('id')->on('domains')->onDelete('cascade');
             $table->foreign('created_by')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('updated_by')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('validated_by')->references('id')->on('users')->onDelete('cascade');
@@ -107,10 +105,9 @@ class CreateFKsTable extends Migration
             $table->dropColumn('created_by');
         });
 
-        //forums
-        Schema::table('forums',function(Blueprint $table){
-            $table->dropColumn('domain_id');
-            $table->dropColumn('created_by');
+        //userProfile
+        Schema::table('userProfile',function(Blueprint $table){
+            $table->dropColumn('user_id');
         });
 
         //posts
@@ -131,7 +128,7 @@ class CreateFKsTable extends Migration
 
         //topics
         Schema::table('topics',function(Blueprint $table){
-            $table->dropColumn('forum_id');
+            $table->dropColumn('domain_id');
             $table->dropColumn('created_by');
             $table->dropColumn('updated_by');
             $table->dropColumn('validated_by');
