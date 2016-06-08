@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ServiceApplicatif extends Model {
 
-	protected $table = 'service_applicatif';
+	protected $table = 'serviceApplicatifs';
 	public $timestamps = true;
 
 	public function groups()

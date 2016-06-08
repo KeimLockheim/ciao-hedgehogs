@@ -16,8 +16,8 @@ class CreateDomainGroupTable extends Migration
             $table->integer('group_id')->unsigned();
             $table->integer('domain_id')->unsigned();
 
-            $table->foreign('domain_id')->references('id')->on('domains');
-            $table->foreign('group_id')->references('id')->on('groups');
+            $table->foreign('domain_id')->references('id')->on('domains')->onDelete('cascade');
+            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
 
 
             //Timestamps

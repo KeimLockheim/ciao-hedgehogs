@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Topic extends Model {
 
-	protected $table = 'topic';
+	protected $table = 'topics';
 	public $timestamps = true;
 
 	//Retourne les posts qui sont dans ce topic

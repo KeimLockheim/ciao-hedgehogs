@@ -16,8 +16,8 @@ class CreateGroupServiceApplicatifTable extends Migration
             $table->integer('group_id')->unsigned();
             $table->integer('serviceApplicatif_id')->unsigned();
 
-            $table->foreign('serviceApplicatif_id')->references('id')->on('serviceApplicatifs');
-            $table->foreign('group_id')->references('id')->on('groups');
+            $table->foreign('serviceApplicatif_id')->references('id')->on('serviceApplicatifs')->onDelete('cascade');
+            $table->foreign('group_id')->references('id')->on('groups')->onDelete('cascade');
 
 
             //Timestamps
