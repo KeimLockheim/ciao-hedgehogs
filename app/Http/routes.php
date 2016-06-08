@@ -17,6 +17,54 @@ Route::get('/', function()
 });
 
 
+// routes pour les vues
+
+// accessible à tous
+
+
+Route::get('/home', function () {
+	return view('view_homepage');
+});
+
+Route::get('/lost', function () {
+	// est-ce qu'on besoin d'une vue ou c'est toujours présent?
+	return view('view_lostPassword');
+});
+
+
+
+Route::get('/domain/{domain_name}', 'DomainController@show ');
+Route::get('/domain/{domain_name}/discussions', 'DomainController@showTopics');
+
+Route::get('/domain/{domain_name}/discussion/{discussion_id}', 'TopicController@show');
+Route::get('/propose/{domain_id}', 'TopicController@proposeTopic');
+
+Route::get('/domain/{domain_name}/questions', 'QuestionController@list');
+Route::get('/domain/{domain_name}/question/{question_id}', 'QuestionController@show');
+Route::get('/ask/{domain_id}', 'QuestionController@askQuestion');
+
+
+
+
+// middleware connecté
+
+Route::get('/dashboard', 'UserController@index');
+
+//middleware admin
+
+Route::get('/dashboard/topics/', 'TopicController@listTopics');
+Route::get('/dashboard/topics/validate/{topic_id}', 'TopicController@validateTopic');
+
+Route::get('/dashboard/answers/{question_id}', 'QuestionController@answer');
+
+
+
+
+
+
+
+
+
 Route::resource('user', 'UserController');
 Route::resource('group', 'GroupController');
 Route::resource('domain', 'DomainController');

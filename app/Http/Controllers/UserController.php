@@ -7,10 +7,20 @@ class UserController extends Controller {
    *
    * @return Response
    */
+
   public function index()
   {
-    
+    $data=[];
+
+    // pour l'utilisateur, on va envoyer son rôle à la vue
+    //
+    // si c'est un expert chopper ses domaines, les questions à repondre
+    // si c'est un user on va prendre ses questions et réponses
+
+    return view('view_dashboard', $data);
   }
+
+
 
   /**
    * Show the form for creating a new resource.

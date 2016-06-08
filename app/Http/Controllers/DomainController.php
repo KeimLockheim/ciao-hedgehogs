@@ -2,6 +2,26 @@
 
 class DomainController extends Controller {
 
+
+  public function showTopics($domain_name)
+  {
+    $data=[];
+
+    // récupère [$highlightedTopics, $notHighlightedTopics] pour un domaine précis
+
+    return view('view_topics', $data);
+  }
+
+  public function show($domain_name)
+  {
+    $data=[];
+
+    return view('view_domain', $data);
+  }
+
+
+
+
   /**
    * Display a listing of the resource.
    *
@@ -38,10 +58,7 @@ class DomainController extends Controller {
    * @param  int  $id
    * @return Response
    */
-  public function show($id)
-  {
-    
-  }
+
 
   /**
    * Show the form for editing the specified resource.
