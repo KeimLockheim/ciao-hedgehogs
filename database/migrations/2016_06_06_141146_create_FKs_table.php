@@ -43,7 +43,7 @@ class CreateFKsTable extends Migration
             $table->integer('written_by')->unsigned();
             $table->integer('updated_by')->unsigned()->nullable();
             $table->integer('deleted_by')->unsigned()->nullable();
-            $table->integer('parentPost_id')->unsigned();
+            $table->integer('parentPost_id')->unsigned()->nullable();
 
             $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
             $table->foreign('written_by')->references('id')->on('users')->onDelete('cascade');
@@ -68,7 +68,7 @@ class CreateFKsTable extends Migration
         Schema::table('topics',function(Blueprint $table){
             $table->integer('domain_id')->unsigned();
             $table->integer('created_by')->unsigned();
-            $table->integer('updated_by')->unsigned();
+            $table->integer('updated_by')->unsigned()->nullable();
             $table->integer('validated_by')->unsigned()->nullable();
 
             $table->foreign('domain_id')->references('id')->on('domains')->onDelete('cascade');
@@ -93,6 +93,12 @@ class CreateFKsTable extends Migration
      */
     public function down()
     {
+        //users
+        Schema::table('users',function(Blueprint $table){
+            $table->dropForeign('secretQuestion_id');
+            $table->dropColumn('secretQuestion_id');
+        });
+
         //answers
         Schema::table('answers',function(Blueprint $table){
             $table->dropForeign('answered_by');
@@ -148,12 +154,6 @@ class CreateFKsTable extends Migration
             $table->dropColumn('updated_by');
             $table->dropForeign('validated_by');
             $table->dropColumn('validated_by');
-        });
-
-        //users
-        Schema::table('users',function(Blueprint $table){
-            $table->dropForeign('secretQuestion_id');
-            $table->dropColumn('secretQuestion_id');
         });
 
     }

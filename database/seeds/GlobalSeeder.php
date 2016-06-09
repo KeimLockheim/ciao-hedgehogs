@@ -5,6 +5,8 @@ use \App\Models\SecretQuestion;
 use \App\Models\Group;
 use \App\Models\Domain;
 use \App\Models\User;
+use \App\Models\Post;
+use \App\Models\Topic;
 
 class GlobalSeeder extends Seeder
 {
@@ -104,9 +106,35 @@ class GlobalSeeder extends Seeder
             'password' => bcrypt('default'),
         ]);*/
 
+        /*
+         * Posts
+         */
+        DB::table('posts')->delete();
+        $p1 = new Post([
+            'content' => 'lbsblsblsblsb',
+        ]);
+        $p2 = new Post([
+            'content' =>'khjgxdfdfzghujihuigzutfzdrtrfguzhio' ,
+        ]);
+        $p3 = new Post([
+            'content' => "arwtsezrdfugiuhogizfutzdsetarwtszdufgzuhijphougizufztsawrq3AWTSEZDRUFTGIZUHOIJPOHUIGUFZDW35ERZUIOUPIJOJPIOUZIT6R75E",
+        ]);
 
 
 
+        /*
+         * Topics
+         */
+        DB::table('topics')->delete();
+        $t1 = new Topic([
+            'name' => 'Comment prier ?',
+        ]);
+        $t2 = new Topic([
+            'name' => 'Pourquoi je dois joindre les mains pour prier ?',
+        ]);
+        $t3 = new Topic([
+            'name' => "Je veux changer de religion, c'est grave ?",
+        ]);
 
         $domSante->creatorUser()->associate($admin);
         $domSexualite->creatorUser()->associate($admin);
@@ -121,5 +149,27 @@ class GlobalSeeder extends Seeder
 
         $domRapports->parentDomain()->associate($domSexualite);
         $domRapports->save();
+
+        $t1->creatorUser()->associate($admin);
+        $t1->domain()->associate($domReligion);
+        $t2->creatorUser()->associate($admin);
+        $t2->domain()->associate($domReligion);
+        $t3->creatorUser()->associate($admin);
+        $t3->domain()->associate($domReligion);
+
+        $t1->save();
+        $t2->save();
+        $t3->save();
+
+        $p1->writterUser()->associate($admin);
+        $p1->topic()->associate($t1);
+        $p2->writterUser()->associate($admin);
+        $p2->topic()->associate($t2);
+        $p3->writterUser()->associate($admin);
+        $p3->topic()->associate($t3);
+
+        $p1->save();
+        $p2->save();
+        $p3->save();
     }
 }

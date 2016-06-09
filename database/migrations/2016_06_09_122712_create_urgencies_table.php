@@ -14,10 +14,10 @@ class CreateUrgenciesTable extends Migration
     {
         Schema::create('urgency', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->unique();
-            $table->integer('noTelephone');
-            $table->string('email');
-            $table->string('webSite');
+            $table->string('name');
+            $table->integer('noTelephone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('webSite')->nullable();
         });
     }
 
