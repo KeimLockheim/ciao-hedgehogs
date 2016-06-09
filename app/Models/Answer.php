@@ -20,4 +20,6 @@ class Answer extends Model {
 		return $this->belongsTo('App\Models\Question', 'question_id');
 	}
 
+	//Retourne le createdAt -answererAt-
+
 }
