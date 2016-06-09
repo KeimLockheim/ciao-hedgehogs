@@ -1,5 +1,11 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\Domain;
+use App\Models\User;
+use App\Models\Category;
+use Session;
+use Request;
+
 class DomainController extends Controller {
 
 
@@ -12,9 +18,10 @@ class DomainController extends Controller {
     return view('view_topics', $data);
   }
 
-  public function show($domain_name)
+  public function show($domain_id)
   {
-    $data=[];
+    $domain = Domain::find($domain_id);
+    $data=['domain', $domain];
 
     return view('view_domain', $data);
   }

@@ -33,7 +33,9 @@ Route::get('/lost', function () {
 
 
 
-Route::get('/domain/{domain_name}', 'DomainController@show ');
+Route::get('/domain/{domain_id}', 'DomainController@show');
+Route::get('/categories/{id}', 'CategoryController@show');
+
 Route::get('/domain/{domain_name}/discussions', 'DomainController@showTopics');
 
 Route::get('/domain/{domain_name}/discussion/{discussion_id}', 'TopicController@show');
@@ -56,12 +58,6 @@ Route::get('/dashboard/topics/', 'TopicController@listTopics');
 Route::get('/dashboard/topics/validate/{topic_id}', 'TopicController@validateTopic');
 
 Route::get('/dashboard/answers/{question_id}', 'QuestionController@answer');
-
-
-
-
-
-
 
 
 
