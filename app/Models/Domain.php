@@ -31,6 +31,11 @@ class Domain extends Model {
 		return $this->hasMany('App\Models\Topic','domain_id');
 	}
 
+	//Retourne les topics liés au subDomain //à vérifier
+	public function subDomainTopics(){
+		return $this->hasMany('App\Models\Topic','subDomain_id')
+	}
+
 	//Retourne les questions liés au domain
 	public function domainQuestions(){
 		return $this->hasMany('App\Models\Question','domain_id');
@@ -48,13 +53,9 @@ class Domain extends Model {
 	}
 
 	//isSubdomain()
-	public function isSubdomain()
-	{
-		$parentDomains = $this->parentDomain;
-		if (!empty($parentDomains)) {
-			return true;
-		}
 
-		return false;
-	}
+	//parentDomains()
+
+	//childrenDomains(domainID)
+
 }
