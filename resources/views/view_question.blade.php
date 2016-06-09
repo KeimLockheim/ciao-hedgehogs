@@ -48,7 +48,7 @@
             </div>
 
 
-      @yield('partials.moreDiscussion')
+      @include('partials.moreDiscussion')
 
       <div class="col-md-12 designBox sideBox">
         <h3 class="titreBox">Sur le thème {{$domain->name}} :</h3>

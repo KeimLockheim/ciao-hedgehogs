@@ -39,5 +39,7 @@ class Post extends Model {
 		return $this->hasMany('App\Models\Post','parentPost_id');
 	}
 
+	//retourne quel l'utilisateur Parent du post
+
 
 }

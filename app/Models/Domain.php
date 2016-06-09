@@ -49,4 +49,8 @@ class Domain extends Model {
 
 	//isSubdomain()
 
+	//parentDomains
+
+	//childrenDomains(domainID)
+
 }

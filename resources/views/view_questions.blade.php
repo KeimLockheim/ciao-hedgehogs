@@ -51,7 +51,7 @@
 
                 </div>
 
-                @yield('partials._moreDiscussion')
+                @include('partials._moreDiscussion')
 
         </div>
 
