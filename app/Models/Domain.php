@@ -53,9 +53,16 @@ class Domain extends Model {
 	}
 
 	//isSubdomain()
+	public function isSubdomain(){
+			$parentDomains = $this->parentDomain;
+			if (!empty($parentDomains)) {
+				return true;
+			}
+
+			return false;
+		}
+	}
 
 	//parentDomains()
 
 	//childrenDomains(domainID)
-
-}
