@@ -37,6 +37,7 @@ class QuestionController extends Controller {
   {
     $domain = Domain::where('id', $domain_id)->with('parentDomain')->get()->first();
     $question = Question::where('id', $question_id)->with('questionUser', 'answer')->get()->first();
+    dd($question);
 
     return view('view_question', ['domain'=> $domain, 'question' => $question]);
   }

@@ -40,7 +40,7 @@
         <div class="col-md-offset-1 col-md-4">
 
                 <div class="row">
-                  
+
             <div class="col-md-12 designBox sideBox">
             @include('partials._moreInfos')
             </div>
