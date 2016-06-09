@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Topic;
 
 class Domain extends Model {
 
@@ -27,7 +28,7 @@ class Domain extends Model {
 
 	//Retourne les topics liés au domain
 	public function topics(){
-		return $this->hasMany('App\Models\Topics','domain_id');
+		return $this->hasMany('App\Models\Topic','domain_id');
 	}
 
 	//Retourne les questions liés au domain

@@ -2,6 +2,8 @@
 
 use App\Models\Domain;
 use App\Models\User;
+use App\Models\Topic;
+
 use App\Models\Category;
 use Session;
 use Request;
@@ -21,9 +23,9 @@ class DomainController extends Controller {
   public function show($domain_id)
   {
     $domain = Domain::find($domain_id);
+    dd($domain->topics);
     $data=['domain', $domain];
-
-    return view('view_domain', $data);
+    return view('test_domain', ['domain' => $domain]);
   }
 
 
