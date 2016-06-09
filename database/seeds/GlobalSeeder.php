@@ -7,6 +7,8 @@ use \App\Models\Domain;
 use \App\Models\User;
 use \App\Models\Post;
 use \App\Models\Topic;
+use \App\Models\Question;
+use \App\Models\Answer;
 
 class GlobalSeeder extends Seeder
 {
@@ -184,8 +186,41 @@ class GlobalSeeder extends Seeder
         $q2 = new Question([
             'content' => "fsfdsdfs dfsf fds dafsfdsddsadsf dfsfsdsfs fsadsfadfdsdf fdaiojfdaspijndfsa ",
         ]);
+        $q3 = new Question([
+            'content' => "fsfdsdfs dfsf fds ds fsadliuikkukuikikiiuikikikiiupijndfsa",
+        ]);
 
-        $q1->questionUser()->save();
+
+        $q1->questionUser()->associate($admin);
+        $q1->domain()->associate($domSante);
+
+        $q3->questionUser()->associate($admin);
+        $q3->domain()->associate($domSante);
+
+        $q2->questionUser()->associate($expert);
+        $q2->domain()->associate($domSexualite);
+        $q2->subDomain()->associate($domRapports);
+
+        $q1->save();
+        $q2->save();
+        $q3->save();
+
+        $a1 = new Answer([
+            'content' => " BLoubloubloub ",
+        ]);
+        $a2 = new Answer([
+            'content' => "bluelulebuleuelueblubelueblueblu ",
+        ]);
+
+        $a1->answererUser()->associate($expert);
+        $a1->question()->associate($q1);
+
+        $a2->answererUser()->associate($expert);
+        $a2->question()->associate($q2);
+
+        $a1->save();
+        $a2->save();
+
 
 
     }

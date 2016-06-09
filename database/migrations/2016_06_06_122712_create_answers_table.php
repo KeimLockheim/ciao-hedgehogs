@@ -10,7 +10,7 @@ class CreateAnswersTable extends Migration {
 		Schema::create('answers', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('content', 2000);
-			$table->boolean('public');
+			$table->boolean('public')->default(false);
 			$table->timestamps();
 
 		});
