@@ -45,9 +45,7 @@
 
           <div class="col-md-12 designBox sideBox">
 
-            <h3 class="titreBox">Je ne trouve pas de réponse :</h3>
-                    <button type="submit" class="btn btn-m" name="question" >Poser ma question!</button>
-                    <button type="submit" class="btn btn-m" name="question">Urgences et adresses</button>
+            @incluse('partials._moreInfos')
 
                 </div>
 

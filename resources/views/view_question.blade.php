@@ -40,15 +40,13 @@
         <div class="col-md-offset-1 col-md-4">
 
                 <div class="row">
-                    <div class="col-md-12 designBox sideBox">
-
-        <h3 class="titreBox">Je ne trouve pas de réponse :</h3>
-        <a href="/ask/{{$domain->name}}"><button type="button" class="btn btn-xs">Poser ma question</button></a>
-        <a href="/domain/{{$domain->name}}/urgences"><button type="button" class="btn btn-xs">Urgences et adresses</button></a>
+                  
+            <div class="col-md-12 designBox sideBox">
+            @include('partials._moreInfos')
             </div>
 
 
-      @yield('partials.moreDiscussion')
+      @include('partials._moreDiscussion')
 
       <div class="col-md-12 designBox sideBox">
         <h3 class="titreBox">Sur le thème {{$domain->name}} :</h3>
