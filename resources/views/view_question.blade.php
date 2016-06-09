@@ -7,10 +7,10 @@
 <div class="container article">
         <div class="row" id="contenu">
 
-    <div class="col-md-12" id="breadcrums">
+  <div class="col-md-12" id="breadcrums">
 
       <p>Accueil <span class="interBread"></span> {{$domain->name}} <span class="interBread"></span> {{@question->name}}</p>
-    </div>
+  </div>
 
     </div>
 
@@ -18,20 +18,20 @@
          <h2>Question / Réponse</h2>
                     <h3>{{$domain->parentDomain}}, {{$domain->name}}</h3>
                 <div class="divContainerQuestion">
-                        <label class="labelMessage">{{$question->askedBy}}</label>
+                        <label class="labelMessage">{{$question->questionUser}}</label>
 
-                        <label class="date">{{$question->createdAt}}</label>
+                        <label class="date">{{$question->questionerAt}}</label>
 
                     <p class="ContainerAnswerQuestion">{{$question->content}}</p>
                 </div>
 
                 <div class="divContainerAnswer rep">
-                        <label class="labelMessage">{{$answer->answererUser}}</label>
+                        <label class="labelMessage">{{$question->answer->answered_by}}</label>
 
                         <label class="date">{{$question->answererAt}}</label>
 
                     <p class="ContainerAnswerQuestion">
-                  {{$answer->content}}
+                  {{$question->answer}}
                     </p>
                 </div>
       </div>
@@ -48,14 +48,7 @@
             </div>
 
 
-      <div class="col-md-12 designBox sideBox">
-        <h3 class="titreBox">Discussion sur ce sujet:</h3>
-        <ul class="lienArticle">
-          @for ($i = 0; $i < 4; $i++)
-          <li><a href="#">{{$domain->topics[$i]->name}}</a></li>
-          @endfor
-        </ul>
-      </div>
+      @yield('partials.moreDiscussion')
 
       <div class="col-md-12 designBox sideBox">
         <h3 class="titreBox">Sur le thème {{$domain->name}} :</h3>

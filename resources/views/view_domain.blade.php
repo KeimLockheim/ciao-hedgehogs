@@ -20,15 +20,7 @@
             <a href="/domain/{{$domain->name}}/urgences"><button type="button" class="btn btn-xs">Urgences et adresses</button></a>
 			  	</div>
 
-
-			  	<div class="col-md-offset-1 col-md-4 designBox sideBox">
-			  		<h3 class="titreBox">Discussion sur ce sujet:</h3>
-                    <ul class="lienArticle">
-                      @for ($i = 0; $i < 4; $i++)
-											<li><a href="#">{{$domain->topics[$i]->name}}</a></li>
-											@endfor
-			  		        </ul>
-			  	</div>
+			  	@yield('partials._moreDiscussion')
 
 			  	<div class="col-md-offset-1 col-md-4 designBox sideBox">
 			  		<h3 class="titreBox">Sur le thème {{$domain->name}} :</h3>
@@ -54,5 +46,5 @@
 			  	</div>
 
         </div>
-				
+
         @stop

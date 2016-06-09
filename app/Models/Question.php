@@ -30,4 +30,6 @@ class Question extends Model {
 		return $this->belongsTo('App\Models\Domain', 'subDomain_id');
 	}
 
+	//Retourne le createdAt -questionerAt-
+
 }

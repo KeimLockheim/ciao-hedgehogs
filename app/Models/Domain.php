@@ -46,4 +46,7 @@ class Domain extends Model {
 	{
 		return $this->belongsToMany('App\Models\Group','domain_group','domain_id','group_id')->withTimestamps();
 	}
+
+	//isSubdomain()
+
 }
