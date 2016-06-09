@@ -22,10 +22,10 @@ class DomainController extends Controller {
 
   public function show($domain_id)
   {
-    $domain = Domain::find($domain_id);
-    dd($domain->topics);
+    $domainTest = Domain::find($domain_id);
+    $domain = Domain::where('id', $domain_id)->with('topics')->get();
     $data=['domain', $domain];
-    return view('test_domain', ['domain' => $domain]);
+    return view('view_domain', ['domain' => $domain]);
   }
 
 
