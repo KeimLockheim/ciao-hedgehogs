@@ -9,17 +9,18 @@
         <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
-      <p>Accueil <span class="interBread"></span> {{@domain->name}} <span class="interBread"></span> Questions </p>
+      <p>Accueil <span class="interBread"></span> {{$domain->name}} <span class="interBread"></span> Questions </p>
     </div>
         </div>
       <div class="col-md-7 designBox">
-         <h2>{{@domain->name}}</h2>
+         <h2>{{$domain->name}}</h2>
 
          <h3>Liste des questions :</h3>
 
 
          <ul class="designForum">
-           @if($domain->isSubdomain)
+
+           @if($domain->isSubdomain())
            @foreach($domain->subDomainQuestions as $question)
               <li><a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a>
                 <p>{{$question->questionerAt}}</p>
@@ -27,11 +28,11 @@
           @endforeach
           @else
           @foreach($domain->domainQuestions as $question)
-              <li><a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a>
+              <li><a href="domain/{{$domain->id}}/question/{{$domain->domainQuestions->id}}">{{$domain->domainQuestions->name}}</a>
                 <p>{{$question->questionerAt}}</p>
               </li>
           @endforeach
-          @enfif
+          @endif
 
         </ul>
 
@@ -51,7 +52,7 @@
 
                 </div>
 
-                @yield('partials._moreDiscussion')
+                @include('partials._moreDiscussion')
 
         </div>
 

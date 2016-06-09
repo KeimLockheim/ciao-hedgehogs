@@ -1,12 +1,18 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\Domain;
+
 class QuestionController extends Controller {
 
-  public function list($domain_name)
+  public function listing($domain_id)
   {
-    $data=[$domain_name];
+    $domain = Domain::where('id', $domain_id)->with('domainQuestions','topics')->get()->first();
+    //dd($domain->isSubdomain());
+    //dd($domain->subDomainQuestions);
+    //dd($domain->domainQuestions);
 
-    return view('view_questions', $data);
+    return view('view_questions', ['domain' => $domain]);
+
   }
 
   public function askQuestion($domain_id)

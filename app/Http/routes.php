@@ -36,13 +36,13 @@ Route::get('/lost', function () {
 Route::get('/domain/{domain_id}', 'DomainController@show');
 Route::get('/categories/{id}', 'CategoryController@show');
 
-Route::get('/domain/{domain_name}/discussions', 'DomainController@showTopics');
+Route::get('/domain/{domain_id}/discussions', 'DomainController@showTopics');
 
-Route::get('/domain/{domain_name}/discussion/{discussion_id}', 'TopicController@show');
+Route::get('/domain/{domain_id}/discussion/{discussion_id}', 'TopicController@show');
 Route::get('/propose/{domain_id}', 'TopicController@proposeTopic');
 
-Route::get('/domain/{domain_name}/questions', 'QuestionController@list');
-Route::get('/domain/{domain_name}/question/{question_id}', 'QuestionController@show');
+Route::get('/domain/{domain_id}/questions', 'QuestionController@listing');
+Route::get('/domain/{domain_id}/question/{question_id}', 'QuestionController@show');
 Route::get('/ask/{domain_id}', 'QuestionController@askQuestion');
 
 
