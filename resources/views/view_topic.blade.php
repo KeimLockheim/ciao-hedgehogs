@@ -19,7 +19,7 @@
                 <div class="divContainerQuestion">
                         <label class="labelMessage">{{$topic->creatorUser}}</label>
 
-                        <label class="date">{{$topic->creatorAt}}</label>
+                        <label class="date">{{$topic->created_at}}</label>
 
                     <p class="ContainerAnswerQuestion firstPost">{{$topic->firstPost}}</p>
                 </div>

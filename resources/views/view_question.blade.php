@@ -20,7 +20,7 @@
                 <div class="divContainerQuestion">
                         <label class="labelMessage">{{$question->questionUser}}</label>
 
-                        <label class="date">{{$question->questionerAt}}</label>
+                        <label class="date">{{$question->created_at}}</label>
 
                     <p class="ContainerAnswerQuestion">{{$question->content}}</p>
                 </div>
@@ -28,7 +28,7 @@
                 <div class="divContainerAnswer rep">
                         <label class="labelMessage">{{$question->answer->answered_by}}</label>
 
-                        <label class="date">{{$question->answererAt}}</label>
+                        <label class="date">{{$question->answer->created_at}}</label>
 
                     <p class="ContainerAnswerQuestion">
                   {{$question->answer->content}}

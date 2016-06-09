@@ -16,13 +16,13 @@
            @if($domain->isSubdomain)
          @foreach($domain->subDomainTopics as $topic)
             <li><a href="domain/{{$domain->id}}/discussion/{{$domain->subDomainTopics->id}}">{{$domain->subDomainTopics->name}}</a>
-              <p>{{$topic->creatorAt}}</p>
+              <p>{{$topic->created_at}}</p>
             </li>
         @endforeach
         @else
         @foreach($domain->topics as $topic)
             <li><a href="domain/{{$domain->id}}/discussion/{{$domain->topics->id}}">{{$domain->topics->name}}</a>
-              <p>{{$topic->creatorAt}}</p>
+              <p>{{$topic->created_at}}</p>
             </li>
         @endforeach
         @endif
