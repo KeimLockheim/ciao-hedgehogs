@@ -12,7 +12,8 @@ class TopicController extends Controller {
 
 
     //trouver la liste des topics à valider et la liste des topics validés [$topicsToValidate, $topicsValidated]
-
+    $topicsToValidate = $topics->where('validated_by', null);
+    $topicsValidated = $topics->diff($topicsToValidate);
     return view('view_topicsAdmin', $data);
   }
 
