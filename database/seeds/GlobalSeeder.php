@@ -171,5 +171,22 @@ class GlobalSeeder extends Seeder
         $p1->save();
         $p2->save();
         $p3->save();
+
+
+        /*
+         * Question
+         */
+        DB::table('questions')->delete();
+
+        $q1 = new Question([
+            'content' => "asfasdfoifdsodfoéfdsdsfasdffshoésadfhdsfodflhwfweoew sadfdsaf fdsasdf dfasf fd dfs s ssfsfsf sfsf sfsfs ",
+        ]);
+        $q2 = new Question([
+            'content' => "fsfdsdfs dfsf fds dafsfdsddsadsf dfsfsdsfs fsadsfadfdsdf fdaiojfdaspijndfsa ",
+        ]);
+
+        $q1->questionUser()->save();
+
+
     }
 }

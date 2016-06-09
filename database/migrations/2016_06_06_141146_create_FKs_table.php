@@ -93,68 +93,70 @@ class CreateFKsTable extends Migration
      */
     public function down()
     {
+
         //users
         Schema::table('users',function(Blueprint $table){
-            $table->dropForeign('secretQuestion_id');
-            $table->dropColumn('secretQuestion_id');
+            //$table->dropForeign('secretQuestion_id');
+            //$table->dropColumn('secretQuestion_id');
         });
 
         //answers
         Schema::table('answers',function(Blueprint $table){
-            $table->dropForeign('answered_by');
-            $table->dropColumn('answered_by');
-            $table->dropForeign('question_id');
-            $table->dropColumn('question_id');
+            //$table->dropForeign('answered_by');
+            //$table->dropColumn('answered_by');
+            //$table->dropForeign('question_id');
+            //$table->dropColumn('question_id');
         });
 
         //domains
         Schema::table('domains',function(Blueprint $table){
-            $table->dropForeign('parentDomain_id');
-            $table->dropColumn('parentDomain_id');
-            $table->dropForeign('created_by');
-            $table->dropColumn('created_by');
+            //$table->dropForeign('parentDomain_id');
+            //$table->dropColumn('parentDomain_id');
+            //$table->dropForeign('created_by');
+            //$table->dropColumn('created_by');
         });
 
         //userProfile
         Schema::table('userProfile',function(Blueprint $table){
-            $table->dropColumn('user_id');
+            //$table->dropColumn('user_id');
         });
 
         //posts
         Schema::table('posts',function(Blueprint $table){
-            $table->dropForeign('topic_id');
-            $table->dropColumn('topic_id');
-            $table->dropForeign('written_by');
-            $table->dropColumn('written_by');
-            $table->dropForeign('updated_by');
-            $table->dropColumn('updated_by');
-            $table->dropForeign('deleted_by');
-            $table->dropColumn('deleted_by');
-            $table->dropForeign('parentPost_id');
-            $table->dropColumn('parentPost_id');
+            //$table->dropForeign('topic_id');
+            //$table->dropColumn('topic_id');
+            //$table->dropForeign('written_by');
+            //$table->dropColumn('written_by');
+            //$table->dropForeign('updated_by');
+            //$table->dropColumn('updated_by');
+            //$table->dropForeign('deleted_by');
+            //$table->dropColumn('deleted_by');
+            //$table->dropForeign('parentPost_id');
+            //$table->dropColumn('parentPost_id');
         });
 
         //questions
         Schema::table('questions',function(Blueprint $table){
-            $table->dropForeign('domain_id');
+            /*$table->dropForeign('domain_id');
             $table->dropColumn('domain_id');
             $table->dropForeign('subDomain_id');
             $table->dropColumn('subDomain_id');
             $table->dropForeign('asked_by');
-            $table->dropColumn('asked_by');
+            $table->dropColumn('asked_by');*/
         });
 
         //topics
         Schema::table('topics',function(Blueprint $table){
-            $table->dropForeign('domain_id');
+            /*$table->dropForeign('domain_id');
             $table->dropColumn('domain_id');
             $table->dropForeign('created_by');
             $table->dropColumn('created_by');
             $table->dropForeign('updated_by');
             $table->dropColumn('updated_by');
             $table->dropForeign('validated_by');
-            $table->dropColumn('validated_by');
+            $table->dropColumn('validated_by');*/
         });
+
 
     }
 }

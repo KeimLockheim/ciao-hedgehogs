@@ -9,9 +9,9 @@ class CreateQuestionsTable extends Migration {
 	{
 		Schema::create('questions', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('name');
+			$table->string('name')->nullable();
 			$table->string('content',2000);
-			$table->boolean('public');
+			$table->boolean('public')->default(false);
 			$table->integer('rating')->default('0');
 			$table->timestamps();
 		});
