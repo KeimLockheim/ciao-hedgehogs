@@ -45,11 +45,11 @@
 
           <div class="col-md-12 designBox sideBox">
 
-            @incluse('partials._moreInfos')
+            @include('partials._moreInfos')
 
                 </div>
 
-                @include('partials._moreDiscussion')
+            @include('partials._moreDiscussion')
 
         </div>
 
