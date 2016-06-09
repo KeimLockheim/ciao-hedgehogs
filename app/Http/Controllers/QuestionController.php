@@ -1,6 +1,9 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\Domain;
+use App\Models\User;
+use App\Models\Question;
+use App\Models\Answer;
 
 class QuestionController extends Controller {
 
@@ -30,11 +33,12 @@ class QuestionController extends Controller {
   }
 
 
-  public function show($question_id)
+  public function show($domain_id, $question_id)
   {
-    $data=[];
+    $domain = Domain::where('id', $domain_id)->with('parentDomain')->get()->first();
+    $question = Question::where('id', $question_id)->with('questionUser', 'answer')->get()->first();
 
-    return view('view_question', $data);
+    return view('view_question', ['domain'=> $domain, 'question' => $question]);
   }
 
   /**
