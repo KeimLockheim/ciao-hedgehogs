@@ -5,11 +5,11 @@
 @section('content')
 
 <div class="container article">
-        <div class="row" id="contenu">
+    <div class="row" id="contenu">
 
   <div class="col-md-12" id="breadcrums">
 
-      <p>Accueil <span class="interBread"></span> {{$domain->name}} <span class="interBread"></span>, on met l'id de la question mais ça devrait être le name. ID: {{$question->id}}{{$question->name}}</p>
+      <p>Accueil <span class="interBread"></span> {{$domain->name}} <span class="interBread"></span> {{$question->name}}</p>
   </div>
 
     </div>
@@ -49,12 +49,8 @@
       @include('partials._moreDiscussion')
 
       <div class="col-md-12 designBox sideBox">
-        <h3 class="titreBox">Sur le thème {{$domain->name}} :</h3>
-
-          <a href="/domain/{{$domain->id}}/questions"><button type="button" class="btn btn-xs">Questions / Réponses</button></a>
-          <a href="/domain/{{$domain->id}}/discussions"><button type="button" class="btn btn-xs">Discussion entre jeunes</button></a>
-          <a href="/domain/{{$domain->id}}/temoignages"><button type="button" class="btn btn-xs">Témoignages</button></a>
-          <a href="/domain/{{$domain->id}}/more"><button type="button" class="btn btn-xs">Plus d'outils</button></a>
+        
+      @include('partials._moreOnTheme')
 
       </div>
 

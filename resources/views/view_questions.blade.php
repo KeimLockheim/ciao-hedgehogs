@@ -19,16 +19,16 @@
 
 
          <ul class="designForum">
-             @if($domain->isSubdomain())
+             @if($domain->isSubdomain)
            @foreach($domain->subDomainQuestions as $question)
-              <li><a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}} la question {{$question->id}} n'a pas encore de name dans la bd</a>
+              <li><a href="domain/{{$domain->id}}/question/{{$domain->subDomainQuestions->id}}">{{$question->name}}</a>
                 <p>{{$question->created_at}}</p>
               </li>
           @endforeach
           @else
           @foreach($domain->domainQuestions as $question)
-              <li><a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}} la question {{$question->id}} n'a pas encore de name dans la bd</a>
-                <p>{{$question->created_at}}{{$question->name}}</p>
+              <li><a href="domain/{{$domain->id}}/question/{{$domain->domainQuestions->id}}">{{$domain->domainQuestions->name}}</a>
+                <p>{{$question->created_at}}</p>
               </li>
           @endforeach
           @endif
