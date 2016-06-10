@@ -29,9 +29,15 @@ class QuestionController extends Controller {
 
   public function answerQuestion($question_id)
   {
-    $data=[];
+    //$user = User::where('id', Auth::id())->with('userProfile')->get()->first();
 
-    return view('view_answerQuestion', $data);
+    // à effacer et remplacer avec la ligne du dessus mais pour le moment je test avec un user précis car je peux pas chopper le auth
+    $user = User::where('id', 1)->with('userProfile')->get()->first();
+
+
+    $question = Question::where('id', $question_id)->with('answer', 'domain')->get()->first();
+
+    return view('view_answerQuestion', ['question' => $question,'user' => $user]);
   }
 
 

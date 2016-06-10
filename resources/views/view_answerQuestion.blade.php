@@ -6,7 +6,7 @@
     </div>
 
     <div class="col-md-11" id="breadcrums">
-      <p>Accueil <span class="interBread">></span> Profil expert {{$user->nickname}} <span class="interBread">></span> Répondre à une question</p>
+      <p>Accueil <span class="interBread">></span> Profil expert nom: {{$user->nickname}} <span class="interBread">></span> Répondre à une question</p>
     </div>
 
     <div class="col-md-7 designBox">
@@ -17,15 +17,23 @@
 
       <h3>La question posée</h3>
           <p>
-            {{$question->answer}}
+            {{$question->answer->content}}
           </p>
 
       <h3>Catégorie</h3>
           <p>
-            {{$question->domain}}
+            {{$question->domain->name}}
           </p>
 
+<<<<<<< Updated upstream
         <form id="answerQuestion"> <!-- Du coup changement du form ici.. il faut gérer en JS le thème précis-->
+=======
+<<<<<<< HEAD
+        <form> <!-- Du coup changement du form ici.. il faut gérer en JS le thème précis avec un foreach-->
+=======
+        <form id="answerQuestion"> <!-- Du coup changement du form ici.. il faut gérer en JS le thème précis-->
+>>>>>>> origin/master
+>>>>>>> Stashed changes
         <div class="form-group">
             <label for="theme"> Thème précis: </label>
             <select class="form-control" name="theme" id="theme">
