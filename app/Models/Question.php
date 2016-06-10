@@ -32,4 +32,6 @@ class Question extends Model {
 
 	//Retourne le createdAt -questionerAt-
 
+	// Retourne isPublic pour que l'on fasse le check facilement dans les vue view question et viewquestions
+
 }
