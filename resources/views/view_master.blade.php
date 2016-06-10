@@ -9,23 +9,21 @@
 	    <title>Ciao.ch | @yield('title') </title> <!-- CHANGE THE TITLE HERE -->
 
 	    <!-- CSS -->
-	    <link href="css/bootstrap.min.css" rel="stylesheet">
-      <link href="css/comem.css" rel="stylesheet">
-	    <link href="css/ben.css" rel="stylesheet">
-      <link href="css/emi.css" rel="stylesheet">
-      <link href="css/megaMenu.css" rel="stylesheet">
-      <link rel="stylesheet" href="formvalidation/dist/css/formValidation.min.css">
+	    <link href="../../ciao_hedgehogs/public/assets/css/bootstrap.min.css" rel="stylesheet">
+      <link href="../../ciao_hedgehogs/public/assets/css/comem.css" rel="stylesheet">
+      <link href="../../ciao_hedgehogs/public/assets/css/megaMenu.css" rel="stylesheet">
+      <link rel="stylesheet" href="../../ciao_hedgehogs/public/assets/formvalidation/dist/css/formValidation.min.css">
 
       <!-- jQuery  -->
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
       <!-- FormValidation -->
-      <script src="formvalidation/dist/js/formValidation.min.js"></script>
-      <script src="formvalidation/dist/js/framework/bootstrap.js"></script>
+      <script src="../../ciao_hedgehogs/public/assets/formvalidation/dist/js/formValidation.min.js"></script>
+      <script src="../../ciao_hedgehogs/public/assets/formvalidation/dist/js/framework/bootstrap.js"></script>
 
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/megaMenu.js"></script>
-      <script src="js/main.js"></script>
+      <script src="../../ciao_hedgehogs/public/assets/js/bootstrap.min.js"></script>
+      <script src="../../ciao_hedgehogs/public/assets/js/megaMenu.js"></script>
+      <script src="../../ciao_hedgehogs/public/assets/js/main.js"></script>
 
 	  </head>
 
