@@ -14,7 +14,7 @@ class Topic extends Model {
 	public static $rules = [
 		'domain_id' => 'required|integer|min:0', //domain_id
 		'topicName' => 'required|String', //name
-		'topicPost' => 'required|String', //post.content
+		'topicPost' => 'required|String', //post -> content
 
 	];
 

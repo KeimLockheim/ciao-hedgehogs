@@ -17,6 +17,35 @@ class Answer extends Model {
 	public $timestamps = true;
 	protected $softDelete = false;
 
+	/**
+	 * Valide les $input reçus pour la création d'une nouvelle Answer
+	 * @param Request $request
+	 * @return void|$this
+	 */
+	public static function getValidation(Request $request)
+	{
+		// Récupération des inputs pertinents
+		$input = $request->only('pseudo', 'password','password2', 'birth', 'country','genre','secreteQuestion','answerQuestion');
+		// Création du validateur
+		$validator = Validator::make($input, self::$rules);
+		// Ajout des contraintes supplémentaires
+		$validator->after(function ($validator) use($input) {
+			// Vérification de la non existence de l'utilisateur
+			if (self::exists($input['pseudo'])) {
+
+				$validator->errors()->add('exists', Message::get('exists'));
+			}
+			// Vérification de l'existence de la question secrète
+			if (!self::exists($input['secreteQuestion'])) {
+
+				$validator->errors()->add('exists', Message::get('exists'));
+			}
+
+		});
+		// Renvoi du validateur
+		return $validator;
+	}
+
 
 	//=======================================================================
 	//								Relations
