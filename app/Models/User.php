@@ -11,13 +11,13 @@ class User extends Model {
 
 	//Règles pour les inputs
 	public static $rules = [
-		'pseudo' => 'required|alpha_dash|min:6|max:30', //nickname
+		'pseudo' => 'required|regex:/^[a-zA-Z0-9_]+$/', //nickname
 		'password' => 'required|String',
 		'password2' => 'required|String|same:password',
-		'birth' => 'required|integer|min:4|max:4', //birthyear
+		'birth' => 'required|integer|min:1920|max:2017', //birthyear
 		'country' => 'required|String', //localisation
-		'genre' => 'required|in:"féminin","masculin"', //sex
-		'secreteQuestion' => 'required|integer|min:0', //secretQuestion_id
+		'sex' => 'required|in:"féminin","masculin"', //sex
+		'secretQuestion' => 'required|integer|min:0', //secretQuestion_id
 		'answerQuestion' => 'required|String', //secretAnswerQuestion
 
 	];
