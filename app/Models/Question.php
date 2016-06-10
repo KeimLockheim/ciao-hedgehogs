@@ -39,4 +39,6 @@ class Question extends Model {
 	}
 
 
+	// Retourne isPublic pour que l'on fasse le check facilement dans les vue view question et viewquestions
+
 }
