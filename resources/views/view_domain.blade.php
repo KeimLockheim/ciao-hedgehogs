@@ -1,6 +1,6 @@
 @extends('view_master')
 
-@section('title', Enregistrer un domaine)
+@section('title', 'Domaine')
 
 @section('content')
 
@@ -8,22 +8,25 @@
 
 			  	<div class="col-md-7 designBox">
 
-            {{$domain->content}}
-
+            {!!$domain->content!!}
+                    
 			  	</div>
 
 
-			  	<div class="col-md-offset-1 col-md-4 designBox sideBox">
+            <div class="col-md-offset-1 col-md-4">
+                    
+            <div class="row">
+                      
+                        
 			  	@include('partials._moreInfos')
-			  	</div>
-
-			  	@include('partials._moreDiscussion')
-
-			  	<div class="col-md-offset-1 col-md-4 designBox sideBox">
-			  	@include('partials._moreOnTheme')
-
-			  	</div>
-
+    
+                @include('partials._moreDiscussion')
+            
+                @include('partials._moreOnTheme')
+                        
+            </div>
         </div>
+     </div>
+   
 
         @stop

@@ -10,10 +10,11 @@
 
     </ul>
 
-<a href="/domain/{{$domain->id}}/discussions"><div class="col-mlg-3 boxPlusMenu">
+<a href="/domain/{{$domain->id}}/discussions">
   <h4>Afficher toutes les discussions...</h4>
-</div></a>
+</a>
 
-<button type="submit" class="btn btn-m" name="question" >Proposer une discussion!</button>
+<button type="submit" class="btn btn-m" name="forum" ><img src="{{ asset('assets/img/forum.png') }}" alt="forum" class="iconButton">Proposer une discussion!</button>
 
+    
 </div>

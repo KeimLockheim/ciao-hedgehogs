@@ -1,3 +1,8 @@
+@extends('view_master')
+
+@section('title', 'Liste des discussion')
+
+@section('content')
 <div class="container article">
         <div class="row" id="contenu">
 
@@ -49,11 +54,9 @@
 
                     </div>
 
-          <div class="col-md-12 designBox sideBox">
 
           @include('partials._moreInfos')
 
-          </div>
 
 
         </div>
@@ -62,3 +65,4 @@
 
 
     </div>
+@stop

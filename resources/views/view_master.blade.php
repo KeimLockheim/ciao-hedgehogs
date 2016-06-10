@@ -9,21 +9,24 @@
 	    <title>Ciao.ch | @yield('title') </title> <!-- CHANGE THE TITLE HERE -->
 
 	    <!-- CSS -->
-	    <link href="../../ciao_hedgehogs/public/assets/css/bootstrap.min.css" rel="stylesheet">
-      <link href="../../ciao_hedgehogs/public/assets/css/comem.css" rel="stylesheet">
-      <link href="../../ciao_hedgehogs/public/assets/css/megaMenu.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../ciao_hedgehogs/public/assets/formvalidation/dist/css/formValidation.min.css">
+          
+            <link href=" {{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+            <link href=" {{ asset('assets/css/comem.css') }}" rel="stylesheet">
+            <link href=" {{ asset('assets/css/megaMenu.css') }}" rel="stylesheet">
+            <link href=" {{ asset('assets/formvalidation/dist/css/formValidation.min.css') }}" rel="stylesheet">
+
 
       <!-- jQuery  -->
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
       <!-- FormValidation -->
-      <script src="../../ciao_hedgehogs/public/assets/formvalidation/dist/js/formValidation.min.js"></script>
-      <script src="../../ciao_hedgehogs/public/assets/formvalidation/dist/js/framework/bootstrap.js"></script>
+     <script src="{{ asset('assets/formvalidation/dist/js/formValidation.min.js') }}"></script>
+    <script src="{{ asset('assets/formvalidation/dist/js/framework/bootstrap.js') }}"></script>
 
-      <script src="../../ciao_hedgehogs/public/assets/js/bootstrap.min.js"></script>
-      <script src="../../ciao_hedgehogs/public/assets/js/megaMenu.js"></script>
-      <script src="../../ciao_hedgehogs/public/assets/js/main.js"></script>
+
+      <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+      <script src="{{ asset('assets/js/megaMenu.js') }}"></script>
+      <script src="{{ asset('assets/js/main.js') }}"></script>
 
 	  </head>
 
@@ -34,12 +37,11 @@
 				<div class="row">
 
 					<div class="col-md-2">
-						<img src="img/logo.png" alt="logo" id="logo">
+						<img src="{{ asset('assets/img/logo.png') }}" alt="logo" id="logo">
 					</div>
 				<div class="col-lg-offset-4 col-md-6 icon">
 					<div >
-						<img src="img/ambulance-xxl.png" alt="urgence" class="imgHeader">
-						<img src="img/address.png" alt="adresses" class="imgHeader">
+						<img src="{{ asset('assets/img/ambulance-xxl.png') }}" alt="urgence" class="imgHeader">
                         <button class="btn btn-xs large" name="question">Poser ma question!</button>
 
                     </div>
@@ -60,7 +62,7 @@
 
     </div>
 
-      <footer>
+       <footer>
 
 			<div class="fondFooter">
 
@@ -68,7 +70,7 @@
 					<div class="row">
 						<ul>
 							<div class="col-md-2">
-								<li><a href="#">Facebook</a></li>
+								<li><a href="https://www.facebook.com/ciao.ch"><img src="{{ asset('assets/img/facebook.png') }}" alt="Facebook" id="facebook"></a></li>
 							</div>
 							<div class="col-md-2">
 								<li><a href="#">Ton avis</a></li>
@@ -88,52 +90,51 @@
 				</div>
 			</div>
 
-				<div class="container designBoxFooter sideBox ">
+				<div class="container designBoxFooter">
 
 					<div class="row">
 
-						<div class="col-md-5">
+						<div class="col-md-4 footerCenter">
 							<div class="row">
 								<div class="col-md-12">
-									<h4>Avec le soutien de :</h4>
+									<h3>Avec le soutien de :</h3>
 								</div>
 								<div class="col-md-6">
-									<a href="http://oakfnd.org/"><img src="img/oak.gif" alt="Oak Foundation"></a>
+									<a href="http://oakfnd.org/"><img src="{{ asset('assets/img/oak.png') }}" class="logoFooter" alt="Oak Foundation"></a>
 								</div>
 								<div class="col-md-6">
-									<a href="https://www.loro.ch/fr"><img src="img/romande.gif" alt="Loterie Romande"></a>
-								</div>
-								<div class="col-md-12">
+									<a href="https://www.loro.ch/fr"><img src="{{ asset('assets/img/romande.jpg') }}" class="logoFooter" alt="Loterie Romande"></a>
+								</div>	
+								<div class="col-md-12 iban">
+
 									<h4>Soutenez nous :</h4>
-									<h4>CCP 10-5261-6</h4>
-								</div>
+									<h5>CCP 10-5261-6</h5>
+								</div>								
 							</div>
 					  	</div>
 
-					  	<div class="col-md-offset-2 col-md-5">
+					  	<div class="col-md-4">
 
-					  		<h4>Ciao c'est :</h4>
+							  		<h3 class="footerCenter">Numéros d'urgence :</h3>
 
-					  		<p>- Une association</p>
-					  		<p>- Un site internet créé en 1997, certifié accessible et HON</p>
-					  		<p>- Une collaboration avec 15 institutions partenaires</p>
-					  		<p>- Des sites partenaires : feelok.ch et tschau.ch</p>
-					  		<p>- En 2015 plus de 13 000 visiteurs par semaine en moyenne, 2'000'000 de pages vues et 2848 questions posées</p>
-
+							  		<p class="footerCenter"><img src="{{ asset('assets/img/medecin.png') }}" alt="medecin" class="footerIcons"> Médical - <span class="footerNum">144</span></p>
+							  		<p class="footerCenter"><img src="{{ asset('assets/img/pompier.png') }}" alt="pompier" class="footerIcons"> Pompiers - <span class="footerNum">118</span></p>
+							  		<p class="footerCenter"><img src="{{ asset('assets/img/police.png') }}" alt="police" class="footerIcons"> Police - <span class="footerNum">117</span></p>
+							  		<p class="footerCenter"><img src="{{ asset('assets/img/general.png') }}" alt="general" class="footerIcons"> Général - <span class="footerNum">112</span></p>
+							
 						</div>
 
-						<div class="col-md-12">
-							<hr>
-						</div>
+					  	<div class="col-md-4">
 
-						<div class="col-md-2">
-							<h4>Ce site respecte :</h4>
-						</div>
-						<div class="col-md-1">
-							<img src="img/honc.gif" alt="HONC">
-						</div>
-						<div class="col-md-1">
-							<img src="img/afa.gif" alt="AFA">
+					  		<h3 class="footerCenter">Ciao c'est :</h3>
+					  		<ul>
+						  		<li>Une association</li>
+						  		<li>Un site internet créé en 1997, certifié accessible et HON</li>
+						  		<li>Une collaboration avec 15 institutions partenaires</li>
+						  		<li>Des sites partenaires : feelok.ch et tschau.ch</li>
+						  		<li>En 2015 plus de 13 000 visiteurs par semaine en moyenne, 2'000'000 de pages vues et 2848 questions posées</li>
+					  		</ul>
+							
 						</div>
 
 					</div>

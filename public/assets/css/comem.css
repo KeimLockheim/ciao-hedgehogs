@@ -131,6 +131,10 @@ hr{
     border-bottom-color: #fa0008;
     background-color: #ff7e82;
     color: #fff;
+    text-decoration: none;
+}
+a:link{
+    text-decoration: none;
 }
 
 .btn-default{
@@ -541,7 +545,6 @@ width: 100%;
 .sideBox{
     margin-bottom: 30px;
 }
-
 /*footer*/
 
 .fondFooter{
@@ -557,9 +560,10 @@ width: 100%;
     display: inline-block;
     font-size: 14px;
     font-family: 'Source Sans Pro Semibold', sans-serif;
-    margin-top: 16px;
+    margin-top: 18px;
     text-align: center;
 }
+
 
 .fondFooter .container .row ul div li a{
     text-decoration: none;
@@ -571,13 +575,44 @@ width: 100%;
     text-align: center;
 }
 
+
 footer{
     margin-top: 30px;
-padding-bottom: 10px;
+    padding-bottom: 10px;
     width: 100%;
     background-color: white;
     border-top: 2px solid #ff5a5f;
 }
+
+#facebook{
+    width: 80px;
+    margin-top: -5px;
+}
+
+.footerIcons{
+    height: 40px;
+}
+
+.iban{
+    margin-top: 30px;
+}
+
+.logoFooter{
+    height: 40px;
+
+}
+
+.footerNum{
+    font-weight: bold;
+    color:  #ff5a5f;
+}
+
+.footerCenter{
+    text-align: left;
+}
+
+footer h3{
+padding-bottom: 10px;}
 
 /* view_forums view_questions*/
 .designForum{
