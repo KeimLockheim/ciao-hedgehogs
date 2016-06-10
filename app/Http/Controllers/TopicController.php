@@ -37,20 +37,19 @@ class TopicController extends Controller {
 
   public function validateTopic($topic_id)
   {
-    $topic = Topic::find($topic_id);
-    $post = $topic->posts->first();
-    $data = ['topic' => $topic, 'post' => $post];
+    $topic = Topic::where('id', $topic_id)->with('posts')->get()->first();
+    $data = ['topic' => $topic, 'posts' => $posts];
 
-    return view('view_validateTopic', $data);
+    return view('view_validateTopic', ['topic' => $topic]);
   }
 
-  public function show($topic_id)
+  public function show($domain_id, $topic_id)
   {
-    $topic = Topic::find($topic_id);
+    $topic = Topic::where('id', $topic_id)->with('posts','creatorUser')->get()->first();
+    $domain = Domain::find($domain_id);
+    $posts = $topic->posts->sortBy('created_at');
 
-    $data=['topic' => $topic];
-
-    return view('view_topic', $data);
+    return view('view_topic', ['topic' => $topic, 'domain' => $domain, 'posts' => $posts]);
   }
 
   public function listAdmin()
