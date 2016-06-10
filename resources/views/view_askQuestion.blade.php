@@ -1,4 +1,4 @@
-<div class="container article">
+<div class="container article" id="askQuestion">
 
   <div class="row" id="contenu">
 
@@ -14,28 +14,25 @@
 
           <div class="form-group">
               <label for="categorie"> Catégorie (obligatoire):</label>
-              <select class="form-control" name="category" id="categorie">
+              <select class="form-control" name="domain" id="categorie">
                 @foreach ($parentDomains as $domain)
-            <option data-id="{{$domain->id}}">{{$domain->name}}</option>
+            <option value="{{$domain->id}}" data-id="{{$domain->id}}">{{$domain->name}}</option>
                 @endforeach
           </select>
           </div>
 
           <div class="form-group">
               <label for="theme"> Thème précis: </label>
-              <select class="form-control" name="subcategory" id="theme">
+              <select class="form-control" name="subDomain" id="theme">
                 <option disabled selected value> -- Tu peux préciser une sous-catégorie -- </option>
-                <option>Adolescence</option>
-                <option>Règles</option>
-                <option>Contraception</option>
-          </select>
+              </select>
           </div>
 
           <div class="form-group">
               <label for="question">Ma question: </label>
                 <a id="existQuestion" href="#"><button type="button" class="btn btn-xs"> Regarder si ma question existe déjà</button></a>
 
-                <textarea class="form-control" rows="4" name="addQuestion" id="question"></textarea>
+                <textarea class="form-control" rows="4" name="content" id="question"></textarea>
 
           </div>
 

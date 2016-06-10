@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container article">
+<div class="container article" id="answerTopic">
         <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
@@ -38,13 +38,24 @@
 
             </div>
 
-            <div>
-        <input class="form-control" id="messageForum" placeholder="Écrire un message">
+  <form>
 
-                <div class="col-md-3 btnForum">
-            <button type="button" class="btn btn-xs">Envoyer</button>
-                </div>
+      <div class="form-group">
+        <input type="hidden" id="parentPost" name="parentPost_id" value="">
       </div>
+      <div class="form-group">
+        <input type="hidden" name="topic_id" value="{{$topic->id}}">
+      </div>
+      <div class="form-group">
+        <input class="form-control" id="messageForum" name="answer" placeholder="Écrire un message">
+      </div>
+      <div class="form-group">
+        <div class="col-md-3 btnForum">
+            <button type="button" class="btn btn-xs">Envoyer</button>
+        </div>
+      </div>
+
+    </form>
 
       </div>
 

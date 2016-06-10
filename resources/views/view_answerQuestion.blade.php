@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="answerQuestion">
 
   <div class="row" id="contenu">
     <div class="col-md-1">
@@ -14,24 +14,24 @@
       <h2>Répondre à la question</h2>
 
 
-      <div class="form-group">
-            <label for="question">La question posée: (non modifiable)</label>
-              <textarea class="form-control" rows="3" id="question" disabled>{{$question->answer}}</textarea>
-              <!-- Est-ce que l'on affiche le champs question dans un textarea? du form?-->
-        </div>
-        <div class="form-group">
-            <label for="categorie">Catégorie: {{$question->domain}} </label>
-            <button type="button" class="btn btn-xs"> Mauvaise catégorie?</button>
-            <input class="form-control" id="categorie" disabled placeholder="Sexe">
-        </div>
+
+      <h3>La question posée</h3>
+          <p>
+            {{$question->answer}}
+          </p>
+
+      <h3>Catégorie</h3>
+          <p>
+            {{$question->domain}}
+          </p>
 
         <form> <!-- Du coup changement du form ici.. il faut gérer en JS le thème précis-->
         <div class="form-group">
             <label for="theme"> Thème précis: </label>
             <select class="form-control" name="theme" id="theme">
-          <option>Adolescence</option>
-          <option>Règles</option>
-          <option>Contraception</option>
+          <option value="{{$question->domain->subDomains}}">{{$question->domain->subDomains}}</option>
+
+
         </select>
         </div>
         <div class="form-group">

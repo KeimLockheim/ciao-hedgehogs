@@ -1,6 +1,6 @@
 @extends('view_master')
 
-@section('title', $domain->name)
+@section('title', Enregistrer un domaine)
 
 @section('content')
 
