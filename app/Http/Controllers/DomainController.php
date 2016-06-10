@@ -11,13 +11,13 @@ use Request;
 class DomainController extends Controller {
 
 
-  public function showTopics($domain_name)
+  public function showTopics($domain_id)
   {
-    $data=[];
+    $domain = Domain::where('id', $domain_id)->with('topics')->get()->first();
 
-    // récupère [$highlightedTopics, $notHighlightedTopics] pour un domaine précis
+    // récupère [$highlightedTopics, $notHighlightedTopics] pour un domaine précis?
 
-    return view('view_topics', $data);
+    return view('view_topics', ['domain' => $domain]);
   }
 
   public function show($domain_id)
