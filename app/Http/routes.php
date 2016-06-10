@@ -31,7 +31,6 @@ Route::get('/lost', function () {
 	return view('view_lostPassword');
 });
 
-Route::get('/domain/{domain_id}/discussion/{discussion_id}', 'TopicController@show');
 
 
 
@@ -42,9 +41,9 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/categories/{id}', 'CategoryController@show');
 
 	Route::get('/domain/{domain_id}/discussions', 'DomainController@showTopics');
+	Route::get('/domain/{domain_id}/discussion/{discussion_id}', 'TopicController@show');
 
 	Route::get('/propose/{domain_id}', 'TopicController@proposeTopic');
-
 
 	Route::get('/domain/{domain_id}/questions', 'QuestionController@listing');
 	Route::get('/domain/{domain_id}/question/{question_id}', 'QuestionController@show');

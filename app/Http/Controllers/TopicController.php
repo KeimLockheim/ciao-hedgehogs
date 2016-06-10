@@ -38,9 +38,9 @@ class TopicController extends Controller {
   public function validateTopic($topic_id)
   {
     $topic = Topic::where('id', $topic_id)->with('posts')->get()->first();
-    $data = ['topic' => $topic, 'posts' => $posts];
+    $post = $topic->posts->first();
 
-    return view('view_validateTopic', ['topic' => $topic]);
+    return view('view_validateTopic', ['topic' => $topic, 'post' => $post]);
   }
 
   public function show($domain_id, $topic_id)
