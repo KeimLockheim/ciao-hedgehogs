@@ -11,6 +11,7 @@ class QuestionController extends Controller {
   {
     $domain = Domain::where('id', $domain_id)->with('domainQuestions','topics')->get()->first();
     //dd($domain->isSubdomain());
+    dd($domain->parentDomain);
     //$subDomainQuestions = Domain::where('id', $domain_id)->with('domainQuestions','topics')->get()->first();
     //dd($subDomainQuestions->domainQuestions);
     $subQuestions = $domain->subDomainQuestions;
