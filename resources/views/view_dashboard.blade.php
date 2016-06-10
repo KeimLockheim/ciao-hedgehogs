@@ -81,7 +81,7 @@
 					</div>
 
 					<!-- EXPERT SECTION -->
-					@elseif ($user->hasGroup('expert'))
+					@elseif ($user->hasRole('expert'))
 
 <div class="container">
 
