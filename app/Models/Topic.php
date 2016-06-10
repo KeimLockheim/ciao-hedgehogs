@@ -2,12 +2,54 @@
 
 namespace App\Models;
 
+use App\Lib\Message;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class Topic extends Model {
 
+	//Règles pour les inputs
+	public static $rules = [
+		'domain_id' => 'required|integer|min:0', //domain_id
+		'topicName' => 'required|String', //name
+		'topicPost' => 'required|String', //post.content
+
+	];
+
+	/**
+	 * Valide les $input reçus pour la création d'un nouveau Topic
+	 * @param Request $request
+	 * @return void|$this
+	 */
+	public static function getValidation(Request $request)
+	{
+		// Récupération des inputs pertinents
+		$input = $request->only('domain_id', 'topicName','topicPost');
+		// Création du validateur
+		$validator = Validator::make($input, self::$rules);
+		// Ajout des contraintes supplémentaires
+		$validator->after(function ($validator) use($input) {
+			// Vérification de la non existence de l'utilisateur
+			if (self::exists($input['pseudo'])) {
+
+				$validator->errors()->add('exists', Message::get('exists'));
+			}
+			// Vérification de l'existence de la question secrète
+			if (!self::exists($input['secreteQuestion'])) {
+
+				$validator->errors()->add('exists', Message::get('exists'));
+			}
+
+		});
+		// Renvoi du validateur
+		return $validator;
+	}
+
 	protected $table = 'topics';
 	public $timestamps = true;
+	protected $softDelete = false;
 
 	//Retourne les posts qui sont dans ce topic
 	public function posts(){

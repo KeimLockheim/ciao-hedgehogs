@@ -6,8 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model {
 
+	//Règles pour les inputs
+	public static $rules = [
+		'parentPost_id' => 'Integer', //parentPost_id
+		'topic_id' => 'required|Integer', //topic_id
+		'answer' => 'required|String', //content
+	];
+
 	protected $table = 'posts';
 	public $timestamps = true;
+	protected $softDelete = false;
 
 	//Retourne le topic au quel le post se rapporte
 	public function topic(){
