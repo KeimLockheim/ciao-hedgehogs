@@ -84,6 +84,13 @@ class CreateFKsTable extends Migration
             $table->foreign('secretQuestion_id')->references('id')->on('secretQuestions')->onDelete('cascade');
         });
 
+        //urgencies
+        Schema::table('urgencies',function(Blueprint $table){
+            $table->integer('domain_id')->unsigned();
+
+            $table->foreign('domain_id')->references('id')->on('domains')->onDelete('cascade');
+        });
+
     }
 
     /**
@@ -155,6 +162,11 @@ class CreateFKsTable extends Migration
             $table->dropColumn('updated_by');
             $table->dropForeign('validated_by');
             $table->dropColumn('validated_by');*/
+        });
+
+        //urgencies
+        Schema::table('urgencies',function(Blueprint $table){
+            //$table->dropColumn('domain_id');
         });
 
 

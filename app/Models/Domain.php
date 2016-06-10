@@ -71,6 +71,11 @@ class Domain extends Model
 		return $this->belongsToMany('App\Models\Group', 'domain_group', 'domain_id', 'group_id')->withTimestamps();
 	}
 
+	//Retourne les urgencies en rapport avec le domaine
+	public function urgencies(){
+		return $this->hasMany('App\Models\Urgency', 'domain_id');
+	}
+
 
 	//isSubdomain()
 	public function isSubdomain(){

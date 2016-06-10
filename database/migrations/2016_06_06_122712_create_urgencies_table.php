@@ -12,10 +12,10 @@ class CreateUrgenciesTable extends Migration
      */
     public function up()
     {
-        Schema::create('urgency', function(Blueprint $table) {
+        Schema::create('urgencies', function(Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('noTelephone')->nullable();
+            $table->integer('telephoneNumber')->nullable();
             $table->string('email')->nullable();
             $table->string('webSite')->nullable();
         });
@@ -28,6 +28,6 @@ class CreateUrgenciesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('urgency');
+        Schema::drop('urgencies');
     }
 }
