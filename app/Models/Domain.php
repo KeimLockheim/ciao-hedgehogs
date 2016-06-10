@@ -33,7 +33,7 @@ class Domain extends Model {
 
 	//Retourne les topics liés au subDomain //à vérifier
 	public function subDomainTopics(){
-		return $this->hasMany('App\Models\Topic','subDomain_id')
+		return $this->hasMany('App\Models\Topic','subDomain_id');
 	}
 
 	//Retourne les questions liés au domain
@@ -47,22 +47,22 @@ class Domain extends Model {
 	}
 
 	//Retourne les groupes liés au domain
-	public function groups()
-	{
+	public function groups(){
 		return $this->belongsToMany('App\Models\Group','domain_group','domain_id','group_id')->withTimestamps();
 	}
 
 	//isSubdomain()
 	public function isSubdomain(){
-			$parentDomains = $this->parentDomain;
-			if (!empty($parentDomains)) {
-				return true;
-			}
-
-			return false;
+		$parentDomains = $this->parentDomain;
+		if (!empty($parentDomains)){
+			return true;
 		}
+
+		return false;
 	}
+
 
 	//parentDomains()
 
 	//childrenDomains(domainID)
+}
