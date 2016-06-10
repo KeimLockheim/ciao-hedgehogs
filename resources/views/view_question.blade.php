@@ -9,16 +9,18 @@
 
   <div class="col-md-12" id="breadcrums">
 
-      <p>Accueil <span class="interBread"></span> {{$domain->name}} <span class="interBread"></span> {{$question->name}}</p>
+      <p>Accueil <span class="interBread"></span> {{$domain->name}} <span class="interBread"></span>
+          on met l'id de la question mais ça devrait être le name. ID: {{$question->id}}{{$question->name}}
+      </p>
   </div>
 
     </div>
 
       <div class="col-md-7 designBox">
          <h2>Question / Réponse</h2>
-                <h3>{{$domain->parentDomain}}, {{$domain->name}}</h3>
+            <h3>@if($domain->parentDomain !== null) {{$domain->parentDomain->name}} @endif > {{$domain->name}}</h3>
                 <div class="divContainerQuestion">
-                        <label class="labelMessage">{{$question->questionUser}}</label>
+                        <label class="labelMessage">quesiton posée par: {{$question->questionUser->nickname}}</label>
 
                         <label class="date">{{$question->created_at}}</label>
 
