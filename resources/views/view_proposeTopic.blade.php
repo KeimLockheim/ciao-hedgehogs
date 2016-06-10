@@ -17,14 +17,16 @@
         <div class="col-md-7 designBox">
 <h2>Proposer un sujet de discussion entre jeunes</h2>
     <form>
-        <input type="hidden" name="domain_id" value="{{$domain->id}}">
         <div class="form-group">
-            <label for="sujet">Ma proposition de sujet: </label>
+            <input type="hidden" name="domain_id" value="{{$domain->id}}">
+        </div>
+        <div class="form-group">
+            <label for="sujet">Ma proposition de sujet </label>
             <input class="form-control" id="sujet" name="topicName">
         </div>
 
         <div class="form-group">
-            <label for="post">Ma proposition de discussion</label>
+            <label for="post">Mon premier message</label>
             <textarea class="form-control" rows="4" name="topicPost" id="topicPost"></textarea>
         </div>
 
