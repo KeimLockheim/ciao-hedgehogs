@@ -2,26 +2,26 @@
         <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
-      <p>Accueil <span class="interBread">></span> {{$domain->name}} <span class="interBread">></span> Disucssions</p>
+      <p>Accueil <span class="interBread">></span> {{$domain->name}} <span class="interBread">></span> Discussions</p>
     </div>
         </div>
 
       <div class="col-md-7 designBox">
-         <h2>{{$topic->domain}}</h2>
+         <h2>{{$domain->name}}</h2>
 
          <h3>Liste des discussions :</h3>
 
          <ul class="designForum">
 
-           @if($domain->isSubdomain)
+           @if($domain->isSubdomain())
          @foreach($domain->subDomainTopics as $topic)
-            <li><a href="domain/{{$domain->id}}/discussion/{{$domain->subDomainTopics->id}}">{{$domain->subDomainTopics->name}}</a>
+            <li><a href="domain/{{$domain->id}}/discussion/{{$topic->id}}">{{$topic->name}}</a>
               <p>{{$topic->created_at}}</p>
             </li>
         @endforeach
         @else
         @foreach($domain->topics as $topic)
-            <li><a href="domain/{{$domain->id}}/discussion/{{$domain->topics->id}}">{{$domain->topics->name}}</a>
+            <li><a href="domain/{{$domain->id}}/discussion/{{$topic->id}}">{{$topic->name}}</a>
               <p>{{$topic->created_at}}</p>
             </li>
         @endforeach
@@ -37,7 +37,7 @@
 
                     <div class="col-md-12 designBox sideBox">
                       <!--Vérifier distinction SubDomain vs Domain -->
-                      @if($domain->isSubdomain)
+                      @if($domain->isSubdomain())
                       <h3>{{$domain->name}}</h3>
 
                       <p>{{$domain->description}}</p>
@@ -51,7 +51,7 @@
 
           <div class="col-md-12 designBox sideBox">
 
-          include('partials._moreInfos')
+          @include('partials._moreInfos')
 
           </div>
 
