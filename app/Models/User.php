@@ -2,12 +2,67 @@
 
 namespace App\Models;
 
+use App\Lib\Message;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 
 class User extends Model {
 
+	//Règles pour les inputs
+	public static $rules = [
+		'pseudo' => 'required|alpha_dash|min:6|max:30', //nickname
+		'password' => 'required|String',
+		'password2' => 'required|String|same:password',
+		'birth' => 'required|integer|min:4|max:4', //birthyear
+		'country' => 'required|String', //localisation
+		'genre' => 'required|in:"féminin","masculin"', //sex
+		'secreteQuestion' => 'required|integer|min:0', //secretQuestion_id
+		'answerQuestion' => 'required|String', //secretAnswerQuestion
+
+	];
+
 	protected $table = 'users';
 	public $timestamps = true;
+	protected $softDelete = false;
+
+	/**
+	 * Valide les $input reçus pour la création d'un nouveau User
+	 * @param Request $request
+	 * @return void|$this
+	 */
+	public static function getValidation(Request $request)
+	{
+		// Récupération des inputs pertinents
+		$input = $request->only('pseudo', 'password','password2', 'birth', 'country','genre','secreteQuestion','answerQuestion');
+		// Création du validateur
+		$validator = Validator::make($input, self::$rules);
+		// Ajout des contraintes supplémentaires
+		$validator->after(function ($validator) use($input) {
+			// Vérification de la non existence de l'utilisateur
+			if (self::exists($input['pseudo'])) {
+
+				$validator->errors()->add('exists', Message::get('exists'));
+			}
+			// Vérification de l'existence de la question secrète
+			if (!self::exists($input['secreteQuestion'])) {
+
+				$validator->errors()->add('exists', Message::get('exists'));
+			}
+
+		});
+		// Renvoi du validateur
+		return $validator;
+	}
+
+
+
+
+
+	//=======================================================================
+	//								Relations
+	//
+	//=======================================================================
 
 	//Retourne les réponses que l'utilisateur a écrites
 	public function answers(){
@@ -70,6 +125,14 @@ class User extends Model {
 		return $this->belongsToMany('App\Models\Group','group_user','user_id','group_id')->withTimestamps();
 	}
 
+
+
+	//=======================================================================
+	//								Methods
+	//
+	//=======================================================================
+
+
 	//Retourne vrai si le user fait parti du groupe passé en paramètre
 	public function hasGroup($role)
 	{
@@ -80,6 +143,41 @@ class User extends Model {
 			}
 		}
 		return false;
+	}
+
+
+
+	/**
+	 * Vérifie s'il n'y a pas déjà une entrée dans la BD.
+	 * @param $pseudo le pseudo à vérifier
+	 * @return bool
+	 */
+	public static function exists($pseudo)
+	{
+		return self::where('nickname', $pseudo) !== null;
+	}
+
+
+
+	/**
+	 * Enregistre un nouvel User selon les $values reçues
+	 * @param array $values An array containing the values to insert
+	 */
+	public static function createOne(array $values)
+	{
+		// Nouvelle instance de User
+		$obj = new ArticlePublicitaire();
+		// Définition des propriétés
+		$obj->nickname = $values['pseudo'];
+		$obj->password = bcrypt($values['password']);
+		$obj->birthyear = $values['birth'];
+		$obj->localisation = $values['country'];
+		$obj->sex = $values['genre'];
+		$obj->secretQuestion_id = $values['secreteQuestion'];
+		$obj->secretAnswerQuestion = $values['answerQuestion'];
+		$obj->secretAnswer = $values['answerQuestion'];
+		// Enregistrement du User
+		$obj->save();
 	}
 
 }

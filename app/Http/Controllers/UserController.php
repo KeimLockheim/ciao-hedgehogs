@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
 
+use App\Lib\Message;
+use App\Models\User;
+use Illuminate\Http\Request;
+
 class UserController extends Controller {
 
   /**
@@ -37,9 +41,28 @@ class UserController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Request $request)
   {
-    
+    // On demande au modèle User, de valider les données contenues dans la $request
+    $validate = User::getValidation($request);
+
+    // Si la validation échoue
+    if ($validate->fails()) {
+      // On redirige l'utilisateur (redirect()) sur le formulaire (back())
+      // avec les inputs tapés (withInput()) et les erreurs de validation (withErrors($validate))
+      return redirect()->back()->withInput()->withErrors($validate);
+    }
+
+    //Ajout dans la BD
+    try{
+      User::createOne($validate->getData());
+      Message::success('saved');
+      return redirect('user');
+    }
+    catch(\Exception $e){
+      Message::error('error');
+      return redirect()->back()->withInput();
+    }
   }
 
   /**

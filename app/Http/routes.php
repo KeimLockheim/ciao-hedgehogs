@@ -32,42 +32,45 @@ Route::get('/lost', function () {
 });
 
 
-
-Route::get('/domain/{domain_id}', 'DomainController@show');
-Route::get('/categories/{id}', 'CategoryController@show');
-
-Route::get('/domain/{domain_id}/discussions', 'DomainController@showTopics');
-
-Route::get('/domain/{domain_id}/discussion/{discussion_id}', 'TopicController@show');
-Route::get('/propose/{domain_id}', 'TopicController@proposeTopic');
-
-Route::get('/domain/{domain_id}/questions', 'QuestionController@listing');
-Route::get('/domain/{domain_id}/question/{question_id}', 'QuestionController@show');
-Route::get('/ask/{domain_id}', 'QuestionController@askQuestion');
+Route::group(['middleware' => ['web']], function () {
 
 
+	Route::get('/domain/{domain_id}', 'DomainController@show');
+	Route::get('/categories/{id}', 'CategoryController@show');
 
+	Route::get('/domain/{domain_id}/discussions', 'DomainController@showTopics');
 
-// middleware connecté
+	Route::get('/domain/{domain_id}/discussion/{discussion_id}', 'TopicController@show');
+	Route::get('/propose/{domain_id}', 'TopicController@proposeTopic');
 
-Route::get('/dashboard', 'UserController@index');
-
-//middleware admin
-
-Route::get('/dashboard/topics/', 'TopicController@listTopics');
-Route::get('/dashboard/topics/validate/{topic_id}', 'TopicController@validateTopic');
-
-Route::get('/dashboard/answers/{question_id}', 'QuestionController@answer');
+	Route::get('/domain/{domain_id}/questions', 'QuestionController@listing');
+	Route::get('/domain/{domain_id}/question/{question_id}', 'QuestionController@show');
+	Route::get('/ask/{domain_id}', 'QuestionController@askQuestion');
 
 
 
-Route::resource('user', 'UserController');
-Route::resource('group', 'GroupController');
-Route::resource('domain', 'DomainController');
-Route::resource('secretquestion', 'SecretQuestionController');
-Route::resource('serviceapplicatif', 'ServiceApplicatifController');
-Route::resource('post', 'PostController');
-Route::resource('topic', 'TopicController');
-Route::resource('forum', 'ForumController');
-Route::resource('answer', 'AnswerController');
-Route::resource('question', 'QuestionController');
+
+	// middleware connecté
+
+	Route::get('/dashboard', 'UserController@index');
+
+	//middleware admin
+
+	Route::get('/dashboard/topics/', 'TopicController@listTopics');
+	Route::get('/dashboard/topics/validate/{topic_id}', 'TopicController@validateTopic');
+
+	Route::get('/dashboard/answers/{question_id}', 'QuestionController@answer');
+
+
+
+	Route::resource('user', 'UserController');
+	Route::resource('group', 'GroupController');
+	Route::resource('domain', 'DomainController');
+	Route::resource('secretquestion', 'SecretQuestionController');
+	Route::resource('serviceapplicatif', 'ServiceApplicatifController');
+	Route::resource('post', 'PostController');
+	Route::resource('topic', 'TopicController');
+	Route::resource('forum', 'ForumController');
+	Route::resource('answer', 'AnswerController');
+	Route::resource('question', 'QuestionController');
+});

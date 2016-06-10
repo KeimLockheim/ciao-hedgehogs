@@ -6,8 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Group extends Model {
 
+	//Règles pour les inputs
+	public static $rules = [
+		'name' => 'required|String', //name
+	];
+
 	protected $table = 'groups';
 	public $timestamps = true;
+	protected $softDelete = false;
 
 	//Retourne les servicesApplicatifs liés au group
 	public function serviceApplicatifs()

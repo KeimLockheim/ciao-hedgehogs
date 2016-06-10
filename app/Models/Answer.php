@@ -6,10 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Answer extends Model {
 
+	//Règles pour les inputs
+	public static $rules = [
+		'theme' => 'required|String', //question -> subBomain_id
+		'answerQuestion' => 'required|String', //content
+		'titleQuestion' => 'required|String', //question -> name
+	];
+
 	protected $table = 'answers';
 	public $timestamps = true;
+	protected $softDelete = false;
 
 
+	//=======================================================================
+	//								Relations
+	//
+	//=======================================================================
 	//Retourne l'utilisateur qui a écrit la réponse
 	public function answererUser(){
 		return $this->belongsTo('App\Models\User', 'answered_by');
@@ -20,6 +32,5 @@ class Answer extends Model {
 		return $this->belongsTo('App\Models\Question', 'question_id');
 	}
 
-	//Retourne le createdAt -answererAt-
 
 }

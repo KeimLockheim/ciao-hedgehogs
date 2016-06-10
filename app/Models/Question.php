@@ -6,8 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model {
 
+	//Règles pour les inputs
+	public static $rules = [
+		'domain' => 'required|Integer', //domain_id
+		'subDomain' => 'Integer', //subDomain_id
+		'content' => 'required|String', //content
+	];
+
 	protected $table = 'questions';
 	public $timestamps = true;
+	protected $softDelete = false;
 
 
 	//Retourne la réponses a rapport à cette question
@@ -30,6 +38,7 @@ class Question extends Model {
 		return $this->belongsTo('App\Models\Domain', 'subDomain_id');
 	}
 
-	//Retourne le createdAt -questionerAt-
+
+	// Retourne isPublic pour que l'on fasse le check facilement dans les vue view question et viewquestions
 
 }
