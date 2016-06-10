@@ -11,8 +11,10 @@ class QuestionController extends Controller {
   {
     $domain = Domain::where('id', $domain_id)->with('domainQuestions','topics')->get()->first();
     //dd($domain->isSubdomain());
-    //dd($domain->subDomainQuestions);
-    //dd($domain->domainQuestions);
+    //$subDomainQuestions = Domain::where('id', $domain_id)->with('domainQuestions','topics')->get()->first();
+    //dd($subDomainQuestions->domainQuestions);
+    $subQuestions = $domain->subDomainQuestions;
+    //dd($subQuestions);
 
     return view('view_questions', ['domain' => $domain]);
   }
