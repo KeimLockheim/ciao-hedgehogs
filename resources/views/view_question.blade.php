@@ -9,7 +9,7 @@
 
   <div class="col-md-12" id="breadcrums">
 
-      <p>Accueil <span class="interBread"></span> {{$domain->name}} <span class="interBread"></span> {{$question->name}}</p>
+      <p>Accueil <span class="interBread"></span> {{$domain->name}} <span class="interBread"></span>, on met l'id de la question mais ça devrait être le name. ID: {{$question->id}}{{$question->name}}</p>
   </div>
 
     </div>
