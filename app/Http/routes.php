@@ -43,6 +43,7 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/domain/{domain_id}/discussion/{discussion_id}', 'TopicController@show');
 	Route::get('/propose/{domain_id}', 'TopicController@proposeTopic');
 
+
 	Route::get('/domain/{domain_id}/questions', 'QuestionController@listing');
 	Route::get('/domain/{domain_id}/question/{question_id}', 'QuestionController@show');
 	Route::get('/ask/{domain_id}', 'QuestionController@askQuestion');

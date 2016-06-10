@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
+
 use App\Models\Topic;
+use App\Models\Domain;
+use Session;
+use Request;
 
 class TopicController extends Controller {
 
@@ -23,13 +27,10 @@ class TopicController extends Controller {
 
   //to do
 
-  public function proposeTopic($topic_id)
+  public function proposeTopic($domain_id)
   {
-
-    $topic = Topic::find($topic_id);
-    $data =[];
-
-    return View::make('view_proposeTopic', $data);
+    $domain = Domain::where('id', $domain_id)->get()->first();
+    return view('view_proposeTopic', ['domain' => $domain]);
   }
 
   //Finished, to test
@@ -40,7 +41,7 @@ class TopicController extends Controller {
     $post = $topic->posts->first();
     $data = ['topic' => $topic, 'post' => $post];
 
-    return View::make('view_validateTopic', $data);
+    return view('view_validateTopic', $data);
   }
 
   public function show($topic_id)
@@ -57,7 +58,7 @@ class TopicController extends Controller {
 
     $data = [];
 
-    return View::make('view_topic', $data);
+    return view::make('view_topic', $data);
   }
 
   /**
