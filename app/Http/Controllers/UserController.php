@@ -6,12 +6,25 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller {
 
+
+
+  public function nicknameExists($userNickname)
+  {
+    //Vérifie l'existence du user
+    $isAvailable = User::exists($userNickname);
+
+    json_encode(array(
+        'valid' => $isAvailable,
+    ));
+
+    return $isAvailable;
+  }
+
   /**
    * Display a listing of the resource.
    *
    * @return Response
    */
-
   public function index()
   {
     $data=[];
@@ -73,7 +86,7 @@ class UserController extends Controller {
    */
   public function show($id)
   {
-    
+
   }
 
   /**

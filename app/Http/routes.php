@@ -49,7 +49,7 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/domain/{domain_id}/question/{question_id}', 'QuestionController@show');
 	Route::get('/ask/{domain_id}', 'QuestionController@askQuestion');
 
-
+	Route::get('/user/nicknameExists/{nickname}','UserController@nicknameExists');
 
 
 	// middleware connecté
