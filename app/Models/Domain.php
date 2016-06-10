@@ -48,67 +48,45 @@ class Domain extends Model
 	}
 
 	//Retourne les topics liés au subDomain //à vérifier
-<<<<<<< HEAD
 	public function subDomainTopics()
 	{
 		return $this->hasMany('App\Models\Topic', 'subDomain_id');
-=======
-	public function subDomainTopics(){
-		return $this->hasMany('App\Models\Topic','subDomain_id');
->>>>>>> origin/master
 	}
 
-	//Retourne les questions liés au domain
-	public function domainQuestions()
+		//Retourne les questions liés au domain
+		public function domainQuestions()
 	{
 		return $this->hasMany('App\Models\Question', 'domain_id');
 	}
 
-	//Retourne les questions liés au subDomain
-	public function subDomainQuestions()
+		//Retourne les questions liés au subDomain
+		public function subDomainQuestions()
 	{
 		return $this->hasMany('App\Models\Question', 'subDomain_id');
 	}
 
-	//Retourne les groupes liés au domain
-<<<<<<< HEAD
-	public function groups()
+		//Retourne les groupes liés au domain
+		public function groups()
 	{
 		return $this->belongsToMany('App\Models\Group', 'domain_group', 'domain_id', 'group_id')->withTimestamps();
 	}
 
 
 	//isSubdomain()
-	public function isSubdomain()
-	{
-		$parentDomains = $this->parentDomain;
-		if (!empty($parentDomains)) {
-=======
-	public function groups(){
-		return $this->belongsToMany('App\Models\Group','domain_group','domain_id','group_id')->withTimestamps();
-	}
-
-	//isSubdomain()
 	public function isSubdomain(){
 		$parentDomains = $this->parentDomain;
 		if (!empty($parentDomains)){
->>>>>>> origin/master
 			return true;
 		}
 
 		return false;
 	}
 
-<<<<<<< HEAD
 	public static function parentDomains()
 	{
 		$parentDomains = self::where('parentDomain_id', null);
 		return $parentDomains;
 	}
-=======
 
-	//parentDomains()
->>>>>>> origin/master
-
-	//childrenDomains(domainID)
+			//childrenDomains(domainID)
 }
