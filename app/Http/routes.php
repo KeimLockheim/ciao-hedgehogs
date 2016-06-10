@@ -56,7 +56,7 @@ Route::group(['middleware' => ['web']], function () {
 
 	//middleware admin
 
-	Route::get('/dashboard/topics/', 'TopicController@listTopics');
+	Route::get('/dashboard/topics', 'TopicController@listTopics');
 	Route::get('/dashboard/topics/validate/{topic_id}', 'TopicController@validateTopic');
 
 	Route::get('/dashboard/answers/{question_id}', 'QuestionController@answerQuestion');
