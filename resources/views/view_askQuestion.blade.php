@@ -1,4 +1,4 @@
-<div class="container article" id="askQuestion">
+<div class="container article" id="addQuestion">
 
   <div class="row" id="contenu">
 
@@ -12,19 +12,20 @@
                   <h2>Poser une question</h2>
       <form>
 
-          <div class="form-group">
+        <div class="form-group">
               <label for="categorie"> Catégorie (obligatoire):</label>
               <select class="form-control" name="domain" id="categorie">
                 @foreach ($parentDomains as $domain)
             <option value="{{$domain->id}}" data-id="{{$domain->id}}">{{$domain->name}}</option>
                 @endforeach
           </select>
-          </div>
+        </div>
 
           <div class="form-group">
               <label for="theme"> Thème précis: </label>
               <select class="form-control" name="subDomain" id="theme">
                 <option disabled selected value> -- Tu peux préciser une sous-catégorie -- </option>
+                <option value="subDomain ID ici"></option>
               </select>
           </div>
 
