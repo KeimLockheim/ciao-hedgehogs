@@ -1,6 +1,6 @@
 <!--test-->
 <!--test-->
-<div class="container article" id="addDomain">
+<div class="container article">
 
   <div class="row" id="contenu">
 
@@ -12,7 +12,7 @@
         <div class="col-md-7 designBox">
 
                   <h2>Ajouter un domaine</h2>
-      <form>
+      <form id="addDomain">
 
           <div class="form-group">
               <label for="question">Nouveau domaine</label>

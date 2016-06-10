@@ -1,4 +1,4 @@
-<div class="container" id="answerQuestion">
+<div class="container">
 
   <div class="row" id="contenu">
     <div class="col-md-1">
@@ -25,7 +25,7 @@
             {{$question->domain}}
           </p>
 
-        <form> <!-- Du coup changement du form ici.. il faut gérer en JS le thème précis-->
+        <form id="answerQuestion"> <!-- Du coup changement du form ici.. il faut gérer en JS le thème précis-->
         <div class="form-group">
             <label for="theme"> Thème précis: </label>
             <select class="form-control" name="theme" id="theme">

@@ -10,7 +10,7 @@
 
 
 			<h2>Valider un sujet de discussion entre jeunes</h2>
-			<form>
+			<form id="validateTopic">
 
 					<div class="form-group">
 							<label for="question">Le sujet proposé: (non modifiable)</label>

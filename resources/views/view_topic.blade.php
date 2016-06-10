@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container article" id="answerTopic">
+<div class="container article">
         <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
@@ -38,7 +38,7 @@
 
             </div>
 
-  <form>
+  <form id="answerTopic">
 
       <div class="form-group">
         <input type="hidden" id="parentPost" name="parentPost_id" value="">

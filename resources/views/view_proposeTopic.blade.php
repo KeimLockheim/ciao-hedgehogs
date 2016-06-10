@@ -12,11 +12,12 @@
     </div>
         </div>
 </div>
-<div class="container article" id="proposeTopic">
+
+<div class="container article">
 
         <div class="col-md-7 designBox">
 <h2>Proposer un sujet de discussion entre jeunes</h2>
-    <form>
+    <form  id="proposeTopic">
         <div class="form-group">
             <input type="hidden" name="domain_id" value="{{$domain->id}}">
         </div>

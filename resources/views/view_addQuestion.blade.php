@@ -1,4 +1,4 @@
-<div class="container article" id="addQuestion">
+<div class="container article">
 
   <div class="row" id="contenu">
 
@@ -10,7 +10,7 @@
         <div class="col-md-7 designBox">
 
                   <h2>Poser une question</h2>
-      <form>
+      <form id="addQuestion">
 
         <div class="form-group">
               <label for="categorie"> Catégorie (obligatoire):</label>
