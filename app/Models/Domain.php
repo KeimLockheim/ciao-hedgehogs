@@ -65,8 +65,8 @@ class Domain extends Model
 		return $this->hasMany('App\Models\Question', 'subDomain_id');
 	}
 
-		//Retourne les groupes liés au domain
-		public function groups()
+	//Retourne les groupes liés au domain
+	public function groups()
 	{
 		return $this->belongsToMany('App\Models\Group', 'domain_group', 'domain_id', 'group_id')->withTimestamps();
 	}
