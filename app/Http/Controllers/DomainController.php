@@ -1,12 +1,9 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\Domain;
-use App\Models\User;
-use App\Models\Topic;
-
-use App\Models\Category;
 use Session;
 use Request;
+use App\Lib\Message;
 
 class DomainController extends Controller {
 

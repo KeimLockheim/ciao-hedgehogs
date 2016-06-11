@@ -5,7 +5,6 @@ namespace App\Models;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Topic;
 
 use Session;
 
@@ -170,7 +169,7 @@ class Domain extends Model
 		// Définition des propriétés
 		$obj->name = $values['newDomain'];
 		$obj->password = $values['password'];
-		$obj->parentDomains = $values['parentDomain_id'];
+		$obj->parentDomain_id = $values['parentDomains'];
 		$obj->description = $values['description'];
 		$obj->content = $values['content'];
 		$obj->created_by = Session::get('user_id');

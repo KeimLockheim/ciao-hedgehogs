@@ -15,6 +15,11 @@ class Group extends Model {
 	public $timestamps = true;
 	protected $softDelete = false;
 
+	//=======================================================================
+	//								Relations
+	//
+	//=======================================================================
+
 	//Retourne les servicesApplicatifs liés au group
 	public function serviceApplicatifs()
 	{

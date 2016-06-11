@@ -2,7 +2,7 @@
 
 use App\Lib\Message;
 use App\Models\User;
-use Illuminate\Http\Request;
+use Request;
 
 class UserController extends Controller {
 

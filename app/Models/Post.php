@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use Session;
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model {
@@ -16,6 +16,37 @@ class Post extends Model {
 	protected $table = 'posts';
 	public $timestamps = true;
 	protected $softDelete = false;
+
+	/**
+	 * Valide les $input reçus pour la création d'un nouveau Post
+	 * @param Request $request
+	 * @return void|$this
+	 */
+	public static function getValidation(Request $request)
+	{
+		// Récupération des inputs pertinents
+		$input = $request->only('parentPost_id', 'topic_id','answer');
+		// Création du validateur
+		$validator = Validator::make($input, self::$rules);
+		// Ajout des contraintes supplémentaires
+		$validator->after(function ($validator) use($input) {
+
+			// Vérification de l'existence du post parent si spécifié
+			if(!empty($input['parentPost_id'])){
+				if (!self::exists($input['parentPost_id'])) {
+					$validator->errors()->add('exists', Message::get('exists'));
+				}
+			}
+
+		});
+		// Renvoi du validateur
+		return $validator;
+	}
+
+	//=======================================================================
+	//								Relations
+	//
+	//=======================================================================
 
 	//Retourne le topic au quel le post se rapporte
 	public function topic(){
@@ -45,6 +76,38 @@ class Post extends Model {
 	//Retourne les posts enfants à ce post
 	public function childrenPosts(){
 		return $this->hasMany('App\Models\Post','parentPost_id');
+	}
+
+	//=======================================================================
+	//								Methods
+	//
+	//=======================================================================
+
+	/**
+	 * Vérifie s'il n'y a pas déjà une entrée dans la BD.
+	 * @param $id id à vérifier
+	 * @return bool
+	 */
+	public static function exists($id)
+	{
+		return self::find($id) !== null;
+	}
+
+	/**
+	 * Enregistre un nouveau Post selon les $values reçues
+	 * @param array $values An array containing the values to insert
+	 */
+	public static function createOne(array $values)
+	{
+		// Nouvelle instance de User
+		$obj = new Domain();
+		// Définition des propriétés
+		$obj->parentPost_id = $values['parentPost_id'];
+		$obj->topic_id = $values['topic_id'];
+		$obj->content = $values['answer'];
+		$obj->created_by = Session::get('user_id');
+		// Enregistrement du Domain
+		$obj->save();
 	}
 
 
