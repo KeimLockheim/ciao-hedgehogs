@@ -1,3 +1,8 @@
+@extends('view_master')
+
+@section('title', 'Poser une question')
+
+@section('content')
 <div class="container article">
 
   <div class="row" id="contenu">
@@ -49,3 +54,4 @@
 
 
       </div>
+      @stop

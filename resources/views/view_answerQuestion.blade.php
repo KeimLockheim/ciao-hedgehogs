@@ -1,3 +1,8 @@
+@extends('view_master')
+
+@section('title', 'Répondre à une question')
+
+@section('content')
 <div class="container">
 
   <div class="row" id="contenu">
@@ -11,8 +16,7 @@
 
     <div class="col-md-7 designBox">
 
-      <h2>Répondre à la question</h2>
-
+      <h2>Répondre à une question</h2>
 
 
       <h3>La question posée</h3>
@@ -25,15 +29,9 @@
             {{$question->domain->name}}
           </p>
 
-<<<<<<< Updated upstream
-        <form id="answerQuestion"> <!-- Du coup changement du form ici.. il faut gérer en JS le thème précis-->
-=======
-<<<<<<< HEAD
-        <form> <!-- Du coup changement du form ici.. il faut gérer en JS le thème précis avec un foreach-->
-=======
-        <form id="answerQuestion"> <!-- Du coup changement du form ici.. il faut gérer en JS le thème précis-->
->>>>>>> origin/master
->>>>>>> Stashed changes
+
+        <form id="answerQuestion">
+
         <div class="form-group">
             <label for="theme"> Thème précis: </label>
             <select class="form-control" name="theme" id="theme">
@@ -65,3 +63,4 @@
       </div>
 
   </div>
+  @stop

@@ -1,11 +1,14 @@
-<!--test-->
-<!--test-->
+@extends('view_master')
+
+@section('title', 'Ajouter un domaine')
+
+@section('content')
 <div class="container article">
 
   <div class="row" id="contenu">
 
 			  <div class="col-md-12" id="breadcrums">
-			  	<p>Dashboard <span class="interBread">></span> {{$domain->name}} <span class="interBread">></span> Ajouter un domaine d'expertise</p>
+			  	<p>Dashboard <span class="interBread">></span> Ajouter un domaine d'expertise</p>
 			  </div>
   </div>
 
@@ -59,10 +62,10 @@
                   <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Enregistrer un nouveau domaine</button>
               </div>
           </div>
-
-
       </form>
+      
         </div>
 
 
       </div>
+      @stop

@@ -51,7 +51,7 @@
       @include('partials._moreDiscussion')
 
       <div class="col-md-12 designBox sideBox">
-        
+
       @include('partials._moreOnTheme')
 
       </div>
@@ -63,4 +63,4 @@
 
 
     </div>
-    @end
+    @stop
