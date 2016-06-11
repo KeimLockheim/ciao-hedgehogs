@@ -57,9 +57,26 @@ class DomainController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Request $request)
   {
-    
+    // On demande au modèle Domain, de valider les données contenues dans la $request
+    $validate = Domain::getValidation($request);
+
+    // Si la validation échoue
+    if ($validate->fails()) {
+      return redirect()->back()->withInput()->withErrors($validate);
+    }
+
+    //Ajout dans la BD
+    try{
+      Domain::createOne($validate->getData());
+      Message::success('saved');
+      return redirect('user');
+    }
+    catch(\Exception $e){
+      Message::error('error');
+      return redirect()->back()->withInput();
+    }
   }
 
   /**

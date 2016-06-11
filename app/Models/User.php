@@ -166,7 +166,7 @@ class User extends Model {
 	public static function createOne(array $values)
 	{
 		// Nouvelle instance de User
-		$obj = new ArticlePublicitaire();
+		$obj = new User();
 		// Définition des propriétés
 		$obj->nickname = $values['pseudo'];
 		$obj->password = bcrypt($values['password']);

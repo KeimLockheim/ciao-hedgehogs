@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Topic;
 
+use Session;
+
 class Domain extends Model
 {
 
@@ -22,6 +24,46 @@ class Domain extends Model
 	public $timestamps = true;
 	protected $softDelete = false;
 
+
+	/**
+	 * Valide les $input reçus pour la création d'un nouveau Domain
+	 * @param Request $request
+	 * @return void|$this
+	 */
+	public static function getValidation(Request $request)
+	{
+		// Récupération des inputs pertinents
+		$input = $request->only('parentDomain', 'newDomain','description', 'content');
+		// Création du validateur
+		$validator = Validator::make($input, self::$rules);
+		// Ajout des contraintes supplémentaires
+		$validator->after(function ($validator) use($input) {
+
+			// Vérification de la non existence du nouveau domain
+			if (self::exists($input['newDomain'])) {
+
+				$validator->errors()->add('exists', Message::get('exists'));
+			}
+
+			// Vérification de l'existence du domain parent si spécifié
+			if(!empty($input['parentDomain'])){
+				if (!self::exists($input['parentDomain'])) {
+					$validator->errors()->add('exists', Message::get('exists'));
+				}
+			}
+
+		});
+		// Renvoi du validateur
+		return $validator;
+	}
+
+
+
+
+	//=======================================================================
+	//								Relations
+	//
+	//=======================================================================
 
 	//Retourne le domain parent à ce domain
 	public function parentDomain()
@@ -77,7 +119,15 @@ class Domain extends Model
 	}
 
 
-	//isSubdomain()
+
+	//=======================================================================
+	//								Methods
+	//
+	//=======================================================================
+
+	/** Vérifie que le domaine est un subdomain
+	 * @return bool qui est true si le domain est un sous domaine, sinon, retourne false
+	 */
 	public function isSubdomain(){
 		$parentDomains = $this->parentDomain;
 		if (!empty($parentDomains)){
@@ -87,6 +137,9 @@ class Domain extends Model
 		return false;
 	}
 
+	/** Récupère tous les domains qui n'ont pas de parent
+	 * @return $parentDomains un tableau contenant tous les domaines n'ayant pas de parent
+	 */
 	public static function parentDomains()
 	{
 		$parentDomains = self::where('parentDomain_id', null);
@@ -94,4 +147,34 @@ class Domain extends Model
 	}
 
 			//childrenDomains(domainID)
+
+
+	/**
+	 * Vérifie s'il n'y a pas déjà une entrée dans la BD.
+	 * @param $name nom à vérifier
+	 * @return bool
+	 */
+	public static function exists($name)
+	{
+		return self::where('name', $name) !== null;
+	}
+
+	/**
+	 * Enregistre un nouveau Domain selon les $values reçues
+	 * @param array $values An array containing the values to insert
+	 */
+	public static function createOne(array $values)
+	{
+		// Nouvelle instance de User
+		$obj = new Domain();
+		// Définition des propriétés
+		$obj->name = $values['newDomain'];
+		$obj->password = $values['password'];
+		$obj->parentDomains = $values['parentDomain_id'];
+		$obj->description = $values['description'];
+		$obj->content = $values['content'];
+		$obj->created_by = Session::get('user_id');
+		// Enregistrement du Domain
+		$obj->save();
+	}
 }
