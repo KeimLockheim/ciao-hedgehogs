@@ -1,7 +1,6 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\Post;
-use Session;
 use Request;
 use App\Lib\Message;
 

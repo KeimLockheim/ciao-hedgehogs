@@ -105,7 +105,7 @@ class Post extends Model {
 		$obj->parentPost_id = $values['parentPost_id'];
 		$obj->topic_id = $values['topic_id'];
 		$obj->content = $values['answer'];
-		$obj->created_by = Session::get('user_id');
+		$obj->written_by = Session::get('user_id');
 		// Enregistrement du Domain
 		$obj->save();
 	}

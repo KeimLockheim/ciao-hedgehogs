@@ -27,7 +27,7 @@ Route::get('/home', function () {
 });
 
 Route::get('/lost', function () {
-	// est-ce qu'on besoin d'une vue ou c'est toujours présent?
+	// est-ce qu'on besoin d'une vue ou c'est toujours présent? //Je ne comprends pas ce commentaire.
 	return view('view_lostPassword');
 });
 
@@ -50,11 +50,14 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/ask/{domain_id}', 'QuestionController@askQuestion');
 
 	Route::get('/user/nicknameExists/{nickname}','UserController@nicknameExists');
+	Route::post('/user/','UserController@store');
 
 
 	// middleware connecté
 
 	Route::get('/dashboard', 'UserController@index');
+	Route::post('/post/', 'PostController@store');
+	Route::post('/question/','QuestionController@store');
 
 	//middleware admin
 
@@ -63,6 +66,7 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('/dashboard/answers/{question_id}', 'QuestionController@answerQuestion');
 
+	Route::post('/domain/', 'DomainController@store');
 
 
 	Route::resource('user', 'UserController');

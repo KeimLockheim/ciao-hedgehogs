@@ -10,6 +10,7 @@ class CreateTopicsTable extends Migration {
 		Schema::create('topics', function(Blueprint $table) {
 			$table->increments('id');
 			$table->boolean('refusedReason')->nullable();
+			$table->boolean('highlighted')->default(false);
 			$table->string('name');
 			$table->timestamps();
 		});

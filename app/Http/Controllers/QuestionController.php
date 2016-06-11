@@ -3,7 +3,8 @@
 use App\Models\Domain;
 use App\Models\User;
 use App\Models\Question;
-use App\Models\Answer;
+use Request;
+use App\Lib\Message;
 
 class QuestionController extends Controller {
 
@@ -63,9 +64,26 @@ class QuestionController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Request $request)
   {
-    
+    // On demande au modèle Question, de valider les données contenues dans la $request
+    $validate = Question::getValidation($request);
+
+    // Si la validation échoue
+    if ($validate->fails()) {
+      return redirect()->back()->withInput()->withErrors($validate);
+    }
+
+    //Ajout dans la BD
+    try{
+      Question::createOne($validate->getData());
+      Message::success('saved');
+      return redirect('user');
+    }
+    catch(\Exception $e){
+      Message::error('error');
+      return redirect()->back()->withInput();
+    }
   }
 
   /**
