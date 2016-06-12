@@ -37,6 +37,10 @@ class Post extends Model {
 					$validator->errors()->add('exists', Message::get('exists'));
 				}
 			}
+			// Vérification de l'existence du topic
+			if (!Topic::exists($input['topic_id'])) {
+				$validator->errors()->add('exists', Message::get('exists'));
+			}
 
 		});
 		// Renvoi du validateur

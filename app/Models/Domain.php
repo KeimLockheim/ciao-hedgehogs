@@ -164,7 +164,7 @@ class Domain extends Model
 	 */
 	public static function createOne(array $values)
 	{
-		// Nouvelle instance de User
+		// Nouvelle instance de Domain
 		$obj = new Domain();
 		// Définition des propriétés
 		$obj->name = $values['newDomain'];

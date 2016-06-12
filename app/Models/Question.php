@@ -17,6 +17,36 @@ class Question extends Model {
 	public $timestamps = true;
 	protected $softDelete = false;
 
+	/**
+	 * Valide les $input reçus pour la création d'une nouvelle Question
+	 * @param Request $request
+	 * @return void|$this
+	 */
+	public static function getValidation(Request $request)
+	{
+		// Récupération des inputs pertinents
+		$input = $request->only('domain', 'subDomain','content');
+		// Création du validateur
+		$validator = Validator::make($input, self::$rules);
+		// Ajout des contraintes supplémentaires
+		$validator->after(function ($validator) use($input) {
+
+			// Vérification de l'existence sous domain si spécifié
+			if(!empty($input['subDomain'])){
+				if (!Domain::exists($input['subDomain'])) {
+					$validator->errors()->add('exists', Message::get('exists'));
+				}
+			}
+			// Vérification de l'existence du domain
+			if (!Topic::exists($input['domain'])) {
+				$validator->errors()->add('exists', Message::get('exists'));
+			}
+
+		});
+		// Renvoi du validateur
+		return $validator;
+	}
+
 	//=======================================================================
 	//								Relations
 	//
@@ -46,6 +76,15 @@ class Question extends Model {
 	//
 	//=======================================================================
 
+	/**
+	 * Vérifie s'il n'y a pas déjà une entrée dans la BD.
+	 * @param $id id à vérifier
+	 * @return bool
+	 */
+	public static function exists($id)
+	{
+		return self::find($id) !== null;
+	}
 
 	/**
 	 * Enregistre un nouveau Domain selon les $values reçues

@@ -74,7 +74,7 @@ class SecretQuestion extends Model {
 	 */
 	public static function createOne(array $values)
 	{
-		// Nouvelle instance de User
+		// Nouvelle instance de SecretQuestion
 		$obj = new SecretQuestion();
 		// Définition des propriétés
 		$obj->name = $values['name'];

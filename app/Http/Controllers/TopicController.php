@@ -75,9 +75,26 @@ class TopicController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Request $request)
   {
-    
+    // On demande au modèle Topic, de valider les données contenues dans la $request
+    $validate = Topic::getValidation($request);
+
+    // Si la validation échoue
+    if ($validate->fails()) {
+      return redirect()->back()->withInput()->withErrors($validate);
+    }
+
+    //Ajout dans la BD
+    try{
+      Topic::createOne($validate->getData());
+      Message::success('saved');
+      return redirect('user');
+    }
+    catch(\Exception $e){
+      Message::error('error');
+      return redirect()->back()->withInput();
+    }
   }
 
   /**

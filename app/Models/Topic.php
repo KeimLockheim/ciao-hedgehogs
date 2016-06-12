@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Lib\Message;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -51,6 +52,11 @@ class Topic extends Model {
 	public $timestamps = true;
 	protected $softDelete = false;
 
+	//=======================================================================
+	//								Relations
+	//
+	//=======================================================================
+
 	//Retourne les posts qui sont dans ce topic
 	public function posts(){
 		return $this->hasMany('App\Models\Post','topic_id');
@@ -74,5 +80,50 @@ class Topic extends Model {
 	//Retourne l'utilisateur qui a validé le topic
 	public function validatorUser(){
 		return $this->belongsTo('App\Models\User', 'validated_by');
+	}
+
+	//=======================================================================
+	//								Methods
+	//
+	//=======================================================================
+
+	/**
+	 * Vérifie s'il n'y a pas déjà une entrée dans la BD.
+	 * @param $id id à vérifier
+	 * @return bool
+	 */
+	public static function exists($id)
+	{
+		return self::find($id) !== null;
+	}
+
+	/** Récupère le prochain id de la table topics
+	 * @return $id prochain identifiant dans la table topics
+	 */
+	protected static function getNextID()
+	{
+		$id = DB::table('topics')->max('id');
+		return $id ++;
+	}
+
+	/**
+	 * Enregistre un nouveau Topic selon les $values reçues
+	 * @param array $values An array containing the values to insert
+	 */
+	public static function createOne(array $values)
+	{
+		// Nouvelle instance de Topic
+		$obj = new Topic();
+		// Définition des propriétés
+		$obj->domain_id = $values['domain_id'];
+		$obj->topicName = $values['name'];
+		$obj->created_by = Session::get('user_id');
+		$obj->posts()->save(new Post([
+			'content' => $values['topicPost'],
+			'topic_id'=> self::getNextID(),
+			'written_by' => Session::get('user_id'),
+		]));
+		// Enregistrement du Topic
+		$obj->save();
 	}
 }

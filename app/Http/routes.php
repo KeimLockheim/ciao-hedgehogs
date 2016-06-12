@@ -58,6 +58,7 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/dashboard', 'UserController@index');
 	Route::post('/post/', 'PostController@store');
 	Route::post('/question/','QuestionController@store');
+	Route::post('/topic/','TopicController@store');
 
 	//middleware admin
 
