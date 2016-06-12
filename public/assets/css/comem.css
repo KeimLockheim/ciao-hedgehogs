@@ -49,6 +49,21 @@ h1, h2, h3, h4, h5, h6{
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+
+/* liens a */
+a{
+color: #ff5a5f;
+}
+
+a:hover, a:focus{
+color: #484848;
+}
+
+a:link{
+    text-decoration: none;
+}
+
+
 footer h4{
      font-weight: bold;
 }
@@ -146,9 +161,6 @@ hr{
     border-bottom-color: #fa0008;
     background-color: #ff7e82;
     color: #fff;
-    text-decoration: none;
-}
-a:link{
     text-decoration: none;
 }
 

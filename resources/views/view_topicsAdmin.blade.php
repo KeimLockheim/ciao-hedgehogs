@@ -1,10 +1,11 @@
 @extends('view_master')
 
-@section('title', 'Dashboard')
+@section('title', 'Dashboard des discussions')
 
 @section('content')
 
 <div class="row" id="contenu">
+
 
 			<div class="col-md-7 designBox">
 
