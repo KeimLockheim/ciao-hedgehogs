@@ -18,7 +18,7 @@
 
       <div class="col-md-7 designBox">
          <h2>Question / Réponse</h2>
-            <h3>@if($domain->parentDomain !== null) {{$domain->parentDomain->name}} @endif > {{$domain->name}}</h3>
+            <h3>@if($domain->parentDomain !== null) {{$domain->parentDomain->name}} @endif  {{$domain->name}}</h3>
                 <div class="divContainerQuestion">
                         <label class="labelMessage">quesiton posée par: {{$question->questionUser->nickname}}</label>
 
@@ -36,6 +36,11 @@
                   {{$question->answer->content}}
                     </p>
                 </div>
+          <div class="form-group">
+			    <div >
+			      <input type="submit" class="btn btn-primary publier" value="Rendre public"/>
+			    </div>
+			  </div>
       </div>
 
 
@@ -43,18 +48,15 @@
 
                 <div class="row">
 
-            <div class="col-md-12 designBox sideBox">
+           
             @include('partials._moreInfos')
-            </div>
 
 
       @include('partials._moreDiscussion')
 
-      <div class="col-md-12 designBox sideBox">
 
       @include('partials._moreOnTheme')
 
-      </div>
 
 
 
