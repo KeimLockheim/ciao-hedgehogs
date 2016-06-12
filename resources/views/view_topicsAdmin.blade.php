@@ -13,7 +13,7 @@
 
                     <ul class="lienArticle">
 											@foreach ($topicsToValidate as $topicToValidate)
-											<li><a href="/topics/validate/{{ $topicToValidate->id }}"></a>{{ $topicToValidate->name }}</li>
+											<li><a href="/topics/validate/{{ $topicToValidate->id }}">{{ $topicToValidate->name }}</a></li>
 											@endforeach
 			  						</ul>
 
@@ -21,10 +21,17 @@
 
                       <ul class="lienArticle">
 												@foreach ($topicsValidated as $topicValidated)
-    										<li><a href="/topics/show/{{$topicValidated->id}}"></a>{{ $topicValidated->name }}</li>
+    										<li><a href="/topics/show/{{$topicValidated->id}}">{{ $topicValidated->name }}</a></li>
 												@endforeach
 											</ul>
+                
+                 <h3>Topics refusés: </h3>
 
+                      <ul class="lienArticle">
+												
+    										<li><a></a></li>
+											</ul>
+            
 						</div>
 
 

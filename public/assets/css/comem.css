@@ -548,6 +548,11 @@ width: 100%;
     color: #ff5a5f;
 }
 
+.lienArticle li a:hover, .lienArticle li a:focus{
+    color: #484848;
+}
+
+
 #bottomMenu{
     margin-top: 30px;
 }
