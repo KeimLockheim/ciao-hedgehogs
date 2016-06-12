@@ -67,6 +67,8 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/dashboard/answers/{question_id}', 'QuestionController@answerQuestion');
 
 	Route::post('/domain/', 'DomainController@store');
+	Route::post('/secretQuestion/', 'SecretQuestionController@store');
+
 
 
 	Route::resource('user', 'UserController');

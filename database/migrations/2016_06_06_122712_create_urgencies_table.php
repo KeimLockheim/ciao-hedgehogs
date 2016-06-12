@@ -14,7 +14,7 @@ class CreateUrgenciesTable extends Migration
     {
         Schema::create('urgencies', function(Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->integer('telephoneNumber')->nullable();
             $table->string('email')->nullable();
             $table->string('webSite')->nullable();

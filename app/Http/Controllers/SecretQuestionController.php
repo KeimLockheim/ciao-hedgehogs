@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\SecretQuestion;
+use Request;
+use App\Lib\Message;
+
 class SecretQuestionController extends Controller {
 
   /**
@@ -27,9 +31,26 @@ class SecretQuestionController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Request $request)
   {
-    
+    // On demande au modèle SecretQuestion, de valider les données contenues dans la $request
+    $validate = SecretQuestion::getValidation($request);
+
+    // Si la validation échoue
+    if ($validate->fails()) {
+      return redirect()->back()->withInput()->withErrors($validate);
+    }
+
+    //Ajout dans la BD
+    try{
+      SecretQuestion::createOne($validate->getData());
+      Message::success('saved');
+      return redirect('user');
+    }
+    catch(\Exception $e){
+      Message::error('error');
+      return redirect()->back()->withInput();
+    }
   }
 
   /**

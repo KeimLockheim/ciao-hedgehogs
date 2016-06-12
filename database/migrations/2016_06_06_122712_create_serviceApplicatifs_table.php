@@ -10,7 +10,7 @@ class CreateServiceApplicatifsTable extends Migration {
 		Schema::create('serviceApplicatifs', function(Blueprint $table) {
 			$table->increments('id');
 			$table->timestamps();
-			$table->string('name', 100);
+			$table->string('name', 100)->unique();
 		});
 	}
 
