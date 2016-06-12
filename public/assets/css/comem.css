@@ -206,6 +206,155 @@ input[type="radio"], input[type="checkbox"] {
     height: 23px;
     float:left;
 }
+
+
+/* accueil */
+
+.imgHome{
+    text-align: center;
+    width: 100%;
+        margin-top: -20px;
+
+}
+
+
+
+.titreImageHome{
+    background-color: #ff5a5f;
+    min-height: 55px;
+    margin-top: -1px;
+    border-radius: 1px;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.accueil{
+    text-align: center;
+}
+
+.descriptionCiao{
+    text-align: center;
+}
+
+.homePrimaryContainer{
+    padding-top: 20px;
+    text-align:justify;
+}
+
+.homeSecondContainer{
+    margin-top: 20px;
+    background-color:white;
+    min-height: 240px;
+}
+
+.homeSecondContainer h4{
+    padding-top: 10px;
+}
+
+
+.iconContainerHome{
+    float: left;
+    height: 50px;
+    padding-top: 5px;
+    padding-right: 10px;
+    
+}
+
+.homeSecondContainer .btn-m{
+    vertical-align: bottom;
+}
+
+.homeSecondContainer p{
+padding-top: 10px;
+    
+}
+
+.homeSecondContainer h2{
+padding-top: 10px;
+}
+
+.homeSecondContainer2{
+    height: 120px;
+}
+
+.actualites{
+    background-color: #fff;
+     /*background-color:rgba(196, 196, 196, 0.5);*/
+    margin-top: 20px;
+}
+
+.actualites h2{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.barre hr{
+    background-color: none;
+    color: #484848;
+}
+
+.imgActualite{
+width: 100%;
+}
+
+.articleActualites{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.actualites p{
+    color:white;
+    padding-top: 10px;
+}
+
+
+.titreImgArticle{
+    padding-top: 20px;
+    padding-bottom: 5px;
+    text-align: left;
+    padding-left: 10px;
+    color:#484848;
+    margin-top: -0.4px;
+    font-size: 16px;
+    background-color:rgba(223, 223, 223, 0.2);
+    
+}
+
+
+.dateArticle{
+    margin-top: 10px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.titreImgArticle:hover, .titreImgArticle:focus{
+    text-decoration: none;
+}
+
+.imgIphone{
+    height: 350px;
+}
+
+.iphoneApp{
+    text-align: right;
+}
+
+.imgAppTel{
+    height: 50px;
+}
+
+.imgDownload{
+    text-align: center;
+}
+
+.iphonePar h2{
+    font-size:28px;
+    text-align: center;
+}
+
+
 /* Profil Admin*/
 
 .gestion{
