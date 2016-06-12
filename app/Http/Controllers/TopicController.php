@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Lib\Message;
 use App\Models\Topic;
 use App\Models\Domain;
 use Session;

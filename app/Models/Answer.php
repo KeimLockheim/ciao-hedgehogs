@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Answer extends Model {
 
@@ -11,6 +12,7 @@ class Answer extends Model {
 		'theme' => 'required|String', //question -> subBomain_id
 		'answerQuestion' => 'required|String', //content
 		'titleQuestion' => 'required|String', //question -> name
+		'question_id' => 'required|Integer',//question_id
 	];
 
 	protected $table = 'answers';
@@ -25,22 +27,15 @@ class Answer extends Model {
 	public static function getValidation(Request $request)
 	{
 		// Récupération des inputs pertinents
-		$input = $request->only('pseudo', 'password','password2', 'birth', 'country','genre','secreteQuestion','answerQuestion');
+		$input = $request->only('theme', 'answerQuestion','titleQuestion', 'question_id');
 		// Création du validateur
 		$validator = Validator::make($input, self::$rules);
 		// Ajout des contraintes supplémentaires
 		$validator->after(function ($validator) use($input) {
-			// Vérification de la non existence de l'utilisateur
-			if (self::exists($input['pseudo'])) {
-
+			// Vérification de l'existence de la question
+			if (!self::exists($input['question_id'])) {
 				$validator->errors()->add('exists', Message::get('exists'));
 			}
-			// Vérification de l'existence de la question secrète
-			if (!self::exists($input['secreteQuestion'])) {
-
-				$validator->errors()->add('exists', Message::get('exists'));
-			}
-
 		});
 		// Renvoi du validateur
 		return $validator;
@@ -84,12 +79,19 @@ class Answer extends Model {
 		// Nouvelle instance de Answer
 		$obj = new Answer();
 		// Définition des propriétés
-		$obj->domain_id = $values['domain'];
-		$obj->subDomain_id = $values['subDomain'];
+		$obj->question_id = $values['question_id'];
 		$obj->content = $values['answerQuestion'];
-		$obj->asked_by = Session::get('user_id');
+		$obj->answered_by = Session::get('user_id');
 		// Enregistrement de la question
 		$obj->save();
+
+		$question_related = DB::table('questions')->find($values['question_id'])->first();
+		$question_related->name = $values['titleQuestion'];
+		if(!empty($values['theme'])){
+			$question_related->subDomain_id = $values['theme'];
+		}
+		$question_related->update();
+
 	}
 
 }

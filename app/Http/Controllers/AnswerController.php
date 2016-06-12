@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
 
+use App\Lib\Message;
+use App\Models\Answer;
+use Illuminate\Http\Request;
+
 class AnswerController extends Controller {
 
   /**
@@ -27,9 +31,26 @@ class AnswerController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Request $request)
   {
-    
+    // On demande au modèle Answer, de valider les données contenues dans la $request
+    $validate = Answer::getValidation($request);
+
+    // Si la validation échoue
+    if ($validate->fails()) {
+      return redirect()->back()->withInput()->withErrors($validate);
+    }
+
+    //Ajout dans la BD
+    try{
+      Answer::createOne($validate->getData());
+      Message::success('saved');
+      return redirect('user');
+    }
+    catch(\Exception $e){
+      Message::error('error');
+      return redirect()->back()->withInput();
+    }
   }
 
   /**

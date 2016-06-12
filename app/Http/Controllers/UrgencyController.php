@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Lib\Message;
+use App\Models\Urgency;
 
 use App\Http\Requests;
 
@@ -36,7 +37,24 @@ class UrgencyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // On demande au modèle Urgency, de valider les données contenues dans la $request
+        $validate = Urgency::getValidation($request);
+
+        // Si la validation échoue
+        if ($validate->fails()) {
+            return redirect()->back()->withInput()->withErrors($validate);
+        }
+
+        //Ajout dans la BD
+        try{
+            Urgency::createOne($validate->getData());
+            Message::success('saved');
+            return redirect('user');
+        }
+        catch(\Exception $e){
+            Message::error('error');
+            return redirect()->back()->withInput();
+        }
     }
 
     /**

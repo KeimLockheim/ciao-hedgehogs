@@ -69,6 +69,8 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::post('/domain/', 'DomainController@store');
 	Route::post('/secretQuestion/', 'SecretQuestionController@store');
+	Route::post('/answer/', 'AnswerController@store');
+	Route::post('/urgency/', 'UrgencyController@store');
 
 
 

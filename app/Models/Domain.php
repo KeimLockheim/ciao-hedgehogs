@@ -157,6 +157,15 @@ class Domain extends Model
 	{
 		return self::where('name', $name) !== null;
 	}
+	/**
+	 * Vérifie s'il n'y a pas déjà une entrée dans la BD.
+	 * @param $id id à vérifier
+	 * @return bool
+	 */
+	public static function existsWithId($id)
+	{
+		return self::find($id) !== null;
+	}
 
 	/**
 	 * Enregistre un nouveau Domain selon les $values reçues
