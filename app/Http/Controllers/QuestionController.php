@@ -10,12 +10,12 @@ class QuestionController extends Controller {
 
   public function listing($domain_id)
   {
-    $domain = Domain::where('id', $domain_id)->with('domainQuestions','topics')->get()->first();
+    $domain = Domain::where('id', $domain_id)->with('domainQuestions','topics', 'subDomainQuestions')->get()->first();
     //dd($domain->isSubdomain());
-    dd($domain->parentDomain);
+    //dd($domain->parentDomain);
     //$subDomainQuestions = Domain::where('id', $domain_id)->with('domainQuestions','topics')->get()->first();
     //dd($subDomainQuestions->domainQuestions);
-    $subQuestions = $domain->subDomainQuestions;
+    //$subQuestions = $domain->subDomainQuestions;
     //dd($subQuestions);
 
     return view('view_questions', ['domain' => $domain]);
@@ -33,7 +33,7 @@ class QuestionController extends Controller {
     //$user = User::where('id', Auth::id())->with('userProfile')->get()->first();
 
     // à effacer et remplacer avec la ligne du dessus mais pour le moment je test avec un user précis car je peux pas chopper le auth
-    $user = User::where('id', 1)->with('userProfile')->get()->first();
+    $user = User::where('id', 1)->get()->first();
 
 
     $question = Question::where('id', $question_id)->with('answer', 'domain')->get()->first();
