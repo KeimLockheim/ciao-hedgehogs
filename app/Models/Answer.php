@@ -60,6 +60,36 @@ class Answer extends Model {
 	public function question(){
 		return $this->belongsTo('App\Models\Question', 'question_id');
 	}
+	//=======================================================================
+	//								Methods
+	//
+	//=======================================================================
 
+	/**
+	 * Vérifie s'il n'y a pas déjà une entrée dans la BD.
+	 * @param $id id à vérifier
+	 * @return bool
+	 */
+	public static function exists($id)
+	{
+		return self::find($id) !== null;
+	}
+
+	/**
+	 * Enregistre un nouvelle Answer selon les $values reçues
+	 * @param array $values An array containing the values to insert
+	 */
+	public static function createOne(array $values)
+	{
+		// Nouvelle instance de Answer
+		$obj = new Answer();
+		// Définition des propriétés
+		$obj->domain_id = $values['domain'];
+		$obj->subDomain_id = $values['subDomain'];
+		$obj->content = $values['answerQuestion'];
+		$obj->asked_by = Session::get('user_id');
+		// Enregistrement de la question
+		$obj->save();
+	}
 
 }
