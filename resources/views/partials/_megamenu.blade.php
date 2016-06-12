@@ -3,7 +3,7 @@
 
                 <ul class="nav navbar-nav">
 
-                    <li><a><img src="img/home.png" alt="home" class="imgNav"><p>Accueil</p></a></li> 
+                    <li><a><img src="{{ asset('assets/img/home.png') }}" alt="home" class="imgNav"><p>Accueil</p></a></li> 
                     <!------------------------>
 
                     <li class="dropdown menu-large">
