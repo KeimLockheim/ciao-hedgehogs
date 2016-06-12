@@ -1,3 +1,5 @@
+
+
 .module-container{
   display: block;
   max-width: 600px;
@@ -8,8 +10,11 @@
   border: 1px solid #dce0e0;
 }
 
-html{
+html, body{
     height: 100%;
+    margin: 0;
+    padding: 0;
+    /*height: 100%;*/
 }
 
 body{
@@ -19,10 +24,11 @@ body{
     color: #484848;
     font-family: 'Open Sans', sans-serif;
     min-height: 100%;   
-    margin: 0;
+    /*margin: 0;
     padding: 0;
-    position: relative;
-
+    position: relative;*/
+    display: table;
+    width: 100%;
 }
 
 h1{
@@ -563,6 +569,8 @@ width: 100%;
     border-bottom: 1px solid #c4c4c4;
     border-radius: 0.2em;
    /* margin-bottom: 30px;*/
+    border-top: 2px solid #ff5a5f;
+
 }
 
 .fondFooter .container .row ul div li{
@@ -590,9 +598,9 @@ footer{
     padding-bottom: 10px;
     width: 100%;
     background-color: white;
-    border-top: 2px solid #ff5a5f;
-    position: absolute;
-    bottom: 0;
+ 
+    display: table-row;
+    height: 350px;
 }
 
 #facebook{
