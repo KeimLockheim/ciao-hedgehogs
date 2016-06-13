@@ -248,7 +248,7 @@ $('#registrationForm').formValidation({
                     },
 										remote: {
                         message: 'Le pseudo est déjà utilisé',
-												url: '../user/nicknameExists/',
+												url: '/user/nicknameExists/',
                         type: 'GET',
 												delay: 1000
                     }

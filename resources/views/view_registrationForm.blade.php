@@ -333,4 +333,54 @@
     </div>
   </form>
 </div>
+<!-- Terms and conditions modal -->
+<div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="Conditions d'utilisations" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Conditions d'utilisations</h3>
+        </div>
+
+        <div class="modal-body">
+          <p>
+            <strong>1. CIAO garantit l'anonymat</strong> des jeunes qui s'expriment sur le site, grâce au pseudo. Le pseudo permet de créer un espace perso pour pouvoir poser des questions et participer aux forums. Le pseudo n’est pas publié dans les questions-réponses, mais les répondants y ont accès. Le pseudo et l'espace perso ne peuvent pas être supprimés.
+            L'utilisation d'un pseudo comporte plusieurs avantages :
+            <ul>
+              <li>Il garantit ton anonymat.</li>
+              <li>Il permet aux répondants de te « reconnaître » et donc d'assurer un certain suivi entre tes différentes questions sans que tu sois obligé de tout réexpliquer à chaque fois.</li>
+              <li>Il te permet d'accéder à toutes tes questions-réponses et à tes interventions dans les forums via l’espace perso.</li>
+              <li>Il permet aux autres participants du forum de te répondre.</li>
+            </ul>
+            <strong>Il est important que tu ne "prêtes" pas ton pseudo à quelqu'un d'autre.</strong> Si tu as des amis ou des membres de ta famille qui veulent poser des questions sur CIAO, conseille-leur de créer leur propre pseudo. Si plusieurs personnes nous posent des questions avec le même pseudo,  nous ne pourrons y répondre de manière adéquate.
+            ciao.ch ne demande aucune donnée privée telles qu'adresse e-mail, nom, téléphone...afin de préserver l'anonymat des jeunes utilisant le site. CIAO utilise Google Analytics Lien externe, nouvelle fenêtre pour analyser l'audience de son site et améliorer son contenu. Via cet outil, le site utilise des cookies que tu peux refuser ou supprimer en configurant ton navigateur.
+          </p>
+
+          <p>
+            <strong>2.</strong>Les questions-réponses publiées et les interventions dans le forum et les témoignages appartiennent à CIAO. Elles ne peuvent pas être copiées sans son accord explicite.
+          </p>
+
+          <p>
+            <strong>3. CIAO répond aux questions via le module « poser une question ».</strong> Les forums sont des espaces de discussion entre jeunes. Les témoignages te permettent de faire part de tes expériences et des solutions que tu as trouvées, qui peuvent aider d'autres internautes. Attention de ne pas confondre ces différents espaces.
+          </p>
+
+          <p>
+            <strong>4. CIAO attend du respect de ses interlocuteurs.</strong>Tu dois donc respecter les participations et les avis de chaque internaute quel que soit son âge, sa culture, son sexe, son ethnie, sa religion, et toute autre préférence et caractéristique personnelle. Les insultes ou propos non respectueux à autrui seront effacés systématiquement aussi bien au niveau des question-réponses que des forums ou des témoignages.
+          </p>
+
+          <p>
+            <strong>5. Chacun-e peut exprimer son avis:</strong> tant qu’il ne s’agit pas d’appel à la haine, ou la discrimination, de discours visant à créer des adeptes religieux ou politiques (prosélytisme), ou de discours incitateur qui mettrait en danger la santé et la sécurité des internautes (apologie de la drogue, de l’alcool ou d’autres pratiques à risque). De telles interventions ne seront pas validées.
+          </p>
+
+          <p>
+            <strong>6. Langage clair.</strong> Merci de ne pas rédiger tes questions ou tes interventions en langage SMS, les répondant-e-s pourraient avoir des difficultés à les comprendre.
+          </p>
+
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" id="agreeButton" data-dismiss="modal">J'accepte</button>
+            <button type="button" class="btn btn-default" id="disagreeButton" data-dismiss="modal">Je refuse</button>
+        </div>
+    </div>
+</div>
+</div>
+</div>
 @stop

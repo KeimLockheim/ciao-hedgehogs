@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -51,7 +51,10 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/domain/{domain_id}/question/{question_id}', 'QuestionController@show');
 	Route::get('/ask/{domain_id}', 'QuestionController@askQuestion');
 
-	Route::get('/user/nicknameExists/{nickname}','UserController@nicknameExists');
+	Route::get('/user/nicknameExists/?pseudo={pseudo}', function(){
+		return Response::json(array('valid' => true));
+	});
+
 	Route::post('/user/','UserController@store');
 
 
