@@ -14,7 +14,7 @@
 			  		<h1>Urgences sur {{$domain->name}}</h1>
 
 			  		<div class="row">
-              @foreach($domain->urgency as $dom)
+              @foreach($domain->urgencies as $dom)
 			  			<div class="col-md-5 boxUrgences">
 			  				<div class="row carteVisite">
 					  				<h2>{{$dom->title}}</h2>

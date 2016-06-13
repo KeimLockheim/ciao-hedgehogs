@@ -31,7 +31,8 @@ Route::get('/lost', function () {
 	return view('view_lostPassword');
 });
 
-
+Route::get('/domain/{domain_id}/urgences', 'UrgencyController@indexDomain');
+Route::get('/urgences', 'UrgencyController@index');
 
 
 Route::group(['middleware' => ['web']], function () {

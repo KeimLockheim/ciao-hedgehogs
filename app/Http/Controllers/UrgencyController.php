@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Lib\Message;
 use App\Models\Urgency;
+use App\Models\Domain;
 
 use App\Http\Requests;
 
@@ -16,7 +17,14 @@ class UrgencyController extends Controller
      */
     public function index()
     {
-        //
+        $urgencies = Urgency::all();
+        return view('view_urgencyAll', ['urgencies' => $urgencies]);
+    }
+
+    public function indexDomain($domain_id)
+    {
+        $domain = Domain::where('id', $domain_id)->with('urgencies')->get()->first();
+        return view('view_urgencyAll', ['domain' => $domain]);
     }
 
     /**
