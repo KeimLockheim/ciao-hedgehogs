@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\Domain;
+use App\Models\Menu;
 use App\Models\User;
 use App\Models\Question;
 use Request;
@@ -24,7 +25,10 @@ class QuestionController extends Controller {
   public function askQuestion($domain_id)
   {
     $domain = Domain::where('id', $domain_id)->get()->first();
-    return view('view_addQuestion', ['domain' => $domain]);
+
+    $data = Menu::getDomains();
+    $data['domain'] = $domain;
+    return view('view_addQuestion', $data);
   }
 
 
@@ -46,7 +50,12 @@ class QuestionController extends Controller {
   {
     $domain = Domain::where('id', $domain_id)->with('parentDomain')->get()->first();
     $question = Question::where('id', $question_id)->with('questionUser', 'answer')->get()->first();
-    return view('view_question', ['domain'=> $domain, 'question' => $question]);
+
+    $data = Menu::getDomains();
+    $data['domain'] = $domain;
+    $data['question'] = $question;
+
+    return view('view_question', $data);
   }
 
   /**
