@@ -16,11 +16,17 @@
 <div class="container article">
     
       <div class="col-md-7 designBox">
-          coucou
+          <h2>Proposer un sujet de discussion entre jeunes</h2>
+
+          <p>
+          Ici, tu proposes un sujet dont tu veux parler avec d’autres jeunes. CIAO ne répond pas dans les forums, mais modère tous les sujets proposés, selon <a>les conditions d’utilisation</a> du site. Ton sujet est validé dans les 24h maximum.
+
+          </p>
     </div>
 
         <div class="col-md-7 designBox">
-<h2>Proposer un sujet de discussion entre jeunes</h2>
+              <div class="row">
+
     <form  id="proposeTopic">
         <div class="form-group">
             <input type="hidden" name="domain_id" value="{{$domain->id}}">
@@ -44,6 +50,29 @@
     </form>
 
     </div>
+ </div>
+
+      <div class="col-md-offset-1 col-md-4">
+
+        <div class="row">
+
+                    <div class="col-md-12 designBox sideBox">
+                      <!--Vérifier distinction SubDomain vs Domain -->
+                      @if($domain->isSubdomain())
+                      <h3>{{$domain->name}}</h3>
+
+                      <p>{{$domain->description}}</p>
+                      @else
+                      <h3>{{$domain->name}}</h3>
+
+                      @endif
+
+                    </div>
+
+        </div>
+
+      </div>
+
 
     </div>
     @stop
