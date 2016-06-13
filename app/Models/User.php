@@ -116,7 +116,7 @@ class User extends Model {
 
 	//Retourne le userProfile relatif à ce user
 	public function userProfile(){
-		return $this->belongsTo('App\Models\UserProfile', 'user_id');
+		return $this->hasOne('App\Models\UserProfile', 'user_id');
 	}
 
 	//Retourne les groupes dont le user fait parti

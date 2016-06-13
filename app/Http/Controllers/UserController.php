@@ -31,7 +31,10 @@ class UserController extends Controller {
   public function index()
   {
     $data = Menu::getDomains();
-
+    //$user = User::where('id', Auth::id())->with('userProfile')->get()->first();
+    $user = User::where('id', 1)->with('groups','userProfile')->get()->first();
+    //dd($user->userProfile);
+    $data['user'] = User::where('id', 1)->with('groups','answers', 'domains', 'questions', 'userProfile', 'createdTopics', 'validatedTopics')->get()->first();
     // pour l'utilisateur, on va envoyer son rôle à la vue
     //
     // si c'est un expert chopper ses domaines, les questions à repondre
