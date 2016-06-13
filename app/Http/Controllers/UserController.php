@@ -9,12 +9,17 @@ use Request;
 class UserController extends Controller {
 
 
-
-  public function nicknameExists($nickname)
+  /**
+   * @param $nickname
+   * @return string retourne false si le pseudo est disponible sinon true
+   */
+  public function nicknameCheck($nickname)
   {
 
     //Vérifie l'existence du user
     $isAvailable = User::exists($nickname);
+    $isAvailable = !$isAvailable;
+    dd($isAvailable);
 
     return json_encode(['valid' => $isAvailable]);
   }
