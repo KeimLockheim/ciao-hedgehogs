@@ -313,7 +313,7 @@ $('#registrationForm').formValidation({
                                 }
 
                                 // We will treat the password as an invalid one if the score is less than 3
-                                if (score < 2) {
+                                if (score < 1) {
                                     return {
                                         valid: false,
                                         message: message
