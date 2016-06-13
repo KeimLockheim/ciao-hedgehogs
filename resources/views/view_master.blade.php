@@ -48,8 +48,7 @@
                         
                         
                     <a href="/urgences"><img src="{{ asset('assets/img/ambulance-xxl.png') }}" alt="urgence" class="imgHeader"></a>
-                        <button class="btn btn-xs large" name="question">Poser ma question!</button>
-                        
+                         <a href="/ask/1"><button type="submit" class="btn btn-xs large">Poser ma question!</button></a>
                     </div>
                     </div>
 					</div>

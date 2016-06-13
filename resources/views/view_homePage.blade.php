@@ -36,7 +36,8 @@
                         <a><div class="boxPlusMenu">
                             <h4>Afficher toutes les questions/réponses...</h4>
                         </div></a>
-                    <button type="submit" class="btn btn-m" name="question">Poser ma question!</button>	  
+                     <a href="/ask/1"><button type="submit" class="btn btn-m">Poser ma question!</button></a>
+
                 </div>
 
                 </div>
@@ -98,7 +99,7 @@
                              <div class="col-md-4 iphonePar">
                                  <h2>Ciao a une toute nouvelle app pour Iphone.</h2>
         
-        <p>Comme le site ciao.ch, cette application te permet d'accéder à :</p>
+        <p>Comme le site ciao.ch, cette application te permet d'accéder à:</p>
     <ul>
 <li>les 100 dernières Questions Réponses</li>
 <li>la possibilité de poser une question et de recevoir une réponse personnalisée</li>
