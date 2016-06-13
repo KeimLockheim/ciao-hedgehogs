@@ -19,11 +19,15 @@
 
         <div class="form-group">
               <label for="categorie"> Catégorie (obligatoire):</label>
-              <select class="form-control" name="domain" id="categorie">
-                @foreach ($parentDomains as $domain)
-            <option value="{{$domain->id}}" data-id="{{$domain->id}}">{{$domain->name}}</option>
-                @endforeach
-          </select>
+            <select class="form-control" name="domain" id="categorie">
+                <option disabled selected value> catégorie par défaut à récupérer </option>
+                <option value="domain ID ici"></option>
+            </select>
+              {{--<select class="form-control" name="domain" id="categorie">--}}
+                {{--@foreach ($parentDomains as $domain)--}}
+            {{--<option value="{{$domain->id}}" data-id="{{$domain->id}}">{{$domain->name}}</option>--}}
+                {{--@endforeach--}}
+          {{--</select>--}}
         </div>
 
           <div class="form-group">

@@ -23,10 +23,10 @@ class QuestionController extends Controller {
 
   public function askQuestion($domain_id)
   {
-    $data=[];
-
-    return view('view_askQuestion', $data);
+    $domain = Domain::where('id', $domain_id)->get()->first();
+    return view('view_addQuestion', ['domain' => $domain]);
   }
+
 
   public function answerQuestion($question_id)
   {
