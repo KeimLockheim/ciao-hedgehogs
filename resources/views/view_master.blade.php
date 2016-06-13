@@ -54,7 +54,6 @@
 
         <div class="container">
 
-      @include('partials._megamenu')
 
         </div>
 

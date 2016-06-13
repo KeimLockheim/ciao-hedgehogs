@@ -21,7 +21,7 @@
          <h2>{{$domain->name}}</h2>
 
           <p>
-        Ci-dessous sont listées toutes les discussions en rapport avec cette thématique.
+        Ci-dessous sont listées toutes les questions en rapport avec cette thématique.
 
           </p>
     </div>
@@ -29,6 +29,7 @@
     
       <div class="col-md-7 designBox">
             <div class="row">
+         <h3>Liste des questions :</h3>
 
          <ul class="designForum">
              @if($domain->isSubdomain())

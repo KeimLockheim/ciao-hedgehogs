@@ -5,10 +5,14 @@
 @section('content')
 
 <div class="row" id="contenu">
-
+      
+    <div class="col-md-12" id="breadcrums">
+      <p>Accueil <span class="interBread">></span>  <span class="interBread">></span> Liste des discussions admin</p>
+    </div>
+  </div>
 
 			<div class="col-md-7 designBox">
-
+                <div class="row"></div>
 			<h2>Discussions</h2>
             <h3>Topics à valider: </h3>
 
@@ -29,6 +33,5 @@
 						</div>
 
 
-</div>
 
 @stop

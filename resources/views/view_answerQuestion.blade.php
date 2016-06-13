@@ -3,12 +3,14 @@
 @section('title', 'Répondre à une question')
 
 @section('content')
-<div class="container">
 
   <div class="row" id="contenu">
-    <div class="col-md-11" id="breadcrums">
+      
+    <div class="col-md-12" id="breadcrums">
       <p>Accueil <span class="interBread">></span> Profil expert nom: {{$user->nickname}} <span class="interBread">></span> Répondre à une question</p>
     </div>
+  </div>
+
 
     <div class="col-md-7 designBox">
         <div class="row">
@@ -57,7 +59,5 @@
 </div>
 </div>
 
-      </div>
 
-  </div>
   @stop
