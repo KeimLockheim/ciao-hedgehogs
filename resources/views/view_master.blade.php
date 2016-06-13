@@ -23,10 +23,14 @@
      <script src="{{ asset('assets/formvalidation/dist/js/formValidation.min.js') }}"></script>
     <script src="{{ asset('assets/formvalidation/dist/js/framework/bootstrap.js') }}"></script>
 
+		<!-- FormValidation -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.3.0/zxcvbn.js"></script>
 
       <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
       <script src="{{ asset('assets/js/megaMenu.js') }}"></script>
-      <script src="{{ asset('assets/js/formValidation.js') }}"></script>
+      <script src="{{ asset('assets/js/validation.js') }}"></script>
+
+
 
 	  </head>
 
@@ -47,10 +51,13 @@
                     <a href="/urgences"><img src="{{ asset('assets/img/ambulance-xxl.png') }}" alt="urgence" class="imgHeader"></a>
                          <a href="/ask/1"><button type="submit" class="btn btn-xs large">Poser ma question!</button></a>
 
+						<img src="{{ asset('assets/img/ambulance-xxl.png') }}" alt="urgence" class="imgHeader">
+                        <button class="btn btn-xs large" name="question">Poser ma question!</button>
 
                     </div>
                     </div>
 					</div>
+				</div>
 			</header>
 
         <div class="container">
@@ -68,7 +75,7 @@
 
 
  @include('partials._footer')
-          </div>
+
 
 	  </body>
 	</html>
