@@ -7,12 +7,27 @@
         <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
-      <p>Accueil <span class="interBread">></span> {{$domain->name}} <span class="interBread">></span> Discussions</p>
+      <p>Accueil <span class="interBread">></span> {{$domain->name}} <span class="interBread">></span> Liste des discussions</p>
+    </div>
+        </div>
+    
+    
+    <div class="col-md-7 designBox">
+        <div class="row">
+
+         <h2>{{$domain->name}}</h2>
+
+          <p>
+         Ci-dessous, tu peux voir toute les discussions en rapport avec cette thématique. N’hésite pas à participer et partages tes expériences et connaissances.
+</p>
+
+
+          </p>
     </div>
         </div>
 
       <div class="col-md-7 designBox">
-         <h2>{{$domain->name}}</h2>
+          <div class="row">
 
          <h3>Liste des discussions :</h3>
 
@@ -34,6 +49,8 @@
         </ul>
               <button type="submit" class="btn btn-m" name="question">Proposer une discussion!</button>
       </div>
+                </div>
+
 
 
       <div class="col-md-offset-1 col-md-4">

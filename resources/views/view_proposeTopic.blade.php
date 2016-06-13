@@ -14,8 +14,10 @@
 </div>
 
 <div class="container article">
-    
+
       <div class="col-md-7 designBox">
+                            <div class="row">
+
           <h2>Proposer un sujet de discussion entre jeunes</h2>
 
           <p>
@@ -23,6 +25,8 @@
 
           </p>
     </div>
+        </div>
+
 
         <div class="col-md-7 designBox">
               <div class="row">

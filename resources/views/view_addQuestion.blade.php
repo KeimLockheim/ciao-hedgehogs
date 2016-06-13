@@ -15,6 +15,8 @@
   </div>
     
           <div class="col-md-7 designBox">
+                                <div class="row">
+
                   <h2>Poser une question</h2>
 
           <p>
@@ -26,10 +28,12 @@ Pour toutes les questions sur les métiers (choix d'un métier, description, ét
 
           </p>
     </div>
+        </div>
+
     
 
         <div class="col-md-7 designBox">
-
+            <div class="row">
       <form id="addQuestion">
 
         <div class="form-group">
@@ -71,6 +75,7 @@ Pour toutes les questions sur les métiers (choix d'un métier, description, ét
       </form>
             
         </div>
+          </div>
 
 
       </div>

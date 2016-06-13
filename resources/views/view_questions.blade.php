@@ -5,18 +5,30 @@
 @section('content')
 
 <div class="container article">
+    
 
         <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
-      <p>Accueil <span class="interBread"></span> {{$domain->name}} <span class="interBread"></span> Questions </p>
+      <p>Accueil <span class="interBread">></span> {{$domain->name}} <span class="interBread">></span> Liste des questions</p>
     </div>
         </div>
-      <div class="col-md-7 designBox">
+    
+    
+    <div class="col-md-7 designBox">
+                            <div class="row">
+
          <h2>{{$domain->name}}</h2>
 
-         <h3>Liste des questions :</h3>
+          <p>
+        Ci-dessous sont listée toute les discussions en rapport avec cette thématique.
 
+          </p>
+    </div>
+        </div>
+    
+      <div class="col-md-7 designBox">
+            <div class="row">
 
          <ul class="designForum">
              @if($domain->isSubdomain())
@@ -34,6 +46,7 @@
           @endif
 
         </ul>
+      </div>
 
       </div>
 
