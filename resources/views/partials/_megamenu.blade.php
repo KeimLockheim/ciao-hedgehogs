@@ -131,7 +131,7 @@
                     </li>
 
                     <li class="dropdown menu-large">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('assets/img/religion.png') }}" alt="Religions" class="imgNav"><p>Religions <b class="caret"></b></p></a>
+                        <a href="#" class="dropdown-toggle" data-tog<sgle="dropdown"><img src="{{ asset('assets/img/religion.png') }}" alt="Religions" class="imgNav"><p>Religions <b class="caret"></b></p></a>
                         <ul class="dropdown-menu megamenu row">
                             <li class="col-sm-4">
                                 <ul>
@@ -155,7 +155,7 @@
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Argent</a></li>
                                     <li class="divider"></li>
-                                    @foreach($domArgent->subDomains as $sub)
+                                    @foreach($ as $sub)
                                     <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
