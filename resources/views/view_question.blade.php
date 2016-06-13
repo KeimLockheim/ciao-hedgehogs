@@ -16,10 +16,10 @@
 
     </div>
 
-      <div class="col-md-7 designBox">
+      <div class="col-md-7 designBox" itemscope itemtype="https://schema.org/Question">
          <h2>Question / Réponse</h2>
             <h3 itemprop="about">@if($domain->parentDomain !== null) {{$domain->parentDomain->name}} @endif  {{$domain->name}}</h3>
-                <div class="divContainerQuestion" itemscope itemtype="https://schema.org/Question">
+                <div class="divContainerQuestion">
                         <label class="labelMessage">quesiton posée par: <span itemprop="author">{{$question->questionUser->nickname}}</span></label>
 
                         <label class="date"><time itemprop="dateCreated">{{$question->created_at}}</time></label>

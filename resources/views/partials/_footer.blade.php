@@ -1,4 +1,4 @@
-<footer>
+<footer itemscope itemtype="https://schema.org/Organization">
 
 			<div class="fondFooter">
 
@@ -6,7 +6,7 @@
 					<div class="row">
 						<ul>
 							<div class="col-md-2">
-								<li><a href="https://www.facebook.com/ciao.ch"><img src="{{ asset('assets/img/facebook.png') }}" alt="Facebook" id="facebook"></a></li>
+								<li itemprop="url"><a href="https://www.facebook.com/ciao.ch"><img src="{{ asset('assets/img/facebook.png') }}" alt="Facebook" id="facebook"></a></li>
 							</div>
 							<div class="col-md-2">
 								<li><a href="#">Ton avis</a></li>
@@ -35,10 +35,10 @@
 								<div class="col-md-12">
 									<h3>Avec le soutien de :</h3>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-6" itemprop="sponsor">
 									<a href="http://oakfnd.org/"><img src="{{ asset('assets/img/oak.png') }}" class="logoFooter" alt="Oak Foundation"></a>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-6" itemprop="sponsor">
 									<a href="https://www.loro.ch/fr"><img src="{{ asset('assets/img/romande.jpg') }}" class="logoFooter" alt="Loterie Romande"></a>
 								</div>	
 								<div class="col-md-12 iban">
@@ -53,16 +53,16 @@
 
 							  		<h3 class="footerCenter">Numéros d'urgence :</h3>
 
-							  		<p class="footerCenter"><img src="{{ asset('assets/img/medecin.png') }}" alt="medecin" class="footerIcons"> Médical - <span class="footerNum">144</span></p>
-							  		<p class="footerCenter"><img src="{{ asset('assets/img/pompier.png') }}" alt="pompier" class="footerIcons"> Pompiers - <span class="footerNum">118</span></p>
-							  		<p class="footerCenter"><img src="{{ asset('assets/img/police.png') }}" alt="police" class="footerIcons"> Police - <span class="footerNum">117</span></p>
-							  		<p class="footerCenter"><img src="{{ asset('assets/img/general.png') }}" alt="general" class="footerIcons"> Général - <span class="footerNum">112</span></p>
+							  		<p class="footerCenter"><img src="{{ asset('assets/img/medecin.png') }}" alt="medecin" class="footerIcons"> Médical - <span class="footerNum" itemprop="telephone">144</span></p>
+							  		<p class="footerCenter"><img src="{{ asset('assets/img/pompier.png') }}" alt="pompier" class="footerIcons"> Pompiers - <span class="footerNum" itemprop="telephone">118</span></p>
+							  		<p class="footerCenter"><img src="{{ asset('assets/img/police.png') }}" alt="police" class="footerIcons"> Police - <span class="footerNum" itemprop="telephone">117</span></p>
+							  		<p class="footerCenter"><img src="{{ asset('assets/img/general.png') }}" alt="general" class="footerIcons"> Général - <span class="footerNum" itemprop="telephone">112</span></p>
 							
 						</div>
 
 					  	<div class="col-md-4">
 
-					  		<h3 class="footerCenter">Ciao c'est :</h3>
+					  		<h3 class="footerCenter"><span itemprop="creator">Ciao</span> c'est :</h3>
 					  		<ul>
 						  		<li>Une association</li>
 						  		<li>Un site internet créé en 1997, certifié accessible et HON</li>
