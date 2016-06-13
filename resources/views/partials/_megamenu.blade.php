@@ -3,15 +3,15 @@
 
                 <ul class="nav navbar-nav">
 
-                    <li><a><img src="{{ asset('assets/img/home.png') }}" alt="home" class="imgNav"><p>Accueil</p></a></li> 
+                    <li><a><img src="img/home.png" alt="home" class="imgNav"><p>Accueil</p></a></li> 
                     <!------------------------>
 
                     <li class="dropdown menu-large">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('assets/img/sante.png') }}" alt="sante" class="imgNav"><p>Santé <b class="caret"></b></p> </a>				
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/sante.png" alt="sante" class="imgNav"><p>Santé <b class="caret"></b></p> </a>				
                         <ul class="dropdown-menu megamenu row">
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu">Santé</li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="#">Santé</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">État de santé</a></li>
                                     <li><a href="#">Où, qui consulter?</a></li>
@@ -30,7 +30,7 @@
                             </li>
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu">Stress</li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="#">Stress</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">Qu'est-ce que c'est?</a></li>
                                     <li><a href="#">Les mécanismes</a></li>
@@ -49,7 +49,7 @@
                             </li>
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu">Boire, fumer, se droguer</li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="#">Boire, fumer, se droguer</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">Les drogues</a></li>
                                     <li><a href="#">Les produits</a></li>
@@ -64,7 +64,7 @@
                             </li>
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu">Manger-bouger</li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="#">Manger-bouger</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">Poids adolescence</a></li>
                                     <li><a href="#">Manger, comment?</a></li>
@@ -77,6 +77,7 @@
                                     <li><a href="#">Bouger, sans risque</a></li>			
                                 </ul>
                             </li>
+                            
 
                         </ul>
 
@@ -85,11 +86,11 @@
 
                     <!------------------------>
                     <li class="dropdown menu-large">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('assets/img/moi.png') }}" alt="moi, les autres" class="imgNav"><p>Moi, toi,...<b class="caret"></b></p></a>				
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/moi.png" alt="moi, les autres" class="imgNav"><p>Moi, toi,...<b class="caret"></b></p></a>				
                         <ul class="dropdown-menu megamenu row">
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu">Estime de soi</li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="#">Estime de soi</a></li>
                                     <li class="divider"></li>
 
                                     <li><a href="#">BlaBla</a></li>
@@ -99,7 +100,7 @@
                             </li>
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu">Moi, toi et les autres</li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="#">Moi, toi et les autres</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">BlaBla</a></li>
 
@@ -111,11 +112,11 @@
                     </li>
 
                     <li class="dropdown menu-large">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('assets/img/sexualite.png') }}" alt="Sexualité" class="imgNav"><p>Sexualité <b class="caret"></b></p></a>				
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/sexualite.png" alt="Sexualité" class="imgNav"><p>Sexualité <b class="caret"></b></p></a>				
                         <ul class="dropdown-menu megamenu row">
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu">Sexualité</li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="#">Sexualité</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">BlaBla</a></li>
 
@@ -127,11 +128,11 @@
                     </li>
 
                     <li class="dropdown menu-large">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('assets/img/violence.png') }}" alt="Violences" class="imgNav"><p>Violences <b class="caret"></b></p></a>				
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/violence.png" alt="Violences" class="imgNav"><p>Violences <b class="caret"></b></p></a>				
                         <ul class="dropdown-menu megamenu row">
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu">Violences</li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="#">Violences</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">BlaBla</a></li>
 
@@ -140,7 +141,7 @@
                             </li>
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu">Discrimination et racismes</li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="#">Discrimination et racismes</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">BlaBla</a></li>
 
@@ -152,11 +153,11 @@
                     </li>
 
                     <li class="dropdown menu-large">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('assets/img/religion.png') }}" alt="Religions" class="imgNav"><p>Religions <b class="caret"></b></p></a>				
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/religion.png" alt="Religions" class="imgNav"><p>Religions <b class="caret"></b></p></a>				
                         <ul class="dropdown-menu megamenu row">
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu">Religions</li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="#">Religions</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">BlaBla</a></li>
 
@@ -168,11 +169,11 @@
                     </li>
 
                     <li class="dropdown menu-large">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('assets/img/work.png') }}" alt="Avenir" class="imgNav"><p>Avenir<b class="caret"></b></p></a>				
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/work.png" alt="Avenir" class="imgNav"><p>Avenir<b class="caret"></b></p></a>				
                         <ul class="dropdown-menu megamenu row">
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu">Argent</li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="#">Argent</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">BlaBla</a></li>
 
@@ -181,7 +182,7 @@
                             </li>
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu">Formation et travail</li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="#">Formation et travail</a></li>
                                     <li class="divider"></li>
                                     <li><a href="#">BlaBla</a></li>
 
@@ -196,7 +197,7 @@
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><img src="{{ asset('assets/img/sign_in.png') }}" alt="login" class="imgNav">Connexion</a></li>
+                    <li><a href="#"><img src="img/sign_in.png" alt="login" class="imgNav">Connexion</a></li>
                 </ul>
             </div>
         </nav>
