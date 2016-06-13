@@ -5,9 +5,16 @@
 @section('content')
 
 		<div class="container">
+            
+            <div class="row" id="contenu">
+
+			  <div class="col-md-12" id="breadcrums">
+			  	<p>Accueil <span class="interBread">></span> Admin <span class="interBread">></span> Valider une discussion</p>
+			  </div>
+  </div>
 
 		<div class="col-md-7 designBox">
-
+            <div class="row">
 
 			<h2>Valider un sujet de discussion entre jeunes</h2>
 			<form id="validateTopic">
@@ -54,7 +61,7 @@
 
 			</form>
 		</div>
-
+</div>
 		</div>
 
 @stop
