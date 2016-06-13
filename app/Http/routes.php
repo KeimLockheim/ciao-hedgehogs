@@ -31,12 +31,12 @@ Route::get('/lost', function () {
 	return view('view_lostPassword');
 });
 
-Route::get('/domain/{domain_id}/urgences', 'UrgencyController@indexDomain');
-Route::get('/urgences', 'UrgencyController@index');
 
 
 Route::group(['middleware' => ['web']], function () {
 
+    Route::get('/domain/{domain_id}/urgences', 'UrgencyController@indexDomain');
+    Route::get('/urgences/', 'UrgencyController@index');
 
 	Route::get('/domain/{domain_id}', 'DomainController@show');
 	Route::get('/categories/{id}', 'CategoryController@show');
