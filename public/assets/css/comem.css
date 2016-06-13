@@ -623,10 +623,10 @@ padding-top: 10px;
 }
 
 .actualites{
-        border-top: 1px solid #ff5a5f;
-
+margin-bottom: 15px;
      /*background-color:rgba(196, 196, 196, 0.5);*/
-    margin-top: 20px;
+        background-color: #fff;
+
 }
 
 .actualites h1{

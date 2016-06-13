@@ -9,7 +9,7 @@
            
         <div class="row">
             <div class="col-md-12">
-                <img src="img/homePage.jpg" alt="ciao" class="imgHome">
+                <img src="{{ asset('assets/img/homePage.jpg') }}" alt="ciao" class="imgHome">
                 <h2 class="titreImageHome">Plateforme d’information, d’aide et d’échanges pour les 11-20 ans.</h2>
             </div>
         </div>
@@ -29,7 +29,7 @@
                 <div class="col-md-4">
                 <div class="col-md-12 homeSecondContainer">
                     <div class="homeSecondContainer2">
-                    <img src="img/penPink.png" alt="question" class="iconContainerHome">
+                    <img src="{{ asset('assets/img/penPink.png') }}" alt="question" class="iconContainerHome">
                     <h2>Questions</h2><p> Anonyme et gratuit : tu peux poser tes questions, nous y répondrons dans les deux jours.</p>
                      </div>
 
@@ -43,7 +43,7 @@
                  <div  class="col-md-4">
                 <div class="col-md-12 homeSecondContainer">
                     <div class="homeSecondContainer2">
-                    <img src="img/forumPink.png" alt="forum" class="iconContainerHome">
+                    <img src="{{ asset('assets/img/forumPink.png') }}" alt="forum" class="iconContainerHome">
                     <h2>Forum</h2><p> C'est quelque chose que tu vis, un sujet que te concerne, dont tu parles avec tes ami-es, pour lequel tu t'engages ? Viens en discuter sur ciao avec d'autres.</p>
                     </div>
                     <a><div class="boxPlusMenu">
@@ -55,7 +55,7 @@
                 <div  class="col-md-4">
                 <div class="col-md-12 homeSecondContainer">
                     <div class="homeSecondContainer2">
-                    <img src="img/quiz.png" alt="forum" class="iconContainerHome">
+                    <img src="{{ asset('assets/img/quiz.png') }}" alt="forum" class="iconContainerHome">
                     <h2>Quiz</h2><p>Teste tes connaissances.
 Es-tu bien informé-e sur certaines thématiques ? 
                         Découvre-le à travers nos quiz dans chaque rubrique.</p>
@@ -86,7 +86,7 @@ Es-tu bien informé-e sur certaines thématiques ?
                          <div class="row">
                              
                             <div class="col-md-offset-2 col-md-4 iphoneApp">
-                            <img src="img/iphone.png" alt="iphone" class="imgIphone">
+                            <img src="{{ asset('assets/img/iphone.png') }}" alt="iphone" class="imgIphone">
                                 </div>
                              <div class="col-md-4 iphonePar">
                                  <h2>Ciao a une toute nouvelle app pour Iphone.</h2>
@@ -100,7 +100,7 @@ Es-tu bien informé-e sur certaines thématiques ?
 <li>l'accès aux actualités de ciao.ch</li>
 </ul>
                                  <p class="imgDownload">
-                            <a><img src="img/apple.png" alt="apple" class="imgAppTel"></a>
+                            <a><img src="{{ asset('assets/img/apple.png') }}" alt="apple" class="imgAppTel"></a>
                             </p>
                             </div>
                              
@@ -121,23 +121,23 @@ Es-tu bien informé-e sur certaines thématiques ?
                              <h2>Actualités</h2>
                             
             <div class="col-md-3 articleActualites"><a class="lienArticle">
-                <img src="img/racisme.jpg" alt="racisme" class="imgActualite">
+                <img src="{{ asset('assets/img/racisme.jpg') }}" alt="racisme" class="imgActualite">
                <h3 class="titreImgArticle">Semaine contre le racisme</h3>
                 </a>
                
             </div>
                 <div class="col-md-3 articleActualites">
-                <a class="lienArticle"><img src="img/citron.jpg" alt="citron" class="imgActualite">
+                <a class="lienArticle"><img src="{{ asset('assets/img/citron.jpg') }}" alt="citron" class="imgActualite">
                 <h3 class="titreImgArticle">Les 3 faux effets du citron</h3></a>
             </div>
              <div class="col-md-3 articleActualites">
-                <a class="lienArticle"><img src="img/cancer.jpg" alt="cancer" class="imgActualite">
+                <a class="lienArticle"><img src="{{ asset('assets/img/cancer.jpg') }}" alt="cancer" class="imgActualite">
                <h3 class="titreImgArticle">Qu’est-ce que le cancer?</h3></a>
             </div>
           
 
            <div class="col-md-3 articleActualites">
-                 <a class="lienArticle"><img src="img/radio.jpg" alt="radio" class="imgActualite">
+                 <a class="lienArticle"><img src="{{ asset('assets/img/radio.jpg') }}" alt="radio" class="imgActualite">
                 <h3 class="titreImgArticle">Journée mondiale de la radio</h3></a>
                 </div>
             </div>
