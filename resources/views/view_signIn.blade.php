@@ -1,3 +1,8 @@
+@extends('view_master')
+
+@section('title', 'Créer un compte')
+
+@section('content')
 <div class="module-container" id="signInForm">
 
   <h2>Se connecter (caché en fonction du boutton cliqué plus)</h2>
@@ -39,3 +44,4 @@
     </div>
   </form>
 </div>
+  @stop
