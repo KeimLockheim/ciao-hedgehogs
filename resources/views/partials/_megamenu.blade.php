@@ -155,7 +155,7 @@
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Argent</a></li>
                                     <li class="divider"></li>
-                                    @foreach($domArgent as $sub)
+                                    @foreach($domArgent->subDomains as $sub)
                                     <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
@@ -166,7 +166,7 @@
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Formation et travail</a></li>
                                     <li class="divider"></li>
-                                    @foreach($domFormations as $sub)
+                                    @foreach($domFormations->subDomains as $sub)
                                     <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
