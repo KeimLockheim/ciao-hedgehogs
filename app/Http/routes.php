@@ -51,11 +51,9 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/domain/{domain_id}/question/{question_id}', 'QuestionController@show');
 	Route::get('/ask/{domain_id}', 'QuestionController@askQuestion');
 
-	Route::get('/user/nicknameExists/?pseudo={pseudo}', function(){
-		return Response::json(array('valid' => true));
-	});
+	Route::get('/user/nicknameExists/{pseudo}','UserController@nicknameExists');
 
-	Route::get('/domain/getSubDomains/','DomainController@show');
+	Route::get('/domain/getSubDomains/{domain_id}','DomainController@getSubDomains');
 
 	Route::post('/user/','UserController@store');
 

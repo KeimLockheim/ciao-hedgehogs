@@ -12,13 +12,11 @@ class UserController extends Controller {
 
   public function nicknameExists($nickname)
   {
-    dd($nickname);
 
     //Vérifie l'existence du user
     $isAvailable = User::exists($nickname);
-    $isAvailable = true;
 
-    return response()->json(['valid' => $isAvailable]);
+    return json_encode(['valid' => $isAvailable]);
   }
 
   /**
@@ -29,6 +27,12 @@ class UserController extends Controller {
   public function index()
   {
     $data=[];
+
+    $data = Menu::getDomains();
+    //$user = User::where('id', Auth::id())->with('userProfile')->get()->first();
+    $user = User::where('id', 1)->with('groups','userProfile')->get()->first();
+    //dd($user->userProfile);
+    $data['user'] = User::where('id', 1)->with('groups','answers', 'domains', 'questions', 'userProfile', 'createdTopics', 'validatedTopics')->get()->first();
 
     // pour l'utilisateur, on va envoyer son rôle à la vue
     //

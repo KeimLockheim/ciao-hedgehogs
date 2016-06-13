@@ -154,7 +154,8 @@ class User extends Model {
 	 */
 	public static function exists($pseudo)
 	{
-		return self::where('nickname', $pseudo) !== null;
+		return self::where('nickname', $pseudo)->first() !== null;
+
 	}
 
 

@@ -10,7 +10,14 @@ class DomainController extends Controller {
   public function getSubDomains($domain_id){
     $subDomains = Domain::where('id', $domain_id)->first()->subDomains;
 
-    return json_encode($subDomains);
+    $string = '[';
+    foreach($subDomains as $subDomain){
+      $string.= "{\"name\" : \"$subDomain->name\",\"id\" : \"$subDomain->id\"},";
+    }
+    $string = substr($string, 0, -1);
+    $string .= ']';
+
+    return $string;
   }
 
   public function showTopics($domain_id)
