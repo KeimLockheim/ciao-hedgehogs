@@ -18,21 +18,21 @@
 
       <div class="col-md-7 designBox">
          <h2>Question / Réponse</h2>
-            <h3>@if($domain->parentDomain !== null) {{$domain->parentDomain->name}} @endif  {{$domain->name}}</h3>
-                <div class="divContainerQuestion">
-                        <label class="labelMessage">quesiton posée par: {{$question->questionUser->nickname}}</label>
+            <h3 itemprop="about">@if($domain->parentDomain !== null) {{$domain->parentDomain->name}} @endif  {{$domain->name}}</h3>
+                <div class="divContainerQuestion" itemscope itemtype="https://schema.org/Question">
+                        <label class="labelMessage">quesiton posée par: <span itemprop="author">{{$question->questionUser->nickname}}</span></label>
 
-                        <label class="date">{{$question->created_at}}</label>
+                        <label class="date"><time itemprop="dateCreated">{{$question->created_at}}</time></label>
 
-                    <p class="ContainerAnswerQuestion">{{$question->content}}</p>
+                    <p class="ContainerAnswerQuestion" itemprop="text">{{$question->content}}</p>
                 </div>
 
                 <div class="divContainerAnswer rep">
-                        <label class="labelMessage">{{$question->answer->answered_by}}</label>
+                        <label class="labelMessage"><span itemprop="author">{{$question->answer->answered_by}}</span></label>
 
-                        <label class="date">{{$question->answer->created_at}}</label>
+                        <label class="date"><time itemprop="dateCreated">{{$question->answer->created_at}}</time></label>
 
-                    <p class="ContainerAnswerQuestion">
+                    <p class="ContainerAnswerQuestion" itemprop="text">
                   {{$question->answer->content}}
                     </p>
                 </div>
