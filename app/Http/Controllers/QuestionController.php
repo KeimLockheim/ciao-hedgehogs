@@ -39,10 +39,12 @@ class QuestionController extends Controller {
     // à effacer et remplacer avec la ligne du dessus mais pour le moment je test avec un user précis car je peux pas chopper le auth
     $user = User::where('id', 1)->get()->first();
 
-
     $question = Question::where('id', $question_id)->with('answer', 'domain')->get()->first();
 
-    return view('view_answerQuestion', ['question' => $question,'user' => $user]);
+    $data = Menu::getDomains();
+    $data['question'] = $question;
+    $data['user'] = $user;
+    return view('view_answerQuestion', $data);
   }
 
 

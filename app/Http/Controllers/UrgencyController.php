@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Lib\Message;
+use App\Models\Menu;
 use App\Models\Urgency;
 use App\Models\Domain;
 

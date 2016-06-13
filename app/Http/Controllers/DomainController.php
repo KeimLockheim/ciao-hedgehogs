@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\Domain;
+use App\Models\Menu;
 use Request;
 use App\Lib\Message;
 
@@ -12,17 +13,18 @@ class DomainController extends Controller {
     $domain = Domain::where('id', $domain_id)->with('topics')->get()->first();
 
     // récupère [$highlightedTopics, $notHighlightedTopics] pour un domaine précis?
-
-    return view('view_topics', ['domain' => $domain]);
+    $data = Menu::getDomains();
+    $data['domain'] = $domain;
+    return view('view_topics', $data);
   }
 
   public function show($domain_id)
   {
     $domain = Domain::where('id', $domain_id)->with('topics')->get()->first();
 
-    $data=['domain', $domain];
-
-    return view('view_domain', ['domain' => $domain]);
+    $data = Menu::getDomains();
+    $data['domain'] = $domain;
+    return view('view_domain', $data);
   }
 
 

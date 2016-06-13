@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Lib\Message;
+use App\Models\Menu;
 use App\Models\Topic;
 use App\Models\Domain;
 use Session;
@@ -22,7 +23,11 @@ class TopicController extends Controller {
     //trouver la liste des topics à valider et la liste des topics validés [$topicsToValidate, $topicsValidated]
     $topicsToValidate = $topics->where('validated_by', null);
     $topicsValidated = $topics->diff($topicsToValidate);
-    return view('view_topicsAdmin', ['topicsToValidate' => $topicsToValidate, 'topicsValidated' => $topicsValidated ]);
+
+    $data = Menu::getDomains();
+    $data['topicsToValidate'] = $topicsToValidate;
+    $data['topicsValidated'] = $topicsValidated;
+    return view('view_topicsAdmin', $data);
   }
 
 
@@ -31,7 +36,9 @@ class TopicController extends Controller {
   public function proposeTopic($domain_id)
   {
     $domain = Domain::where('id', $domain_id)->get()->first();
-    return view('view_proposeTopic', ['domain' => $domain]);
+    $data = Menu::getDomains();
+    $data['domain'] = $domain;
+    return view('view_proposeTopic', $data);
   }
 
   //Finished, to test
@@ -50,7 +57,12 @@ class TopicController extends Controller {
     $domain = Domain::find($domain_id);
     $posts = $topic->posts->sortBy('created_at');
 
-    return view('view_topic', ['topic' => $topic, 'domain' => $domain, 'posts' => $posts]);
+    $data = Menu::getDomains();
+    $data['topic'] = $topic;
+    $data['domain'] = $domain;
+    $data['posts'] = $posts;
+
+    return view('view_topic', $data);
   }
 
   public function listAdmin()
