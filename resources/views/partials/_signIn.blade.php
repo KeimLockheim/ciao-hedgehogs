@@ -28,6 +28,14 @@
       <div>
         <button type="submit" class="btn btn-primary">Je me connecte</button>
       </div>
+        <div>
+						<button type="submit" class="btn btn-primary">Créer un compte</button>
+				</div>
+         <div class="modal-footer">
+                        <button type="button" 
+                        class="btn btn-xs close" data-dismiss="modal">
+                            Fermer</button>
+                    </div>
     </div>
   </form>
 </div>

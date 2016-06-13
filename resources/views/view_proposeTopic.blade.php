@@ -58,14 +58,10 @@
 
                     <div class="col-md-12 designBox sideBox">
                       <!--Vérifier distinction SubDomain vs Domain -->
-                      @if($domain->isSubdomain())
-                      <h3>{{$domain->name}}</h3>
 
+                      <h3>{{$domain->name}}</h3>
                       <p>{{$domain->description}}</p>
-                      @else
-                      <h3>{{$domain->name}}</h3>
 
-                      @endif
 
                     </div>
 
