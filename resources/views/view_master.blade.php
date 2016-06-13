@@ -47,13 +47,10 @@
                     <a href="/urgences"><img src="{{ asset('assets/img/ambulance-xxl.png') }}" alt="urgence" class="imgHeader"></a>
                          <a href="/ask/1"><button type="submit" class="btn btn-xs large">Poser ma question!</button></a>
 
-						<img src="{{ asset('assets/img/ambulance-xxl.png') }}" alt="urgence" class="imgHeader">
-                        <button class="btn btn-xs large" name="question">Poser ma question!</button>
 
                     </div>
                     </div>
 					</div>
-				</div>
 			</header>
 
         <div class="container">
@@ -71,7 +68,7 @@
 
 
  @include('partials._footer')
-
+          </div>
 
 	  </body>
 	</html>
