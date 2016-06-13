@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	
+
 	//  <--- answerTopic form --->
       $('#answerTopic').formValidation({
           framework: 'bootstrap',
@@ -18,9 +18,9 @@ $(document).ready(function() {
               }
           }
       });
-		
 
-	
+
+
 	 //  <--- addDomain form--->
       $('#addDomain').formValidation({
           framework: 'bootstrap',
@@ -46,10 +46,10 @@ $(document).ready(function() {
               }
           }
       });
-	
-	
-	
-	
+
+
+
+
   //  <--- addTopic form --->
       $('#validateTopic').formValidation({
           framework: 'bootstrap',
@@ -232,6 +232,7 @@ $('#registrationForm').formValidation({
         },
         fields: {
             pseudo: {
+								threshold: 3,
                 validators: {
                     notEmpty: {
                         message: "Ciao, moi c'est Gustave et toi ton pseudo c'est quoi? ;-)"
@@ -245,10 +246,11 @@ $('#registrationForm').formValidation({
                         regexp: /^[a-zA-Z0-9_]+$/,
                         message: "Ton pseudo ne doit être constitué que de lettres, chiffres et underscores '_'"
                     },
-					remote: {
+										remote: {
                         message: 'Le pseudo est déjà utilisé',
-                        url: '/user/nicknameExists/',
-                        type: 'POST'
+												url: '../user/nicknameExists/',
+                        type: 'GET',
+												delay: 1000
                     }
                   }
                 },
