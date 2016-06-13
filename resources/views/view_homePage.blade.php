@@ -31,12 +31,8 @@
                     <div class="homeSecondContainer2">
                     <img src="{{ asset('assets/img/penPink.png') }}" alt="question" class="iconContainerHome">
                     <h2>Questions</h2><p> Anonyme et gratuit : tu peux poser tes questions, nous y répondrons dans les deux jours.</p>
+                        <p>Pour ceci, rends-toi dans le domaine qui t'intéresse et pose ta question.</p>
                      </div>
-
-                        <a><div class="boxPlusMenu">
-                            <h4>Afficher toutes les questions/réponses...</h4>
-                        </div></a>
-                     <a href="/ask/1"><button type="submit" class="btn btn-m">Poser ma question!</button></a>
 
                 </div>
 
@@ -46,11 +42,11 @@
                     <div class="homeSecondContainer2">
                     <img src="{{ asset('assets/img/forumPink.png') }}" alt="forum" class="iconContainerHome">
                     <h2>Forum</h2><p> C'est quelque chose que tu vis, un sujet que te concerne, dont tu parles avec tes ami-es, pour lequel tu t'engages ? Viens en discuter sur ciao avec d'autres.</p>
+                        <p>Pour ceci, rends-toi dans un domaine qui t'intéresse, et propose ton sujet de discussions. Tu peux aussi voir les autres discussions et y participer. </p>
+                     </div>
                     </div>
-                    <a><div class="boxPlusMenu">
-                            <h4>Afficher toutes les discussions...</h4>
-                        </div></a>
-                </div>
+            
+    
                 </div>
                 
                 

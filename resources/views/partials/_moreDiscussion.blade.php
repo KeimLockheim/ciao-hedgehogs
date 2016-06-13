@@ -10,10 +10,7 @@
 
     </ul>
 
-<a href="/domain/{{$domain->id}}/discussions">
-  <h4>Afficher toutes les discussions...</h4>
-</a>
-    
+
      <a href="/propose/{{$domain->id}}"><button type="submit" class="btn btn-m"><img src="{{ asset('assets/img/forum.png') }}" alt="question" class="iconButton">Proposer une discussion!</button></a>
 
     
