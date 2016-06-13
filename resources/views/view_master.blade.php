@@ -43,9 +43,13 @@
 					</div>
 				<div class="col-lg-offset-4 col-md-6 icon">
 					<div >
-						<img src="{{ asset('assets/img/ambulance-xxl.png') }}" alt="urgence" class="imgHeader">
-                        <button class="btn btn-xs large" name="question">Poser ma question!</button>
+                        
 
+                        
+                        
+                    <a href="/urgences"><img src="{{ asset('assets/img/ambulance-xxl.png') }}" alt="urgence" class="imgHeader"></a>
+                        <button class="btn btn-xs large" name="question">Poser ma question!</button>
+                        
                     </div>
                     </div>
 					</div>
@@ -53,7 +57,6 @@
 			</header>
 
         <div class="container">
-              <!--  @include('partials._megamenu')-->
 
         </div>
 

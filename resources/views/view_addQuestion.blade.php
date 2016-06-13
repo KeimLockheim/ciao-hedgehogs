@@ -59,7 +59,8 @@ Pour toutes les questions sur les métiers (choix d'un métier, description, ét
 
           <div class="form-group">
               <label for="question">Ma question: </label>
-                <a id="existQuestion" href="#"><button type="button" class="btn btn-xs"> Regarder si ma question existe déjà</button></a>
+                <a id="existQuestion" href="/domain/{{$domain->id}}/discussions"><button type="button" class="btn btn-xs"> Regarder si ma question existe déjà</button></a>
+              
 
                 <textarea class="form-control" rows="4" name="content" id="question"></textarea>
 

@@ -14,7 +14,7 @@
       </div>
 
 			  	<div class="col-md-12 designBox">
-
+                    <div lass="row">
 			  		<h1>Liste des adresses d'urgences</h1>
 
 			  		<div class="row">
@@ -35,7 +35,7 @@
 			  			</div>
               @endforeach
 			  		</div>
-
+</div>
 
 			  	</div>
 

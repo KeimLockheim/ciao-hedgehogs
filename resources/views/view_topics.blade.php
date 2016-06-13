@@ -47,8 +47,8 @@
         @endforeach
         @endif
         </ul>
-              <button type="submit" class="btn btn-m" name="question">Proposer une discussion!</button>
-      </div>
+     <a href="/propose/{{$domain->id}}"><button type="submit" class="btn btn-m"><img src="{{ asset('assets/img/forum.png') }}" alt="question" class="iconButton">Proposer une discussion!</button></a>
+          </div>
                 </div>
 
 
