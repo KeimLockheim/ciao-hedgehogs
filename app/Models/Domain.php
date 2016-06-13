@@ -141,11 +141,9 @@ class Domain extends Model
 	 */
 	public static function parentDomains()
 	{
-		$parentDomains = self::where('parentDomain_id', null);
+		$parentDomains = self::where('parentDomain_id', null)->get();
 		return $parentDomains;
 	}
-
-			//childrenDomains()
 
 
 	/**
@@ -157,6 +155,7 @@ class Domain extends Model
 	{
 		return self::where('name', $name) !== null;
 	}
+
 	/**
 	 * Vérifie s'il n'y a pas déjà une entrée dans la BD.
 	 * @param $id id à vérifier

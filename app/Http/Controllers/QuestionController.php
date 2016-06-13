@@ -25,9 +25,11 @@ class QuestionController extends Controller {
   public function askQuestion($domain_id)
   {
     $domain = Domain::where('id', $domain_id)->get()->first();
+    $parentDomains = Domain::parentDomains();
 
     $data = Menu::getDomains();
     $data['domain'] = $domain;
+    $data['parentDomains'] = $parentDomains;
     return view('view_addQuestion', $data);
   }
 
