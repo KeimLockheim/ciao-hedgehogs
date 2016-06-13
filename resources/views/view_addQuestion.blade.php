@@ -52,7 +52,6 @@ Pour toutes les questions sur les métiers (choix d'un métier, description, ét
               <label for="theme"> Thème précis: </label>
               <select class="form-control" name="subDomain" id="theme">
                 <option disabled selected value> Tu peux préciser une sous-catégorie </option>
-                <option value="subDomain ID ici"></option>
               </select>
           </div>
 

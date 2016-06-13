@@ -1,12 +1,15 @@
 $(document).ready(function() {
+
 	//Peupler drop-down list domain / sous-domaine
 	$domain = $("select[name='domain']");
 	$subDomain = $("select[name='subDomain']");
 
 	$domain.change(function() {
   $.getJSON('/domain/getSubDomains/' + $domain.val(), function(data) {
-			console.log(data.name);
-  		$subDomain.append('<option>'+ data.name + '</option>');
+			//$subDomain.empty();
+			for (var i = 0; i < data.length; i++) {
+					$subDomain.append("<option value="+ data[i].id +">" + data[i].name + "</option>");
+			}
   });
 });
 
