@@ -9,7 +9,7 @@
 	    <title>Ciao.ch | @yield('title') </title> <!-- CHANGE THE TITLE HERE -->
 
 	    <!-- CSS -->
-          
+
             <link href=" {{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
             <link href=" {{ asset('assets/css/comem.css') }}" rel="stylesheet">
             <link href=" {{ asset('assets/css/megaMenu.css') }}" rel="stylesheet">
@@ -43,17 +43,13 @@
 					</div>
 				<div class="col-lg-offset-4 col-md-6 icon">
 					<div >
-<<<<<<< Updated upstream
-                        
 
-                        
-                        
                     <a href="/urgences"><img src="{{ asset('assets/img/ambulance-xxl.png') }}" alt="urgence" class="imgHeader"></a>
                          <a href="/ask/1"><button type="submit" class="btn btn-xs large">Poser ma question!</button></a>
-=======
+
 						<img src="{{ asset('assets/img/ambulance-xxl.png') }}" alt="urgence" class="imgHeader">
                         <button class="btn btn-xs large" name="question">Poser ma question!</button>
->>>>>>> Stashed changes
+
                     </div>
                     </div>
 					</div>
@@ -61,10 +57,8 @@
 			</header>
 
         <div class="container">
-<<<<<<< Updated upstream
-=======
+
 			@include('partials._megamenu')
->>>>>>> Stashed changes
 
         </div>
 
