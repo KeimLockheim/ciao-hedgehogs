@@ -315,7 +315,7 @@
       <div class="form-group">
           <label for="answer" >Ma réponse secrète: </label>
       <div>
-            <textarea name="answerQuestion" class="form-control" placeholder="Si tu perds ton mot de passe tu pourras le récupérer en répondant à la question que tu as choisie" class="form-control" rows="3" id="answer"></textarea>
+            <textarea name="answerQuestion" class="form-control" placeholder="Si tu perds ton mot de passe tu pourras le récupérer en répondant à la question que tu as choisie" class="form-control" rows="2" id="answer"></textarea>
           </div>
       </div>
 

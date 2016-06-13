@@ -3,10 +3,11 @@ $(document).ready(function() {
 	$domain = $("select[name='domain']");
 	$subDomain = $("select[name='subDomain']");
 
-	//$domain.load("getAllDomain.php")
-
 	$domain.change(function() {
-  $subDomain.load("getSubDomain.php?parent=" + $domain.val());
+  $.getJSON('/domain/getSubDomains/' + $domain.val(), function(data) {
+			console.log(data.name);
+  		$subDomain.append('<option>'+ data.name + '</option>');
+  });
 });
 
 
@@ -258,7 +259,9 @@ $('#registrationForm').formValidation({
                     },
 										remote: {
                         message: 'Le pseudo est déjà utilisé',
-												url: '/user/nicknameExists/',
+												url: function(validator, $field, value) {
+    										return '/user/nicknameCheck/' + value;
+													},
                         type: 'GET',
 												delay: 1000
                     }
