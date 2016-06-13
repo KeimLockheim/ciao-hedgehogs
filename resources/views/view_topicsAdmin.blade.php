@@ -25,14 +25,7 @@
     										<li><a href="/topics/show/{{$topicValidated->id}}">{{ $topicValidated->name }}</a></li>
 												@endforeach
 											</ul>
-                
-                 <h3>Topics refusés: </h3>
-
-                      <ul class="lienArticle">
-												
-    										<li><a></a></li>
-											</ul>
-            
+                            
 						</div>
 
 
