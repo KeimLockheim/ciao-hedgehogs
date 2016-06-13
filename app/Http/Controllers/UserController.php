@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Lib\Message;
+use App\Models\SecretQuestion;
 use App\Models\User;
 use Request;
 
@@ -46,7 +47,8 @@ class UserController extends Controller {
    */
   public function create()
   {
-    
+    $secretQuestion = SecretQuestion::all();
+    return view('view_registrationForm', ['secretQuestion' => $secretQuestion]);
   }
 
   /**

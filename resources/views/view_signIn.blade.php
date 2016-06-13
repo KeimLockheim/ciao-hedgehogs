@@ -1,6 +1,6 @@
 @extends('view_master')
 
-@section('title', 'Créer un compte')
+@section('title', 'Connexion')
 
 @section('content')
 <div class="module-container" id="signInForm">

@@ -1,3 +1,8 @@
+@extends('view_master')
+
+@section('title', 'Création de compte')
+
+@section('content')
 <div class="module-container" id="registration">
 
   <h2>S'inscrire</h2>
@@ -301,8 +306,9 @@
           <label for="secret" > Choisis ta question secrète: </label>
           <div>
             <select class="form-control" name="secreteQuestion" id="secret">
-          <option>Le nom de ma maman</option>
-          <option>ma couleur préférée</option>
+            @foreach($secretQuestion as $sq)
+                <option value="{{$sq->id}}">{{$sq->name}}</option>
+            @endforeach
         </select>
       </div>
      </div>
@@ -327,3 +333,4 @@
     </div>
   </form>
 </div>
+@stop
