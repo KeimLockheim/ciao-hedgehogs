@@ -52,24 +52,31 @@
                 </div>
                 </div>
                 
-                <div  class="col-md-4">
+                
+                
+                <div class="col-md-4">
                 <div class="col-md-12 homeSecondContainer">
                     <div class="homeSecondContainer2">
-                    <img src="{{ asset('assets/img/quiz.png') }}" alt="forum" class="iconContainerHome">
-                    <h2>Quiz</h2><p>Teste tes connaissances.
-Es-tu bien informé-e sur certaines thématiques ? 
-                        Découvre-le à travers nos quiz dans chaque rubrique.</p>
-                    </div>
-                    <div>
-                         <ul class="lienArticle">
-			  			<li><a href="#">Stress</a></li>
-			  			<li><a href="#">Estime de soi</a></li>
-                        <li><a href="#">Moi et les autres</a></li>
+                    <img src="{{ asset('assets/img/userPink.png') }}" alt="question" class="iconContainerHome">
+                    <h2>Espace personnel</h2>  
+                        <p>
+                        Crée ton espace perso pour avoir accès aux fonctionnalités proposées
+                            Ta partie privée te permet de:
+                            <ul>
+                            <li>poser anonymement des questions</li>
+                            <li>créer et participer à des discussions</li>
+                            <li>poster des témoignages</li>
+                            </ul>
 
-                    </div>
-                    </div>
+                            </p>
+                     </div>
+
+                        
+                <button type="submit" class="btn btn-m btnEspacePerso" name="compte">Créer un compte</button>	  
+                </div>
 
                 </div>
+                
             </div>
         </div>
 

@@ -279,6 +279,10 @@ padding-top: 10px;
     height: 120px;
 }
 
+.btnEspacePerso{
+    margin-top: 46px;
+}
+
 .actualites{
     background-color: #fff;
      /*background-color:rgba(196, 196, 196, 0.5);*/
@@ -592,7 +596,6 @@ color: white;
 .homeSecondContainer{
     margin-top: 20px;
     background-color:white;
-        height: 240px;
 
 
 }
