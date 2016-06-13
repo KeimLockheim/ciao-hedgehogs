@@ -19,7 +19,6 @@ class UserController extends Controller {
     //Vérifie l'existence du user
     $isAvailable = User::exists($nickname);
     $isAvailable = !$isAvailable;
-    dd($isAvailable);
 
     return json_encode(['valid' => $isAvailable]);
   }
