@@ -6,15 +6,12 @@
 <div class="container">
 
   <div class="row" id="contenu">
-    <div class="col-md-1">
-
-    </div>
-
     <div class="col-md-11" id="breadcrums">
       <p>Accueil <span class="interBread">></span> Profil expert nom: {{$user->nickname}} <span class="interBread">></span> Répondre à une question</p>
     </div>
 
     <div class="col-md-7 designBox">
+        <div class="row">
 
       <h2>Répondre à une question</h2>
 
@@ -58,7 +55,7 @@
 
   </form>
 </div>
-
+</div>
 
       </div>
 

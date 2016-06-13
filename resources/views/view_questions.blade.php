@@ -21,7 +21,7 @@
          <h2>{{$domain->name}}</h2>
 
           <p>
-        Ci-dessous sont listée toute les discussions en rapport avec cette thématique.
+        Ci-dessous sont listées toutes les discussions en rapport avec cette thématique.
 
           </p>
     </div>

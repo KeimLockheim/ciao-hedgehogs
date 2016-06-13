@@ -20,10 +20,10 @@
                   <h2>Poser une question</h2>
 
           <p>
-         Tu te poses des questions et n’as pas envie de t’adresser à tes parents ? Peut-être ne sais-tu pas où trouver la réponse ? Nos experts se feront une joie de pouvoir y répondre, et ça dans les 48 heures !
+         Tu te poses des questions et n’as pas envie de t’adresser à tes parents? Peut-être ne sais-tu pas où trouver la réponse? Nos experts se feront une joie de pouvoir y répondre, et ça dans les 48 heures!
 <p>N’hésite pas à nous soumettre tes questions, c’est 100% gratuit et nos conseillers feront leur maximum pour éclairer tes lanternes.</p>
-<p>Remarque : Peut-être que quelqu’un nous a déjà soumis la même question. Pense à aller jeter un œil sur les forums ou les questions posées par d’autres utilisateurs.
-Pour toutes les questions sur les métiers (choix d'un métier, description, études pour y parvenir...), regarde le site  <a href="http://www.orientation.ch">www.orientation.ch</a>.</p>
+<p>Remarque: Peut-être que quelqu’un nous a déjà soumis la même question. Pense à aller jeter un œil sur les forums ou les questions posées par d’autres utilisateurs.
+Pour toutes les questions sur les métiers (choix d'un métier, description, études pour y parvenir...), regarde le site <a href="http://www.orientation.ch">www.orientation.ch</a>.</p>
 
 
           </p>

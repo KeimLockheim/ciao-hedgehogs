@@ -18,7 +18,7 @@
          <h2>{{$domain->name}}</h2>
 
           <p>
-         Ci-dessous, tu peux voir toute les discussions en rapport avec cette thématique. N’hésite pas à participer et partages tes expériences et connaissances.
+         Ci-dessous, tu peux voir toutes les discussions en rapport avec cette thématique. N’hésite pas à participer et partager tes expériences et connaissances.
 </p>
 
 
