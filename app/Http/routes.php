@@ -55,6 +55,8 @@ Route::group(['middleware' => ['web']], function () {
 		return Response::json(array('valid' => true));
 	});
 
+	Route::get('/domain/getSubDomains/','DomainController@getSubDomains');
+
 	Route::post('/user/','UserController@store');
 
 

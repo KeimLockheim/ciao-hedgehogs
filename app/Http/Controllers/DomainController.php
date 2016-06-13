@@ -7,6 +7,11 @@ use App\Lib\Message;
 
 class DomainController extends Controller {
 
+  public function getSubDomains($domain_id){
+    $subDomains = Domain::where('id', $domain_id)->first()->subDomains;
+
+    return json_encode($subDomains);
+  }
 
   public function showTopics($domain_id)
   {
@@ -21,6 +26,8 @@ class DomainController extends Controller {
   public function show($domain_id)
   {
     $domain = Domain::where('id', $domain_id)->with('topics')->get()->first();
+
+
 
     $data = Menu::getDomains();
     $data['domain'] = $domain;
