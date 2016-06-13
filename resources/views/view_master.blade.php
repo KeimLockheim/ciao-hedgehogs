@@ -39,17 +39,19 @@
 
 
 
-	  		<header>
+	  		<header itemscope itemtype="https://schema.org/Organization">
 				<div class="row">
 
 					<div class="col-md-2">
-						<img src="{{ asset('assets/img/logo.png') }}" alt="logo" id="logo">
+						<img src="{{ asset('assets/img/logo.png') }}" alt="logo" id="logo" itemprop="logo">
 					</div>
 				<div class="col-lg-offset-4 col-md-6 icon">
 					<div >
 
                     <a href="/urgences"><img src="{{ asset('assets/img/ambulance-xxl.png') }}" alt="urgence" class="imgHeader"></a>
+
                   	<a href="/ask/1"><button type="submit" class="btn btn-xs large">Poser ma question!</button></a>
+
 
                     </div>
                     </div>
