@@ -1,4 +1,14 @@
 $(document).ready(function() {
+	//Peupler drop-down list domain / sous-domaine
+	$domain = $("select[name='domain']");
+	$subDomain = $("select[name='subDomain']");
+
+	//$domain.load("getAllDomain.php")
+
+	$domain.change(function() {
+  $subDomain.load("getSubDomain.php?parent=" + $domain.val());
+});
+
 
 	//  <--- answerTopic form --->
       $('#answerTopic').formValidation({
@@ -396,4 +406,6 @@ $('#registrationForm').formValidation({
                 // Revalidate the field manually
                 .formValidation('revalidateField', 'agree');
         });
+
+
 });
