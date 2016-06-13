@@ -23,12 +23,12 @@ Route::get('/', function()
 
 
 Route::get('/home', function () {
-	return view('view_homePage');
+	return view('view_homePage',\App\Models\Menu::getDomains());
 });
 
 Route::get('/lost', function () {
 	// est-ce qu'on besoin d'une vue ou c'est toujours présent? //Je ne comprends pas ce commentaire.
-	return view('view_lostPassword');
+	return view('view_lostPassword',\App\Models\Menu::getDomains());
 });
 
 
