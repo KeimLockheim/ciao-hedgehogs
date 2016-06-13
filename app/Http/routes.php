@@ -23,7 +23,7 @@ Route::get('/', function()
 
 
 Route::get('/home', function () {
-	return view('view_homepage');
+	return view('view_homePage');
 });
 
 Route::get('/lost', function () {
