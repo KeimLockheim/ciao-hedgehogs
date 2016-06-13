@@ -9,6 +9,7 @@ use \App\Models\Post;
 use \App\Models\Topic;
 use \App\Models\Question;
 use \App\Models\Answer;
+use App\Models\UserProfile;
 
 class GlobalSeeder extends Seeder
 {
@@ -201,10 +202,15 @@ class GlobalSeeder extends Seeder
         $q2->domain()->associate($domSexualite);
         $q2->subDomain()->associate($domRapports);
 
+
         $q1->save();
         $q2->save();
         $q3->save();
 
+        /*
+         * Answer
+         */
+        DB::table('answers')->delete();
         $a1 = new Answer([
             'content' => " BLoubloubloub ",
         ]);
@@ -220,6 +226,27 @@ class GlobalSeeder extends Seeder
 
         $a1->save();
         $a2->save();
+
+        /*
+         * User Profile
+         */
+        DB::table('userProfiles')->delete();
+        $up1 = new UserProfile([
+            'firstName' => "Jean",
+            'lastName' => "Peuplu",
+            'email' => "jean.peuplu@example.com",
+        ]);
+        $up2 = new UserProfile([
+            'firstName' => "Jeanette",
+            'lastName' => "Lapine",
+            'email' => "jeannette.lapine@example.com",
+        ]);
+
+        $up1->user()->associate($expert);
+        $up2->user()->associate($admin);
+
+        $up1->save();
+        $up2->save();
 
 
 
