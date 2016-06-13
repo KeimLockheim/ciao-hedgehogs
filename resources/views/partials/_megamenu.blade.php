@@ -11,10 +11,10 @@
                         <ul class="dropdown-menu megamenu row">
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu"><a href="">Santé</a></li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="/domain/1">Santé</a></li>
                                     <li class="divider"></li>
-                                    @foreach($domSante->subDomains as $sub)
-                                    <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
+                                    @foreach($domSante as $sub)
+                                    <li><a href="/domain/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
                                 </ul>
                             </li>
@@ -22,8 +22,8 @@
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Stress</a></li>
                                     <li class="divider"></li>
-                                    @foreach($domStress->subDomains as $sub)
-                                    <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
+                                    @foreach($domStress as $sub)
+                                    <li><a href="/domain/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
                                 </ul>
@@ -32,8 +32,8 @@
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Boire, fumer, se droguer</a></li>
                                     <li class="divider"></li>
-                                    @foreach($domBoire->subDomains as $sub)
-                                    <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
+                                    @foreach($domBoire as $sub)
+                                    <li><a href="domain/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
                                 </ul>
                             </li>
@@ -41,8 +41,8 @@
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Manger-bouger</a></li>
                                     <li class="divider"></li>
-                                    @foreach($domManger->subDomains as $sub)
-                                    <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
+                                    @foreach($domManger as $sub)
+                                    <li><a href="/domain/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
                                 </ul>
                             </li>
@@ -61,7 +61,7 @@
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Estime de soi</a></li>
                                     <li class="divider"></li>
-                                    @foreach($domEstime->subDomains as $sub)
+                                    @foreach($domEstime as $sub)
                                     <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
@@ -72,7 +72,7 @@
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Moi, toi et les autres</a></li>
                                     <li class="divider"></li>
-                                    @foreach($domMoi->subDomains as $sub)
+                                    @foreach($domMoi as $sub)
                                     <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
@@ -90,8 +90,8 @@
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Sexualité</a></li>
                                     <li class="divider"></li>
-                                    @foreach($domSex->subDomains as $sub)
-                                    <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
+                                    @foreach($domSex as $sub)
+                                    <li><a href="/domain/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
 
@@ -108,7 +108,7 @@
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Violences</a></li>
                                     <li class="divider"></li>
-                                    @foreach($domViolences->subDomains as $sub)
+                                    @foreach($domViolences as $sub)
                                     <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
@@ -119,7 +119,7 @@
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Discrimination et racismes</a></li>
                                     <li class="divider"></li>
-                                    @foreach($domDiscrim->subDomains as $sub)
+                                    @foreach($domDiscrim as $sub)
                                     <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
@@ -137,7 +137,7 @@
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Religions</a></li>
                                     <li class="divider"></li>
-                                    @foreach($domReligions->subDomains as $sub)
+                                    @foreach($domReligions as $sub)
                                     <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
@@ -155,7 +155,7 @@
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Argent</a></li>
                                     <li class="divider"></li>
-                                    @foreach($domArgent->subDomains as $sub)
+                                    @foreach($domArgent as $sub)
                                     <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
@@ -166,7 +166,7 @@
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Formation et travail</a></li>
                                     <li class="divider"></li>
-                                    @foreach($domFormations->subDomains as $sub)
+                                    @foreach($domFormations as $sub)
                                     <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 

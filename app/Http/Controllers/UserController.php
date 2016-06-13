@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Lib\Message;
+use App\Models\Domain;
 use App\Models\SecretQuestion;
 use App\Models\User;
 use Request;
@@ -48,7 +49,19 @@ class UserController extends Controller {
   public function create()
   {
     $secretQuestion = SecretQuestion::all();
-    return view('view_registrationForm', ['secretQuestion' => $secretQuestion]);
+
+    return view('view_registrationForm', ['secretQuestion' => $secretQuestion,'domSante' => Domain::where('name','Santé')->first()->subDomains,
+        'domStress' =>Domain::where('name','Stress')->first()->subDomains,
+        'domBoire' => Domain::where('name','Boire, fumer, se droguer')->first()->subDomains,
+        'domManger' => Domain::where('name','Manger-bouger')->first()->subDomains,
+        'domEstime' => Domain::where('name','Estime de soi')->first()->subDomains,
+        'domMoi' => Domain::where('name','Moi, toi et les autres')->first()->subDomains,
+        'domSex' => Domain::where('name','Sexualité')->first()->subDomains,
+        'domViolences' => Domain::where('name','Violences')->first()->subDomains,
+        'domDiscrim' => Domain::where('name','Discrimination et racismes')->first()->subDomains,
+        'domArgent' => Domain::where('name','Argent')->first()->subDomains,
+        'domReligions' => Domain::where('name','Religions')->first()->subDomains,
+        'domFormations' => Domain::where('name','Formation et travail')->first()->subDomains,]);
   }
 
   /**

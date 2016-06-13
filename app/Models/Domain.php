@@ -145,7 +145,7 @@ class Domain extends Model
 		return $parentDomains;
 	}
 
-			//childrenDomains(domainID)
+			//childrenDomains()
 
 
 	/**

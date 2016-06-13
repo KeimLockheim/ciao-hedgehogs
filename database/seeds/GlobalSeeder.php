@@ -56,17 +56,43 @@ class GlobalSeeder extends Seeder
             'name' => 'Sexualité',
         ]);
         $domViolence = new Domain([
-            'name' => 'Violence',
+            'name' => 'Violences',
         ]);
         $domReligion = new Domain([
-            'name' => 'Religion',
+            'name' => 'Religions',
         ]);
 
+        $domStress = new Domain([
+            'name' => 'Stress',
+        ]);
+        $domBoire = new Domain([
+            'name' => 'Boire, fumer, se droguer',
+        ]);
+        $domManger = new Domain([
+            'name' => 'Manger-bouger',
+        ]);
+        $domEstime = new Domain([
+            'name' => 'Estime de soi',
+        ]);
+        $domMoi = new Domain([
+            'name' => 'Moi, toi et les autres',
+        ]);
         $domRapports = new Domain([
             'name' => 'Rapports',
         ]);
+        $domDiscrim = new Domain([
+            'name' => 'Discrimination et racismes',
+        ]);
+        $domArgent = new Domain([
+            'name' => 'Argent',
+        ]);
+        $domFormations = new Domain([
+            'name' => 'Formation et travail',
+        ]);
 
-        $domRapports->parentDomain()->associate($domSexualite);
+
+
+
 
 
 
@@ -145,10 +171,28 @@ class GlobalSeeder extends Seeder
         $domViolence->creatorUser()->associate($admin);
         $domRapports->creatorUser()->associate($admin);
 
+        $domStress->creatorUser()->associate($admin);
+        $domBoire->creatorUser()->associate($admin);
+        $domManger->creatorUser()->associate($admin);
+        $domEstime->creatorUser()->associate($admin);
+        $domMoi->creatorUser()->associate($admin);
+        $domDiscrim->creatorUser()->associate($admin);
+        $domArgent->creatorUser()->associate($admin);
+        $domFormations->creatorUser()->associate($admin);
+
         $domSante->save();
         $domSexualite->save();
         $domReligion->save();
         $domViolence->save();
+
+        $domStress->save();
+        $domBoire->save();
+        $domManger->save();
+        $domEstime->save();
+        $domMoi->save();
+        $domDiscrim->save();
+        $domArgent->save();
+        $domFormations->save();
 
         $domRapports->parentDomain()->associate($domSexualite);
         $domRapports->save();

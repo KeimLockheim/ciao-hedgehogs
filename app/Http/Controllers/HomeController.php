@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Domain;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -16,7 +17,23 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //
+        $domSante = Domain::where('name','Santé')->first();
+        dd($domSante);
+
+        return view('view', [
+            'domSante' => $domSante,
+            'domStress' =>Domain::where('name','Stress')->first(),
+            'domBoire' => Domain::where('name','Boire, fumer, se droguer')->first(),
+            'domManger' => Domain::where('name','Manger-bouger')->first(),
+            'domEstime' => Domain::where('name','Estime de soi')->first(),
+            'domMoi' => Domain::where('name','Moi, toi et les autres')->first(),
+            'domSex' => Domain::where('name','Sexualité')->first(),
+            'domViolences' => Domain::where('name','Violences')->first(),
+            'domDiscrim' => Domain::where('name','Discrimination et racismes')->first(),
+            'domArgent' => Domain::where('name','Argent')->first(),
+            'domReligions' => Domain::where('name','Religions')->first(),
+            'domFormations' => Domain::where('name','Formation et travail')->first(),
+        ]);
     }
 
     /**
