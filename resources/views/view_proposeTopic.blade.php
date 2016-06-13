@@ -47,7 +47,7 @@
 
         <div class="form-group">
             <div>
-                <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Proposer mon sujet de discussion!</button>
+                <button type="submit" class="btn btn-primary" id="AddTopic">Proposer mon sujet de discussion!</button>
             </div>
         </div>
 

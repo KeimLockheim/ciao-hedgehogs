@@ -27,6 +27,7 @@
       <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
       <script src="{{ asset('assets/js/megaMenu.js') }}"></script>
       <script src="{{ asset('assets/js/formValidation.js') }}"></script>
+      <script src="{{ asset('assets/js/main.js') }}"></script>
 
 	  </head>
 

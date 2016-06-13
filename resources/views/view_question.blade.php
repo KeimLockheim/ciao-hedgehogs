@@ -38,7 +38,7 @@
                 </div>
           <div class="form-group">
 			    <div >
-			      <input type="submit" class="btn btn-primary publier" value="Rendre public"/>
+			      <input type="submit" class="btn btn-primary publier" id="publish" value="Rendre public"/>
 			    </div>
 			  </div>
       </div>

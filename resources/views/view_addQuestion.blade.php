@@ -68,7 +68,7 @@ Pour toutes les questions sur les métiers (choix d'un métier, description, ét
 
           <div class="form-group">
               <div>
-                  <button type="submit" class="btn btn-primary" name="signup" value="Sign up">Poser ma question!</button>
+                  <button type="submit" class="btn btn-primary" id="SendQuestion" name="signup" value="Sign up">Poser ma question!</button>
               </div>
           </div>
 

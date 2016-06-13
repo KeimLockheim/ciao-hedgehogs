@@ -51,7 +51,7 @@
       </div>
       <div class="form-group">
         <div class="col-md-3 btnForum">
-            <button type="button" class="btn btn-xs">Envoyer</button>
+            <button type="button" class="btn btn-xs" id="addPost">Envoyer</button>
         </div>
       </div>
 
