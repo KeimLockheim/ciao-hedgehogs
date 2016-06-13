@@ -2,9 +2,11 @@
 
 use App\Lib\Message;
 use App\Models\Domain;
+use App\Models\Menu;
 use App\Models\SecretQuestion;
 use App\Models\User;
-use Request;
+use Session;
+use Illuminate\Http\Request;
 
 class UserController extends Controller {
 

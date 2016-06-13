@@ -47,8 +47,12 @@ class TopicController extends Controller {
   {
     $topic = Topic::where('id', $topic_id)->with('posts')->get()->first();
     $post = $topic->posts->first();
+    $data = Menu::getDomains();
 
-    return view('view_validateTopic', ['topic' => $topic, 'post' => $post]);
+    $data['topic'] = $topic;
+    $data['post'] = $post;
+
+    return view('view_validateTopic', $data);
   }
 
   public function show($domain_id, $topic_id)

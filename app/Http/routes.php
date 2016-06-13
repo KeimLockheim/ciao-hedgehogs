@@ -55,7 +55,7 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('/domain/getSubDomains/{domain_id}','DomainController@getSubDomains');
 
-	Route::post('/user/','UserController@store');
+	//Route::post('/user/','UserController@store');
 
 
 	// middleware connecté

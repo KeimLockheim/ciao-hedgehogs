@@ -4,7 +4,7 @@ namespace App\Models;
 
 use App\Lib\Message;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Validator;
+use Validator;
 use Illuminate\Http\Request;
 
 class User extends Model {
@@ -18,7 +18,7 @@ class User extends Model {
 		'country' => 'required|String', //localisation
 		'sex' => 'required|in:"féminin","masculin"', //sex
 		'secretQuestion' => 'required|integer|min:0', //secretQuestion_id
-		'answerQuestion' => 'required|String', //secretAnswerQuestion
+		'answerQuestion' => 'required|String|regex:/^\S*$/', //secretAnswerQuestion
 
 	];
 
@@ -35,18 +35,19 @@ class User extends Model {
 	{
 		// Récupération des inputs pertinents
 		$input = $request->only('pseudo', 'password','password2', 'birth', 'country','genre','secreteQuestion','answerQuestion');
+		dd($input['password2']);
 		// Création du validateur
 		$validator = Validator::make($input, self::$rules);
 		// Ajout des contraintes supplémentaires
 		$validator->after(function ($validator) use($input) {
 			// Vérification de la non existence de l'utilisateur
 			if (self::exists($input['pseudo'])) {
-
+				dd('User already exist');
 				$validator->errors()->add('exists', Message::get('exists'));
 			}
 			// Vérification de l'existence de la question secrète
-			if (!self::exists($input['secreteQuestion'])) {
-
+			if (!secretQuestion::exists($input['secreteQuestion'])) {
+				dd('Question not exist');
 				$validator->errors()->add('exists', Message::get('exists'));
 			}
 

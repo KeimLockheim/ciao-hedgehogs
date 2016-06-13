@@ -7,7 +7,7 @@
 
   <h2>S'inscrire</h2>
 
-  <form id="registrationForm" action="/user/" method="post">
+  <form id="registrationForm" action="/user" method="post">
     <div class="form-group">
       <label for="pseudo" class="control-label">Pseudo</label>
       <div>
