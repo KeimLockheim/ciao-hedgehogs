@@ -49,7 +49,6 @@
                     <a><div class="boxPlusMenu">
                             <h4>Afficher toutes les discussions...</h4>
                         </div></a>
-                    <button type="submit" class="btn btn-m" name="question">Proposer une discussion!</button>
                 </div>
                 </div>
                 

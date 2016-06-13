@@ -3,11 +3,11 @@
 
                 <ul class="nav navbar-nav">
 
-                    <li><a><img src="img/home.png" alt="home" class="imgNav"><p>Accueil</p></a></li> 
+                    <li><a><img src="{{ asset('assets/img/home.png') }}" alt="home" class="imgNav"><p>Accueil</p></a></li> 
                     <!------------------------>
 
                     <li class="dropdown menu-large">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/sante.png" alt="sante" class="imgNav"><p>Santé <b class="caret"></b></p> </a>				
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('assets/img/sante.png') }}" alt="sante" class="imgNav"><p>Santé <b class="caret"></b></p> </a>				
                         <ul class="dropdown-menu megamenu row">
                             <li class="col-sm-3">
                                 <ul>
@@ -86,9 +86,9 @@
 
                     <!------------------------>
                     <li class="dropdown menu-large">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/moi.png" alt="moi, les autres" class="imgNav"><p>Moi, toi,...<b class="caret"></b></p></a>				
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('assets/img/moi.png') }}" alt="moi, les autres" class="imgNav"><p>Moi, toi,...<b class="caret"></b></p></a>				
                         <ul class="dropdown-menu megamenu row">
-                            <li class="col-sm-3">
+                            <li class="col-sm-4">
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Estime de soi</a></li>
                                     <li class="divider"></li>
@@ -98,7 +98,7 @@
 
                                 </ul>
                             </li>
-                            <li class="col-sm-3">
+                            <li class="col-sm-4">
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Moi, toi et les autres</a></li>
                                     <li class="divider"></li>
@@ -112,9 +112,9 @@
                     </li>
 
                     <li class="dropdown menu-large">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/sexualite.png" alt="Sexualité" class="imgNav"><p>Sexualité <b class="caret"></b></p></a>				
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('assets/img/sexualite.png') }}" alt="Sexualité" class="imgNav"><p>Sexualité <b class="caret"></b></p></a>				
                         <ul class="dropdown-menu megamenu row">
-                            <li class="col-sm-3">
+                            <li class="col-sm-4">
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Sexualité</a></li>
                                     <li class="divider"></li>
@@ -128,9 +128,9 @@
                     </li>
 
                     <li class="dropdown menu-large">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/violence.png" alt="Violences" class="imgNav"><p>Violences <b class="caret"></b></p></a>				
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('assets/img/violence.png') }}" alt="Violences" class="imgNav"><p>Violences <b class="caret"></b></p></a>				
                         <ul class="dropdown-menu megamenu row">
-                            <li class="col-sm-3">
+                            <li class="col-sm-4">
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Violences</a></li>
                                     <li class="divider"></li>
@@ -139,7 +139,7 @@
 
                                 </ul>
                             </li>
-                            <li class="col-sm-3">
+                            <li class="col-sm-4">
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Discrimination et racismes</a></li>
                                     <li class="divider"></li>
@@ -153,9 +153,9 @@
                     </li>
 
                     <li class="dropdown menu-large">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/religion.png" alt="Religions" class="imgNav"><p>Religions <b class="caret"></b></p></a>				
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('assets/img/religion.png') }}" alt="Religions" class="imgNav"><p>Religions <b class="caret"></b></p></a>				
                         <ul class="dropdown-menu megamenu row">
-                            <li class="col-sm-3">
+                            <li class="col-sm-4">
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Religions</a></li>
                                     <li class="divider"></li>
@@ -169,9 +169,9 @@
                     </li>
 
                     <li class="dropdown menu-large">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="img/work.png" alt="Avenir" class="imgNav"><p>Avenir<b class="caret"></b></p></a>				
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="{{ asset('assets/img/work.png') }}" alt="Avenir" class="imgNav"><p>Avenir<b class="caret"></b></p></a>				
                         <ul class="dropdown-menu megamenu row">
-                            <li class="col-sm-3">
+                            <li class="col-sm-4">
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Argent</a></li>
                                     <li class="divider"></li>
@@ -180,7 +180,7 @@
 
                                 </ul>
                             </li>
-                            <li class="col-sm-3">
+                            <li class="col-sm-4">
                                 <ul>
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Formation et travail</a></li>
                                     <li class="divider"></li>
@@ -197,7 +197,7 @@
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><img src="img/sign_in.png" alt="login" class="imgNav">Connexion</a></li>
+                    <li><a href="#"><img src="{{ asset('assets/img/sign_in.png') }}" alt="login" class="imgNav">Connexion</a></li>
                 </ul>
             </div>
         </nav>
