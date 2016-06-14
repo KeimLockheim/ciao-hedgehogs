@@ -14,14 +14,14 @@
             <link href=" {{ asset('assets/css/comem.css') }}" rel="stylesheet">
             <link href=" {{ asset('assets/css/megaMenu.css') }}" rel="stylesheet">
             <link href=" {{ asset('assets/formvalidation/dist/css/formValidation.min.css') }}" rel="stylesheet">
-<link href='https://fonts.googleapis.com/css?family=Roboto:700,500,400|Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+						<link href='https://fonts.googleapis.com/css?family=Roboto:700,500,400|Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
 
       <!-- jQuery  -->
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
       <!-- FormValidation -->
-     <script src="{{ asset('assets/formvalidation/dist/js/formValidation.min.js') }}"></script>
-    <script src="{{ asset('assets/formvalidation/dist/js/framework/bootstrap.js') }}"></script>
+     	<script src="{{ asset('assets/formvalidation/dist/js/formValidation.min.js') }}"></script>
+    	<script src="{{ asset('assets/formvalidation/dist/js/framework/bootstrap.js') }}"></script>
 
 		<!-- FormValidation -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.3.0/zxcvbn.js"></script>
@@ -33,9 +33,8 @@
 
             <!--menu resp-->
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/testResp/css/component.css') }}"/>
-		<script src="{{ asset('assets/testResp/js/modernizr.custom.js') }}"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="{{ asset('assets/testResp/js/jquery.dlmenu.js') }}"></script>
+				<script src="{{ asset('assets/testResp/js/modernizr.custom.js') }}"></script>
+				<script src="{{ asset('assets/testResp/js/jquery.dlmenu.js') }}"></script>
         <script src="{{ asset('assets/testResp/js/modernizr.js') }}"></script>
 
 
@@ -69,7 +68,8 @@
         <div class="container">
 
 			@include('partials._megamenu')
-            @include('partials._menuResp')
+
+			@include('partials._menuResp')
 
 
         </div>
@@ -82,9 +82,9 @@
           <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
 
 
- @include('partials._footer')
+ 				@include('partials._footer')
 
- @include('partials._signIn')
+ 				@include('partials._signIn')
 
 
 	  </body>
