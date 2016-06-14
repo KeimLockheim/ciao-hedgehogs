@@ -30,7 +30,7 @@
 
 					<div class="row">
 
-						<div class="col-md-4 footerCenter">
+						<div class="col-md-4 footerCenter sponsors">
 							<div class="row">
 								<div class="col-md-12">
 									<h3>Avec le soutien de :</h3>
@@ -49,7 +49,7 @@
 							</div>
 					  	</div>
 
-					  	<div class="col-md-4">
+					  	<div class="col-md-4 numUrgences">
 
 							  		<h3 class="footerCenter">Numéros d'urgence :</h3>
 
@@ -60,7 +60,7 @@
 							
 						</div>
 
-					  	<div class="col-md-4">
+					  	<div class="col-md-4 ciaoAssoc">
 
 					  		<h3 class="footerCenter"><span itemprop="creator">Ciao</span> c'est :</h3>
 					  		<ul>

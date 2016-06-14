@@ -26,34 +26,11 @@
 }
 
 .dl-menuwrapper button {
-	border: none;
-	width: 48px;
-	height: 45px;
-	text-indent: -900em;
-	overflow: hidden;
-	position: relative;
-	cursor: pointer;
-	outline: none;
+	font-family: icomoon;
+    font-size: 30px;
 }
 
-.dl-menuwrapper button:hover,
-.dl-menuwrapper button.dl-active,
-.dl-menuwrapper ul {
-	/*background: #aaa;*/
-}
 
-.dl-menuwrapper button:after {
-	content: '/e9bd';
-	position: absolute;
-	width: 68%;
-	height: 5px;
-	background: #fff;
-	top: 10px;
-	left: 16%;
-	box-shadow: 
-		0 10px 0 #fff, 
-		0 20px 0 #fff;
-}
 
 .dl-menuwrapper ul {
 	padding: 0;

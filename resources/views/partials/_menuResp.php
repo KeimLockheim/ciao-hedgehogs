@@ -16,7 +16,7 @@
             
 
 <div id="dl-menu" class="dl-menuwrapper">
-						<button class="dl-trigger">Open Menu</button>
+						<button class="dl-trigger icon-menu">&#xe9bd</button>
 						<ul class="dl-menu">
 							<li>
 								<a href="#">Santé</a>

@@ -802,7 +802,7 @@ footer{
     background-color: white;
  
     display: table-row;
-    height: 350px;
+    height: 100%;
 }
 
 #facebook{
@@ -957,15 +957,26 @@ padding-bottom: 10px;}
     }
 .imgHome{
     display: none;
-}
-footer{
-    display: none;
+    z-index: 10000;
 }
 
-
-
-.dl-menuopen{
-}
+.ciaoAssoc{
+     display: none;   
+    }
+    .fondFooter{
+        display: none;
+    }
+    
+    .sponsors{
+        display: none;
+    }
+    .numUrgences{
+        text-align: center;
+    }
+    
+    .footerCenter{
+        text-align: center;
+    }
 
 .dl-menu{
     position: fixed;
@@ -989,7 +1000,7 @@ position:relative;
     
 
 
-  .dl-menuwrapper button:hover, .dl-menuwrapper button.dl-active, .dl-menuwrapper ul {
+   .dl-menuwrapper ul {
     background: #c4c4c4;
 }
     
@@ -998,6 +1009,14 @@ position:relative;
             padding-right: 30px;
     }
     
+    .icon {
+    padding-top: 0;
+        margin-bottom: -50px;
+    }
+    #logo {
+    width: 100px;
+    margin: 10px 0 10px 0;
+}
 
 }
 
