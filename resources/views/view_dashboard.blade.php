@@ -119,7 +119,7 @@
     				{{$refusedTopics = $user->topics->diff($notRefusedTopics)}}--}}
 
 
-					@foreach ($user->createdTopics as $topic)
+					@foreach ($user->validatedTopics as $topic)
 						<li><a href="topic/user">{{$topic->name}}</a></li>
 					@endforeach
 				</ul>
