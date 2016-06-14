@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return view('view_homePage',\App\Models\Menu::getDomains());
 });
 
 
