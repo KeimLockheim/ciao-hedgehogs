@@ -27,7 +27,10 @@ class UrgencyController extends Controller
     public function indexDomain($domain_id)
     {
         $domain = Domain::where('id', $domain_id)->with('urgencies')->get()->first();
-        return view('view_urgencyAll', ['domain' => $domain]);
+        $data = Menu::getDomains();
+        $data['domain'] = $domain;
+        
+        return view('view_urgency', $data);
     }
 
     /**

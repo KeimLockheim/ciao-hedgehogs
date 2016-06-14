@@ -1,10 +1,15 @@
+@extends('view_master')
+
+@section('title', 'Urgences et adresses')
+
+@section('content')
 <div class="container article">
 
 
 			<div class="row" id="contenu">
 
 			  <div class="col-md-12" id="breadcrums">
-			  	<p>Accueil <span class="interBread">></span> Urgences <span class="interBread">></span> Urgences sur {{$domain->name}}/p>
+			  	<p>Accueil <span class="interBread">></span> {{$domain->name}} <span class="interBread">></span> Urgences et adresses</p>
 			  </div>
             </div>
 
@@ -14,17 +19,17 @@
 			  		<h1>Urgences sur {{$domain->name}}</h1>
 
 			  		<div class="row">
-              @foreach($domain->urgencies as $dom)
+              @foreach($domain->urgencies as $urgency)
 			  			<div class="col-md-5 boxUrgences">
 			  				<div class="row carteVisite">
-					  				<h2>{{$dom->title}}</h2>
-					  				<h4>{{$dom->name}}</h4>
+					  				<h2>{{$urgency->title}}</h2>
+					  				<h4>{{$urgency->name}}</h4>
                                 <div class="containCarte">
-					  				<p><img src="img/phone.png" alt="phone" class="imgUrgency"><label>{{$dom->telephoneNumber}}</label></p>
+					  				<p><img src="{{ asset('assets/img/phone.png') }}" alt="phone" class="imgUrgency"><label>{{$urgency->telephoneNumber}}</label></p>
 
-					  				<p><img src="img/mail.png" alt="mail" class="imgUrgency"><label>{{$dom->email}}</label></p>
+					  				<p><img src="{{ asset('assets/img/mail.png') }}" alt="mail" class="imgUrgency"><label>{{$urgency->email}}</label></p>
 
-					  				<p><img src="img/web.png" alt="web" class="imgUrgency"><label><a href="{{$urgency->webSite}}">{{$dom->webSite}}</a></label></p>
+					  				<p><img src="{{ asset('assets/img/web.png') }}" alt="web" class="imgUrgency"><label><a href="{{$urgency->webSite}}">{{$urgency->webSite}}</a></label></p>
                                 </div>
 
 					  		</div>
@@ -36,3 +41,4 @@
 			  	</div>
 
   </div>
+@stop
