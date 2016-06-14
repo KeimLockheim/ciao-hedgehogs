@@ -1,7 +1,13 @@
 // Dropdown Menu Fade
 jQuery(document).ready(function(){
+    
+      init();
+    $(window).on('resize', init);
+
+
     $("#deconnecter").hide();
       //  $("#connecter").hide();
+
 
     $(".dropdown").hover(
         function() { $('.dropdown-menu', this).stop().fadeIn("fast");
@@ -32,3 +38,13 @@ jQuery(document).ready(function(){
     });
 }
 });
+
+function init(){
+    if(Modernizr.mq("screen and (max-width: 41em), screen and (max-device-width: 41em)")){
+	    $("#dl-menu").show();
+        }else{
+        $("#dl-menu").hide();
+
+        $("nav").show();
+        }
+}

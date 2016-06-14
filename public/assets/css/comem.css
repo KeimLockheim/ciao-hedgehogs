@@ -1,4 +1,6 @@
-
+#dl-menu{
+    display: none;
+}
 
 .module-container{
   display: block;
@@ -262,6 +264,8 @@ input[type="radio"], input[type="checkbox"] {
     margin-top: 20px;
     background-color:white;
     min-height: 275px;
+        padding-left: 20px;
+    padding-right: 20px;
 }
 
 .homeSecondContainer h4{
@@ -944,5 +948,56 @@ padding-bottom: 10px;}
 .imgArticles{
     width: 100%;
     padding: 15px 0 15px 0;
+}
+
+/* Petite tablette (ou moyenne tablette en mode portrait), grand smartphone */
+@media screen and (max-width: 41em), screen and (max-device-width: 41em) {
+    nav{
+        display: none;
+    }
+.imgHome{
+    display: none;
+}
+footer{
+    display: none;
+}
+
+
+
+.dl-menuopen{
+}
+
+.dl-menu{
+    position: fixed;
+    z-index: 1000000;
+
+}
+
+.dl-menuwrapper .dl-menu.dl-menuopen{
+position:relative;
+    z-index:10000;
+    width: 100%;
+    }
+
+    .dl-menuwrapper {
+        margin-bottom: 10px;
+    }
+    
+    .dl-menuwrapper li a:hover, .dl-menuwrapper li a:focus {
+    background-color:#ff7e82;!important
+    }
+    
+
+
+  .dl-menuwrapper button:hover, .dl-menuwrapper button.dl-active, .dl-menuwrapper ul {
+    background: #c4c4c4;
+}
+    
+    .descriptionCiao{
+            padding-left: 30px;
+            padding-right: 30px;
+    }
+    
+
 }
 

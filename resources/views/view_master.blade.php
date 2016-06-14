@@ -31,7 +31,12 @@
       <script src="{{ asset('assets/js/validation.js') }}"></script>
 			<script src="{{ asset('assets/js/main.js') }}"></script>
 
-
+            <!--menu resp-->
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/testResp/css/component.css') }}"/>
+		<script src="{{ asset('assets/testResp/js/modernizr.custom.js') }}"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="{{ asset('assets/testResp/js/jquery.dlmenu.js') }}"></script>
+        <script src="{{ asset('assets/testResp/js/modernizr.js') }}"></script>
 
 
 	  </head>
@@ -64,6 +69,8 @@
         <div class="container">
 
 			@include('partials._megamenu')
+            @include('partials._menuResp')
+
 
         </div>
 
