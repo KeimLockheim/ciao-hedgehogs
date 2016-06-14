@@ -50,7 +50,7 @@
 				<div class="row">
 
 					<div class="col-md-2">
-						<img src="{{ asset('assets/img/logo.png') }}" alt="logo" id="logo" itemprop="logo">
+                        <a href="/home"><img src="{{ asset('assets/img/logo.png') }}"  alt="logo" id="logo" itemprop="logo"></a>
 					</div>
 				<div class="col-lg-offset-4 col-md-6 icon">
 					<div >

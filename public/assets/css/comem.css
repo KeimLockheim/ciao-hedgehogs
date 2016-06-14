@@ -957,7 +957,6 @@ padding-bottom: 10px;}
     }
 .imgHome{
     display: none;
-    z-index: 10000;
 }
 
 .ciaoAssoc{
@@ -978,15 +977,10 @@ padding-bottom: 10px;}
         text-align: center;
     }
 
-.dl-menu{
-    position: fixed;
-    z-index: 1000000;
 
-}
 
 .dl-menuwrapper .dl-menu.dl-menuopen{
 position:relative;
-    z-index:10000;
     width: 100%;
     }
 
@@ -1011,7 +1005,7 @@ position:relative;
     
     .icon {
     padding-top: 0;
-        margin-bottom: -50px;
+        margin-top: -55px;
     }
     #logo {
     width: 100px;
