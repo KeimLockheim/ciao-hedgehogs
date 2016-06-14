@@ -2,6 +2,7 @@
 
 use App\Models\Domain;
 use App\Models\Menu;
+use Illuminate\Http\Response;
 use Request;
 use App\Lib\Message;
 
@@ -9,7 +10,9 @@ class DomainController extends Controller {
 
   public function getSubDomains($domain_id){
     $subDomains = Domain::where('id', $domain_id)->first()->subDomains;
-
+    if(!isset($subDomains)){
+      return Response::view('errors.404',[],404);
+    }
     $string = '[';
     foreach($subDomains as $subDomain){
       $string.= "{\"name\" : \"$subDomain->name\",\"id\" : \"$subDomain->id\"},";

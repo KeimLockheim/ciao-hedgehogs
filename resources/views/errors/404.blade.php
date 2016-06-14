@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Be right back.</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Page non trouvée</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -14,7 +17,7 @@
                 margin: 0;
                 padding: 0;
                 width: 100%;
-                color: #B0BEC5;
+                color: #ccc6c6;
                 display: table;
                 font-weight: 100;
                 font-family: 'Lato';
@@ -35,12 +38,15 @@
                 font-size: 72px;
                 margin-bottom: 40px;
             }
+            a{
+                color:  #ff5a5f;
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Be right back.</div>
+                <div class="title">Page non trouvée. <a href="/home">Revenir à l'accueil</a></div>
             </div>
         </div>
     </body>
