@@ -1017,14 +1017,16 @@ position:relative;
     
     .icon {
         padding-top: 0;
-        margin-top: -60px;
     }
     #logo {
     padding-bottom: 10px;
     height: 60px;
     margin: 10px 0 10px 0;
 }
-    
+    .imgHeader{
+        margin-right: 10px;
+
+    }
     .iphoneApp {
     text-align: center;
 }
