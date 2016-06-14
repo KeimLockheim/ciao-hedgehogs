@@ -64,7 +64,7 @@ Route::group(['middleware' => ['web']], function () {
 	});
 
 	Route::get('/login', function () {
-		return view('auth/login');
+		return view('view_signIn',App\Models\Menu::getDomains());
 
 	});
 
