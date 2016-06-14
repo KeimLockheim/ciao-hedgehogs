@@ -11,7 +11,7 @@
 
   <h2>Se connecter</h2>
 
-  <form action="auth/login" method="post" id="signIn">
+  <form action="/auth/login" method="post" id="signIn">
     <div class="form-group">
       <label for="nickname" class="control-label">Pseudo</label>
       <div>
