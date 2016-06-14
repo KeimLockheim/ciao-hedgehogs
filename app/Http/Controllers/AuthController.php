@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Session;
 use Request;
 
@@ -10,20 +11,22 @@ class AuthController extends Controller
 {
     public function login()
     {
-        $password = Request::input('password', '');
-        $name = Request::input('name', '');
-        $user = User::where('name', $name)->first();
+        $nickname = Request::input('password', '');
+        $password = Request::input('nickname', '');
+        $user = User::where('nickname', $nickname)->first();
 
         // Vérifie que le user existe
         if (empty($user)) {
             return response('Bad Request', 400);
         }
         //Vérifie le mdp
-        if (bcrypt($password) != $user->password) {
+        if (!Hash::check($password,$user->password)) {
             return response('Bad Request', 400);
         }
         // Persistance de l'authentification
         Session::put('id', $user->id);
+
+
         return;
     }
 

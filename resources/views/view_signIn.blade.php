@@ -17,7 +17,7 @@
 
   <h2>Se connecter (caché en fonction du boutton cliqué plus)</h2>
 
-  <form class="" action="index.html" method="post" id="signIn">
+  <form class="" action="auth/login" method="post" id="signIn">
     <div class="form-group">
       <label for="nickname" class="control-label">Pseudo</label>
       <div>
@@ -43,9 +43,11 @@
       <div>
         <button type="submit" class="btn btn-primary">Je me connecte</button>
       </div>
+  </form>
         <div>
-						<button type="submit" class="btn btn-primary">Créer un compte</button>
-				</div>
+            <a href="/user/create"><button class="btn btn-primary">Créer un compte</button></a>
+        </div>
+
         <!--
          <div class="modal-footer">
                         <button type="button"
@@ -55,7 +57,6 @@
         -->
 
     </div>
-  </form>
 </div>
 <!--
             <div class="modal-footer">
