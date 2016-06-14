@@ -17,14 +17,14 @@
             <div class="row">
 
 			<h2>Valider un sujet de discussion entre jeunes</h2>
-			<form id="validateTopic">
-
+			<form id="validateTopic" action="/topic/update" method="POST">
+				<input type="hidden" name="topic_id" value="{{$topic->id}}">
 					<div class="form-group">
-							<label for="question">Le sujet proposé: (non modifiable)</label>
+							<label for="question">Le sujet proposé:</label>
 								<textarea class="form-control" rows="3" id="question" disabled>{{$topic->name}}</textarea>
 					</div>
 					<div class="form-group">
-							<label for="post">La proposition de disucussion:</label>
+							<label for="post">La proposition de discussion:</label>
 							<textarea class="form-control" rows="4" name="topicPost" id="topicPost" disabled>{{$post->content}}</textarea>
 					</div>
 

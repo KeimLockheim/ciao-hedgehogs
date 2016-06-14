@@ -5,6 +5,7 @@ use App\Models\Domain;
 use App\Models\Menu;
 use App\Models\SecretQuestion;
 use App\Models\User;
+use Illuminate\Support\Facades\Response;
 use Session;
 use Illuminate\Http\Request;
 

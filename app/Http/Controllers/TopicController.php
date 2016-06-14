@@ -146,9 +146,25 @@ class TopicController extends Controller {
    * @param  int  $id
    * @return Response
    */
-  public function update($id)
+  public function update(Request $request)
   {
-    
+    $inputs = $request->only('reason','validateStatus','topic_id');
+    if (!isset($inputs['validateStatus']) || (!isset($inputs['reason']) && $inputs['validateStatus'] == 'non') || !isset($inputs['topic_id'])) {
+
+      return Response::view('errors.404',['url' => redirect()->back()->getTargetUrl(),'message'=>'Erreur de saisie.'], 404);
+    }
+
+    $topic = Topic::find($inputs['topic_id'])->first();
+    $topic = 
+    if (!isset($topic)) {
+      return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Topic non trouvé.'], 404);
+    }
+    if($inputs['validateStatus'] == 'non'){
+      $topic->refusedReason = $inputs['reason'];
+    }
+    $topic->validated_by = Session::get('id');
+    $topic->update();
+    return Response::view('errors.200',['url' =>'/dashboard/topics/','message'=>'Topic modéré.'], 200);
   }
 
   /**
