@@ -72,7 +72,7 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::group(['middleware' => ['auth']], function () {
 
-		Route::get('/auth/logout', 'AuthController@logout');
+		Route::get('logout', 'AuthController@logout');
 
 		Route::group(['middleware' => ['acl']], function () {
 

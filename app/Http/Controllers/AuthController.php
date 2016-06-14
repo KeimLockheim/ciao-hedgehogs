@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Menu;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Session;
@@ -26,13 +27,12 @@ class AuthController extends Controller
         // Persistance de l'authentification
         Session::put('id', $user->id);
 
-
-        return;
+        return view('view_homePage', Menu::getDomains());
     }
 
     public function logout()
     {
         Session::forget('id');
-        return;
+        return view('view_homePage', Menu::getDomains());
     }
 }
