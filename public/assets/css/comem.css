@@ -959,10 +959,14 @@ padding-bottom: 10px;}
     nav{
         display: none;
     }
-.imgHome{
-    display: none;
-}
+    .titreImageHome{
+        font-size: 20px;
+    }
 
+    .descriptionCiao{
+        font-size: 16px;
+    }
+    
 .ciaoAssoc{
      display: none;   
     }
