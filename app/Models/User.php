@@ -126,6 +126,12 @@ class User extends Model {
 		return $this->belongsToMany('App\Models\Group','group_user','user_id','group_id')->withTimestamps();
 	}
 
+	//Retourne les domains lié au user
+	public function expertInDomains()
+	{
+		return $this->belongsToMany('App\Models\Domain','domain_group','user_id','domain_id')->withTimestamps();
+	}
+
 
 
 	//=======================================================================

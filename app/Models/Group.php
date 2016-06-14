@@ -34,10 +34,4 @@ class Group extends Model {
 		return $this->belongsToMany('App\Models\User','group_user','group_id','user_id')->withTimestamps();
 	}
 
-	//Retourne les domains lié au group
-	public function domains()
-	{
-		return $this->belongsToMany('App\Models\Domain','domain_group','group_id','domain_id')->withTimestamps();
-	}
-
 }
