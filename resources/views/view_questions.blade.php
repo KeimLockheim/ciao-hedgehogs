@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container article">
-    
+
 
         <div class="row" id="contenu">
 
@@ -13,8 +13,8 @@
       <p>Accueil <span class="interBread">></span> {{$domain->name}} <span class="interBread">></span> Liste des questions</p>
     </div>
         </div>
-    
-    
+
+
     <div class="col-md-7 designBox">
                             <div class="row">
 
@@ -26,13 +26,13 @@
           </p>
     </div>
         </div>
-    
+
       <div class="col-md-7 designBox">
             <div class="row">
          <h3>Liste des questions :</h3>
 
          <ul class="designForum">
-             @if($domain->isSubdomain())
+          @if($domain->isSubdomain())
            @foreach($domain->subDomainQuestions as $question)
               <li><a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a>
                 <p>{{$question->created_at}}</p>
@@ -57,7 +57,7 @@
         <div class="row">
 
 
-         
+
 
             @include('partials._moreInfos')
 

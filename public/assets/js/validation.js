@@ -5,12 +5,16 @@ $(document).ready(function() {
 	$domain = $("select[name='domain']");
 	$subDomain = $("select[name='subDomain']");
 
-	$domain.change(function() {
-  $.getJSON('/domain/getSubDomains/' + $domain.val(), function(data) {
+	$domain.on('change', function(event) {
+		event.preventDefault();
+		$subDomain.empty();
+		$subDomain.append("<option disabled selected value> Tu peux préciser une sous-catégorie </option>");
+  	$.getJSON('/domain/getSubDomains/' + $domain.val(), function(data) {
 			//$subDomain.empty();
 			for (var i = 0; i < data.length; i++) {
 					$subDomain.append("<option value="+ data[i].id +">" + data[i].name + "</option>");
-			}
+			};
+					$('#theme').focus();
   });
 });
 
@@ -27,7 +31,7 @@ $("#showQuestion").on('click', function() {
 });
 
 
-//  <--- registrationForm --->
+//  <--- changePassword form--->
 			$('#changePassword').formValidation({
 					framework: 'bootstrap',
 					icon: {
@@ -51,12 +55,62 @@ $("#showQuestion").on('click', function() {
 								}
 							},
 							password: {
-								validators:{
-									notEmpty:{
-										message: "Tu dois préciser un nouveau mot de passe"
+									validMessage: 'The password is good',
+									validators: {
+											notEmpty: {
+													message: 'Choisis un mot de passe'
+											},
+											different: {
+													field: 'nickname',
+													message: "Ce n'est pas une bonne idée d'utiliser ton pseudo comme mot de passe, choisis autre chose :-)"
+											},
+											callback: {
+													callback: function(value, validator, $field) {
+															var password = $field.val();
+															if (password == '') {
+																	return true;
+															}
+
+															var result  = zxcvbn(password),
+																	score   = result.score,
+																	message = "Tu n'as pas lu nos conseils ;-) Ton mot de passe est trop simple, utilise majuscules/ponctuation et chiffres";
+
+															var $bar = $('#strengthBar');
+															switch (score) {
+																	case 0:
+																			$bar.attr('class', 'progress-bar progress-bar-danger')
+																					.css('width', '1%');
+																			break;
+																	case 1:
+																			$bar.attr('class', 'progress-bar progress-bar-danger')
+																					.css('width', '25%');
+																			break;
+																	case 2:
+																			$bar.attr('class', 'progress-bar progress-bar-success') //afficher warning?? - orange-
+																					.css('width', '50%');
+																			break;
+																	case 3:
+																			$bar.attr('class', 'progress-bar progress-bar-success')
+																					.css('width', '75%');
+																			break;
+																	case 4:
+																			$bar.attr('class', 'progress-bar progress-bar-success')
+																					.css('width', '100%');
+																			break;
+															}
+
+															if (score < 1) {
+																	return {
+																			valid: false,
+																			message: message
+																	}
+															}
+
+															return true;
+													}
+											}
 									}
-								}
-							},
+							}
 					}
 			});
 
@@ -318,6 +372,7 @@ $('#registrationForm').formValidation({
                   }
                 },
                 password: {
+										validMessage: 'Bravo champion!',
                     validators: {
                         notEmpty: {
                             message: 'Choisis un mot de passe'
@@ -337,7 +392,6 @@ $('#registrationForm').formValidation({
                                     score   = result.score,
                                     message = "Tu n'as pas lu nos conseils ;-) Ton mot de passe est trop simple, utilise majuscules/ponctuation et chiffres";
 
-                                // Update the progress bar width and add alert class
                                 var $bar = $('#strengthBar');
                                 switch (score) {
                                     case 0:
@@ -362,7 +416,6 @@ $('#registrationForm').formValidation({
                                         break;
                                 }
 
-                                // We will treat the password as an invalid one if the score is less than 3
                                 if (score < 1) {
                                     return {
                                         valid: false,
