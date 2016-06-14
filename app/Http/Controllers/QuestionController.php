@@ -18,8 +18,10 @@ class QuestionController extends Controller {
     //dd($subDomainQuestions->domainQuestions);
     //$subQuestions = $domain->subDomainQuestions;
     //dd($subQuestions);
+    $data = Menu::getDomains();
+    $data['domain'] = $domain;
 
-    return view('view_questions', ['domain' => $domain]);
+    return view('view_questions', $data);
   }
 
   public function askQuestion($domain_id)
