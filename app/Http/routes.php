@@ -63,16 +63,11 @@ Route::group(['middleware' => ['web']], function () {
 		return view('view_homePage',\App\Models\Menu::getDomains());
 	});
 
-	Route::get('/login', function () {
-		return view('view_signIn',App\Models\Menu::getDomains());
-
-	});
-
 	Route::post('/auth/login', 'AuthController@login');
 
 	Route::group(['middleware' => ['auth']], function () {
 
-		Route::get('logout', 'AuthController@logout');
+		Route::get('/logout', 'AuthController@logout');
 
 		Route::group(['middleware' => ['acl']], function () {
 

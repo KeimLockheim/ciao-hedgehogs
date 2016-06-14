@@ -7,7 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'CreateAnswersTable' => $baseDir . '/database/migrations/2016_06_06_122712_create_answers_table.php',
-    'CreateDomainGroupTable' => $baseDir . '/database/migrations/2016_06_06_131959_create_domain_user_table.php',
+    'CreateDomainUserTable' => $baseDir . '/database/migrations/2016_06_06_131959_create_domain_user_table.php',
     'CreateDomainsTable' => $baseDir . '/database/migrations/2016_06_06_122712_create_domains_table.php',
     'CreateFKsTable' => $baseDir . '/database/migrations/2016_06_06_141146_create_FKs_table.php',
     'CreateGroupServiceApplicatifTable' => $baseDir . '/database/migrations/2016_06_06_130835_create_group_serviceApplicatif_table.php',
@@ -18,7 +18,7 @@ return array(
     'CreateSecretQuestionsTable' => $baseDir . '/database/migrations/2016_06_06_122712_create_secretQuestions_table.php',
     'CreateServiceApplicatifsTable' => $baseDir . '/database/migrations/2016_06_06_122712_create_serviceApplicatifs_table.php',
     'CreateTopicsTable' => $baseDir . '/database/migrations/2016_06_06_122712_create_topics_table.php',
-    'CreateUrgenciesTable' => $baseDir . '/database/migrations/2016_06_09_122712_create_urgencies_table.php',
+    'CreateUrgenciesTable' => $baseDir . '/database/migrations/2016_06_06_122712_create_urgencies_table.php',
     'CreateUserProfileTable' => $baseDir . '/database/migrations/2016_06_06_122712_create_userProfile_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2016_06_06_122711_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',

@@ -20,6 +20,7 @@ class Authenticate
     {
 
         $userId = Session::get('id');
+
         if (!isset($userId)) {
             return response('Unauthorised', 403);
         }

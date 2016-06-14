@@ -254,7 +254,7 @@ class ComposerStaticInitf190bc930cb71851ff9350c12b645db3
 
     public static $classMap = array (
         'CreateAnswersTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_122712_create_answers_table.php',
-        'CreateDomainGroupTable' => __DIR__ . '/../..',
+        'CreateDomainUserTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_131959_create_domain_user_table.php',
         'CreateDomainsTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_122712_create_domains_table.php',
         'CreateFKsTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_141146_create_FKs_table.php',
         'CreateGroupServiceApplicatifTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_130835_create_group_serviceApplicatif_table.php',
@@ -265,7 +265,7 @@ class ComposerStaticInitf190bc930cb71851ff9350c12b645db3
         'CreateSecretQuestionsTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_122712_create_secretQuestions_table.php',
         'CreateServiceApplicatifsTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_122712_create_serviceApplicatifs_table.php',
         'CreateTopicsTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_122712_create_topics_table.php',
-        'CreateUrgenciesTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_09_074704_create_urgencies_table.php',
+        'CreateUrgenciesTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_122712_create_urgencies_table.php',
         'CreateUserProfileTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_122712_create_userProfile_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_122711_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
