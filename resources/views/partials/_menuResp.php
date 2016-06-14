@@ -20,7 +20,7 @@
 						<ul class="dl-menu">
                             
                             <li>
-								<a href="#">Accueil</a>
+								<a href="/home">Accueil</a>
 							</li>
 							<li>
 								<a href="#">Santé</a>
