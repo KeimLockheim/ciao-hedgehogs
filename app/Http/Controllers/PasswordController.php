@@ -79,14 +79,14 @@ class PasswordController extends Controller
     {
         $inputs = $request->only('nickname','password','answerQuestion');
         if (!isset($inputs['nickname']) || !isset($inputs['password']) || $inputs['password'] == "" || !isset($inputs['answerQuestion'])) {
-            return Response::view('errors.404',['url' =>'/lost','message'=>'Erreur de saisie.'], 404);
+            return Response::view('errors.404',['url' => redirect()->back()->getTargetUrl(),'message'=>'Erreur de saisie.'], 404);
         }
         $user = User::where('nickname', $inputs['nickname'])->first();
         if (!isset($user)) {
-            return Response::view('errors.404',['url' =>'/lost','message'=>'Utilisateur non trouvé.'], 404);
+            return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Utilisateur non trouvé.'], 404);
         }
         if (!Hash::check($inputs['answerQuestion'],$user->secretQuestionAnswer)) {
-            return Response::view('errors.404',['url' =>'/lost','message'=>'Mauvaise réponse !'], 404);
+            return Response::view('errors.404',['url' => redirect()->back()->getTargetUrl(),'message'=>'Mauvaise réponse !'], 404);
         }
         if (!isset($inputs['password'])) {
             return response('Fields error', 404);

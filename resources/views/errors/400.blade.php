@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Refresh" content="1; url={{$url}}">
         <title>Bad request</title>
 
         <link href=" {{ asset('assets/css/error.css') }}" rel="stylesheet">
@@ -14,7 +13,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Ajouté avec succès.</div>
+                <div class="title">{{$message or 'Problème de connexion.'}} <a href="{{$url or '/home'}}">Revenir en arrière</a></div>
             </div>
         </div>
     </body>

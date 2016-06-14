@@ -100,7 +100,7 @@ class Topic extends Model {
 	protected static function getNextID()
 	{
 		$id = DB::table('topics')->max('id');
-		return $id ++;
+		return ++$id;
 	}
 
 	/**
@@ -109,19 +109,21 @@ class Topic extends Model {
 	 */
 	public static function createOne(array $values)
 	{
+		$post = new Post();
+		$post->content = $values['topicPost'];
+		$post->written_by = Session::get('id');
+
 		// Nouvelle instance de Topic
-		$obj = new Topic();
+		$topic = new Topic();
 		// Définition des propriétés
-		$obj->domain_id = $values['domain_id'];
-		$obj->name = $values['topicName'];
-		$obj->created_by = Session::get('id');
-		$obj->posts()->save(new Post([
-			'content' => $values['topicPost'],
-			'topic_id'=> self::getNextID(),
-			'written_by' => Session::get('id'),
-		]));
-		// Enregistrement du Topic
-		$obj->save();
+		$topic->domain_id = $values['domain_id'];
+		$topic->name = $values['topicName'];
+		$topic->created_by = Session::get('id');
+
+		// Enregistrement du Topic et de son post
+		$topic->save();
+		$post->topic()->associate($topic);
+		$post->save();
 		
 	}
 }

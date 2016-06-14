@@ -50,6 +50,9 @@ class TopicController extends Controller {
   public function validateTopic($topic_id)
   {
     $topic = Topic::where('id', $topic_id)->with('posts')->get()->first();
+    if(!isset($topic)){
+      return Response::view('errors.404',['url' =>'/home','message'=>'Discussion non trouvée.'], 404);
+    }
     $post = $topic->posts->first();
     $data = Menu::getDomains();
 
@@ -62,7 +65,13 @@ class TopicController extends Controller {
   public function show($domain_id, $topic_id)
   {
     $topic = Topic::where('id', $topic_id)->with('posts','creatorUser')->get()->first();
+    if(!isset($topic)){
+      return Response::view('errors.404',['url' =>'/home','message'=>'Discussion non trouvée.'], 404);
+    }
     $domain = Domain::find($domain_id);
+    if(!isset($domain)){
+      return Response::view('errors.404',['url' =>'/home','message'=>'Catégorie non trouvée.'], 404);
+    }
     $posts = $topic->posts->sortBy('created_at');
 
     $data = Menu::getDomains();
@@ -103,18 +112,19 @@ class TopicController extends Controller {
 
     // Si la validation échoue
     if ($validate->fails()) {
-      return redirect()->back()->withInput()->withErrors($validate);
-    }
 
+      return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Erreur de saisie'], 400);
+
+    }
     //Ajout dans la BD
     try{
       Topic::createOne($validate->getData());
       Message::success('saved');
-      return redirect('user');
+      return Response::view('errors.200',['url' => redirect()->back()->getTargetUrl(),'message'=>'Discussion créée !'], 200);
     }
     catch(\Exception $e){
       Message::error('error');
-      return redirect()->back()->withInput();
+      return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Problème de connexion à la base de donnée'], 400);
     }
   }
 
