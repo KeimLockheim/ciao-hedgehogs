@@ -51,43 +51,56 @@ class GlobalSeeder extends Seeder
 
         $domSante = new Domain([
             'name' => 'Santé',
+            'description' => 'Description',
         ]);
         $domSexualite = new Domain([
             'name' => 'Sexualité',
+            'description' => 'Description',
         ]);
         $domViolence = new Domain([
             'name' => 'Violences',
+            'description' => 'Description',
         ]);
         $domReligion = new Domain([
             'name' => 'Religions',
+            'description' => 'Description',
         ]);
 
         $domStress = new Domain([
             'name' => 'Stress',
+            'description' => 'Description',
         ]);
         $domBoire = new Domain([
             'name' => 'Boire, fumer, se droguer',
+            'description' => 'Description',
         ]);
         $domManger = new Domain([
             'name' => 'Manger-bouger',
+            'description' => 'Description',
         ]);
         $domEstime = new Domain([
             'name' => 'Estime de soi',
+            'description' => 'Description',
         ]);
         $domMoi = new Domain([
             'name' => 'Moi, toi et les autres',
+            'description' => 'Description',
         ]);
         $domRapports = new Domain([
             'name' => 'Rapports',
+            'description' => 'Description',
         ]);
         $domDiscrim = new Domain([
             'name' => 'Discrimination et racismes',
+            'description' => 'Description',
         ]);
         $domArgent = new Domain([
             'name' => 'Argent',
+            'description' => 'Description',
         ]);
         $domFormations = new Domain([
             'name' => 'Formation et travail',
+            'description' => 'Description',
         ]);
 
 

@@ -8,6 +8,8 @@
 
 namespace App\Models;
 
+use App\Models\Domain;
+
 
 class Menu
 {

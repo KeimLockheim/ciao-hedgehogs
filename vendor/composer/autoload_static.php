@@ -254,7 +254,7 @@ class ComposerStaticInitf190bc930cb71851ff9350c12b645db3
 
     public static $classMap = array (
         'CreateAnswersTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_122712_create_answers_table.php',
-        'CreateDomainGroupTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_131959_create_domain_group_table.php',
+        'CreateDomainGroupTable' => __DIR__ . '/../..',
         'CreateDomainsTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_122712_create_domains_table.php',
         'CreateFKsTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_141146_create_FKs_table.php',
         'CreateGroupServiceApplicatifTable' => __DIR__ . '/../..' . '/database/migrations/2016_06_06_130835_create_group_serviceApplicatif_table.php',
