@@ -33,18 +33,38 @@ class UserController extends Controller {
   public function index()
   {
 
+    $data=[];
+
     $data = Menu::getDomains();
+    //$user = User::where('id', Auth::id())->with('userProfile')->get()->first();
+    $user = User::where('id', 2)->with('groups','userProfile')->get()->first();
+    //dd($user->userProfile);
+    //dd(User::where('id', 1)->with('questions.answer')->get());
+    $data['user'] = User::where('id', 2)->with( 'expertInDomains', 'domains', 'userProfile')->get()->first();
+    //dd($data['user']->nickname);
 
-    $user = User::where('id', Session::get('id'))->with('refusedTopics', 'groups','answers', 'domains', 'questions', 'userProfile', 'createdTopics', 'validatedTopics')->get()->first();
+    // à finir avec le eager loading
+    $data['unansweredQuestionsExpert'] = $data['user']->unansweredQuestionsExpert();
 
-    $data['user'] = $user;
+    //fonctionne
+    $data['myAnsweredQuestions'] = $data['user']->myAnsweredQuestions();
+
+    //dd("test");
+
+    ////$data['questionsNotAnswered'] = $data['user']->questionsNotAnswered();
+
+
+    //$data['refusedTopics'] = $data['user']->refusedTopics();
+    //$data['myTopicsValidated'] = $data['user']->myTopicsValidated();
+
+    //'questionsNotAnswered', 'myTopicsValidated', 'refusedTopics', 'unansweredQuestionsExpert', 'myAnsweredQuestions',
 
     // pour l'utilisateur, on va envoyer son rôle à la vue
     //
     // si c'est un expert chopper ses domaines, les questions à repondre
     // si c'est un user on va prendre ses questions et réponses
 
-    return view('view_homePage', $data);
+    return view('view_dashboard', $data);
   }
 
 

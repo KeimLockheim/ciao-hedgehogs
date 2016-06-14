@@ -58,19 +58,27 @@
 				<div class="col-md-7 designBox">
 					<h2>Profil expert</h2>
 					<h3>Questions à traiter: </h3>
-					{{--<ul class="lienArticle">--}}
-						{{--@foreach ($questionsNoAnswer as $questionNoAnswer)--}}
-							{{--<li>{{$questionNoAnswer->name}}</li>--}}
-							{{--<a href="/dashboard/answers/{{$question->id}}"><button type="button" class="btn btn-xs">Répondre</button></a>--}}
-						{{--@endforeach--}}
-					{{--</ul>--}}
-					{{--<h3>Mes questions répondues: </h3>--}}
-					{{--<ul class="lienArticle">--}}
-						{{--@foreach ($questionsAnswered as $questionAnswered)--}}
-							{{--<li><a href="domain/{{$domain->name}}/question/{{$question->id}}">{{$questionNoAnswer->name}}</a></li>--}}
-						{{--@endforeach--}}
-						{{--<a href="/dashboard/answered/">Afficher toutes mes questions répondues</a>--}}
-					{{--</ul>--}}
+					<ul class="lienArticle">
+
+						@if($unansweredQuestionsExpert != null)
+							@foreach ($unansweredQuestionsExpert as $questionNoAnswer)
+								<li>{{$questionNoAnswer->name}}</li>
+								<a href="/dashboard/answers/{{$questionNoAnswer->id}}"><button type="button" class="btn btn-xs">Répondre</button></a>
+							@endforeach
+						@endif
+
+
+					</ul>
+					<h3>Mes questions répondues: </h3>
+					<ul class="lienArticle">
+						@if($myAnsweredQuestions != null)
+							@foreach ($myAnsweredQuestions as $questionAnswered)
+								<li><a href="domain/{{$questionAnswered->content}}/question/{{$questionAnswered->id}}">{{$questionAnswered->content}}</a></li>
+							@endforeach
+						@endif
+
+						<a href="/dashboard/answered/">Afficher toutes mes questions répondues</a>
+					</ul>
 				</div>
 				<div class="col-md-offset-1 col-md-4">
 					<div class="row">
@@ -101,15 +109,21 @@
 				<h2>Gestion de mon activité</h2>
 				<h3>Mes questions en attente de réponse </h3>
 				<ul class="">
-					@foreach ($user->questions as $question)
-						<li>{{$question->content}}</li>
-					@endforeach
+					@if(questionsNotAnswered != null)
+						@foreach (questionsNotAnswered as $question)
+							<li>{{$question->content}}</li>
+						@endforeach
+					@endif
 				</ul>
 				<h3>Mes questions répondues </h3>
 				<ul class="">
-					@foreach ($user->questions as $question)
-						<li><a href="/question/Answered">{{$question->content}}</a></li>
-					@endforeach
+
+					@if(questionsAnswered != null)
+						@foreach (questionsAnswered as $question)
+							<li><a href="/question/Answered">{{$question->content}}</a></li>
+						@endforeach
+					@endif
+
 				</ul>
 				<h3>Mes discussions</h3>
 				<ul class="myTopics">
@@ -118,19 +132,23 @@
     				{{$notRefusedTopics = $user->topics->where('refusedReason', null)}}
     				{{$refusedTopics = $user->topics->diff($notRefusedTopics)}}--}}
 
+					@if(myTopicsValidated != null)
+						@foreach (myTopicsValidated as $topic)
+							<li><a href="domain/{domain_id}/discussion/{{$topic->id}}">{{$topic->name}}</a></li>
+						@endforeach
+					@endif
 
-					@foreach ($user->validatedTopics as $topic)
-						<li><a href="domain/{domain_id}/discussion/{{$topic->id}}">{{$topic->name}}</a></li>
-					@endforeach
 				</ul>
 				<h3>Mes discussions refusées</h3>
 				<ul class="refusedTopics">
-					@foreach ($user->createdTopics as $topic)
-						<li>{{$topic->name}}</li>
-						<div class="reason">
-							{{$topic->refusedReason}}
-						</div>
-					@endforeach
+					@if(refusedTopics != null)
+						@foreach (refusedTopics as $topic)
+							<li>{{$topic->name}}</li>
+							<div class="reason">
+								{{$topic->refusedReason}}
+							</div>
+						@endforeach
+					@endif
 				</ul>
 			</div>
 			<div class="col-md-offset-1 col-md-4 designBox sideBox">
