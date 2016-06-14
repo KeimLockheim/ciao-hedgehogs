@@ -18,6 +18,7 @@ class UrgencyController extends Controller
      */
     public function index()
     {
+        $urgencies = Urgency::all();
         $data = Menu::getDomains();
         $data['urgencies'] = $urgencies;
         return view('view_urgencyAll', $data);
