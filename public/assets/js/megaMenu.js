@@ -1,14 +1,14 @@
-// Dropdown Menu Fade    
+// Dropdown Menu Fade
 jQuery(document).ready(function(){
-    $("#deconnecter").show();
-        $("#connecter").hide();
+    $("#deconnecter").hide();
+      //  $("#connecter").hide();
 
     $(".dropdown").hover(
         function() { $('.dropdown-menu', this).stop().fadeIn("fast");
         },
         function() { $('.dropdown-menu', this).stop().fadeOut("fast");
     });
-    
+
      //back to top
     if ($('#back-to-top').length) {
     var scrollTrigger = 100, // px
