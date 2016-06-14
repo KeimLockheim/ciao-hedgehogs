@@ -29,6 +29,8 @@
       <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
       <script src="{{ asset('assets/js/megaMenu.js') }}"></script>
       <script src="{{ asset('assets/js/validation.js') }}"></script>
+			<script src="{{ asset('assets/js/main.js') }}"></script>
+
 
 
 
@@ -74,6 +76,8 @@
 
 
  @include('partials._footer')
+
+ @include('partials._signIn')
 
 
 	  </body>

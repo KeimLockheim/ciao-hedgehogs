@@ -1,9 +1,3 @@
-@extends('view_master')
-
-@section('title', 'Connexion')
-
-@section('content')
-<!--
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
            <div class="modal-dialog">
                <div class="modal-content">
@@ -12,12 +6,12 @@
                            <span aria-hidden="true">&times;
                            </span><span class="sr-only">
                                     Fermer</span></button>
-                                  -->
+
 <div class="module-container" id="signInForm">
 
-  <h2>Se connecter (caché en fonction du boutton cliqué plus)</h2>
+  <h2>Se connecter</h2>
 
-  <form class="" action="auth/login" method="post" id="signIn">
+  <form action="auth/login" method="post" id="signIn">
     <div class="form-group">
       <label for="nickname" class="control-label">Pseudo</label>
       <div>
@@ -43,28 +37,15 @@
       <div>
         <button type="submit" class="btn btn-primary">Je me connecte</button>
       </div>
-  </form>
-        <div>
-            <a href="/user/create"><button class="btn btn-primary">Créer un compte</button></a>
-        </div>
-
-        <!--
-         <div class="modal-footer">
-                        <button type="button"
-                        class="btn btn-xs close" data-dismiss="modal">
-                            Fermer</button>
-        </div>
-        -->
-
     </div>
+  </form>
+      <div>
+      </div>
 </div>
-<!--
-            <div class="modal-footer">
+        <div class="modal-footer">
               <button type="button" class="btn btn-xs close" data-dismiss="modal">Fermer</button>
-            </div>
-          </div>
+        </div>
+        </div>
         </div>
       </div>
     </div>
-  -->
-  @stop
