@@ -102,7 +102,7 @@
 				<h3>Mes questions en attente de réponse </h3>
 				<ul class="">
 					@foreach ($user->questions as $question)
-						<li><a href="/question/notAnswered">{{$question->content}}</a></li>
+						<li>{{$question->content}}</li>
 					@endforeach
 				</ul>
 				<h3>Mes questions répondues </h3>
@@ -120,7 +120,7 @@
 
 
 					@foreach ($user->validatedTopics as $topic)
-						<li><a href="topic/user">{{$topic->name}}</a></li>
+						<li><a href="domain/{domain_id}/discussion/{{$topic->id}}">{{$topic->name}}</a></li>
 					@endforeach
 				</ul>
 				<h3>Mes discussions refusées</h3>
