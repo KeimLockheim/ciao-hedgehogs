@@ -5,7 +5,7 @@
 @section('content')
 
 		<div class="container">
-            
+
             <div class="row" id="contenu">
 
 			  <div class="col-md-12" id="breadcrums">
@@ -55,9 +55,6 @@
 									<button type="submit" class="btn btn-primary" name="signup" value="Sign up">Appliquer</button>
 							</div>
 					</div>
-
-
-
 
 			</form>
 		</div>

@@ -13,6 +13,7 @@
             <link href=" {{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
             <link href=" {{ asset('assets/css/comem.css') }}" rel="stylesheet">
             <link href=" {{ asset('assets/css/megaMenu.css') }}" rel="stylesheet">
+						<link href=" {{ asset('assets/css/responsiveMenu.css') }}" rel="stylesheet">
             <link href=" {{ asset('assets/formvalidation/dist/css/formValidation.min.css') }}" rel="stylesheet">
 						<link href='https://fonts.googleapis.com/css?family=Roboto:700,500,400|Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
 
@@ -84,6 +85,8 @@
 
 
  				@include('partials._footer')
+
+				@include('partials._responsiveMenu')
 
  				@include('partials._signIn')
 
