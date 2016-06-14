@@ -29,14 +29,18 @@
           </p>
 
 
-        <form id="answerQuestion">
+        <form id="answerQuestion" method="post">
 
         <div class="form-group">
             <label for="theme"> Thème précis: </label>
             <select class="form-control" name="theme" id="answerSubDomain">
-            <option disabled selected value> Vous pouvez préciser </option>
               @foreach ($question->domain->subDomains as $sub)
-          <option value="{{$sub->id}}">{{$sub->name}}</option>
+              @if($question->id == $sub->id)
+              <option selected value="{{$sub->id}}">{{$sub->name}}</option>
+              @else
+              <option disabled selected value> Vous pouvez préciser un domaine précis </option>
+              <option value="{{$sub->id}}">{{$sub->name}}</option>
+              @endif
               @endforeach
             </select>
         </div>
