@@ -19,10 +19,11 @@ html, body{
 
 body{
     background-color: #f5f5f5;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.43;
     color: #484848;
-    font-family: 'Open Sans', sans-serif;
+  /*  font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Roboto', sans-serif;
     min-height: 100%;   
     /*margin: 0;
     padding: 0;
@@ -39,14 +40,17 @@ h1{
 
 label{
     color: #484848;
-    font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Open Sans', sans-serif;*/
+    font-family: 'Roboto', sans-serif;
     font-weight: 600;
 
 }
 
 
 h1, h2, h3, h4, h5, h6{
-    font-family: 'Source Sans Pro', sans-serif;
+    /*font-family: 'Source Sans Pro', sans-serif;*/
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 500;
 }
 
 
@@ -69,9 +73,10 @@ footer h4{
 }
 
 p{
-   font-family: 'Open Sans', sans-serif; 
+   /*font-family: 'Open Sans', sans-serif;*/ 
+    font-family: 'Roboto', sans-serif;
    text-align: justify;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 hr{
@@ -230,12 +235,22 @@ input[type="radio"], input[type="checkbox"] {
     padding-top: 10px;
 }
 
+
 .accueil{
     text-align: center;
 }
 
+.titreCiao{
+    font-size: 36px;
+        font-weight: 500;
+        color: #ff5a5f;
+}
+
 .descriptionCiao{
-    text-align: center;
+       text-align: justify;
+    font-size: 16px;
+    padding-bottom: 30px;
+    padding-top: 20px;
 }
 
 .homePrimaryContainer{
@@ -246,7 +261,7 @@ input[type="radio"], input[type="checkbox"] {
 .homeSecondContainer{
     margin-top: 20px;
     background-color:white;
-    min-height: 240px;
+    min-height: 275px;
 }
 
 .homeSecondContainer h4{
@@ -280,7 +295,7 @@ padding-top: 10px;
 }
 
 .btnEspacePerso{
-    margin-top: 46px;
+    margin-top: -10px;
 }
 
 .actualites{
@@ -458,8 +473,9 @@ padding-left: 0px;
 }
 
 .titreMegaMenu{
+
     font-weight: 500;
-        font-size: 16px;
+    font-size: 16px;
     color: #ff5a5f;
 }
 
@@ -752,7 +768,9 @@ width: 100%;
 .fondFooter .container .row ul div li{
     display: inline-block;
     font-size: 14px;
-    font-family: 'Source Sans Pro Semibold', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    /*font-family: 'Source Sans Pro Semibold', sans-serif;*/
     margin-top: 18px;
     text-align: center;
 }

@@ -15,8 +15,8 @@
         </div>
 
         <div class="row">
-            <div class="col-md-offset-4 col-md-4 descriptionCiao">
-                <h1>ciao.ch</h1> est destiné aux jeunes romands de 11 à 20 ans
+            <div class="col-md-offset-3 col-md-6 descriptionCiao">
+                <span class="titreCiao">ciao.ch</span> est destiné aux jeunes romands de 11 à 20 ans
                 12 rubriques et plus de 1700 fiches d’information rédigées pour toi sur des thématiques qui t’intéressent (clique sur les onglets du menu pour y accéder).
 
             </div>
@@ -58,18 +58,18 @@
                     <h2>Espace personnel</h2>  
                         <p>
                         Crée ton espace perso pour avoir accès aux fonctionnalités proposées
-                            Ta partie privée te permet de:
+                            Ta partie privée te permet de: </p>   
                             <ul>
                             <li>poser anonymement des questions</li>
                             <li>créer et participer à des discussions</li>
                             <li>poster des témoignages</li>
                             </ul>
+ <p> <button type="submit" class="btn btn-m btnEspacePerso" name="compte">Créer un compte</button>
+                            </p>        	  
 
-                            </p>
                      </div>
 
                         
-                <button type="submit" class="btn btn-m btnEspacePerso" name="compte">Créer un compte</button>	  
                 </div>
 
                 </div>
