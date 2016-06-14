@@ -292,12 +292,12 @@
             <div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="genre" value="h" id="h" /> Homme
+                        <input type="radio" name="sex" value="masculin" id="h" /> Homme
                     </label>
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="genre" value="f" id="f" /> Femme
+                        <input type="radio" name="sex" value="féminin" id="f" /> Femme
                     </label>
                 </div>
             </div>
@@ -305,7 +305,7 @@
     <div class="form-group">
           <label for="secret" > Choisis ta question secrète: </label>
           <div>
-            <select class="form-control" name="secreteQuestion" id="secret">
+            <select class="form-control" name="secretQuestion" id="secret">
             @foreach($secretQuestion as $sq)
                 <option value="{{$sq->id}}">{{$sq->name}}</option>
             @endforeach

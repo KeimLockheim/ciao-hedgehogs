@@ -58,19 +58,10 @@ class UserController extends Controller {
   public function create()
   {
     $secretQuestion = SecretQuestion::all();
+    $data = Menu::getDomains();
+    $data['secretQuestion'] = $secretQuestion;
 
-    return view('view_registrationForm', ['secretQuestion' => $secretQuestion,'domSante' => Domain::where('name','Santé')->first()->subDomains,
-        'domStress' =>Domain::where('name','Stress')->first()->subDomains,
-        'domBoire' => Domain::where('name','Boire, fumer, se droguer')->first()->subDomains,
-        'domManger' => Domain::where('name','Manger-bouger')->first()->subDomains,
-        'domEstime' => Domain::where('name','Estime de soi')->first()->subDomains,
-        'domMoi' => Domain::where('name','Moi, toi et les autres')->first()->subDomains,
-        'domSex' => Domain::where('name','Sexualité')->first()->subDomains,
-        'domViolences' => Domain::where('name','Violences')->first()->subDomains,
-        'domDiscrim' => Domain::where('name','Discrimination et racismes')->first()->subDomains,
-        'domArgent' => Domain::where('name','Argent')->first()->subDomains,
-        'domReligions' => Domain::where('name','Religions')->first()->subDomains,
-        'domFormations' => Domain::where('name','Formation et travail')->first()->subDomains,]);
+    return view('view_registrationForm', $data);
   }
 
   /**
@@ -85,6 +76,7 @@ class UserController extends Controller {
 
     // Si la validation échoue
     if ($validate->fails()) {
+
       // On redirige l'utilisateur (redirect()) sur le formulaire (back())
       // avec les inputs tapés (withInput()) et les erreurs de validation (withErrors($validate))
       return redirect()->back()->withInput()->withErrors($validate);
@@ -94,9 +86,11 @@ class UserController extends Controller {
     try{
       User::createOne($validate->getData());
       Message::success('saved');
-      return redirect('user');
+
+      return redirect('dashboard');
     }
     catch(\Exception $e){
+
       Message::error('error');
       return redirect()->back()->withInput();
     }

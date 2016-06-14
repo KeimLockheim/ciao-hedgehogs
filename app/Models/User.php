@@ -13,7 +13,7 @@ class User extends Model {
 	public static $rules = [
 		'pseudo' => 'required|regex:/^[a-zA-Z0-9_]+$/', //nickname
 		'password' => 'required|String',
-		'password2' => 'required|String|same:password',
+		'confirmPassword' => 'required|String|same:password',
 		'birth' => 'required|integer|min:1920|max:2017', //birthyear
 		'country' => 'required|String', //localisation
 		'sex' => 'required|in:"féminin","masculin"', //sex
@@ -34,20 +34,20 @@ class User extends Model {
 	public static function getValidation(Request $request)
 	{
 		// Récupération des inputs pertinents
-		$input = $request->only('pseudo', 'password','password2', 'birth', 'country','genre','secreteQuestion','answerQuestion');
-		dd($input['password2']);
+		$input = $request->only('pseudo', 'password','confirmPassword', 'birth', 'country','sex','secretQuestion','answerQuestion');
+		//dd($input['birth']."  ".$input['country']."  ".$input['sex']."  ".$input['secreteQuestion']."  ".$input['answerQuestion']);
 		// Création du validateur
 		$validator = Validator::make($input, self::$rules);
 		// Ajout des contraintes supplémentaires
 		$validator->after(function ($validator) use($input) {
 			// Vérification de la non existence de l'utilisateur
 			if (self::exists($input['pseudo'])) {
-				dd('User already exist');
+
 				$validator->errors()->add('exists', Message::get('exists'));
 			}
 			// Vérification de l'existence de la question secrète
-			if (!secretQuestion::exists($input['secreteQuestion'])) {
-				dd('Question not exist');
+			if (!secretQuestion::exists($input['secretQuestion'])) {
+
 				$validator->errors()->add('exists', Message::get('exists'));
 			}
 
@@ -174,10 +174,9 @@ class User extends Model {
 		$obj->password = bcrypt($values['password']);
 		$obj->birthyear = $values['birth'];
 		$obj->localisation = $values['country'];
-		$obj->sex = $values['genre'];
-		$obj->secretQuestion_id = $values['secreteQuestion'];
-		$obj->secretAnswerQuestion = $values['answerQuestion'];
-		$obj->secretAnswer = $values['answerQuestion'];
+		$obj->sex = $values['sex'];
+		$obj->secretQuestion_id = $values['secretQuestion'];
+		$obj->secretQuestionAnswer = $values['answerQuestion'];
 		// Enregistrement du User
 		$obj->save();
 	}
