@@ -5,9 +5,9 @@
 @section('content')
 
   <div class="row" id="contenu">
-      
+
     <div class="col-md-12" id="breadcrums">
-      <p>Accueil <span class="interBread">></span> Profil expert nom: {{$user->nickname}} <span class="interBread">></span> Répondre à une question</p>
+      <p>Accueil <span class="interBread">></span> Profil expert <strong>{{$user->nickname}}</strong> <span class="interBread">></span> Répondre à une question</p>
     </div>
   </div>
 
@@ -33,12 +33,14 @@
 
         <div class="form-group">
             <label for="theme"> Thème précis: </label>
-            <select class="form-control" name="theme" id="theme">
-          <option value="{{$question->domain->subDomains}}">{{$question->domain->subDomains}}</option>
-
-
-        </select>
+            <select class="form-control" name="theme" id="answerSubDomain">
+            <option disabled selected value> Vous pouvez préciser </option>
+              @foreach ($question->domain->subDomains as $sub)
+          <option value="{{$sub->id}}">{{$sub->name}}</option>
+              @endforeach
+            </select>
         </div>
+
         <div class="form-group">
             <label for="title">Intitulé précis de la question: </label>
             <input class="form-control" id="title" name="titleQuestion" placeholder="Titre de la question (court et clair)">
@@ -58,6 +60,4 @@
   </form>
 </div>
 </div>
-
-
   @stop

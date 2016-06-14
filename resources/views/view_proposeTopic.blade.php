@@ -8,7 +8,7 @@
   <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
-      <p>Accueil <span class="interBread">></span> {{$domain->name}} <span class="interBread">></span> Proposer une discussion</p>
+      <p>Accueil <span class="interBread">></span>{{$domain->name}} <span class="interBread">></span> Proposer une discussion</p>
     </div>
         </div>
 </div>
@@ -31,7 +31,7 @@
         <div class="col-md-7 designBox">
               <div class="row">
 
-    <form  id="proposeTopic">
+    <form  id="proposeTopic" action="" method="post">
         <div class="form-group">
             <input type="hidden" name="domain_id" value="{{$domain->id}}">
         </div>

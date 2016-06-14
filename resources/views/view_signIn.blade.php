@@ -3,8 +3,8 @@
 @section('title', 'Connexion')
 
 @section('content')
-<div class="modal fade" id="login" tabindex="-1"
-role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
+<!--
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
            <div class="modal-dialog">
                <div class="modal-content">
                    <div class="modal-header">
@@ -12,6 +12,7 @@ role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
                            <span aria-hidden="true">&times;
                            </span><span class="sr-only">
                                     Fermer</span></button>
+                                  -->
 <div class="module-container" id="signInForm">
 
   <h2>Se connecter (caché en fonction du boutton cliqué plus)</h2>
@@ -45,14 +46,18 @@ role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
         <div>
 						<button type="submit" class="btn btn-primary">Créer un compte</button>
 				</div>
+        <!--
          <div class="modal-footer">
                         <button type="button"
                         class="btn btn-xs close" data-dismiss="modal">
                             Fermer</button>
         </div>
+        -->
+
     </div>
   </form>
 </div>
+<!--
             <div class="modal-footer">
               <button type="button" class="btn btn-xs close" data-dismiss="modal">Fermer</button>
             </div>
@@ -60,4 +65,5 @@ role="dialog" aria-labelledby="helpModalLabel" aria-hidden="true">
         </div>
       </div>
     </div>
+  -->
   @stop
