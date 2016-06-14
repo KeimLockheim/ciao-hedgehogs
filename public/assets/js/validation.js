@@ -20,9 +20,9 @@ $("#secreteQ").hide();
 $("#showQuestion").on('click', function() {
 	$('#secreteQ').show('slow');
 	var val = $('#changePassword #pseudo').val();
-	console.log(val);
-	$.getJSON('/secretQuestion/getSecretQuestion/'+ $('#changePassword #pseudo').val(), function(data) {
-			console.log(data);
+	$.getJSON('/secretQuestion/getSecretQuestion/'+ val, function(data) {
+		console.log(data);
+		  $('#secreteQuestion').attr("placeholder", data.name).css('color', 'red');
 	});
 });
 
@@ -49,7 +49,14 @@ $("#showQuestion").on('click', function() {
 										message: "Tu dois répondre à la question secrète - indice: un seul mot"
 									}
 								}
-							}
+							},
+							password: {
+								validators:{
+									notEmpty:{
+										message: "Tu dois préciser un nouveau mot de passe"
+									}
+								}
+							},
 					}
 			});
 
