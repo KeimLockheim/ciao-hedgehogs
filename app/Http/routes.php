@@ -56,7 +56,29 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('/domain/getSubDomains/{domain_id}','DomainController@getSubDomains');
 
-	//Route::post('/user/','UserController@store');
+	Route::get('/', function () {
+		return view('view_homePage',\App\Models\Menu::getDomains());
+	});
+	Route::get('/home', function () {
+		return view('view_homePage',\App\Models\Menu::getDomains());
+	});
+
+	Route::get('/login', function () {
+		return view('auth/login');
+
+	});
+
+	Route::post('/auth/login', 'AuthController@login');
+
+	Route::group(['middleware' => ['auth']], function () {
+
+		Route::get('/auth/logout', 'AuthController@logout');
+
+		Route::group(['middleware' => ['acl']], function () {
+
+
+		});
+	});
 
 
 	// middleware connecté
