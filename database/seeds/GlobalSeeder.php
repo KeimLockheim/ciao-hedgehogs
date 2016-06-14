@@ -121,7 +121,7 @@ class GlobalSeeder extends Seeder
             'sex' => 'féminin',
             'localisation' => 'Vaud',
             'password' => bcrypt('admin'),
-            'secretQuestionAnswer' => 'lala'
+            'secretQuestionAnswer' => bcrypt('lala'),
         ]);
         $admin->secretQuestion()->associate($q2);
         $gAdministrator->users()->save($admin);
@@ -133,7 +133,7 @@ class GlobalSeeder extends Seeder
             'sex' => 'masculin',
             'localisation' => 'Neuchâtel',
             'password' => bcrypt('expert'),
-            'secretQuestionAnswer' => 'hihi'
+            'secretQuestionAnswer' => bcrypt('hihi'),
         ]);
 
         $expert->secretQuestion()->associate($q1);

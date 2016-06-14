@@ -34,6 +34,7 @@ Route::get('/lost', function () {
 
 
 Route::group(['middleware' => ['web']], function () {
+	Route::get('/lost', 'PasswordController@index');
 
     Route::get('/domain/{domain_id}/urgences', 'UrgencyController@indexDomain');
     Route::get('/urgences/', 'UrgencyController@index');

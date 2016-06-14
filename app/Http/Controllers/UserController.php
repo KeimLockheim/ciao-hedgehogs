@@ -32,20 +32,19 @@ class UserController extends Controller {
    */
   public function index()
   {
-    $data=[];
 
     $data = Menu::getDomains();
-    //$user = User::where('id', Auth::id())->with('userProfile')->get()->first();
-    $user = User::where('id', 1)->with('groups','userProfile')->get()->first();
-    //dd($user->userProfile);
-    $data['user'] = User::where('id', 1)->with('refusedTopics', 'groups','answers', 'domains', 'questions', 'userProfile', 'createdTopics', 'validatedTopics')->get()->first();
+
+    $user = User::where('id', Session::get('id'))->with('refusedTopics', 'groups','answers', 'domains', 'questions', 'userProfile', 'createdTopics', 'validatedTopics')->get()->first();
+
+    $data['user'] = $user;
 
     // pour l'utilisateur, on va envoyer son rôle à la vue
     //
     // si c'est un expert chopper ses domaines, les questions à repondre
     // si c'est un user on va prendre ses questions et réponses
 
-    return view('view_dashboard', $data);
+    return view('view_homePage', $data);
   }
 
 
@@ -87,7 +86,7 @@ class UserController extends Controller {
       User::createOne($validate->getData());
       Message::success('saved');
 
-      return redirect('dashboard');
+      return redirect('home');
     }
     catch(\Exception $e){
 

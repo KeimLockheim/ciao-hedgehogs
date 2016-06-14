@@ -210,7 +210,7 @@ class User extends Model {
 		$obj->localisation = $values['country'];
 		$obj->sex = $values['sex'];
 		$obj->secretQuestion_id = $values['secretQuestion'];
-		$obj->secretQuestionAnswer = $values['answerQuestion'];
+		$obj->secretQuestionAnswer = bcrypt($values['answerQuestion']);
 		// Enregistrement du User
 		$obj->save();
 	}
