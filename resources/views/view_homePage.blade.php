@@ -64,7 +64,7 @@
                             <li>créer et participer à des discussions</li>
                             <li>poster des témoignages</li>
                             </ul>
- <p> <button type="submit" class="btn btn-m btnEspacePerso" name="compte">Créer un compte</button>
+ <p> <a href="/user/create"><button type="submit" class="btn btn-m btnEspacePerso" name="compte">Créer un compte</button></a>
                             </p>        	  
 
                      </div>
@@ -89,7 +89,7 @@
             <div class="col-md-12">
                          <div class="row">
                              
-                            <div class="col-md-offset-2 col-md-4 iphoneApp">
+                            <div class="col-md-offset-2 col-md-3 iphoneApp">
                             <img src="{{ asset('assets/img/iphone.png') }}" alt="iphone" class="imgIphone">
                                 </div>
                              <div class="col-md-4 iphonePar">
