@@ -1,5 +1,8 @@
 // Dropdown Menu Fade    
 jQuery(document).ready(function(){
+    $("#deconnecter").hide();
+        $("#connecter").show();
+
     $(".dropdown").hover(
         function() { $('.dropdown-menu', this).stop().fadeIn("fast");
         },

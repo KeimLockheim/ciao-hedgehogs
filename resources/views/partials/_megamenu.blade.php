@@ -3,7 +3,7 @@
 
                 <ul class="nav navbar-nav">
 
-                    <li><a><img src="{{ asset('assets/img/home.png') }}" alt="home" class="imgNav"><p>Accueil</p></a></li>
+                    <li><a href="/home"><img src="{{ asset('assets/img/home.png') }}" alt="home" class="imgNav"><p>Accueil</p></a></li>
                     <!------------------------>
 
                     <li class="dropdown menu-large">
@@ -179,8 +179,11 @@
 
 
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right" id="connecter">
                     <li><a href="#"><img src="{{ asset('assets/img/sign_in.png') }}" alt="login" class="imgNav">Connexion</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" id="deconnecter">
+                    <li><a href="#"><img src="{{ asset('assets/img/deco.png') }}" alt="deco" class="imgNav">Deconnexion</a></li>
                 </ul>
             </div>
         </nav>
