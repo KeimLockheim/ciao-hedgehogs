@@ -1,10 +1,27 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\SecretQuestion;
+use App\Models\User;
 use Request;
 use App\Lib\Message;
 
 class SecretQuestionController extends Controller {
+
+  /**
+   * @param $nickname
+   * @return string retourne false si le pseudo est disponible sinon true
+   */
+  public function getSecretQuestion($nickname)
+  {
+    //Vérifie l'existence du user
+    if(!User::exists($nickname)){
+      return null;
+    }
+    $user = User::where('nickname',$nickname)->first();
+    $secretQuestion = $user->secretQuestion;
+    dd($secretQuestion);
+    return $secretQuestion;
+  }
 
   /**
    * Display a listing of the resource.

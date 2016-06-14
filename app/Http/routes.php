@@ -52,6 +52,7 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/ask/{domain_id}', 'QuestionController@askQuestion');
 
 	Route::get('/user/nicknameCheck/{pseudo}','UserController@nicknameCheck');
+	Route::get('/secretQuestion/getSecretQuestion/{pseudo}', 'SecretQuestionController@getSecretQuestion');
 
 	Route::get('/domain/getSubDomains/{domain_id}','DomainController@getSubDomains');
 
