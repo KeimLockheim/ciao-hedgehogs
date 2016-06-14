@@ -11,7 +11,7 @@
 
   <h2>Se connecter</h2>
 
-  <form action="/auth/login" method="post" id="signIn">
+  <form action="auth/login" method="post" id="signIn">
     <div class="form-group">
       <label for="nickname" class="control-label">Pseudo</label>
       <div>
@@ -21,16 +21,7 @@
     <div class="form-group">
       <label for="password" class="control-label">Mot de passe</label>
       <div>
-        <input type="password" name="password" class="form-control" id="password2" placeholder="Mot de passe">
-      </div>
-    </div>
-    <div class="form-group">
-      <div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" name="rememberMe"> Se souvenir de moi
-          </label>
-        </div>
+        <input type="password" name="password" class="form-control" id="password" placeholder="Mot de passe">
       </div>
     </div>
     <div class="form-group">

@@ -178,7 +178,7 @@
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right" id="connecter">
-                    <li><a class="login" href="/login" data-toggle="modal" data-target="#login"><img src="{{ asset('assets/img/sign_in.png') }}" alt="login" class="imgNav">Connexion</a></li>
+                    <li><a class="login" data-toggle="modal" data-target="#login"><img src="{{ asset('assets/img/sign_in.png') }}" alt="login" class="imgNav">Connexion</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" id="deconnecter">
                     <li><a class="register" href="/logout" data-toggle="modal" data-target="#register"><img src="{{ asset('assets/img/deco.png') }}" alt="deco" class="imgNav">Deconnexion</a></li>

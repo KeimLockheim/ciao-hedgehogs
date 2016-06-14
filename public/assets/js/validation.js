@@ -247,8 +247,9 @@ $("#showQuestion").on('click', function() {
 
 
 //  <--- SignIn form --->
-    $('#signinForm').formValidation({
+    $('#signin').formValidation({
         framework: 'bootstrap',
+				excluded: ':disabled',
         icon: {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
