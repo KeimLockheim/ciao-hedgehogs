@@ -9,7 +9,7 @@
            
         <div class="row">
             <div class="col-md-12">
-                <img src="{{ asset('assets/img/homePage.jpg') }}" alt="ciao" class="imgHome">
+                <img src="{{ asset('assets/img/homePage6.jpg') }}" alt="ciao" class="imgHome">
                 <h2 class="titreImageHome">Plateforme d’information, d’aide et d’échanges pour les 11-20 ans.</h2>
             </div>
         </div>
