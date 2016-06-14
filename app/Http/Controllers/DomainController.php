@@ -2,7 +2,7 @@
 
 use App\Models\Domain;
 use App\Models\Menu;
-use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Response;
 use Request;
 use App\Lib\Message;
 
@@ -39,7 +39,7 @@ class DomainController extends Controller {
   {
     $domain = Domain::where('id', $domain_id)->with('topics')->get()->first();
     if(!isset($domain)){
-      return Response::view('errors.404',[],404);
+      return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Erreur de saisie'], 400);
     }
 
     $data = Menu::getDomains();
@@ -88,12 +88,13 @@ class DomainController extends Controller {
     //Ajout dans la BD
     try{
       Domain::createOne($validate->getData());
-      return Response::view('errors.200',[],200);
-      return redirect('user');
+      return Response::view('errors.200',['url' => redirect()->back()->getTargetUrl(),'message'=>'Discussion créée !'], 200);
+
     }
     catch(\Exception $e){
       Message::error('error');
-      return redirect()->back()->withInput();
+      return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Problème de connexion à la base de donnée'], 400);
+
     }
   }
 

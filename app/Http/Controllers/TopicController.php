@@ -38,7 +38,7 @@ class TopicController extends Controller {
   {
     $domain = Domain::where('id', $domain_id)->get()->first();
     if(!isset($domain)){
-      return Response::view('errors.404',['url' =>'/home','message'=>'Catégorie non trouvée.'], 404);
+      return Response::view('errors.404',['url' => redirect()->back()->getTargetUrl(),'message'=>'Catégorie non trouvée.'], 404);
     }
     $data = Menu::getDomains();
     $data['domain'] = $domain;
@@ -51,9 +51,10 @@ class TopicController extends Controller {
   {
     $topic = Topic::where('id', $topic_id)->with('posts')->get()->first();
     if(!isset($topic)){
-      return Response::view('errors.404',['url' =>'/home','message'=>'Discussion non trouvée.'], 404);
+      return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Discussion non trouvée.'], 404);
     }
     $post = $topic->posts->first();
+
     $data = Menu::getDomains();
 
     $data['topic'] = $topic;
@@ -66,11 +67,11 @@ class TopicController extends Controller {
   {
     $topic = Topic::where('id', $topic_id)->with('posts','creatorUser')->get()->first();
     if(!isset($topic)){
-      return Response::view('errors.404',['url' =>'/home','message'=>'Discussion non trouvée.'], 404);
+      return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Discussion non trouvée.'], 404);
     }
     $domain = Domain::find($domain_id);
     if(!isset($domain)){
-      return Response::view('errors.404',['url' =>'/home','message'=>'Catégorie non trouvée.'], 404);
+      return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Catégorie non trouvée.'], 404);
     }
     $posts = $topic->posts->sortBy('created_at');
 

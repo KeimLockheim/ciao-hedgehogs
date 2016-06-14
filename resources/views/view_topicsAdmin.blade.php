@@ -18,7 +18,7 @@
 
                     <ul class="lienArticle">
 											@foreach ($topicsToValidate as $topicToValidate)
-											<li><a href="/topics/validate/{{ $topicToValidate->id }}">{{ $topicToValidate->name }}</a></li>
+											<li><a href="/dashboard/topics/validate/{{ $topicToValidate->id }}">{{ $topicToValidate->name }}</a></li>
 											@endforeach
 			  						</ul>
 

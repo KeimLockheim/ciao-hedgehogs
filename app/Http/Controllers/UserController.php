@@ -98,7 +98,7 @@ class UserController extends Controller {
 
       // On redirige l'utilisateur (redirect()) sur le formulaire (back())
       // avec les inputs tapés (withInput()) et les erreurs de validation (withErrors($validate))
-      return redirect()->back()->withInput()->withErrors($validate);
+      return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Erreur de saisie'], 400);
     }
 
     //Ajout dans la BD
@@ -106,12 +106,13 @@ class UserController extends Controller {
       User::createOne($validate->getData());
       Message::success('saved');
 
-      return redirect('home');
+      return Response::view('errors.200',['url' => '/home','message'=>'Discussion créée !'], 200);
+
     }
     catch(\Exception $e){
 
       Message::error('error');
-      return redirect()->back()->withInput();
+      return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Problème de connexion à la base de donnée'], 400);
     }
   }
 

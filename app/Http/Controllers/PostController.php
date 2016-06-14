@@ -1,6 +1,7 @@
 <?php namespace App\Http\Controllers;
 
 use App\Models\Post;
+use Illuminate\Support\Facades\Response;
 use Request;
 use App\Lib\Message;
 
@@ -38,18 +39,20 @@ class PostController extends Controller {
 
     // Si la validation échoue
     if ($validate->fails()) {
-      return redirect()->back()->withInput()->withErrors($validate);
+      return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Erreur de saisie'], 400);
     }
 
     //Ajout dans la BD
     try{
       Post::createOne($validate->getData());
       Message::success('saved');
-      return redirect('user');
+      return Response::view('errors.200',['url' => redirect()->back()->getTargetUrl(),'message'=>'Discussion créée !'], 200);
+
     }
     catch(\Exception $e){
       Message::error('error');
-      return redirect()->back()->withInput();
+      return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Problème de connexion à la base de donnée'], 400);
+
     }
   }
 

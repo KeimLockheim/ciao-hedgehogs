@@ -3,6 +3,7 @@
 use App\Lib\Message;
 use App\Models\Answer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 
 class AnswerController extends Controller {
 
@@ -38,18 +39,20 @@ class AnswerController extends Controller {
 
     // Si la validation échoue
     if ($validate->fails()) {
-      return redirect()->back()->withInput()->withErrors($validate);
+      return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Erreur de saisie'], 400);
     }
 
     //Ajout dans la BD
     try{
       Answer::createOne($validate->getData());
       Message::success('saved');
-      return redirect('user');
+      return Response::view('errors.200',['url' => redirect()->back()->getTargetUrl(),'message'=>'Discussion créée !'], 200);
+
     }
     catch(\Exception $e){
       Message::error('error');
-      return redirect()->back()->withInput();
+      return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Problème de connexion à la base de donnée'], 400);
+
     }
   }
 
