@@ -132,6 +132,34 @@ class User extends Model {
 		return $this->belongsToMany('App\Models\Domain','domain_group','user_id','domain_id')->withTimestamps();
 	}
 
+	public function myAnsweredQuestions(){
+		return $this->answers->with('question')->get();
+	}
+	public function unansweredQuestionsExpert(){
+		$questions = $this->expertInDomains->with('domainQuestions')->get();
+		foreach($questions as $question){
+			if($question->answer == null){
+				$answeredQuestions[]= $question;
+			}
+		}
+		return $answeredQuestions;
+		// -> faire un if domainQuestions->answer !== null
+		// mais comment ramener answer de domain question
+	}
+
+	//Retourne les questions que l'utilisateur a validé
+	public function refusedTopics(){
+		return $this->domains->where('refusedReason', !null);
+	}
+	public function questionsNotAnswered(){
+		return $this->questions->with('answer');
+		// check this question->answer est pas null
+	}
+	public function questionsAnswered(){
+		return $this->domains->where('refusedReason', !null);
+		// check this question->answer n'est pas null
+	}
+
 
 
 	//=======================================================================
