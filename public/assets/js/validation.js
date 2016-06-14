@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+	//AddQuestion form
 	//Peupler drop-down list domain / sous-domaine
 	$domain = $("select[name='domain']");
 	$subDomain = $("select[name='subDomain']");
@@ -13,6 +14,44 @@ $(document).ready(function() {
   });
 });
 
+//lostPassowrd form
+$("#secreteQ").hide();
+
+$("#showQuestion").on('click', function() {
+	$('#secreteQ').show('slow');
+	var val = $('#changePassword #pseudo').val();
+	console.log(val);
+	$.getJSON('/secretQuestion/getSecretQuestion/'+ $('#changePassword #pseudo').val(), function(data) {
+			console.log(data);
+	});
+});
+
+
+//  <--- registrationForm --->
+			$('#changePassword').formValidation({
+					framework: 'bootstrap',
+					icon: {
+							valid: 'glyphicon glyphicon-ok',
+							invalid: 'glyphicon glyphicon-remove',
+							validating: 'glyphicon glyphicon-refresh'
+					},
+					fields: {
+							nickname: {
+									validators: {
+											notEmpty: {
+													message: "Tu dois retrouver ton pseudo avant de répondre à la question secrète"
+											}
+									}
+							},
+							answerQuestion: {
+								validators:{
+									notEmpty:{
+										message: "Tu dois répondre à la question secrète - indice: un seul mot"
+									}
+								}
+							}
+					}
+			});
 
 	//  <--- answerTopic form --->
       $('#answerTopic').formValidation({
