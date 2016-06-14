@@ -37,6 +37,7 @@
               @foreach ($question->domain->subDomains as $sub)
               @if($question->id == $sub->id)
               <option selected value="{{$sub->id}}">{{$sub->name}}</option>
+              <option value="{{$sub->id}}">{{$sub->name}}</option>
               @else
               <option disabled selected value> Vous pouvez préciser un domaine précis </option>
               <option value="{{$sub->id}}">{{$sub->name}}</option>
