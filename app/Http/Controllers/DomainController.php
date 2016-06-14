@@ -26,7 +26,9 @@ class DomainController extends Controller {
   public function showTopics($domain_id)
   {
     $domain = Domain::where('id', $domain_id)->with('topics')->get()->first();
-
+    if(!isset($domain)){
+      return Response::view('errors.404',[],404);
+    }
     // récupère [$highlightedTopics, $notHighlightedTopics] pour un domaine précis?
     $data = Menu::getDomains();
     $data['domain'] = $domain;
@@ -36,8 +38,9 @@ class DomainController extends Controller {
   public function show($domain_id)
   {
     $domain = Domain::where('id', $domain_id)->with('topics')->get()->first();
-
-
+    if(!isset($domain)){
+      return Response::view('errors.404',[],404);
+    }
 
     $data = Menu::getDomains();
     $data['domain'] = $domain;
@@ -85,7 +88,7 @@ class DomainController extends Controller {
     //Ajout dans la BD
     try{
       Domain::createOne($validate->getData());
-      Message::success('saved');
+      return Response::view('errors.200',[],200);
       return redirect('user');
     }
     catch(\Exception $e){

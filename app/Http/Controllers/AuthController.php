@@ -19,11 +19,11 @@ class AuthController extends Controller
 
         // Vérifie que le user existe
         if (empty($user)) {
-            return Response::view('errors.503',[], 503);
+            return Response::view('errors.400',['url'=>'/home'], 400);
         }
         //Vérifie le mdp
         if (!Hash::check($password,$user->password)) {
-            return response('Bad Request', 400);
+            return Response::view('errors.400',[], 400);
         }
         // Persistance de l'authentification
         Session::put('id', $user->id);

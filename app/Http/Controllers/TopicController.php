@@ -4,6 +4,7 @@ use App\Lib\Message;
 use App\Models\Menu;
 use App\Models\Topic;
 use App\Models\Domain;
+use Illuminate\Support\Facades\Response;
 use Session;
 use Request;
 
@@ -36,6 +37,9 @@ class TopicController extends Controller {
   public function proposeTopic($domain_id)
   {
     $domain = Domain::where('id', $domain_id)->get()->first();
+    if(!isset($domain)){
+      return Response::view('errors.404',['url' =>'/home','message'=>'Catégorie non trouvée.'], 404);
+    }
     $data = Menu::getDomains();
     $data['domain'] = $domain;
     return view('view_proposeTopic', $data);

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 //use App\Http\Requests;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Response;
 
 class PasswordController extends Controller
 {
@@ -77,22 +78,22 @@ class PasswordController extends Controller
     public function update(Request $request)
     {
         $inputs = $request->only('nickname','password','answerQuestion');
-        if (!isset($inputs['nickname']) || !isset($inputs['password']) || !isset($inputs['answerQuestion'])) {
-            return response('Fields error', 404);
+        if (!isset($inputs['nickname']) || !isset($inputs['password']) || $inputs['password'] == "" || !isset($inputs['answerQuestion'])) {
+            return Response::view('errors.404',['url' =>'/lost','message'=>'Erreur de saisie.'], 404);
         }
         $user = User::where('nickname', $inputs['nickname'])->first();
         if (!isset($user)) {
-            return response('Not found', 404);
+            return Response::view('errors.404',['url' =>'/lost','message'=>'Utilisateur non trouvé.'], 404);
         }
         if (!Hash::check($inputs['answerQuestion'],$user->secretQuestionAnswer)) {
-            return response('Wrong answer', 400);
+            return Response::view('errors.404',['url' =>'/lost','message'=>'Mauvaise réponse !'], 404);
         }
         if (!isset($inputs['password'])) {
             return response('Fields error', 404);
         }
         $user->password = bcrypt($inputs['password']);
         $user->update();
-        return redirect('/home');
+        return Response::view('errors.200',['url' =>'/home','message'=>'Mot de passe modifié !'], 200);
     }
 
     /**
