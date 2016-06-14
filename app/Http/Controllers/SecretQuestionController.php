@@ -19,8 +19,7 @@ class SecretQuestionController extends Controller {
     }
     $user = User::where('nickname',$nickname)->first();
     $secretQuestion = $user->secretQuestion;
-    dd($secretQuestion);
-    return $secretQuestion;
+    return "{name:$secretQuestion->name}";
   }
 
   /**
