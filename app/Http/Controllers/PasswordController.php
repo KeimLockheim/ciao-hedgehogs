@@ -6,7 +6,8 @@ use App\Models\Menu;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+//use App\Http\Requests;
+use Illuminate\Support\Facades\Hash;
 
 class PasswordController extends Controller
 {
@@ -70,16 +71,19 @@ class PasswordController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request)
     {
-        $user = User::find($id);
+        $inputs = $request->only('nickname','password','answerQuestion');
+        if (!isset($inputs['nickname']) || !isset($inputs['password']) || !isset($inputs['answerQuestion'])) {
+            return response('Fields error', 404);
+        }
+        $user = User::where('nickname', $inputs['nickname'])->first();
         if (!isset($user)) {
             return response('Not found', 404);
         }
-        $inputs = Request::all();
         if (!Hash::check($inputs['answerQuestion'],$user->secretQuestionAnswer)) {
             return response('Wrong answer', 400);
         }
@@ -88,7 +92,7 @@ class PasswordController extends Controller
         }
         $user->password = bcrypt($inputs['password']);
         $user->update();
-        return $news;
+        return redirect('/home');
     }
 
     /**

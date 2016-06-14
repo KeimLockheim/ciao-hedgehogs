@@ -11,7 +11,7 @@
 
   <h2>Changement de mot de passe</h2>
 
-  <form id="changePassword" method="post">
+  <form id="changePassword" action="/password" method="post">
     <div class="form-group">
       <label for="pseudo" class="control-label">Ton pseudo</label>
       <div>
