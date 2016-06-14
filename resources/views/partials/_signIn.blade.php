@@ -40,6 +40,7 @@
     </div>
   </form>
       <div>
+          <a href="/user/create"><button class="btn btn-primary">Créer un compte</button></a>
       </div>
 </div>
         <div class="modal-footer">
