@@ -13,6 +13,7 @@
             <link href=" {{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
             <link href=" {{ asset('assets/css/comem.css') }}" rel="stylesheet">
             <link href=" {{ asset('assets/css/megaMenu.css') }}" rel="stylesheet">
+						<link href=" {{ asset('assets/css/responsive_menu.css') }}" rel="stylesheet">
             <link href=" {{ asset('assets/formvalidation/dist/css/formValidation.min.css') }}" rel="stylesheet">
 						<link href='https://fonts.googleapis.com/css?family=Roboto:700,500,400|Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
 
@@ -31,11 +32,12 @@
       <script src="{{ asset('assets/js/validation.js') }}"></script>
 			<script src="{{ asset('assets/js/main.js') }}"></script>
 
-            <!--menu resp-->
+				<!--
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/testResp/css/component.css') }}"/>
 				<script src="{{ asset('assets/testResp/js/modernizr.custom.js') }}"></script>
 				<script src="{{ asset('assets/testResp/js/jquery.dlmenu.js') }}"></script>
         <script src="{{ asset('assets/testResp/js/modernizr.js') }}"></script>
+			-->
 
 
 	  </head>
@@ -69,7 +71,7 @@
 
 			@include('partials._megamenu')
 
-			@include('partials._menuResp')
+			@include('partials._menuResp0')
 
 
         </div>

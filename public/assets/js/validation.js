@@ -196,6 +196,10 @@ $("#showQuestion").on('click', function() {
         $('.reason').show('slow');
       })
 
+			$('#oui').click(function(){
+				$('.reason').hide('slow');
+			})
+
   //  <--- addTopic form --->
       $('#proposeTopic').formValidation({
           framework: 'bootstrap',
