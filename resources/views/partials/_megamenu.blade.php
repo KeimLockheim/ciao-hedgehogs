@@ -106,7 +106,7 @@
                         <ul class="dropdown-menu megamenu row">
                             <li class="col-sm-4">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu"><a href="#">Violences</a></li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="#">Violence</a></li>
                                     <li class="divider"></li>
                                     @foreach($domViolences as $sub)
                                     <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>

@@ -2,6 +2,10 @@
     display: none;
 }
 
+#deconnecter{
+    display: none;
+}
+
 .module-container{
   display: block;
   max-width: 600px;
