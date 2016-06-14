@@ -19,7 +19,7 @@ class AuthController extends Controller
             return response('Bad Request', 400);
         }
         //Vérifie le mdp
-        if (bcrypt($password) != $user->password)) {
+        if (bcrypt($password) != $user->password) {
             return response('Bad Request', 400);
         }
         // Persistance de l'authentification
