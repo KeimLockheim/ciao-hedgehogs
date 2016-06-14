@@ -495,7 +495,6 @@ padding-left: 0px;
 }
 
 .icon{
-    padding-top: 50px;
     text-align: right;
 }
 
@@ -709,7 +708,7 @@ width: 100%;
 }
 
 #logo{
-    width: 160px;
+    height: 80px;
     margin: 10px 0 10px 0;
 }
 
@@ -955,9 +954,14 @@ padding-bottom: 10px;}
 }
 
 /* Petite tablette (ou moyenne tablette en mode portrait), grand smartphone */
-@media screen and (max-width: 41em), screen and (max-device-width: 41em) {
+@media screen and (max-width: 62em), screen and (max-device-width: 62em) {
     nav{
         display: none;
+    }
+    
+    .imgHome{
+            margin-top: -10px;
+
     }
     .titreImageHome{
         font-size: 20px;
@@ -1012,12 +1016,17 @@ position:relative;
     }
     
     .icon {
-    padding-top: 0;
-        margin-top: -55px;
+        padding-top: 0;
+        margin-top: -60px;
     }
     #logo {
-    width: 100px;
+    padding-bottom: 10px;
+    height: 60px;
     margin: 10px 0 10px 0;
+}
+    
+    .iphoneApp {
+    text-align: center;
 }
 
 }

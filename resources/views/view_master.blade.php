@@ -51,7 +51,7 @@
 					<div class="col-md-2">
                         <a href="/home"><img src="{{ asset('assets/img/logo.png') }}"  alt="logo" id="logo" itemprop="logo"></a>
 					</div>
-				<div class="col-lg-offset-4 col-md-6 icon">
+				<div class="col-lg-offset-7 col-md-3 icon">
 					<div >
 
                     <a href="/urgences"><img src="{{ asset('assets/img/ambulance-xxl.png') }}" alt="urgence" class="imgHeader"></a>
