@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
+use Session;
 
 class Topic extends Model {
 
@@ -32,16 +32,13 @@ class Topic extends Model {
 		$validator = Validator::make($input, self::$rules);
 		// Ajout des contraintes supplémentaires
 		$validator->after(function ($validator) use($input) {
-			// Vérification de la non existence de l'utilisateur
-			if (self::exists($input['pseudo'])) {
+			$user = User::find(Session::get('id'));
+			// Vérification de l'existence de l'utilisateur
+			if ($user == null) {
 
 				$validator->errors()->add('exists', Message::get('exists'));
 			}
-			// Vérification de l'existence de la question secrète
-			if (!self::exists($input['secreteQuestion'])) {
 
-				$validator->errors()->add('exists', Message::get('exists'));
-			}
 
 		});
 		// Renvoi du validateur
@@ -116,14 +113,15 @@ class Topic extends Model {
 		$obj = new Topic();
 		// Définition des propriétés
 		$obj->domain_id = $values['domain_id'];
-		$obj->topicName = $values['name'];
-		$obj->created_by = Session::get('user_id');
+		$obj->name = $values['topicName'];
+		$obj->created_by = Session::get('id');
 		$obj->posts()->save(new Post([
 			'content' => $values['topicPost'],
 			'topic_id'=> self::getNextID(),
-			'written_by' => Session::get('user_id'),
+			'written_by' => Session::get('id'),
 		]));
 		// Enregistrement du Topic
 		$obj->save();
+		
 	}
 }

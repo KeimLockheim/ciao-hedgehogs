@@ -4,6 +4,7 @@ use App\Models\Domain;
 use App\Models\Menu;
 use App\Models\User;
 use App\Models\Question;
+use Illuminate\Support\Facades\Response;
 use Request;
 use App\Lib\Message;
 
@@ -27,6 +28,9 @@ class QuestionController extends Controller {
   public function askQuestion($domain_id)
   {
     $domain = Domain::where('id', $domain_id)->get()->first();
+    if(!isset($domain)){
+      return Response::view('errors.404',['url' =>'/home','message'=>'Catégorie non trouvée.'], 404);
+    }
     $parentDomains = Domain::parentDomains();
 
     $data = Menu::getDomains();
@@ -44,7 +48,9 @@ class QuestionController extends Controller {
     $user = User::where('id', 1)->get()->first();
 
     $question = Question::where('id', $question_id)->with('answer', 'domain')->get()->first();
-
+    if(!isset($question)){
+      return Response::view('errors.404',['url' =>'/home','message'=>'Question non trouvée.'], 404);
+    }
     $data = Menu::getDomains();
     $data['question'] = $question;
     $data['user'] = $user;
@@ -55,7 +61,13 @@ class QuestionController extends Controller {
   public function show($domain_id, $question_id)
   {
     $domain = Domain::where('id', $domain_id)->with('parentDomain')->get()->first();
+    if(!isset($domain)){
+      return Response::view('errors.404',['url' =>'/home','message'=>'Catégorie non trouvée.'], 404);
+    }
     $question = Question::where('id', $question_id)->with('questionUser', 'answer')->get()->first();
+    if(!isset($question)){
+      return Response::view('errors.404',['url' =>'/home','message'=>'Question non trouvée.'], 404);
+    }
 
     $data = Menu::getDomains();
     $data['domain'] = $domain;
@@ -86,7 +98,7 @@ class QuestionController extends Controller {
 
     // Si la validation échoue
     if ($validate->fails()) {
-      return redirect()->back()->withInput()->withErrors($validate);
+      return Response::view('errors.404',['url' =>'/home','message'=>'Erreur de saisie.'], 404);
     }
 
     //Ajout dans la BD

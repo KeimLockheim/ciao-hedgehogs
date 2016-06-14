@@ -31,7 +31,7 @@
         <div class="col-md-7 designBox">
               <div class="row">
 
-    <form  id="proposeTopic" action="" method="post">
+    <form  id="proposeTopic" action="/topic" method="post">
         <div class="form-group">
             <input type="hidden" name="domain_id" value="{{$domain->id}}">
         </div>

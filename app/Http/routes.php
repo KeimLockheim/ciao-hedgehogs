@@ -37,6 +37,8 @@ Route::group(['middleware' => ['web']], function () {
 	Route::get('/lost', 'PasswordController@index');
 	Route::post('/password/', 'PasswordController@update');
 
+	Route::post('/topic', 'TopicController@store');
+
     Route::get('/domain/{domain_id}/urgences', 'UrgencyController@indexDomain');
     Route::get('/urgences/', 'UrgencyController@index');
 

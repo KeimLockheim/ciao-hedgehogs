@@ -6,7 +6,7 @@ use App\Models\Topic;
 use App\Models\Domain;
 use Illuminate\Support\Facades\Response;
 use Session;
-use Request;
+use Illuminate\Http\Request;
 
 class TopicController extends Controller {
 
