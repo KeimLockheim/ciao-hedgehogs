@@ -240,6 +240,8 @@ class GlobalSeeder extends Seeder
         ]);
 
         $domSante->creatorUser()->associate($admin);
+        
+        /*STRESS*/
         $domQuestce->creatorUser()->associate($admin);
         $domMecanismes->creatorUser()->associate($admin);
         $domReponses->creatorUser()->associate($admin);
@@ -268,6 +270,7 @@ class GlobalSeeder extends Seeder
         $domFormations->creatorUser()->associate($admin);
 
         $domSante->save();
+        /*STRESS*/
         $domQuestce->save();
         $domMecanismes->save();
         $domReponses->save();
@@ -296,29 +299,31 @@ class GlobalSeeder extends Seeder
 
         $domRapports->parentDomain()->associate($domSexualite);
         $domRapports->save();
-        $domQuestce->parentDomain()->associate($domSante);
+        
+        /*STRESS*/
+        $domQuestce->parentDomain()->associate($domStress);
         $domQuestce->save();
-        $domMecanismes->parentDomain()->associate($domSante);
+        $domMecanismes->parentDomain()->associate($domStress);
         $domMecanismes->save();
-        $domReponses->parentDomain()->associate($domSante);
+        $domReponses->parentDomain()->associate($domStress);
         $domReponses->save();
-        $domSymptomes->parentDomain()->associate($domSante);
+        $domSymptomes->parentDomain()->associate($domStress);
         $domSymptomes->save();
-        $domSources->parentDomain()->associate($domSante);
+        $domSources->parentDomain()->associate($domStress);
         $domSources->save();
-        $domFaireFace->parentDomain()->associate($domSante);
+        $domFaireFace->parentDomain()->associate($domStress);
         $domFaireFace->save();
-        $domSommeil->parentDomain()->associate($domSante);
+        $domSommeil->parentDomain()->associate($domStress);
         $domSommeil->save();
-        $domExamens->parentDomain()->associate($domSante);
+        $domExamens->parentDomain()->associate($domStress);
         $domExamens->save();
-        $domPuberte->parentDomain()->associate($domSante);
+        $domPuberte->parentDomain()->associate($domStress);
         $domPuberte->save();
-        $domQuotidien->parentDomain()->associate($domSante);
+        $domQuotidien->parentDomain()->associate($domStress);
         $domQuotidien->save();
-        $domScolaire->parentDomain()->associate($domSante);
+        $domScolaire->parentDomain()->associate($domStress);
         $domScolaire->save();
-        $domRessources->parentDomain()->associate($domSante);
+        $domRessources->parentDomain()->associate($domStress);
         $domRessources->save();
         
         $t1->creatorUser()->associate($admin);
