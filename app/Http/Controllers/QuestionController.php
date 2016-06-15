@@ -45,7 +45,7 @@ class QuestionController extends Controller {
     if(!isset($question)){
       return Response::view('errors.404',['url' =>'/home','message'=>'Question non trouvée.'], 404);
     }
-    if(!isset($question->answer)){
+    if(isset($question->answer)){
       return Response::view('errors.400',['url' =>'/home','message'=>'Question déjà répondue.'], 400);
     }
     $data = Menu::getDomains();

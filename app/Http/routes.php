@@ -94,6 +94,7 @@ Route::group(['middleware' => ['web']], function () {
 			// répondre à une question
 			Route::get('/dashboard/answers/{question_id}', 'QuestionController@answerQuestion');
 
+
 		});
 
 		// routes pour les admins
