@@ -237,10 +237,23 @@ class GlobalSeeder extends Seeder
             'description' => "Ce qui caractérise les organismes vivants, c'est qu'ils sont capables de se reproduire, pour la survie de leur espèce. Se reproduire est quelque chose de concrètement facile à réaliser. On peut faire un enfant avec ou sans amour, avec ou sans plaisir, ou le plus distraitement du monde : ça fonctionne. Mais la sexualité est aussi d'une fascinante complexité : découverte de soi et découverte des autres, envies et craintes, limites personnelles et limites de la société, prises de risques et épanouissement.",
         ]);
         
-        $domRapports = new Domain([
-            'name' => 'Rapports',
+        $domAnatomie = new Domain([
+            'name' => 'Anatomie et reproduction',
             'description' => 'Description',
         ]);
+        $domFilles = new Domain([
+            'name' => 'Filles: corps et puberté',
+            'description' => 'Description',
+        ]);
+        $domContraception = new Domain([
+            'name' => 'Contraception',
+            'description' => 'Description',
+        ]);
+        $domRelation = new Domain([
+            'name' => 'Relations sexuelles',
+            'description' => 'Description',
+        ]);
+    
         
         $domViolence = new Domain([
             'name' => 'Violences',
@@ -485,12 +498,17 @@ class GlobalSeeder extends Seeder
         $domBougerNul->creatorUser()->associate($admin);
         $domBougerPl->creatorUser()->associate($admin);
         $domBougerRisque->creatorUser()->associate($admin);
-    
-
+        
+        /*SEXUALITE*/
         $domSexualite->creatorUser()->associate($admin);
+        $domAnatomie->creatorUser()->associate($admin);
+        $domFilles->creatorUser()->associate($admin);
+        $domContraception->creatorUser()->associate($admin);
+        $domRelation->creatorUser()->associate($admin);
+        
+        
         $domReligion->creatorUser()->associate($admin);
         $domViolence->creatorUser()->associate($admin);
-        $domRapports->creatorUser()->associate($admin);
 
         $domEstime->creatorUser()->associate($admin);
         $domMoi->creatorUser()->associate($admin);
@@ -499,7 +517,6 @@ class GlobalSeeder extends Seeder
         $domFormations->creatorUser()->associate($admin);
         
 
-        $domSexualite->save();
         $domReligion->save();
         $domViolence->save();
 
@@ -510,8 +527,7 @@ class GlobalSeeder extends Seeder
         $domArgent->save();
         $domFormations->save();
 
-        $domRapports->parentDomain()->associate($domSexualite);
-        $domRapports->save();
+        
         
         /*SANTE*/
         $domSante->save();
@@ -605,6 +621,18 @@ class GlobalSeeder extends Seeder
         $domBougerRisque->parentDomain()->associate($domManger);
         $domBougerRisque->save();
         
+        /*SEXUALITE*/
+        $domSexualite->save();
+        $domAnatomie->parentDomain()->associate($domSexualite);
+        $domAnatomie->save();
+        $domFilles->parentDomain()->associate($domSexualite);
+        $domFilles->save();
+        $domContraception->parentDomain()->associate($domSexualite);
+        $domContraception->save();
+        $domRelation->parentDomain()->associate($domSexualite);
+        $domRelation->save();
+        
+        
         $t1->creatorUser()->associate($admin);
         $t1->domain()->associate($domPoids);
         $t2->creatorUser()->associate($admin);
@@ -634,6 +662,7 @@ class GlobalSeeder extends Seeder
         DB::table('questions')->delete();
 
         $q1 = new Question([
+            'name'=>"Moustache",
             'content' => "Comment faire pour avoir une barbe et une moustache à 14 ans ?",
         ]);
         $q2 = new Question([
@@ -645,14 +674,14 @@ class GlobalSeeder extends Seeder
 
 
         $q1->questionUser()->associate($admin);
-        $q1->domain()->associate($domSante);
+        $q1->domain()->associate($domPuberteG);
 
         $q3->questionUser()->associate($admin);
-        $q3->domain()->associate($domSante);
+        $q3->domain()->associate($domPoids);
 
         $q2->questionUser()->associate($expert);
         $q2->domain()->associate($domSexualite);
-        $q2->subDomain()->associate($domRapports);
+        $q2->subDomain()->associate($domRelation);
 
 
         $q1->save();
