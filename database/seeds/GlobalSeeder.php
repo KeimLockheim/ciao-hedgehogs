@@ -341,10 +341,28 @@ class GlobalSeeder extends Seeder
             'description' => 'Description',
         ]);
         
+        /*ESTIME DE SOI*/
         $domEstime = new Domain([
             'name' => 'Estime de soi',
             'description' => "L'estime de soi varie comme la température de ton corps sur le thermomètre. Elle est changeante et il est possible qu'elle soit très haute ou très basse selon les périodes de la vie. Mais par tes choix et tes actes, tu as le pouvoir de l'améliorer! Teste-toi, fais les jeux, lis les infos, enregistre ton niveau d'estime quotidien, surfe sur ces pages... et tu verras qu'avoir une bonne estime de soi n'est pas insurmontable!",
         ]);
+        $domEstimeDeSoi = new Domain([
+            'name' => "L'estime de soi exactement",
+            'description' => 'Description',
+        ]);
+        $domUne = new Domain([
+            'name' => "Une ou des estimes de soi?",
+            'description' => 'Description',
+        ]);
+        $domAuto = new Domain([
+            'name' => "S'auto-évaluer",
+            'description' => 'Description',
+        ]);
+        $domConstruit = new Domain([
+            'name' => "L'estime de soi se construit",
+            'description' => 'Description',
+        ]);
+        
         $domMoi = new Domain([
             'name' => 'Moi, toi et les autres',
             'description' => "Les relations avec la famille, les amis, les copines, les liens entre les uns et les autres apportent de nombreuses joies. Elles posent aussi de multiples questions dans la vie de tous les jours. Comment arriver à se faire entendre, comment faire passer un message correctement, comment comprendre l'autre? Tu trouveras dans ce thème des informations pour mieux comprendre comment fonctionnent les relations entre les personnes en général et les liens avec ton entourage. Bienvenue dans le monde gigantesque des relations!",
@@ -506,11 +524,17 @@ class GlobalSeeder extends Seeder
         $domContraception->creatorUser()->associate($admin);
         $domRelation->creatorUser()->associate($admin);
         
+        /*ESTIME DE SOI*/
+        $domEstime->creatorUser()->associate($admin);
+        $domEstimeDeSoi->creatorUser()->associate($admin);
+        $domUne->creatorUser()->associate($admin);
+        $domAuto->creatorUser()->associate($admin);
+        $domConstruit->creatorUser()->associate($admin);
+
         
         $domReligion->creatorUser()->associate($admin);
         $domViolence->creatorUser()->associate($admin);
 
-        $domEstime->creatorUser()->associate($admin);
         $domMoi->creatorUser()->associate($admin);
         $domDiscrim->creatorUser()->associate($admin);
         $domArgent->creatorUser()->associate($admin);
@@ -521,7 +545,6 @@ class GlobalSeeder extends Seeder
         $domViolence->save();
 
         
-        $domEstime->save();
         $domMoi->save();
         $domDiscrim->save();
         $domArgent->save();
@@ -632,6 +655,16 @@ class GlobalSeeder extends Seeder
         $domRelation->parentDomain()->associate($domSexualite);
         $domRelation->save();
         
+        /*ESTIME DE SOI*/
+        $domEstime->save();
+        $domEstimeDeSoi->parentDomain()->associate($domEstime);
+        $domEstimeDeSoi->save();
+        $domUne->parentDomain()->associate($domEstime);
+        $domUne->save();
+        $domAuto->parentDomain()->associate($domEstime);
+        $domAuto->save();
+        $domConstruit->parentDomain()->associate($domEstime);
+        $domConstruit->save();
         
         $t1->creatorUser()->associate($admin);
         $t1->domain()->associate($domPoids);
