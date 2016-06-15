@@ -38,8 +38,6 @@
 				<script src="{{ asset('assets/testResp/js/jquery.dlmenu.js') }}"></script>
         <script src="{{ asset('assets/testResp/js/modernizr.js') }}"></script>
 
-
-
 	  </head>
 
 	  <body>
