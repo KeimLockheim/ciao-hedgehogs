@@ -4,7 +4,6 @@ jQuery(document).ready(function(){
     init();
     $(window).on('resize', init);
 
-
     //$("#deconnecter").show();
     //$("#connecter").hide();
 
