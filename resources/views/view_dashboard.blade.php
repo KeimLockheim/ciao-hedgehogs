@@ -59,7 +59,7 @@
 		<div class="container">
 		<div class="row" id="contenu">
 			<div class="col-md-12" id="breadcrums">
-				<p><a href="/home">Accueil</a><span class="interBread">></span> <a href="/dashboard">Profil Expert</a></p>
+				<p><a href="/home">Accueil</a> > <a href="/dashboard">Profil Expert</a></p>
 			</div>
         </div>
 				<div class="col-md-7 designBox dashboard">
@@ -83,11 +83,11 @@
 							@foreach ($myAnsweredQuestions as $questionAnswered)
 								<li><a href="domain/{{$questionAnswered->id}}/question/{{$questionAnswered->id}}">
 
-                                    {{$questionAnswered->content}}</a></li>
+                                    {{$questionAnswered->name}}</a></li>
 							@endforeach
 						@endif
 
-						<a href="/dashboard/answered/">Afficher toutes mes questions répondues</a>
+						<a href="#">Afficher toutes mes questions répondues</a>
 					</ul>
 				</div>
             </div>
@@ -119,7 +119,7 @@
 		<div class="container">
             <div class="row" id="contenu">
 			<div class="col-md-12" id="breadcrums">
-				<p><a href="/home">Accueil</a><span class="interBread">></span> <a href="/dashboard">{{$user->name}}</a></p>
+				<p><a href="/home">Accueil</a> > <a href="/dashboard">{{$user->name}}</a></p>
 			</div>
         </div>
 			<div class="col-md-7 designBox dashboard">
