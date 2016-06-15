@@ -37,12 +37,12 @@ class Question extends Model {
 
 			// Vérification de l'existence du sous domain si spécifié
 			if(!empty($input['subDomain'])){
-				if (!Domain::exists($input['subDomain'])) {
+				if (!Domain::existsWithId($input['subDomain'])) {
 					$validator->errors()->add('exists', 'exists');
 				}
 			}
 			// Vérification de l'existence du domain
-			if (!Domain::exists($input['domain'])) {
+			if (!Domain::existsWithId($input['domain'])) {
 				$validator->errors()->add('exists', 'exists');
 			}
 
