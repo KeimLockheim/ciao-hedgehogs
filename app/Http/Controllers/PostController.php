@@ -46,7 +46,7 @@ class PostController extends Controller {
     try{
       Post::createOne($validate->getData());
       Message::success('saved');
-      return Response::view('errors.200',['url' => redirect()->back()->getTargetUrl(),'message'=>'Discussion créée !'], 200);
+      return redirect()->back();
 
     }
     catch(\Exception $e){
