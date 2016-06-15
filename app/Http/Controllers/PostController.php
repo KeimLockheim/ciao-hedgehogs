@@ -2,7 +2,7 @@
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Response;
-use Request;
+use Illuminate\Http\Request;
 use App\Lib\Message;
 
 class PostController extends Controller {
@@ -50,7 +50,7 @@ class PostController extends Controller {
 
     }
     catch(\Exception $e){
-      Message::error('error');
+      dd($e);
       return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Problème de connexion à la base de donnée'], 400);
 
     }

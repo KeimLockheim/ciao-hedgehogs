@@ -48,7 +48,7 @@
 	  		<header itemscope itemtype="https://schema.org/Organization">
 				<div class="row">
 
-					<div class="col-md-2">
+					<div class="col-md-2 logoHeader">
                         <a href="/home"><img src="{{ asset('assets/img/logo.png') }}"  alt="logo" id="logo" itemprop="logo"></a>
 					</div>
 				<div class="col-lg-offset-7 col-md-3 icon">
