@@ -67,7 +67,12 @@ class DomainController extends Controller {
    */
   public function create()
   {
-    
+    $domains = Domain::all();
+    $data = Menu::getDomains();
+    $data['domains'] = $domains;
+    $data['parentDomains'] = Domain::parentDomains();
+
+    return view('view_addDomain', $data);
   }
 
   /**

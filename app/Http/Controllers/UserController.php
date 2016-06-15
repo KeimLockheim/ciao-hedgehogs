@@ -109,7 +109,7 @@ class UserController extends Controller {
       User::createOne($validate->getData());
       Message::success('saved');
 
-      return Response::view('errors.200',['url' => '/home','message'=>'Discussion créée !'], 200);
+      return Response::view('errors.200',['url' => '/home','message'=>'Compte créée !'], 200);
 
     }
     catch(\Exception $e){

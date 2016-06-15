@@ -28,7 +28,7 @@
           </div>
 
           <div class="form-group">
-              <label for="question">Contenu de la page</label>
+              <label for="question">Contenu de la page en html</label>
                 <textarea class="form-control" rows="6" name="content"></textarea>
           </div>
 
@@ -51,7 +51,7 @@
           <div class="form-group">
               <label for="categorie">Veuillez choisir un domaine parent</label>
               <select class="form-control" name="parentDomains" id="parentDomains">
-                @foreach ($domains->parentDomains() as $domain)
+                @foreach ($parentDomains as $domain)
             <option data-id="{{$domain->id}}">{{$domain->name}}</option>
                 @endforeach
               </select>
