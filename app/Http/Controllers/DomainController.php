@@ -39,7 +39,7 @@ class DomainController extends Controller {
   {
     $domain = Domain::where('id', $domain_id)->with('topics')->get()->first();
     if(!isset($domain)){
-      return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Erreur de saisie'], 400);
+      return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Domaine non trouvé'], 404);
     }
 
     $data = Menu::getDomains();

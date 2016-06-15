@@ -113,9 +113,7 @@ class TopicController extends Controller {
 
     // Si la validation échoue
     if ($validate->fails()) {
-
       return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Erreur de saisie'], 400);
-
     }
     //Ajout dans la BD
     try{
