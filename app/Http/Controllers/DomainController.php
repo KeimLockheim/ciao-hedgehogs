@@ -3,8 +3,7 @@
 use App\Models\Domain;
 use App\Models\Menu;
 use Illuminate\Support\Facades\Response;
-use Request;
-use App\Lib\Message;
+use Illuminate\Http\Request;
 
 class DomainController extends Controller {
 
@@ -106,12 +105,12 @@ class DomainController extends Controller {
 
     //Ajout dans la BD
     try{
+
       Domain::createOne($validate->getData());
-      return Response::view('errors.200',['url' => redirect()->back()->getTargetUrl(),'message'=>'Discussion créée !'], 200);
+      return Response::view('errors.200',['url' => redirect()->back()->getTargetUrl(),'message'=>'Domaine créé !'], 200);
 
     }
     catch(\Exception $e){
-      Message::error('error');
       return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Problème de connexion à la base de donnée'], 400);
 
     }

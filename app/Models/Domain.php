@@ -32,7 +32,8 @@ class Domain extends Model
 	public static function getValidation(Request $request)
 	{
 		// Récupération des inputs pertinents
-		$input = $request->only('parentDomain', 'newDomain','description', 'content');
+		$input = $request->only('isDomain','parentDomains', 'newDomain','description', 'content');
+
 		// Création du validateur
 		$validator = Validator::make($input, self::$rules);
 		// Ajout des contraintes supplémentaires
@@ -40,14 +41,13 @@ class Domain extends Model
 
 			// Vérification de la non existence du nouveau domain
 			if (self::exists($input['newDomain'])) {
-
-				$validator->errors()->add('exists', Message::get('exists'));
+				$validator->errors()->add('exists', ('exists'));
 			}
 
 			// Vérification de l'existence du domain parent si spécifié
-			if(!empty($input['parentDomain'])){
-				if (!self::exists($input['parentDomain'])) {
-					$validator->errors()->add('exists', Message::get('exists'));
+			if($input['isDomain'] == "non"){
+				if (!self::existsWithId($input['parentDomains'])) {
+					$validator->errors()->add('exists',('exists'));
 				}
 			}
 
@@ -176,8 +176,10 @@ class Domain extends Model
 		$obj = new Domain();
 		// Définition des propriétés
 		$obj->name = $values['newDomain'];
-		$obj->password = $values['password'];
-		$obj->parentDomain_id = $values['parentDomains'];
+		if($values['isDomain'] == 'non'){
+			$obj->parentDomain_id = $values['parentDomains'];
+		}
+
 		$obj->description = $values['description'];
 		$obj->content = $values['content'];
 		$obj->created_by = Session::get('id');

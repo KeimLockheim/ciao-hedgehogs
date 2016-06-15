@@ -14,7 +14,7 @@
         <div class="col-md-7 designBox">
 
                   <h2>Ajouter un domaine</h2>
-      <form id="addDomain">
+      <form id="addDomain" method="post" action="/domain">
 
           <div class="form-group">
               <label for="question">Nouveau domaine</label>
@@ -51,7 +51,7 @@
               <label for="categorie">Veuillez choisir un domaine parent</label>
               <select class="form-control" name="parentDomains" id="parentDomains">
                 @foreach ($parentDomains as $domain)
-            <option data-id="{{$domain->id}}">{{$domain->name}}</option>
+            <option data-id="{{$domain->id}}" value="{{$domain->id}}">{{$domain->name}}</option>
                 @endforeach
               </select>
           </div>
