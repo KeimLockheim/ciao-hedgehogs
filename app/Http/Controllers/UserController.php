@@ -41,22 +41,24 @@ class UserController extends Controller {
     $user = User::where('id', 2)->with('groups','userProfile')->get()->first();
     //dd($user->userProfile);
     //dd(User::where('id', 1)->with('questions.answer')->get());
-    $data['user'] = User::where('id', 2)->with( 'expertInDomains', 'domains', 'userProfile')->get()->first();
-    //dd($data['user']->nickname);
 
-    // à finir avec le eager loading
+    $data['user'] = User::where('id', 2)->with( 'expertInDomains.domainQuestions.answer', 'expertInDomains.domainQuestions.domain', 'questions.answer', 'domains', 'userProfile', 'createdTopics.domain')->get()->first();
+
+  /*  foreach($data['user']->expertInDomains as $qqq){
+      $answers[]=$qqq->domainQuestions;
+    }
+    dd($answers);*/
+
+
     $data['unansweredQuestionsExpert'] = $data['user']->unansweredQuestionsExpert();
 
-    //fonctionne
     $data['myAnsweredQuestions'] = $data['user']->myAnsweredQuestions();
 
-    //dd("test");
+    $data['questionsNotAnswered'] = $data['user']->questionsNotAnswered();
+    $data['questionsAnswered'] = $data['user']->questionsAnswered();
 
-    ////$data['questionsNotAnswered'] = $data['user']->questionsNotAnswered();
-
-
-    //$data['refusedTopics'] = $data['user']->refusedTopics();
-    //$data['myTopicsValidated'] = $data['user']->myTopicsValidated();
+    $data['refusedTopics'] = $data['user']->refusedTopics();
+    $data['myTopicsValidated'] = $data['user']->myTopicsValidated();
 
     //'questionsNotAnswered', 'myTopicsValidated', 'refusedTopics', 'unansweredQuestionsExpert', 'myAnsweredQuestions',
 

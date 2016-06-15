@@ -130,8 +130,8 @@
 				<h2>Gestion de mon activité</h2>
 				<h3>Mes questions en attente de réponse </h3>
 				<ul class="">
-					@if(questionsNotAnswered != null)
-						@foreach (questionsNotAnswered as $question)
+					@if($questionsNotAnswered != null)
+						@foreach ($questionsNotAnswered as $question)
 							<li>{{$question->content}}</li>
 						@endforeach
 					@endif
@@ -139,8 +139,8 @@
 				<h3>Mes questions répondues </h3>
 				<ul class="">
 
-					@if(questionsAnswered != null)
-						@foreach (questionsAnswered as $question)
+					@if($questionsAnswered != null)
+						@foreach ($questionsAnswered as $question)
 							<li><a href="/question/Answered">{{$question->content}}</a></li>
 						@endforeach
 					@endif
@@ -148,22 +148,19 @@
 				</ul>
 				<h3>Mes discussions</h3>
 				<ul class="myTopics">
-					{{--{{$topicsToValidate = $user->topics->where('validated_by', null)}}
-    				{{$topicsValidated = $user->topics->diff($topicsToValidate)}}
-    				{{$notRefusedTopics = $user->topics->where('refusedReason', null)}}
-    				{{$refusedTopics = $user->topics->diff($notRefusedTopics)}}--}}
 
-					@if(myTopicsValidated != null)
-						@foreach (myTopicsValidated as $topic)
-							<li><a href="domain/{domain_id}/discussion/{{$topic->id}}">{{$topic->name}}</a></li>
+
+					@if($myTopicsValidated != null)
+						@foreach ($myTopicsValidated as $topic)
+							<li><a href="domain/{{$topic->domain->id}}/discussion/{{$topic->id}}">{{$topic->name}}</a></li>
 						@endforeach
 					@endif
 
 				</ul>
 				<h3>Mes discussions refusées</h3>
 				<ul class="refusedTopics">
-					@if(refusedTopics != null)
-						@foreach (refusedTopics as $topic)
+					@if($refusedTopics != null)
+						@foreach ($refusedTopics as $topic)
 							<li>{{$topic->name}}</li>
 							<div class="reason">
 								{{$topic->refusedReason}}

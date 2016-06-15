@@ -149,14 +149,28 @@ class User extends Model {
 	// retourne les questions auxquelles un expert a répondu
 	public function myAnsweredQuestions(){
 		$answers = [];
-		foreach($this->answers as $answer){
-			$answers[]=$answer->with('question')->first();
+		if($this->answers != null){
+			foreach($this->answers as $answer){
+				$answers[]=$answer->with('question')->first();
+			}
 		}
 		return $answers;
 	}
 
 	// retourne les questions auxquelles l'expert peut répondre
 	public function unansweredQuestionsExpert(){
+//
+		foreach($this->expertInDomains as $domain){
+
+			foreach($domain->domainQuestions as $qq){
+				if($qq->answer == null){
+					$unAnsweredQuestions[]= $qq;
+				}
+			}
+		}
+
+		return $unAnsweredQuestions;
+
 //		$q=[];
 //		$questionsWithAnswer=[];
 //		$answeredQuestions=[];
@@ -176,16 +190,18 @@ class User extends Model {
 //				$answeredQuestions[]= $question;
 //			}
 //		}
-		return null;
 
 	}
 
 	//Retourne les topics refusés d'un utilisateur
 	public function refusedTopics(){
-		$topics = $this->createdTopics->get();
-		foreach($topics as $topic){
-			if($topic->refusedReason !== null){
-				$refusedTopics[]= $topic;
+		$topics = $this->createdTopics;
+		$refusedTopics = [];
+		if($topics != null) {
+			foreach ($topics as $topic) {
+				if ($topic->refusedReason !== null) {
+					$refusedTopics[] = $topic;
+				}
 			}
 		}
 		return $refusedTopics;
@@ -193,11 +209,13 @@ class User extends Model {
 
 	//Retourne les topics validés d'un utilisateur
 	public function myTopicsValidated(){
-		$topics = $this->createdTopics->get();
-
-		foreach($topics as $topic){
-			if($topic->refusedReason == null && $topic->validated_by !== null){
-				$validatedTopics[]= $topic;
+		$topics = $this->createdTopics;
+		$validatedTopics = [];
+		if($topics != null) {
+			foreach ($topics as $topic) {
+				if ($topic->refusedReason == null && $topic->validated_by !== null) {
+					$validatedTopics[] = $topic;
+				}
 			}
 		}
 		return $validatedTopics;
@@ -207,31 +225,31 @@ class User extends Model {
 
 	public function questionsNotAnswered(){
 		// check this question->answer est pas null
-		$q = $this->with('questions')->get();
-		foreach($q as $qq){
-			$questions[] = $qq->with('answer')->get()->first();
-		}
-		foreach($questions as $question){
-			if($question->answer == null){
-				$questionsNotAnswered[]= $question;
+		$questionsNotAnswered = [];
+		if($this->questions != null){
+			foreach($this->questions as $question){
+				if($question->answer == null){
+					$questionsNotAnswered[]= $question;
+				}
 			}
 		}
+
 		return $questionsNotAnswered;
 	}
 
 	// les questions de l'utilisateur qui sont répondues
 
 	public function questionsAnswered(){
-		$q = $this->with('questions')->get();
-		foreach($q as $qq){
-			$questions[] = $qq->with('answer')->get()->first();
-		}
+
 		$questionsAnswered=[];
-		foreach($questions as $question){
-			if($question->answer != null){
-				$questionsAnswered[]= $question;
+		if($this->questions != null){
+			foreach($this->questions as $question){
+				if($question->answer != null){
+					$questionsAnswered[]= $question;
+				}
 			}
 		}
+
 		return $questionsAnswered;
 	}
 
