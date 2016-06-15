@@ -40,9 +40,9 @@ jQuery(document).ready(function(){
 
 function init(){
     if(Modernizr.mq("screen and (max-width: 62em), screen and (max-device-width: 62em)")){
-	    $("#dl-menu").show();
+	    $(".menu").show();
         }else{
-        $("#dl-menu").hide();
+        $(".menu").hide();
 
         $("nav").show();
         }

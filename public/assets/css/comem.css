@@ -1,4 +1,6 @@
-
+.menu{
+    display: none;
+}
 
 .module-container{
   display: block;
@@ -967,6 +969,7 @@ padding-bottom: 10px;}
     nav{
         display: none;
     }
+
     
     .imgHome{
             margin-top: 10px;
