@@ -71,6 +71,8 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::group(['middleware' => ['auth']], function () {
 
+		Route::post('/post','PostController@store');
+
 		Route::get('/logout', 'AuthController@logout');
 
 		Route::group(['middleware' => ['acl']], function () {

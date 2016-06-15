@@ -38,7 +38,7 @@
 
             </div>
 
-  <form id="answerTopic">
+  <form id="answerTopic" action="/post" method="post">
 
       <div class="form-group">
         <input type="hidden" id="parentPost" name="parentPost_id" value="">
@@ -51,7 +51,7 @@
       </div>
       <div class="form-group">
         <div class="col-md-3 btnForum">
-            <button type="button" class="btn btn-xs">Envoyer</button>
+            <button type="submit" class="btn btn-xs">Envoyer</button>
         </div>
       </div>
 

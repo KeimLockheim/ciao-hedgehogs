@@ -2,7 +2,9 @@
 
 namespace App\Models;
 use Session;
+use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Validator;
 
 class Post extends Model {
 
@@ -30,7 +32,6 @@ class Post extends Model {
 		$validator = Validator::make($input, self::$rules);
 		// Ajout des contraintes supplémentaires
 		$validator->after(function ($validator) use($input) {
-
 			// Vérification de l'existence du post parent si spécifié
 			if(!empty($input['parentPost_id'])){
 				if (!self::exists($input['parentPost_id'])) {
