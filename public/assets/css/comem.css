@@ -734,6 +734,9 @@ width: 100%;
 }
 
 
+.icon div{
+    margin-top: 40px;
+}
 
 #breadcrums{
     font-size: 16px;
@@ -976,7 +979,7 @@ padding-bottom: 10px;}
 
     
     .imgHome{
-            margin-top: 10px;
+            margin-top: 0px;
 
     }
     .titreImageHome{
@@ -1043,5 +1046,9 @@ padding-bottom: 10px;}
         height: 40px;
         margin: 10px;
     }
+    
+    .icon div{
+    margin-top: 10px;
+}
 }
 
