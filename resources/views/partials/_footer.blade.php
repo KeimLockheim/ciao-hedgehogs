@@ -63,7 +63,7 @@
 					  	<div class="col-md-4 ciaoAssoc">
 
 					  		<h3 class="footerCenter"><span itemprop="creator">Ciao</span> c'est :</h3>
-					  		<ul>
+					  		<ul class="listeAPuce">
 						  		<li>Une association</li>
 						  		<li>Un site internet créé en 1997, certifié accessible et HON</li>
 						  		<li>Une collaboration avec 15 institutions partenaires</li>

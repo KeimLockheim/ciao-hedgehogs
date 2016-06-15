@@ -59,7 +59,7 @@
                         <p>
                         Crée ton espace perso pour avoir accès aux fonctionnalités proposées
                             Ta partie privée te permet de: </p>   
-                            <ul>
+                            <ul class="listeAPuce">
                             <li>poser anonymement des questions</li>
                             <li>créer et participer à des discussions</li>
                             <li>poster des témoignages</li>
@@ -96,7 +96,7 @@
                                  <h2>Ciao a une toute nouvelle app pour Iphone.</h2>
         
         <p>Comme le site ciao.ch, cette application te permet d'accéder à:</p>
-    <ul>
+    <ul class="listeAPuce">
 <li>les 100 dernières Questions Réponses</li>
 <li>la possibilité de poser une question et de recevoir une réponse personnalisée</li>
 <li>l'accès à des adresses du réseau d'aide et de soutien en fonction de ta localisation et de mots-clé</li>

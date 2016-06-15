@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="container article">
-    <div class="row" id="contenu">
+		<div class="row" id="contenu">
 
   <div class="col-md-12" id="breadcrums">
 
