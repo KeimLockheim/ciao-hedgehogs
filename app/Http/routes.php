@@ -101,7 +101,6 @@ Route::group(['middleware' => ['web']], function () {
 		Route::group(['middleware' => ['admin']], function () {
 
 			//Formulaire de création de domain
-			//Créer un nouveau domain
 			Route::get('/addDomain','DomainController@create');
 			//Créer un nouveau domain
 			Route::post('/domain','DomainController@store');
