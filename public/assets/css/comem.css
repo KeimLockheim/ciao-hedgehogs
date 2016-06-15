@@ -1006,25 +1006,6 @@ padding-bottom: 10px;}
 
 
 
-.dl-menuwrapper .dl-menu.dl-menuopen{
-position:relative;
-    width: 100%;
-    }
-
-    .dl-menuwrapper {
-        margin-bottom: 10px;
-    }
-    
-    .dl-menuwrapper li a:hover, .dl-menuwrapper li a:focus {
-    background-color:#ff7e82;!important
-    }
-    
-
-
-   .dl-menuwrapper ul {
-    background: #c4c4c4;
-}
-    
     .descriptionCiao{
             padding-left: 30px;
             padding-right: 30px;

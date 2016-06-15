@@ -68,10 +68,10 @@
 			</header>
 
         <div class="container">
+		  @include('partials._responsiveMenu')
 
 			@include('partials._megamenu')
 
-		  @include('partials._responsiveMenu')
 
 
         </div>
