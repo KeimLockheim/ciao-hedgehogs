@@ -33,19 +33,19 @@
 
          <ul class="designForum">
 
-           @if($domain->isSubdomain())
-         @foreach($domain->subDomainTopics as $topic)
-            <li><a href="domain/{{$domain->id}}/discussion/{{$topic->id}}">{{$topic->name}}</a>
-              <p>{{$topic->created_at}}</p>
-            </li>
-        @endforeach
-        @else
-        @foreach($domain->topics as $topic)
-            <li><a href="domain/{{$domain->id}}/discussion/{{$topic->id}}">{{$topic->name}}</a>
-              <p>{{$topic->created_at}}</p>
-            </li>
-        @endforeach
-        @endif
+             @if($domain->isSubdomain())
+                 @foreach($domain->subDomainTopics as $topic)
+                    <li><a href="domain/{{$domain->id}}/discussion/{{$topic->id}}">{{$topic->name}}</a>
+                      <p>{{$topic->created_at}}</p>
+                    </li>
+                @endforeach
+            @else
+                @foreach($domain->topics as $topic)
+                    <li><a href="domain/{{$domain->id}}/discussion/{{$topic->id}}">{{$topic->name}}</a>
+                      <p>{{$topic->created_at}}</p>
+                    </li>
+                @endforeach
+            @endif
         </ul>
      <a href="/propose/{{$domain->id}}"><button type="submit" class="btn btn-m"><img src="{{ asset('assets/img/forum.png') }}" alt="question" class="iconButton">Proposer une discussion!</button></a>
           </div>
