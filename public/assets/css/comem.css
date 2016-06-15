@@ -617,6 +617,13 @@ color: white;
     margin-top: 5px;
 }
 
+.answerTo{
+width: 100px;
+margin-right: 10px;
+}
+
+.answerTo:hover, .answerTo:focus{
+width: 100px;}
 
 /* accueil */
 

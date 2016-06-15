@@ -32,8 +32,8 @@
                     <p class="ContainerAnswerQuestion" itemprop="comment">
                       {{$post->content}}
                     </p>
-                    <div class="col-md-3 btnForum">
-                        <a href="#"><button type="button" data-nickname="{{$post->writterUser->nickname}}" class="btn btn-xs answerTo">Répondre</button></a>
+                    <div class="btnForum">
+                        <a href="#"><button type="button" data-nickname="{{$post->writterUser->nickname}}" class="btn btn-xs large answerTo">Répondre</button></a>
                     </div>
                 </div>
                 @endforeach
