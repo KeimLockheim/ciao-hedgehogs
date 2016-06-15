@@ -29,19 +29,18 @@
     </p>
 
 
-    <form id="answerQuestion" method="post">
+    <form id="answerQuestion" method="post" action="/answer">
 
       <div class="form-group">
         <label for="theme"> Thème précis: </label>
         <select class="form-control" name="theme" id="answerSubDomain">
-          @foreach ($question->domain->subDomains as $sub)
-          @if($question->id == $sub->id)
-          <option selected value="{{$sub->id}}">{{$sub->name}}</option>
-          <option value="{{$sub->id}}">{{$sub->name}}</option>
+          @if($question->subDomain != null)
+          <option selected value="{{$question->id}}">{{$question->subDomain->name}}</option>
           @else
-          <option disabled selected value> Vous pouvez préciser un domaine précis </option>
-          <option value="{{$sub->id}}">{{$sub->name}}</option>
+          <option disabled selected value> {{$user->userProfile->firstName}}, vous pouvez préciser une sous-catégorie. </option>
           @endif
+          @foreach ($question->domain->subDomains as $sub)
+          <option value="{{$sub->id}}">{{$sub->name}}</option>
           @endforeach
         </select>
       </div>
@@ -55,6 +54,8 @@
         <label for="answer">Ma Réponse: </label>
         <textarea class="form-control" rows="6" name="answerQuestion" id="answer"></textarea>
       </div>
+
+      <input type="hidden" name="question_id" value="{{$question->id}}">
 
       <div class="form-group">
         <div>
