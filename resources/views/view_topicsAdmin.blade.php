@@ -22,11 +22,11 @@
 											@endforeach
 			  						</ul>
 
-            <h3>Topics validés: </h3>
+            <h3>Topics modérés: </h3>
 
                       <ul class="lienArticle">
 												@foreach ($topicsValidated as $topicValidated)
-    										<li><a href="/topics/show/{{$topicValidated->id}}">{{ $topicValidated->name }}</a></li>
+    										<li><a href="/dashboard/topics/validate/{{$topicValidated->id}}">{{ $topicValidated->name }}</a></li>
 												@endforeach
 											</ul>
                             
