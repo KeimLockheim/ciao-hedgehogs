@@ -254,12 +254,30 @@ class GlobalSeeder extends Seeder
             'description' => 'Description',
         ]);
     
-        
+        /*VIOLENCE*/
         $domViolence = new Domain([
             'name' => 'Violences',
             'description' => "Qu'est-ce que la violence?
             C'est faire preuve de force et de brutalité en pensée ou en action. La violence est souvent liée à des problèmes de communication. Que faire face à la violence? La violence sous toutes ses formes doit être dénoncée car chacun a le droit de vivre en sécurité. Les actes de violence doivent être pris au sérieux : ils sont inacceptables et ne débouchent sur rien de constructif. Il faut lutter contre eux.",
         ]);
+        $domQuoi = new Domain([
+            'name' => "La violence, c'est quoi?",
+            'description' => 'Description',
+        ]);
+        $domContreMoi = new Domain([
+            'name' => 'Violences contre moi',
+            'description' => 'Description',
+        ]);
+        $domEnMoi = new Domain([
+            'name' => 'Violence en moi',
+            'description' => 'Description',
+        ]);
+        $domRue = new Domain([
+            'name' => 'Violence dans la rue',
+            'description' => 'Description',
+        ]);
+        
+        
         $domReligion = new Domain([
             'name' => 'Religions',
             'description' => "Cette rubrique traite des principales religions: le bouddhisme, le christianisme, le judaïsme, l'Islam.Que tu sois un peu croyant, très religieux, pas pratiquant ou sans croyance aucune, tu y trouveras différentes informations sur les traditions et les croyances des principales religions, ainsi que  les textes de référence propres à chaque religion.",
@@ -363,10 +381,28 @@ class GlobalSeeder extends Seeder
             'description' => 'Description',
         ]);
         
+        /*MOI*/
         $domMoi = new Domain([
             'name' => 'Moi, toi et les autres',
             'description' => "Les relations avec la famille, les amis, les copines, les liens entre les uns et les autres apportent de nombreuses joies. Elles posent aussi de multiples questions dans la vie de tous les jours. Comment arriver à se faire entendre, comment faire passer un message correctement, comment comprendre l'autre? Tu trouveras dans ce thème des informations pour mieux comprendre comment fonctionnent les relations entre les personnes en général et les liens avec ton entourage. Bienvenue dans le monde gigantesque des relations!",
         ]);
+        $domFam = new Domain([
+            'name' => "Famille",
+            'description' => 'Description',
+        ]);
+        $domAm = new Domain([
+            'name' => "Amour",
+            'description' => 'Description',
+        ]);
+        $domAmi = new Domain([
+            'name' => "Amitié",
+            'description' => 'Description',
+        ]);
+        $domAdo = new Domain([
+            'name' => "Adolescence",
+            'description' => 'Description',
+        ]);
+        
 
         $domDiscrim = new Domain([
             'name' => 'Discrimination et racismes',
@@ -523,22 +559,33 @@ class GlobalSeeder extends Seeder
         $domUne->creatorUser()->associate($admin);
         $domAuto->creatorUser()->associate($admin);
         $domConstruit->creatorUser()->associate($admin);
+        
+        /*MOI*/
+        $domMoi->creatorUser()->associate($admin);
+        $domFam->creatorUser()->associate($admin);
+        $domAm->creatorUser()->associate($admin);
+        $domAmi->creatorUser()->associate($admin);
+        $domAdo->creatorUser()->associate($admin);
+
+        /*VIOLENCE*/
+        $domViolence->creatorUser()->associate($admin);
+        $domQuoi->creatorUser()->associate($admin);
+        $domContreMoi->creatorUser()->associate($admin);
+        $domEnMoi->creatorUser()->associate($admin);
+        $domRue->creatorUser()->associate($admin);
 
         
+        
         $domReligion->creatorUser()->associate($admin);
-        $domViolence->creatorUser()->associate($admin);
 
-        $domMoi->creatorUser()->associate($admin);
         $domDiscrim->creatorUser()->associate($admin);
         $domArgent->creatorUser()->associate($admin);
         $domFormations->creatorUser()->associate($admin);
         
 
         $domReligion->save();
-        $domViolence->save();
 
         
-        $domMoi->save();
         $domDiscrim->save();
         $domArgent->save();
         $domFormations->save();
@@ -660,6 +707,29 @@ class GlobalSeeder extends Seeder
         $domAuto->save();
         $domConstruit->parentDomain()->associate($domEstime);
         $domConstruit->save();
+        
+        /*MOI*/
+        $domMoi->save();
+        $domFam->parentDomain()->associate($domMoi);
+        $domFam->save();
+        $domAm->parentDomain()->associate($domMoi);
+        $domAm->save();
+        $domAmi->parentDomain()->associate($domMoi);
+        $domAmi->save();
+        $domAdo->parentDomain()->associate($domMoi);
+        $domAdo->save();
+        
+        /*VIOLENCE*/
+        $domViolence->save();
+        $domQuoi->parentDomain()->associate($domViolence);
+        $domQuoi->save();
+        $domContreMoi->parentDomain()->associate($domViolence);
+        $domContreMoi->save();
+        $domEnMoi->parentDomain()->associate($domViolence);
+        $domEnMoi->save();
+        $domRue->parentDomain()->associate($domViolence);
+        $domRue->save();
+
         
         $t1->creatorUser()->associate($admin);
         $t1->domain()->associate($domPoids);
