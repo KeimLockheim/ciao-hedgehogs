@@ -35,7 +35,7 @@ Pour toutes les questions sur les métiers (choix d'un métier, description, ét
 
         <div class="col-md-7 designBox">
             <div class="row">
-      <form id="addQuestion" action="/question" post="post">
+      <form id="addQuestion" action="/question" method="post">
 
         <div class="form-group">
               <label for="categorie"> Catégorie (obligatoire):</label>

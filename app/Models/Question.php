@@ -3,6 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Session;
+
 
 class Question extends Model {
 
@@ -31,15 +35,15 @@ class Question extends Model {
 		// Ajout des contraintes supplémentaires
 		$validator->after(function ($validator) use($input) {
 
-			// Vérification de l'existence sous domain si spécifié
+			// Vérification de l'existence du sous domain si spécifié
 			if(!empty($input['subDomain'])){
 				if (!Domain::exists($input['subDomain'])) {
-					$validator->errors()->add('exists', Message::get('exists'));
+					$validator->errors()->add('exists', 'exists');
 				}
 			}
 			// Vérification de l'existence du domain
-			if (!Topic::exists($input['domain'])) {
-				$validator->errors()->add('exists', Message::get('exists'));
+			if (!Domain::exists($input['domain'])) {
+				$validator->errors()->add('exists', 'exists');
 			}
 
 		});
@@ -98,7 +102,7 @@ class Question extends Model {
 		$obj->domain_id = $values['domain'];
 		$obj->subDomain_id = $values['subDomain'];
 		$obj->content = $values['content'];
-		$obj->asked_by = Session::get('user_id');
+		$obj->asked_by = Session::get('id');
 		// Enregistrement de la question
 		$obj->save();
 	}
