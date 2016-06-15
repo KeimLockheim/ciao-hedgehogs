@@ -294,18 +294,17 @@
             <div>
                 <label class="control-label">Je suis:</label>
                 <div class="col-md-12 radio">
-                    <div class="col-md-3">
                     <label>
                         <input type="radio" name="sex" value="masculin" id="h" /> Un garçon
                     </label>
-                    </div>
-                    <div class="col-md-3">
+
                     <label>
                         <input type="radio" name="sex" value="féminin" id="f" /> Une fille
                     </label>
-                    </div>
                 </div>
             </div>
+
+
         </div>
     <div class="form-group">
           <label for="secret" > Choisir ma question secrète: </label>
