@@ -15,6 +15,10 @@ use Session;
 class Menu
 {
     public static function getDomains(){
+        $user = null;
+        if(Session::get('id') != null){
+            $user = User::find(Session::get('id'))->first();
+        }
         return ['domSante' => Domain::where('name','Santé')->first()->subDomains,
             'domStress' =>Domain::where('name','Stress')->first()->subDomains,
             'domBoire' => Domain::where('name','Boire, fumer, se droguer')->first()->subDomains,
@@ -27,6 +31,6 @@ class Menu
             'domArgent' => Domain::where('name','Argent')->first()->subDomains,
             'domReligions' => Domain::where('name','Religions')->first()->subDomains,
             'domFormations' => Domain::where('name','Formation et travail')->first()->subDomains,
-            'userConnected' => User::find(Session::get('id'))->first()];
+            'userConnected' => $user];
     }
 }
