@@ -2,7 +2,7 @@
 
   <input type="checkbox" id="menu" name="menu" class="menu-checkbox">
   <div class="menu">
-    <label class="menu-toggle" for="menu"><span>Toggle</span></label>
+    <label class="menu-toggle" for="menu"><span>&#xe9bd</span></label>
     <ul>
             <li>
               <label for="menu-3-2">Santé</label>
