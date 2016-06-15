@@ -28,12 +28,12 @@ class AuthController extends Controller
         // Persistance de l'authentification
         Session::put('id', $user->id);
 
-        return view('view_homePage', Menu::getDomains());
+        return redirect('dashboard');
     }
 
     public function logout()
     {
         Session::forget('id');
-        return view('view_homePage', Menu::getDomains());
+        return redirect('home');
     }
 }

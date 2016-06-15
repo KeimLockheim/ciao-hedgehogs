@@ -22,7 +22,7 @@ class Admin
 
         $user = User::where('id', Session::get('id'))->first();
         if(!isset($user)){
-            return response('Unauthorised', 403);
+            return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>'Accès non-autorisé !'], 403);
         }
 
         if (!$user->hasGroup('administrator')) {
