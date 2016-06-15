@@ -12,7 +12,7 @@
 			</div>
         </div>
 
-			<div class="col-md-7 designBox">
+			<div class="col-md-7 designBox dashboard">
                 <div class="row">
 				<h2>Gestion du site ciao</h2>
 				
@@ -27,7 +27,7 @@
 					<button type="submit" class="btn btn-primary btnBox"><img src="{{ asset('assets/img/addUser.png') }}" alt="logo" class="imgBtn"><p>Ajouter expert</p></button>
              </div>
                 <div class="col-md-4">
-					<button type="submit" class="btn btn-primary btnBox"><img src="{{ asset('assets/img/addDom.png') }}" alt="logo" class="imgBtn"><p>Ajouter domaine</p></button>
+					<a href="/addDomain"><button type="submit" class="btn btn-primary btnBox"><img src="{{ asset('assets/img/addDom.png') }}" alt="logo" class="imgBtn"><p>Ajouter domaine</p></button></a>
 					<button type="submit" class="btn btn-primary btnBox"><img src="{{ asset('assets/img/addAmb.png') }}" alt="logo" class="imgBtn"><p>Ajouter adresse</p></button>
              </div>
 
@@ -39,7 +39,7 @@
 
 			<div class="col-md-offset-1 col-md-4">
 				<div class="row">
-					<div class="col-md-12 designBox sideBox">
+					<div class="col-md-12 designBox sideBox dashboard">
 						<h3 class="titreBox">Profil</h3>
                         <div class="col-md-12 imgProfil">
 						      <img src="{{ asset('assets/img/user.png') }}" alt="logo" class="imgUser">
@@ -62,7 +62,7 @@
 				<p>Accueil <span class="interBread">></span> Profil expert</p>
 			</div>
         </div>
-				<div class="col-md-7 designBox">
+				<div class="col-md-7 designBox dashboard">
                     <div class="row">
 					<h2>Profil expert</h2>
 					<h3>Questions à traiter: </h3>
@@ -81,7 +81,7 @@
 					<ul class="lienArticle">
 						@if($myAnsweredQuestions != null)
 							@foreach ($myAnsweredQuestions as $questionAnswered)
-								<li><a href="domain/{{$questionAnswered->content}}/question/{{$questionAnswered->id}}">
+								<li><a href="domain/{{$questionAnswered->id}}/question/{{$questionAnswered->id}}">
                                    
                                     {{$questionAnswered->content}}</a></li>
 							@endforeach
