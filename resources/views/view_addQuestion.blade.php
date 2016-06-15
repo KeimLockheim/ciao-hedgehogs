@@ -38,7 +38,7 @@ Pour toutes les questions sur les métiers (choix d'un métier, description, ét
       <form id="addQuestion" action="/question" method="post">
 
         <div class="form-group">
-              <label for="categorie"> Catégorie (obligatoire):</label>
+              <label for="categorie"> Catégorie (obligatoire): </label>
             <select class="form-control" name="domain" id="categorie">
               <option value="{{$domain->id}}" data-id="{{$domain->id}}">{{$domain->name}}</option>
               @foreach ($parentDomains as $dom)

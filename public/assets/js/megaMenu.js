@@ -3,6 +3,8 @@ jQuery(document).ready(function(){
 
     init();
     $(window).on('resize', init);
+    $('[data-toggle="tooltip"]').tooltip(); 
+
 
     //$("#deconnecter").show();
     //$("#connecter").hide();
