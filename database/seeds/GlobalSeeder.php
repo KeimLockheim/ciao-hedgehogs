@@ -412,17 +412,10 @@ class GlobalSeeder extends Seeder
 
         $expert->secretQuestion()->associate($q1);
         $gExpert->users()->save($expert);
-        $expert->save();
-        
-    
 
-        /*$default = User::create([
-            'nickname' => 'default',
-            'birthyear' => 1999,
-            'sex' => 'féminin',
-            'localisation' => 'Neuchâtel',
-            'password' => bcrypt('default'),
-        ]);*/
+        $expert->save();
+
+
 
         /*
          * Posts
@@ -654,6 +647,8 @@ class GlobalSeeder extends Seeder
         $domContraception->save();
         $domRelation->parentDomain()->associate($domSexualite);
         $domRelation->save();
+        //add par maic:
+        $domSexualite->users()->save($expert);
         
         /*ESTIME DE SOI*/
         $domEstime->save();

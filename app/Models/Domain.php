@@ -109,7 +109,7 @@ class Domain extends Model
 	//Retourne les users liés au domain
 	public function users()
 	{
-		return $this->belongsToMany('App\Models\Group', 'domain_group', 'domain_id', 'user_id')->withTimestamps();
+		return $this->belongsToMany('App\Models\User', 'domain_user', 'domain_id', 'user_id')->withTimestamps();
 	}
 
 	//Retourne les urgencies en rapport avec le domaine
