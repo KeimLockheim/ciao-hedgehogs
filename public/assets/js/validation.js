@@ -170,11 +170,11 @@ $("#showQuestion").on('click', function() {
 			$('.sub').hide('slow');
 
 			$('#subYes').on('click', function() {
-				$('.sub').show('slow');
+				$('.sub').hide('slow');
 				});
 
 			$('#subNo').on('click', function() {
-				$('.sub').hide('slow');
+				$('.sub').show('slow');
 				});
 
 
