@@ -2,7 +2,7 @@
 @section('title', 'Dashboard')
 @section('content')
 
-	@if ($user->hasGroup('expert'))
+	@if ($user->hasGroup('administrator'))
 			<!-- ADMIN SECTION -->
 
 	<div class="container">
@@ -17,26 +17,22 @@
 				<h2>Gestion du site ciao</h2>
 				
 				
-				<div class="col-md-6">
-                <div class="row">
-					<button type="submit" class="btn btn-primary" name="addForum" value="add forum">Créer un forum</button>
-					<a href="dashboard/topics"><button type="submit" class="btn btn-primary btnBox" name="" value="">Gestion forum</button></a>
-				</div>
+				<div class="col-md-4">
+					<button type="submit" class="btn btn-primary btnBox" name="addForum" value="add forum"><img src="{{ asset('assets/img/addforum.png') }}" alt="logo" class="imgBtn"><p>Créer un forum</p></button>
+					<a href="dashboard/topics"><button type="submit" class="btn btn-primary btnBox"> <img src="{{ asset('assets/img/forum.png') }}" alt="logo" class="imgBtn"><p>Gestion forum</p></button></a>
                 </div>
 
-				<div class="col-md-6">
-                    <div class="row">
-					<button type="submit" class="btn btn-primary" name="" value="">Ajouter admin</button>
-					<button type="submit" class="btn btn-primary btnBox" name="" value="">Ajouter expert</button>
-				</div>
+				<div class="col-md-4">
+					<button type="submit" class="btn btn-primary btnBox"><img src="{{ asset('assets/img/addUser.png') }}" alt="logo" class="imgBtn"><p>Ajouter admin</p></button>
+					<button type="submit" class="btn btn-primary btnBox"><img src="{{ asset('assets/img/addUser.png') }}" alt="logo" class="imgBtn"><p>Ajouter expert</p></button>
+             </div>
+                <div class="col-md-4">
+					<button type="submit" class="btn btn-primary btnBox"><img src="{{ asset('assets/img/addDom.png') }}" alt="logo" class="imgBtn"><p>Ajouter domaine</p></button>
+					<button type="submit" class="btn btn-primary btnBox"><img src="{{ asset('assets/img/addAmb.png') }}" alt="logo" class="imgBtn"><p>Ajouter adresse</p></button>
              </div>
 
-                <div class="col-md-6">
-                <div class="row">
-					<button type="submit" class="btn btn-primary" name="addForum" value="add forum">Créer un forum</button>
-					<a href="dashboard/topics"><button type="submit" class="btn btn-primary btnBox" name="" value="">Gestion forum</button></a>
-				</div>
-                </div>
+
+
 
 			</div>
         </div>
@@ -60,7 +56,7 @@
 
 	
 	<!-- EXPERT SECTION -->
-	@elseif ($user->hasGroup('administrator'))
+	@elseif ($user->hasGroup('expert'))
 		<div class="container">
 		<div class="row" id="contenu">
 			<div class="col-md-12" id="breadcrums">
