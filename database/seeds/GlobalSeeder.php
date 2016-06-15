@@ -568,13 +568,13 @@ class GlobalSeeder extends Seeder
         DB::table('questions')->delete();
 
         $q1 = new Question([
-            'content' => "asfasdfoifdsodfoéfdsdsfasdffshoésadfhdsfodflhwfweoew sadfdsaf fdsasdf dfasf fd dfs s ssfsfsf sfsf sfsfs ",
+            'content' => "Comment faire pour avoir une barbe et une moustache à 14 ans ?",
         ]);
         $q2 = new Question([
-            'content' => "fsfdsdfs dfsf fds dafsfdsddsadsf dfsfsdsfs fsadsfadfdsdf fdaiojfdaspijndfsa ",
+            'content' => "Je vomis et j'ai des vertiges. Suis-je enceinte ?",
         ]);
         $q3 = new Question([
-            'content' => "fsfdsdfs dfsf fds ds fsadliuikkukuikikiiuikikikiiupijndfsa",
+            'content' => "Comment faire pour vite perdre du poids ?",
         ]);
 
 
@@ -598,10 +598,21 @@ class GlobalSeeder extends Seeder
          */
         DB::table('answers')->delete();
         $a1 = new Answer([
-            'content' => " BLoubloubloub ",
+            'content' => "Bonjour,
+            L'apparition de la pilosité varie d'une personne à une autre et survient lorsque la puberté est en place. Dans votre famille, il semble que ce phénomène soit précoce.
+            Il n'est pas possible de la précipiter, aussi nous vous conseillons de laisser au temps le temps de faire son travail de maturité et bientôt votre souhait sera votre réalité. Sourire
+            Nous vous souhaitons une belle semaine.
+            L'équipe CIAO ",
         ]);
         $a2 = new Answer([
-            'content' => "bluelulebuleuelueblubelueblueblu ",
+            'content' => "Bonjour,
+            Les symptômes que tu décris peuvent être dûs à une gastro, ce qui est de saison ! Mais tu as raison, il peut aussi s'agir de signes d'une grossesse.
+
+            Même si le préservatif a été bien mis et ne s'est pas déchiré, il peut y avoir des accidents. Notamment lorsqu'il y a des contacts très rapprochés entre les parties intimes avant la pose du préservatif. Des spermatozoïdes présents dans le pré-sperme peuvent suffire à la fécondation.
+
+            Pour en avoir le coeur net, nous te conseillons de faire un test de grossesse, si tes règles ont du retard. Tu peux en acheter dans les grandes surfaces ou en pharmacies. Si tu préfères, tu peux également prendre rendez-vous au planning familial afin de ne pas être seule (voir dans Près de chez toi).
+
+            Bonne chance !",
         ]);
 
         $a1->answererUser()->associate($expert);
