@@ -70,7 +70,7 @@
 
 				@if($unansweredQuestionsExpert != null)
 				@foreach ($unansweredQuestionsExpert as $questionNoAnswer)
-				<li>{{$questionNoAnswer->name}}</li>
+				<li><strong>{{$questionNoAnswer->questionUser->nickname}}</strong> a posé une question</li>
 				<a href="/dashboard/answers/{{$questionNoAnswer->id}}"><button type="button" class="btn btn-xs">Répondre</button></a>
 				@endforeach
 				@endif
