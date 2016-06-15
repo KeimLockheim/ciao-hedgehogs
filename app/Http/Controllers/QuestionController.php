@@ -5,9 +5,8 @@ use App\Models\Menu;
 use App\Models\User;
 use App\Models\Question;
 use Illuminate\Support\Facades\Response;
-use Request;
+use Illuminate\Http\Request;
 use Session;
-use App\Lib\Message;
 
 class QuestionController extends Controller {
 

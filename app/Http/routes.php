@@ -93,7 +93,7 @@ Route::group(['middleware' => ['web']], function () {
 
 		// routes pour les admins
 
-		Route::admin(['middleware' => ['expert']], function () {
+		Route::admin(['middleware' => ['admin']], function () {
 
 			//Créer un nouveau domain
 			Route::post('/domain','DomainController@store');

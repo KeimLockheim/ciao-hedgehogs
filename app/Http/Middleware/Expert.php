@@ -7,7 +7,7 @@ use Session;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
-class Authenticate
+class Expert
 {
     /**
      * Handle an incoming request.
@@ -21,6 +21,9 @@ class Authenticate
     {
 
         $user = User::where('id', Session::get('id'));
+        if(!isset($user)){
+            return response('Unauthorised', 403);
+        }
 
         if (!$user->hasGroup('expert')) {
             return response('Unauthorised', 403);
