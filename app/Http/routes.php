@@ -55,7 +55,7 @@ Route::group(['middleware' => ['web']], function () {
 
 
 
-
+  /*
 	// zone d'utilisateur connecté
 
 	Route::group(['middleware' => ['auth']], function () {
@@ -110,13 +110,14 @@ Route::group(['middleware' => ['web']], function () {
 			// modifier un topic
 			Route::post('/topic/update','TopicController@update');
 
-
-
-
 		});
 
+	}); */
 
-	});
+
+
+
+
 
 
 
