@@ -41,8 +41,10 @@
 
 
 
-	  		<header itemscope itemtype="https://schema.org/Organization">
                 	  	<div class="container">
+
+                                    <div class="monContenu">
+                            <header itemscope itemtype="https://schema.org/Organization">
 
                     <div class="headerResp">
 											  @if($userConnected)
@@ -67,7 +69,6 @@
                     </div>
                     </div>
 					</div>
-				</div>
 			</header>
 
         <div class="container">
@@ -84,6 +85,9 @@
       @yield('content')
 
     </div>
+            </div>
+
+          </div>
           <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
 
 

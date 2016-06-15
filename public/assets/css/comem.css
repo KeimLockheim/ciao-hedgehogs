@@ -399,6 +399,10 @@ width: 100%;
 
 
 /* Profil Admin*/
+.dashboard{
+padding-bottom: 30px!important;
+
+}
 
 .gestion{
 margin-top: 10px;
@@ -617,6 +621,13 @@ color: white;
     margin-top: 5px;
 }
 
+.answerTo{
+width: 100px;
+margin-right: 10px;
+}
+
+.answerTo:hover, .answerTo:focus{
+width: 100px;}
 
 /* accueil */
 
@@ -625,9 +636,6 @@ color: white;
     width: 100%;
         margin-top: -20px;
 
-}
-.listeAPuce{
-margin-left: 30px;
 }
 
 
@@ -735,6 +743,9 @@ width: 100%;
     padding-right: 0px;
 }
 
+.monContenu{
+    min-height: 1000px;
+}
 #logo{
     height: 70px;
     margin: 10px 0 10px 0;
@@ -769,9 +780,9 @@ width: 100%;
     padding: 10px 45px;
     margin-bottom: 15px;
     padding-top: 15px;
-
-
 }
+
+
 
 .lienArticle li a{
     color: #ff5a5f;
