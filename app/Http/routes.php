@@ -45,6 +45,11 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('/domain/getSubDomains/{domain_id}','DomainController@getSubDomains');
 
+	//Création de user
+	Route::get('/user/create','UserController@create');
+	Route::post('/user/', 'UserController@store');
+
+
 	// homepage
 	Route::get('/', function () {
 		return view('view_homePage',\App\Models\Menu::getDomains());
@@ -55,7 +60,7 @@ Route::group(['middleware' => ['web']], function () {
 
 
 
-  /*
+
 	// zone d'utilisateur connecté
 
 	Route::group(['middleware' => ['auth']], function () {
@@ -93,7 +98,7 @@ Route::group(['middleware' => ['web']], function () {
 
 		// routes pour les admins
 
-		Route::admin(['middleware' => ['admin']], function () {
+		Route::group(['middleware' => ['admin']], function () {
 
 			//Créer un nouveau domain
 			Route::post('/domain','DomainController@store');
@@ -112,7 +117,7 @@ Route::group(['middleware' => ['web']], function () {
 
 		});
 
-	}); */
+	});
 
 
 

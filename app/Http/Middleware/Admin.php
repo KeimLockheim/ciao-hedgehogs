@@ -20,7 +20,7 @@ class Admin
     public function handle($request, Closure $next, $guard = null)
     {
 
-        $user = User::where('id', Session::get('id'));
+        $user = User::where('id', Session::get('id'))->first();
         if(!isset($user)){
             return response('Unauthorised', 403);
         }

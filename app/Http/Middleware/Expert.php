@@ -3,8 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\Request;
 use Session;
-use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 
 class Expert
@@ -17,10 +17,10 @@ class Expert
      * @param  string|null  $guard
      * @return mixed
      */
-    public function handle($request, Closure $next, $guard = null)
+    public function handle(Request $request, Closure $next, $guard = null)
     {
 
-        $user = User::where('id', Session::get('id'));
+        $user = User::where('id', Session::get('id'))->first();
         if(!isset($user)){
             return response('Unauthorised', 403);
         }

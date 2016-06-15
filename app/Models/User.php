@@ -159,7 +159,7 @@ class User extends Model {
 
 	// retourne les questions auxquelles l'expert peut répondre
 	public function unansweredQuestionsExpert(){
-//
+		$unAnsweredQuestions=[];
 		foreach($this->expertInDomains as $domain){
 
 			foreach($domain->domainQuestions as $qq){

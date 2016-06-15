@@ -20,7 +20,7 @@
 
       <h3>La question posée</h3>
           <p>
-            {{$question->answer->content}}
+            {{$question->content}}
           </p>
 
       <h3>Catégorie</h3>
