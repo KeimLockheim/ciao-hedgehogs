@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use Session;
 use App\Models\User;
 
@@ -22,11 +23,11 @@ class Expert
 
         $user = User::where('id', Session::get('id'))->first();
         if(!isset($user)){
-            return response('Unauthorised', 403);
+            return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>'Oups, Accès non-autorisé !'], 403);
         }
 
         if (!$user->hasGroup('expert')) {
-            return response('Unauthorised', 403);
+            return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>'Oups, Accès non-autorisé !'], 403);
         }
         return $next($request);
 

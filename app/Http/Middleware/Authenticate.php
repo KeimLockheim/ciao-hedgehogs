@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Response;
 use Session;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,13 +23,15 @@ class Authenticate
         $userId = Session::get('id');
 
         if (!isset($userId)) {
-            return response('Unauthorised', 403);
+            return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>'Oups, Accès non-autorisé !'], 403);
+
         }
         return $next($request);
 
         if (Auth::guard($guard)->guest()) {
             if ($request->ajax() || $request->wantsJson()) {
-                return response('Unauthorized.', 401);
+                return Response::view('errors.403',['url' => redirect()->back()->getTargetUrl(),'message'=>'Oups, Accès non-autorisé !'], 403);
+
             } else {
                 return redirect()->guest('login');
             }
