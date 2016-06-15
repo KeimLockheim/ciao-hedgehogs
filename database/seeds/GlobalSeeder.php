@@ -44,7 +44,7 @@ class GlobalSeeder extends Seeder
 
 
         /*
-         * Domain
+         * Domains
          */
 
         DB::table('domains')->delete();
@@ -53,6 +53,67 @@ class GlobalSeeder extends Seeder
             'name' => 'Santé',
             'description' => 'Description',
         ]);
+        
+        $domQuestce = new Domain([
+            'name' => "Qu'est-ce que le stress?",
+            'description' => 'Description',
+        ]);
+        
+         $domMecanismes = new Domain([
+            'name' => "Mécanismes du stress",
+            'description' => 'Description',
+        ]);
+        
+         $domReponses = new Domain([
+            'name' => "Réponses au stress",
+            'description' => 'Description',
+        ]);
+        
+        $domSymptomes = new Domain([
+            'name' => "Symptômes du stress",
+            'description' => 'Description',
+        ]);
+        
+        $domSources = new Domain([
+            'name' => "Sources du stress",
+            'description' => 'Description',
+        ]);
+        
+        $domFaireFace = new Domain([
+            'name' => "Faire face au stress",
+            'description' => 'Description',
+        ]);
+        
+        $domSommeil = new Domain([
+            'name' => "Stress et sommeil",
+            'description' => 'Description',
+        ]);
+        
+        $domExamens = new Domain([
+            'name' => "Stress et examens",
+            'description' => 'Description',
+        ]);
+        
+        $domPuberte = new Domain([
+            'name' => "Stress et puberté",
+            'description' => 'Description',
+        ]);
+        
+        $domQuotidien = new Domain([
+            'name' => "Stress et quotidien",
+            'description' => 'Description',
+        ]);
+        
+        $domScolaire = new Domain([
+            'name' => "Stress et vie scolaire",
+            'description' => 'Description',
+        ]);
+        
+        $domRessources = new Domain([
+            'name' => "Ressources contre le stress",
+            'description' => 'Description',
+        ]);
+        
         $domSexualite = new Domain([
             'name' => 'Sexualité',
             'description' => 'Description',
@@ -179,6 +240,19 @@ class GlobalSeeder extends Seeder
         ]);
 
         $domSante->creatorUser()->associate($admin);
+        $domQuestce->creatorUser()->associate($admin);
+        $domMecanismes->creatorUser()->associate($admin);
+        $domReponses->creatorUser()->associate($admin);
+        $domSymptomes->creatorUser()->associate($admin);
+        $domSources->creatorUser()->associate($admin);
+        $domFaireFace->creatorUser()->associate($admin);
+        $domSommeil->creatorUser()->associate($admin);
+        $domExamens->creatorUser()->associate($admin);
+        $domPuberte->creatorUser()->associate($admin);
+        $domQuotidien->creatorUser()->associate($admin);
+        $domScolaire->creatorUser()->associate($admin);
+        $domRessources->creatorUser()->associate($admin);
+        
         $domSexualite->creatorUser()->associate($admin);
         $domReligion->creatorUser()->associate($admin);
         $domViolence->creatorUser()->associate($admin);
@@ -194,6 +268,19 @@ class GlobalSeeder extends Seeder
         $domFormations->creatorUser()->associate($admin);
 
         $domSante->save();
+        $domQuestce->save();
+        $domMecanismes->save();
+        $domReponses->save();
+        $domSymptomes->save();
+        $domSources->save();
+        $domFaireFace->save();
+        $domSommeil->save();
+        $domExamens->save();
+        $domPuberte->save();
+        $domQuotidien->save();
+        $domScolaire->save();
+        $domRessources->save();
+        
         $domSexualite->save();
         $domReligion->save();
         $domViolence->save();
@@ -209,7 +296,31 @@ class GlobalSeeder extends Seeder
 
         $domRapports->parentDomain()->associate($domSexualite);
         $domRapports->save();
-
+        $domQuestce->parentDomain()->associate($domSante);
+        $domQuestce->save();
+        $domMecanismes->parentDomain()->associate($domSante);
+        $domMecanismes->save();
+        $domReponses->parentDomain()->associate($domSante);
+        $domReponses->save();
+        $domSymptomes->parentDomain()->associate($domSante);
+        $domSymptomes->save();
+        $domSources->parentDomain()->associate($domSante);
+        $domSources->save();
+        $domFaireFace->parentDomain()->associate($domSante);
+        $domFaireFace->save();
+        $domSommeil->parentDomain()->associate($domSante);
+        $domSommeil->save();
+        $domExamens->parentDomain()->associate($domSante);
+        $domExamens->save();
+        $domPuberte->parentDomain()->associate($domSante);
+        $domPuberte->save();
+        $domQuotidien->parentDomain()->associate($domSante);
+        $domQuotidien->save();
+        $domScolaire->parentDomain()->associate($domSante);
+        $domScolaire->save();
+        $domRessources->parentDomain()->associate($domSante);
+        $domRessources->save();
+        
         $t1->creatorUser()->associate($admin);
         $t1->domain()->associate($domReligion);
         $t2->creatorUser()->associate($admin);
