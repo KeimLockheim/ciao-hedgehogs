@@ -32,8 +32,9 @@
                     <img src="{{ asset('assets/img/quiz.png') }}" alt="question" class="iconContainerHome">
                     <h2>Questions</h2><p> Anonyme et gratuit : tu peux poser tes questions, nous y répondrons dans les deux jours.</p>
                         <p>Pour ceci, rends-toi dans le domaine qui t'intéresse et pose ta question.</p>
-                     </div>
-
+                     
+                    </div>
+  
                 </div>
 
                 </div>

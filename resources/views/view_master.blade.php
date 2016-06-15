@@ -38,11 +38,12 @@
 	  </head>
 
 	  <body>
-	  	<div class="container">
 
 
 
 	  		<header itemscope itemtype="https://schema.org/Organization">
+                	  	<div class="container">
+
 				<div class="row">
 
 					<div class="col-md-2 logoHeader">

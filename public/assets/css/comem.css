@@ -261,11 +261,11 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .homeSecondContainer{
-    margin-top: 20px;
+    /*margin-top: 20px;
     background-color:white;
     min-height: 275px;
-        padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;*/
 }
 
 .homeSecondContainer h4{
@@ -292,10 +292,14 @@ padding-top: 10px;
 
 .homeSecondContainer h2{
 padding-top: 10px;
+     margin-top: 20px;
+    background-color:white;
+        padding-left: 20px;
+    padding-right: 20px;
 }
 
 .homeSecondContainer2{
-    height: 120px;
+    min-height: 260px;*/
 }
 
 .btnEspacePerso{
@@ -659,9 +663,6 @@ padding-top: 10px;
 padding-top: 10px;
 }
 
-.homeSecondContainer2{
-    height: 120px;
-}
 
 .actualites{
 margin-bottom: 15px;
