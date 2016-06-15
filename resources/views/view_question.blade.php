@@ -9,9 +9,7 @@
 
   <div class="col-md-12" id="breadcrums">
 
-      <p>Accueil <span class="interBread"></span> {{$domain->name}} <span class="interBread"></span>
-          on met l'id de la question mais ça devrait être le name. ID: {{$question->id}}{{$question->name}}
-      </p>
+      <p><a href="/home">Accueil</a> > <a href="/domain/{{$domain->id}}">{{$domain->name}}</a> > <a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a></p>
   </div>
 
     </div>
@@ -48,7 +46,7 @@
 
                 <div class="row">
 
-           
+
             @include('partials._moreInfos')
 
 

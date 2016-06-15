@@ -1,4 +1,4 @@
-@extends('view_master')
+ @extends('view_master')
 
 @section('title', 'Ajouter un domaine')
 
@@ -7,7 +7,7 @@
 
   <div class="row" id="contenu">
 			  <div class="col-md-12" id="breadcrums">
-			  	<p><a href="/dashboard">Dashboard </a><span class="interBread">></span> Ajouter un domaine d'expertise</p>
+			  	<p><a href="/dashboard">Dashboard </a> > Ajouter un domaine d'expertise</p>
 			  </div>
   </div>
 

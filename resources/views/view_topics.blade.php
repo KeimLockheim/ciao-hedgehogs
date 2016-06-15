@@ -7,11 +7,11 @@
         <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
-      <p>Accueil <span class="interBread">></span> {{$domain->name}} <span class="interBread">></span> Liste des discussions</p>
+      <p><a href="/home">Accueil</a> > <a href="/domain/{{$domain->id}}">{{$domain->name}}</a> > <a href="/domain/{{$domain->id}}/discussions">Liste des discussions</a></p>
     </div>
         </div>
-    
-    
+
+
     <div class="col-md-7 designBox">
         <div class="row">
 

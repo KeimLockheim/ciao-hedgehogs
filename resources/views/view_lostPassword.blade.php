@@ -6,7 +6,7 @@
 <div class="module-container">
 
   <div class="col-md-11" id="breadcrums">
-    <p>Accueil <span class="interBread">></span> Changer son mot de passe</p>
+    <p><a href="/home">Accueil</a> > Changer son mot de passe</p>
   </div>
 
   <h2>Changement de mot de passe</h2>

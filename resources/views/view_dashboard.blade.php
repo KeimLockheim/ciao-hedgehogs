@@ -8,7 +8,7 @@
 	<div class="container">
 		<div class="row" id="contenu">
 			<div class="col-md-12" id="breadcrums">
-				<p><a href="/home">Accueil</a><span class="interBread">></span> <a href="/dashboard">Profil administrateur</a></p>
+				<p><a href="/home">Accueil</a> > <a href="/dashboard">Profil administrateur</a></p>
 			</div>
         </div>
 

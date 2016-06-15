@@ -9,7 +9,7 @@
             <div class="row" id="contenu">
 
 			  <div class="col-md-12" id="breadcrums">
-			  	<p>Accueil <span class="interBread">></span> Admin <span class="interBread">></span> Valider une discussion</p>
+			  	<p><a href="/dashboard">Dashboard</a> > Valider une discussion</p>
 			  </div>
   </div>
 

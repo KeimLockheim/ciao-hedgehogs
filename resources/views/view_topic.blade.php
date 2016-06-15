@@ -5,10 +5,10 @@
 @section('content')
 
 <div class="container article" itemscope itemtype="https://schema.org/DiscussionForumPosting">
+  
     <div class="row" id="contenu">
-
     <div class="col-md-12" id="breadcrums">
-      <p>Accueil <span class="interBread">></span> {{$domain->name}} <span class="interBread">></span> Discussion</p>
+      <p><a href="/home">Accueil</a> > <a href="/domain/{{$domain->id}}">{{$domain->name}}</a> > Discussion</p>
     </div>
     </div>
 

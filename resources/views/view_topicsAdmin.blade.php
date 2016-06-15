@@ -5,9 +5,9 @@
 @section('content')
 
 <div class="row" id="contenu">
-      
+
     <div class="col-md-12" id="breadcrums">
-      <p>Accueil <span class="interBread">></span> Admin <span class="interBread">></span> Liste des discussions admin</p>
+      <p><a href="/dashboard">Dashboard</a> > Admin > Liste des discussions admin</p>
     </div>
   </div>
 

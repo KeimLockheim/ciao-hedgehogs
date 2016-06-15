@@ -10,7 +10,7 @@
   <div class="row" id="contenu">
 
 			  <div class="col-md-12" id="breadcrums">
-			  	<p><a href="/home">Accueil</a> <span class="interBread">></span><a href="/domain/{{$domain->id}}"> {{$domain->name}}</a> <span class="interBread">></span> Poser une question</p>
+			  	<p><a href="/home">Accueil</a> > <a href="/domain/{{$domain->id}}"> {{$domain->name}}</a> > Poser une question</p>
 			  </div>
   </div>
 

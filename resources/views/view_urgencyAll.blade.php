@@ -9,7 +9,7 @@
 			<div class="row" id="contenu">
 
 			  <div class="col-md-12" id="breadcrums">
-			  	<p>Accueil <span class="interBread">></span> Urgences</p>
+			  	<p><a href="/home">Accueil</a> > Urgences</p>
 			  </div>
       </div>
 

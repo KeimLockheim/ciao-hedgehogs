@@ -8,7 +8,7 @@
   <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
-      <p>Accueil <span class="interBread">></span> {{$domain->name}} <span class="interBread">></span> Proposer une discussion</p>
+      <p><a href="/home">Accueil</a> > <a href="/domain/{{$domain->id}}"></a>{{$domain->name}} > Proposer une discussion</p>
     </div>
         </div>
 </div>
