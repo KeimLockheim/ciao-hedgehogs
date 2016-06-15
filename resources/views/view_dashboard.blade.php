@@ -18,7 +18,7 @@
 				
 				
 				<div class="col-md-4">
-					<button type="submit" class="btn btn-primary btnBox" name="addForum" value="add forum"><img src="{{ asset('assets/img/addforum.png') }}" alt="logo" class="imgBtn"><p>Créer un forum</p></button>
+					<a href="/propose/1"><button type="submit" class="btn btn-primary btnBox" name="addForum" value="add forum"><img src="{{ asset('assets/img/addforum.png') }}" alt="logo" class="imgBtn"><p>Créer un forum</p></button></a>
 					<a href="dashboard/topics"><button type="submit" class="btn btn-primary btnBox"> <img src="{{ asset('assets/img/forum.png') }}" alt="logo" class="imgBtn"><p>Gestion forum</p></button></a>
                 </div>
 
@@ -47,8 +47,7 @@
 						<p><label>Nom:</label> {{$user->userProfile->lastName}}</p>
 						<p><label>Prénom:</label> {{$user->userProfile->firstName}}</p>
 						<p><label>Pseudo:</label> {{$user->nickname}}</p>
-						<button type="button" class="btn btn-xs" id="nicknameChange">Modifier mon pseudo</button>
-						<button type="button" class="btn btn-xs" id="passwordChange">Changer mon mot de passe</button>
+				
 					</div>
 				</div>
 			</div>
@@ -102,8 +101,6 @@
 							<p><label>Nom:</label> {{$user->userProfile->lastName}}</p>
 							<p><label>Prénom:</label> {{$user->userProfile->firstName}}</p>
 							<p><label>Pseudo:</label> {{$user->nickname}}</p>
-							<button type="button" class="btn btn-xs">Modifier mon pseudo</button>
-							<button type="button" class="btn btn-xs">Changer mon mot de passe</button>
 							<h3 class="titreBox">Domaines de compétences</h3>
 							<div>
 								<ul class="listeAPuce">
@@ -178,8 +175,7 @@
 						      <img src="{{ asset('assets/img/user.png') }}" alt="logo" class="imgUser">
 					       </div>				
 					<p><label>Pseudo:</label> {{$user->nickname}}</p>
-					<button type="button" class="btn btn-xs">Modifier mon pseudo</button>
-					<button type="button" class="btn btn-xs">Changer mon mot de passe</button>
+				
                 </div>
 
 			</div>

@@ -32,6 +32,7 @@
     </div>
     <div class="form-group">
       <label for="birth" class="control-label">Année de naissance</label>
+         <a href="#" class="iconInfo" data-toggle="tooltip" data-placement="top" title="Les informations suivantes sont importantes pour te donner une réponse appropriée.">&#xea08</a>
       <div>
         <input type="number" size="4" class="form-control" id="birth" name="birth" placeholder="Par exemple: 1995">
       </div>

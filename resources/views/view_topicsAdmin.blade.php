@@ -16,7 +16,7 @@
 				<h2>Discussions</h2>
 				<h3>Topics à valider: </h3>
 
-					<ul class="lienArticle listeAPuce">
+					<ul class="lienArticle">
 						@foreach ($topicsToValidate as $topicToValidate)
 						<li><a href="/dashboard/topics/validate/{{ $topicToValidate->id }}">{{ $topicToValidate->name }}</a></li>
 						@endforeach
@@ -24,7 +24,7 @@
 
 				<h3>Topics modérés: </h3>
 
-					<ul class="lienArticle listeAPuce">
+					<ul class="lienArticle">
 						@foreach ($topicsValidated as $topicValidated)
 							<li><a href="/dashboard/topics/validate/{{$topicValidated->id}}">{{ $topicValidated->name }}</a></li>
 						@endforeach
