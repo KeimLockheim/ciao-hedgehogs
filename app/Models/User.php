@@ -129,7 +129,7 @@ class User extends Model {
 	//Retourne les domains lié au user
 	public function expertInDomains()
 	{
-		return $this->belongsToMany('App\Models\Domain','domain_group','user_id','domain_id')->withTimestamps();
+		return $this->belongsToMany('App\Models\Domain','domain_user','user_id','domain_id')->withTimestamps();
 	}
 
 
