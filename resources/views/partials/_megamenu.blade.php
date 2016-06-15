@@ -1,4 +1,3 @@
-  <input type="hidden" id="isConnected" name="isConnected" value="{!!$userConnected!!}">
   <nav class="navbar navbar-inverse">
             <div class="container-fluid">
 
@@ -181,10 +180,10 @@
                 <ul class="nav navbar-nav navbar-right" id="deconnecter">
                     <li><a class="" href="/logout"><img src="{{ asset('assets/img/deco.png') }}" alt="deco" class="imgNav">Deconnexion</a></li>
                 </ul>
-                @else
                 <ul class="nav navbar-nav navbar-right" id="compte">
                     <li><a class="login" data-toggle="modal" data-target="#compte"><img src="{{ asset('assets/img/compte.png') }}" alt="mon compte" class="imgNav">Compte</a></li>
                 </ul>
+                @else
                 <ul class="nav navbar-nav navbar-right" id="connecter">
                     <li><a class="login" data-toggle="modal" data-target="#login"><img src="{{ asset('assets/img/sign_in.png') }}" alt="login" class="imgNav">Connexion</a></li>
                 </ul>

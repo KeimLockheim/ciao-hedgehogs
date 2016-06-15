@@ -451,7 +451,7 @@ $('#registrationForm').formValidation({
                     }
                 }
             },
-            genre: {
+            sex: {
                     validators: {
                         notEmpty: {
                             message: 'Fille ou Garçon? Tu devrais pouvoir répondre à la question ;-)'
