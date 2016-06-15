@@ -98,18 +98,18 @@ class QuestionController extends Controller {
 
     // Si la validation échoue
     if ($validate->fails()) {
+      dd('fail');
       return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Erreur de saisie'], 400);
     }
 
     //Ajout dans la BD
     try{
       Question::createOne($validate->getData());
-      Message::success('saved');
       return Response::view('errors.200',['url' => redirect()->back()->getTargetUrl(),'message'=>'Discussion créée !'], 200);
 
     }
     catch(\Exception $e){
-      Message::error('error');
+      dd($e);
       return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Problème de connexion à la base de donnée'], 400);
 
     }

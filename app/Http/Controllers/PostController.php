@@ -50,7 +50,6 @@ class PostController extends Controller {
 
     }
     catch(\Exception $e){
-      dd($e);
       return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Problème de connexion à la base de donnée'], 400);
 
     }
