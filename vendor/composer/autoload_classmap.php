@@ -245,7 +245,7 @@ return array(
     'PHPUnit_Util_Log_JUnit' => $vendorDir . '/phpunit/phpunit/src/Util/Log/JUnit.php',
     'PHPUnit_Util_Log_TAP' => $vendorDir . '/phpunit/phpunit/src/Util/Log/TAP.php',
     'PHPUnit_Util_PHP' => $vendorDir . '/phpunit/phpunit/src/Util/PHP.php',
-    'PHPUnit_Util_PHP_Default' => $vendorDir . '/phpunit/phpunit/src/Util/PHP/Default.php',
+    'PHPUnit_Util_PHP_Default' => $vendorDir . '/phpunit/phpunit/src/Util/PHP/DefaultUser.php',
     'PHPUnit_Util_PHP_Windows' => $vendorDir . '/phpunit/phpunit/src/Util/PHP/Windows.php',
     'PHPUnit_Util_Printer' => $vendorDir . '/phpunit/phpunit/src/Util/Printer.php',
     'PHPUnit_Util_Regex' => $vendorDir . '/phpunit/phpunit/src/Util/Regex.php',
