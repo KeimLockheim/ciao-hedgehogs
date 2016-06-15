@@ -9,6 +9,7 @@
 namespace App\Models;
 
 use App\Models\Domain;
+use Session;
 
 
 class Menu
@@ -25,6 +26,7 @@ class Menu
             'domDiscrim' => Domain::where('name','Discrimination et racismes')->first()->subDomains,
             'domArgent' => Domain::where('name','Argent')->first()->subDomains,
             'domReligions' => Domain::where('name','Religions')->first()->subDomains,
-            'domFormations' => Domain::where('name','Formation et travail')->first()->subDomains,];
+            'domFormations' => Domain::where('name','Formation et travail')->first()->subDomains,
+            'userConnected' => User::find(Session::get('id'))->first()];
     }
 }
