@@ -117,6 +117,9 @@ Route::group(['middleware' => ['web']], function () {
 			// modifier un topic
 			Route::post('/topic/update','TopicController@update');
 
+			//Check si un domain est déjà dans la BD
+			Route::get('/domain/domainCheck/{domain}','DomainController@nicknameCheck');
+
 		});
 
 	});

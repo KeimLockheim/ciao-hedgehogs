@@ -180,7 +180,7 @@ class Domain extends Model
 		$obj->parentDomain_id = $values['parentDomains'];
 		$obj->description = $values['description'];
 		$obj->content = $values['content'];
-		$obj->created_by = Session::get('user_id');
+		$obj->created_by = Session::get('id');
 		// Enregistrement du Domain
 		$obj->save();
 	}

@@ -8,6 +8,20 @@ use App\Lib\Message;
 
 class DomainController extends Controller {
 
+  /**
+   * @param $nickname
+   * @return string retourne false si le pseudo est disponible sinon true
+   */
+  public function domainCheck($domain)
+  {
+
+    //Vérifie l'existence du domain
+    $isAvailable = Domain::exists($domain);
+    $isAvailable = !$isAvailable;
+
+    return json_encode(['valid' => $isAvailable]);
+  }
+
   public function getSubDomains($domain_id){
     $subDomains = Domain::where('id', $domain_id)->first()->subDomains;
     if(!isset($subDomains)){
