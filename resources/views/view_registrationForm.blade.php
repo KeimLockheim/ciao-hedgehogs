@@ -293,7 +293,6 @@
 
             <div>
                 <label class="control-label">Je suis:</label>
-                <div class="col-md-12 radio">
                     <label>
                         <input type="radio" name="sex" value="masculin" id="h" /> Un garçon
                     </label>
@@ -301,7 +300,6 @@
                     <label>
                         <input type="radio" name="sex" value="féminin" id="f" /> Une fille
                     </label>
-                </div>
             </div>
 
 

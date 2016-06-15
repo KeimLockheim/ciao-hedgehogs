@@ -66,7 +66,7 @@
                     <div class="row">
 					<h2>Profil expert</h2>
 					<h3>Questions à traiter: </h3>
-					<ul class="lienArticle listeAPuce">
+					<ul class="lienArticle">
 
 						@if($unansweredQuestionsExpert != null)
 							@foreach ($unansweredQuestionsExpert as $questionNoAnswer)
@@ -78,7 +78,7 @@
 
 					</ul>
 					<h3>Mes questions répondues: </h3>
-					<ul class="lienArticle listeAPuce">
+					<ul class="lienArticle">
 						@if($myAnsweredQuestions != null)
 							@foreach ($myAnsweredQuestions as $questionAnswered)
 								<li><a href="domain/{{$questionAnswered->content}}/question/{{$questionAnswered->id}}">
@@ -103,7 +103,7 @@
 							<p><label>Pseudo:</label> {{$user->nickname}}</p>
 							<h3 class="titreBox">Domaines de compétences</h3>
 							<div>
-								<ul class="listeAPuce">
+								<ul>
 									@foreach ($user->expertInDomains as $domain)
 										<li>{{$domain->name}}</li>
 									@endforeach
@@ -126,7 +126,7 @@
                 <div class="row">
 				<h2>Gestion de mon activité</h2>
 				<h3>Mes questions en attente de réponse </h3>
-				<ul class="listeAPuce">
+				<ul>
 					@if($questionsNotAnswered != null)
 						@foreach ($questionsNotAnswered as $question)
 							<li>{{$question->content}}</li>
@@ -134,8 +134,7 @@
 					@endif
 				</ul>
 				<h3>Mes questions répondues </h3>
-				<ul class="listeAPuce" >
-
+				<ul>
 					@if($questionsAnswered != null)
 						@foreach ($questionsAnswered as $question)
 							<li><a href="/question/Answered">{{$question->content}}</a></li>
@@ -144,7 +143,7 @@
 
 				</ul>
 				<h3>Mes discussions</h3>
-				<ul class="myTopics listeAPuce">
+				<ul class="myTopics">
 
 
 					@if($myTopicsValidated != null)
@@ -155,7 +154,7 @@
 
 				</ul>
 				<h3>Mes discussions refusées</h3>
-				<ul class="refusedTopics listeAPuce">
+				<ul class="refusedTopics">
 					@if($refusedTopics != null)
 						@foreach ($refusedTopics as $topic)
 							<li>{{$topic->name}}</li>
