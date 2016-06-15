@@ -104,15 +104,18 @@ class Post extends Model {
 	 */
 	public static function createOne(array $values)
 	{
-		// Nouvelle instance de User
-		$obj = new Domain();
+		// Nouvelle instance de Post
+		$obj = new Post();
 		// Définition des propriétés
-		$obj->parentPost_id = $values['parentPost_id'];
+		if($values['parentPost_id'] != ""){
+			$obj->parentPost_id = $values['parentPost_id'];
+		}
+
 		$obj->topic_id = $values['topic_id'];
 		$obj->content = $values['answer'];
-		$obj->written_by = Session::get('user_id');
-		// Enregistrement du Domain
+		$obj->written_by = Session::get('id');
 		$obj->save();
+
 	}
 
 

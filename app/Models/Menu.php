@@ -15,9 +15,9 @@ use Session;
 class Menu
 {
     public static function getDomains(){
-        $userConnected = 'no';
+        $userConnected = false;
         if(Session::get('id') != null){
-            $userConnected = 'yes';
+            $userConnected = true;
         }
         return ['domSante' => Domain::where('name','Santé')->first()->subDomains,
             'domStress' =>Domain::where('name','Stress')->first()->subDomains,
