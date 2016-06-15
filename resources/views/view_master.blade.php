@@ -43,12 +43,13 @@
 
 	  		<header itemscope itemtype="https://schema.org/Organization">
                 	  	<div class="container">
+
                     <div class="headerResp">
 											  @if($userConnected)
-												<a href="#"><img src="{{ asset('assets/img/decoGris.png') }}" class="iconResp" alt="se deconnecter" id="IconCompte"></a>
+												<a href="/logout"><img src="{{ asset('assets/img/signinGris.png') }}" class="iconResp" alt="se deconnecter"></a>
+												<a href="/dashboard"><img src="{{ asset('assets/img/user.png') }}" class="iconResp" alt="compte" ></a>
 												@else
-                        <a href="#"><img src="{{ asset('assets/img/user.png') }}" class="iconResp" alt="compte" id="IconCompte"></a>
-                        <a href="#"><img src="{{ asset('assets/img/signinGris.png') }}" class="iconResp" alt="se connecter" id="IconCompte"></a>
+												<a class="login" data-toggle="modal" data-target="#login"><img src="{{ asset('assets/img/decoGris.png') }}" class="iconResp" alt="se connecter"></a>
 												@endif
                     </div>
 
