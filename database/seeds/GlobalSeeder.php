@@ -695,7 +695,6 @@ class GlobalSeeder extends Seeder
         DB::table('questions')->delete();
 
         $q1 = new Question([
-            'name'=>"Moustache",
             'content' => "Comment faire pour avoir une barbe et une moustache à 14 ans ?",
         ]);
         $q2 = new Question([
