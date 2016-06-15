@@ -18,14 +18,6 @@ $(document).ready(function() {
   });
 });
 
-		//Gestion réponse à un post
-		$('.answerTo').on('click', function(event) {
-			event.preventDefault();
-			var name = $(this).data('nickname');
-			$('#messageForum').val('@' + name + ': ');
-			$('#messageForum').focus();
-		});
-
 //lostPassowrd form
 $("#secreteQ").hide();
 
@@ -121,6 +113,25 @@ $("#showQuestion").on('click', function() {
 							}
 					}
 			});
+
+	//  <--- answerTopic form --->
+      $('#answerTopic').formValidation({
+          framework: 'bootstrap',
+          icon: {
+              valid: 'glyphicon glyphicon-ok',
+              invalid: 'glyphicon glyphicon-remove',
+              validating: 'glyphicon glyphicon-refresh'
+          },
+          fields: {
+              answer: {
+                  validators: {
+                      notEmpty: {
+                          message: "Tu dois écrire une réponse"
+                      }
+                  }
+              }
+          }
+      });
 
 
 
