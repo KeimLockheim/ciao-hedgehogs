@@ -137,7 +137,15 @@ $("#showQuestion").on('click', function() {
 								validators: {
 										notEmpty: {
 												message: "Merci de définir un domaine (sous-domaine, domaine)"
-										}
+										},
+										remote: {
+                        message: 'Le domaine existe déjà',
+												url: function(validator, $field, value) {
+    										return '/domain/domainCheck/' + value;
+													},
+                        type: 'GET',
+												delay: 500
+                    }
 								}
               },
               description: {
@@ -380,7 +388,7 @@ $('#registrationForm').formValidation({
     										return '/user/nicknameCheck/' + value;
 													},
                         type: 'GET',
-												delay: 1000
+												delay: 500
                     }
                   }
                 },
