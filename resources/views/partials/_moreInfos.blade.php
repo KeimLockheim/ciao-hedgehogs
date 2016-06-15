@@ -1,6 +1,6 @@
 
 <div class="col-md-12 designBox sideBox">
-<h3 class="titreBox">Je ne trouve pas de réponse :</h3>
+<h3 class="titreBox">Tu ne trouve pas de réponse :</h3>
 
             <a href="/ask/{{$domain->id}}"><button type="submit" class="btn btn-m"><img src="{{ asset('assets/img/quizWhite.png') }}" alt="question" class="iconButton">Poser ma question!</button></a>
 
