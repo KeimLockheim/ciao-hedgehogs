@@ -21,18 +21,20 @@
 
                         <label class="date"><time itemprop="dateCreated">{{$topic->created_at}}</time></label>
 
-                    <p class="ContainerAnswerQuestion firstPost">premier post: {{$posts->first()->content}}</p>
+                    <p class="ContainerAnswerQuestion firstPost">{{$posts->first()->content}}</p>
                 </div>
 
                 @foreach($posts->splice(1) as $post)
                 <div class="divContainerAnswer rep">
-                    <label data-nickname="{{$post->writterUser->nickname}}" class="labelMessage" itemprop="creator">{{$post->writterUser->nickname}}</label>
+                    <label class="labelMessage" itemprop="creator">{{$post->writterUser->nickname}}</label>
 
                     <label class="date"><time itemprop="dateCreated">{{$post->created_at}}</time></label>
                     <p class="ContainerAnswerQuestion" itemprop="comment">
-                      réponse: {{$post->content}}
+                      {{$post->content}}
                     </p>
-                    <button type="button" class="btn btn-xs" id="answerThis">répondre</button>
+                    <div class="col-md-3 btnForum">
+                        <a href="#"><button type="button" data-nickname="{{$post->writterUser->nickname}}" class="btn btn-xs answerTo">Répondre</button></a>
+                    </div>
                 </div>
                 @endforeach
 
