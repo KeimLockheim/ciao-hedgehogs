@@ -6,9 +6,8 @@
 <div class="container article">
 
   <div class="row" id="contenu">
-
 			  <div class="col-md-12" id="breadcrums">
-			  	<p>Dashboard <span class="interBread">></span> Ajouter un domaine d'expertise</p>
+			  	<p><a href="/dashboard">Dashboard </a><span class="interBread">></span> Ajouter un domaine d'expertise</p>
 			  </div>
   </div>
 
@@ -37,12 +36,12 @@
  								 <div>
  										 <div class="radio">
  												 <label>
- 														 <input type="radio" name="parentDomain" value="oui" id="subYes" /> Oui
+ 														 <input type="radio" name="isDomain" value="oui" id="subYes" /> Oui
  												 </label>
  										 </div>
  										 <div class="radio">
  												 <label>
- 														 <input type="radio" name="parentDomain" value="non" id="subNo" /> Non
+ 														 <input type="radio" name="isDomain" value="non" id="subNo" /> Non
  												 </label>
  										 </div>
  								 </div>

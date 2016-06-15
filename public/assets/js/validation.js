@@ -155,7 +155,7 @@ $("#showQuestion").on('click', function() {
                       }
                   }
               },
-							parentDomain: {
+							isDomain: {
                   validators: {
                       notEmpty: {
                           message: "Merci de définir une description pour le domaine"
