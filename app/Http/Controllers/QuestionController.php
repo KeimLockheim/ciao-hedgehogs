@@ -5,13 +5,8 @@ use App\Models\Menu;
 use App\Models\User;
 use App\Models\Question;
 use Illuminate\Support\Facades\Response;
-<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Session;
-=======
-use Request;
-use App\Lib\Message;
->>>>>>> parent of 34621ba... middle admin expert et default
 
 class QuestionController extends Controller {
 
