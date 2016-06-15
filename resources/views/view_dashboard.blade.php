@@ -92,7 +92,7 @@
 							<h3 class="titreBox">Domaines de compétences</h3>
 							<div>
 								<ul>
-									@foreach ($user->domains as $domain)
+									@foreach ($user->expertInDomains as $domain)
 										<li>{{$domain->name}}</li>
 									@endforeach
 								</ul>
