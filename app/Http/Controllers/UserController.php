@@ -37,18 +37,8 @@ class UserController extends Controller {
     $data=[];
 
     $data = Menu::getDomains();
-    //$user = User::where('id', Auth::id())->with('userProfile')->get()->first();
-    //$user = User::where('id', 2)->with('groups','userProfile')->get()->first();
-    //dd($user->userProfile);
-    //dd(User::where('id', 1)->with('questions.answer')->get());
 
     $data['user'] = User::where('id', Session::get('id'))->with( 'expertInDomains.domainQuestions.answer', 'expertInDomains.domainQuestions.domain', 'questions.answer', 'domains', 'userProfile', 'createdTopics.domain')->get()->first();
-
-  /*  foreach($data['user']->expertInDomains as $qqq){
-      $answers[]=$qqq->domainQuestions;
-    }
-    dd($answers);*/
-
 
     $data['unansweredQuestionsExpert'] = $data['user']->unansweredQuestionsExpert();
 
