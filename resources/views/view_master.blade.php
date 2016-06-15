@@ -71,7 +71,7 @@
 
 			@include('partials._megamenu')
 
-			@include('partials._menuResp')
+		  @include('partials._responsiveMenu')
 
 
         </div>
@@ -85,8 +85,6 @@
 
 
  				@include('partials._footer')
-
-				@include('partials._responsiveMenu')
 
  				@include('partials._signIn')
 

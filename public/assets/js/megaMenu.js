@@ -1,12 +1,8 @@
 // Dropdown Menu Fade
 jQuery(document).ready(function(){
-    
-      init();
+
+    init();
     $(window).on('resize', init);
-
-
-    $("#deconnecter").hide();
-      //  $("#connecter").hide();
 
 
     $(".dropdown").hover(
