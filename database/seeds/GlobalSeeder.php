@@ -295,10 +295,6 @@ class GlobalSeeder extends Seeder
 
 
 
-
-
-
-
         /*
          * Users
          */
@@ -342,13 +338,17 @@ class GlobalSeeder extends Seeder
          */
         DB::table('posts')->delete();
         $p1 = new Post([
-            'content' => 'lbsblsblsblsb',
+            'content' => 'Coucou
+            Y il a qu un professionel qui peut te repondre bien^^ par raport a ton IMC...pose la question dans La rubrique Santé;) bisous',
         ]);
         $p2 = new Post([
-            'content' =>'khjgxdfdfzghujihuigzutfzdrtrfguzhio' ,
+            'content' =>"Salut
+            Arides a tres bien expliqué ce qu'il fait faire mais sache que chaque personne as une morphologie différente. Ci certains deviennent "gros" a vue d'oeil pour d'autres (dont moi) c'est l'inverse et il n'y a pas d'aventages... Le plus important est l'alimentation et s'hydrater correctement apres tu px ajouter un sport (par expérience je suis en sport études avk 3.30h par jour et la base est l'alimentation) ... et le plus important de tout c'est d'aimer comme tu est " ,
         ]);
         $p3 = new Post([
-            'content' => "arwtsezrdfugiuhogizfutzdsetarwtszdufgzuhijphougizufztsawrq3AWTSEZDRUFTGIZUHOIJPOHUIGUFZDW35ERZUIOUPIJOJPIOUZIT6R75E",
+            'content' => "Coucou! Moi, je te conseille de t'inscrire quelque part, à la natation, par ex.
+            En général, ça ne coûte pas très cher et le fait d'être inscrite d'oblige à y aller.
+            Essaye aussi de faire du sport avec des ami(e)s. A deux, le temps passera plus vite que seule!",
         ]);
 
 
@@ -358,13 +358,13 @@ class GlobalSeeder extends Seeder
          */
         DB::table('topics')->delete();
         $t1 = new Topic([
-            'name' => 'Comment prier ?',
+            'name' => 'Suis-je anorexique ?',
         ]);
         $t2 = new Topic([
-            'name' => 'Pourquoi je dois joindre les mains pour prier ?',
+            'name' => 'Je me trouve grosse je voudrait pouvoir perdre du poids comment faire? ? ? ?',
         ]);
         $t3 = new Topic([
-            'name' => "Je veux changer de religion, c'est grave ?",
+            'name' => "Pas envie de faire du sport",
         ]);
 
         /*SANTE*/
@@ -540,11 +540,11 @@ class GlobalSeeder extends Seeder
         $domBougerRisque->save();
         
         $t1->creatorUser()->associate($admin);
-        $t1->domain()->associate($domReligion);
+        $t1->domain()->associate($domManger);
         $t2->creatorUser()->associate($admin);
-        $t2->domain()->associate($domReligion);
+        $t2->domain()->associate($domManger);
         $t3->creatorUser()->associate($admin);
-        $t3->domain()->associate($domReligion);
+        $t3->domain()->associate($domManger);
 
         $t1->save();
         $t2->save();
