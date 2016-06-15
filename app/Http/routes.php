@@ -11,33 +11,18 @@
 |
 */
 
-Route::get('/', function()
-{
-	return view('view_homePage',\App\Models\Menu::getDomains());
-});
-
-
-// routes pour les vues
-
-// accessible à tous
-
-
-Route::get('/home', function () {
-	return view('view_homePage',\App\Models\Menu::getDomains());
-});
-
-Route::get('/lost', function () {
-	// est-ce qu'on besoin d'une vue ou c'est toujours présent? //Je ne comprends pas ce commentaire.
-	return view('view_lostPassword',\App\Models\Menu::getDomains());
-});
-
 
 
 Route::group(['middleware' => ['web']], function () {
-	Route::get('/lost', 'PasswordController@index');
-	Route::post('/password/', 'PasswordController@update');
 
-	Route::post('/topic', 'TopicController@store');
+	// password perdu
+	Route::get('/lost', 'PasswordController@index');
+
+
+	//login
+	Route::post('/auth/login', 'AuthController@login');
+
+
 
     Route::get('/domain/{domain_id}/urgences', 'UrgencyController@indexDomain');
     Route::get('/urgences/', 'UrgencyController@index');
@@ -60,6 +45,7 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::get('/domain/getSubDomains/{domain_id}','DomainController@getSubDomains');
 
+	// homepage
 	Route::get('/', function () {
 		return view('view_homePage',\App\Models\Menu::getDomains());
 	});
@@ -67,52 +53,85 @@ Route::group(['middleware' => ['web']], function () {
 		return view('view_homePage',\App\Models\Menu::getDomains());
 	});
 
-	Route::post('/auth/login', 'AuthController@login');
+
+
+
+	// zone d'utilisateur connecté
 
 	Route::group(['middleware' => ['auth']], function () {
 
+		// API listes de tous les services:
+
+		// enregistrement de topic
+		Route::post('/topic', 'TopicController@store');
+		// enregistrement du nouveau mot de passe
+		Route::post('/password/', 'PasswordController@update');
+
 		//Ajoute un post dans un topic
 		Route::post('/post','PostController@store');
-
 		//Créer une question pour les experts
 		Route::post('/question','QuestionController@store');
 
 
-
-
-
 		Route::get('/logout', 'AuthController@logout');
+		Route::get('/dashboard', 'UserController@index');
 
-		Route::group(['middleware' => ['acl']], function () {
+		Route::post('/secretQuestion/', 'SecretQuestionController@store');
+
+
+
+		// routes pour les experts
+
+		Route::group(['middleware' => ['expert']], function () {
+
+			Route::post('/answer/', 'AnswerController@store');
+
+			// répondre à une question
+			Route::get('/dashboard/answers/{question_id}', 'QuestionController@answerQuestion');
+
+		});
+
+		// routes pour les admins
+
+		Route::admin(['middleware' => ['expert']], function () {
+
+			//Créer un nouveau domain
+			Route::post('/domain','DomainController@store');
+
+			// liste des topics
+			Route::get('/dashboard/topics', 'TopicController@listTopics');
+
+			//validation d'un topics
+			Route::get('/dashboard/topics/validate/{topic_id}', 'TopicController@validateTopic');
+
+			// enregistrer une urgence
+			Route::post('/urgency/', 'UrgencyController@store');
+
+			// modifier un topic
+			Route::post('/topic/update','TopicController@update');
+
+
 
 
 		});
+
+
 	});
 
 
-	// middleware connecté
 
-	Route::get('/dashboard', 'UserController@index');
-	Route::post('/post/', 'PostController@store');
-	Route::post('/question/','QuestionController@store');
-	Route::post('/topic/','TopicController@store');
 
 	//middleware admin
 
-	Route::get('/dashboard/topics', 'TopicController@listTopics');
-	Route::get('/dashboard/topics/validate/{topic_id}', 'TopicController@validateTopic');
-
-	Route::get('/dashboard/answers/{question_id}', 'QuestionController@answerQuestion');
-
-	Route::post('/domain/', 'DomainController@store');
-	Route::post('/secretQuestion/', 'SecretQuestionController@store');
-	Route::post('/answer/', 'AnswerController@store');
-	Route::post('/urgency/', 'UrgencyController@store');
-	Route::post('/topic/update','TopicController@update');
 
 
 
-	Route::resource('user', 'UserController');
+
+
+
+
+
+/*	Route::resource('user', 'UserController');
 	Route::resource('group', 'GroupController');
 	Route::resource('domain', 'DomainController');
 	Route::resource('secretquestion', 'SecretQuestionController');
@@ -121,5 +140,5 @@ Route::group(['middleware' => ['web']], function () {
 	Route::resource('topic', 'TopicController');
 	Route::resource('forum', 'ForumController');
 	Route::resource('answer', 'AnswerController');
-	Route::resource('question', 'QuestionController');
+	Route::resource('question', 'QuestionController');*/
 });
