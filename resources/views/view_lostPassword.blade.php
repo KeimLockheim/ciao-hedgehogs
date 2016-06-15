@@ -38,7 +38,7 @@
         <input type="password" name="password" class="form-control" id="password" placeholder="Mot de passe">
       </div>
       <div class="progress password-progress">
-          <div id="strengthBar" class="progress-bar" role="progressbar" style="width: 0;"></div>
+        <div id="strengthBar" class="progress-bar" role="progressbar" style="width: 0;"></div>
       </div>
     </div>
     <div class="form-group">

@@ -7,69 +7,69 @@
 <div class="container article">
 
 
-        <div class="row" id="contenu">
+  <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
       <p><a href="/home">Accueil </a> > {{$domain->name}} > <a href="/domain/{{$domain->id}}/question/{{$question->id}}">Liste des questions</a></p>
     </div>
-        </div>
+  </div>
 
 
-    <div class="col-md-7 designBox">
-                            <div class="row">
+  <div class="col-md-7 designBox">
+    <div class="row">
+      
+      <h2>{{$domain->name}}</h2>
 
-         <h2>{{$domain->name}}</h2>
-
-          <p>
+      <p>
         Ci-dessous sont listées toutes les questions en rapport avec cette thématique.
 
-          </p>
+      </p>
     </div>
-        </div>
+  </div>
 
-      <div class="col-md-7 designBox">
-            <div class="row">
-         <h3>Liste des questions :</h3>
+  <div class="col-md-7 designBox">
+    <div class="row">
+      <h3>Liste des questions :</h3>
 
-         <ul class="designForum">
-          @if($domain->isSubdomain())
-           @foreach($domain->subDomainQuestions as $question)
-              <li><a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a>
-                <p>{{$question->created_at}}</p>
-              </li>
-          @endforeach
-          @else
-              @if($domain->domainQuestions != null)
-                  @foreach($domain->domainQuestions as $question)
-                      <li><a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a>
-                        <p>{{$question->created_at}}</p>
-                      </li>
-                  @endforeach
-              @endif
-          @endif
+      <ul class="designForum">
+        @if($domain->isSubdomain())
+        @foreach($domain->subDomainQuestions as $question)
+        <li><a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a>
+          <p>{{$question->created_at}}</p>
+        </li>
+        @endforeach
+        @else
+        @if($domain->domainQuestions != null)
+        @foreach($domain->domainQuestions as $question)
+        <li><a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a>
+          <p>{{$question->created_at}}</p>
+        </li>
+        @endforeach
+        @endif
+        @endif
 
-        </ul>
-      </div>
+      </ul>
+    </div>
 
-      </div>
-
-
-      <div class="col-md-offset-1 col-md-4">
-
-        <div class="row">
+  </div>
 
 
+  <div class="col-md-offset-1 col-md-4">
+
+    <div class="row">
 
 
-            @include('partials._moreInfos')
 
 
-            @include('partials._moreDiscussion')
+      @include('partials._moreInfos')
 
-        </div>
 
-      </div>
-
+      @include('partials._moreDiscussion')
 
     </div>
-    @stop
+
+  </div>
+
+
+</div>
+@stop

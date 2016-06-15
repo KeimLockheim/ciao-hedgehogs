@@ -5,62 +5,62 @@
 @section('content')
 
 <div class="container article">
-		<div class="row" id="contenu">
+	<div class="row" id="contenu">
 
-  <div class="col-md-12" id="breadcrums">
+		<div class="col-md-12" id="breadcrums">
 
-      <p><a href="/home">Accueil</a> > <a href="/domain/{{$domain->id}}">{{$domain->name}}</a> > <a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a></p>
-  </div>
+			<p><a href="/home">Accueil</a> > <a href="/domain/{{$domain->id}}">{{$domain->name}}</a> > <a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a></p>
+		</div>
 
-    </div>
+	</div>
 
-      <div class="col-md-7 designBox" itemscope itemtype="https://schema.org/Question">
-         <h2>Question / Réponse</h2>
-            <h3 itemprop="about">@if($domain->parentDomain !== null) {{$domain->parentDomain->name}} @endif  {{$domain->name}}</h3>
-                <div class="divContainerQuestion">
-                        <label class="labelMessage">quesiton posée par: <span itemprop="creator">{{$question->questionUser->nickname}}</span></label>
+	<div class="col-md-7 designBox" itemscope itemtype="https://schema.org/Question">
+		<h2>Question / Réponse</h2>
+		<h3 itemprop="about">@if($domain->parentDomain !== null) {{$domain->parentDomain->name}} @endif  {{$domain->name}}</h3>
+		<div class="divContainerQuestion">
+			<label class="labelMessage">quesiton posée par: <span itemprop="creator">{{$question->questionUser->nickname}}</span></label>
 
-                        <label class="date"><time itemprop="dateCreated">{{$question->created_at}}</time></label>
+			<label class="date"><time itemprop="dateCreated">{{$question->created_at}}</time></label>
 
-                    <p class="ContainerAnswerQuestion" itemprop="text">{{$question->content}}</p>
-                </div>
+			<p class="ContainerAnswerQuestion" itemprop="text">{{$question->content}}</p>
+		</div>
 
-                <div class="divContainerAnswer rep">
-                        <label class="labelMessage"><span itemprop="creator">{{$question->answer->answered_by}}</span></label>
+		<div class="divContainerAnswer rep">
+			<label class="labelMessage"><span itemprop="creator">{{$question->answer->answered_by}}</span></label>
 
-                        <label class="date"><time itemprop="dateCreated">{{$question->answer->created_at}}</time></label>
+			<label class="date"><time itemprop="dateCreated">{{$question->answer->created_at}}</time></label>
 
-                    <p class="ContainerAnswerQuestion" itemprop="text">
-                  {{$question->answer->content}}
-                    </p>
-                </div>
-          <div class="form-group">
-			    <div >
-			      <input type="submit" class="btn btn-primary publier" value="Rendre public"/>
-			    </div>
-			  </div>
-      </div>
-
-
-        <div class="col-md-offset-1 col-md-4">
-
-                <div class="row">
+			<p class="ContainerAnswerQuestion" itemprop="text">
+				{{$question->answer->content}}
+			</p>
+		</div>
+		<div class="form-group">
+			<div >
+				<input type="submit" class="btn btn-primary publier" value="Rendre public"/>
+			</div>
+		</div>
+	</div>
 
 
-            @include('partials._moreInfos')
+	<div class="col-md-offset-1 col-md-4">
+
+		<div class="row">
 
 
-      @include('partials._moreDiscussion')
+			@include('partials._moreInfos')
 
 
-      @include('partials._moreOnTheme')
+			@include('partials._moreDiscussion')
+
+
+			@include('partials._moreOnTheme')
 
 
 
 
-      </div>
-    </div>
+		</div>
+	</div>
 
 
-    </div>
-    @stop
+</div>
+@stop

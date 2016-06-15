@@ -4,38 +4,38 @@
 
 @section('content')
 
-		<div class="container article">
+<div class="container article">
 
-              <div class="row" id="contenu">
+	<div class="row" id="contenu">
 
-    <div class="col-md-12" id="breadcrums">
-      <p><a href="/home">Accueil</a> > <a href="/domain/{{$domain->id}}">{{$domain->name}}</a></p>
-    </div>
-        </div>
+		<div class="col-md-12" id="breadcrums">
+			<p><a href="/home">Accueil</a> > <a href="/domain/{{$domain->id}}">{{$domain->name}}</a></p>
+		</div>
+	</div>
 
-			  	<div class="col-md-7 designBox">
-                    <div class="row">
-            {!!$domain->content!!}
+	<div class="col-md-7 designBox">
+		<div class="row">
+			{!!$domain->content!!}
 
-			  	</div>
-            </div>
-
-
-            <div class="col-md-offset-1 col-md-4">
-
-            <div class="row">
+		</div>
+	</div>
 
 
-			  	@include('partials._moreInfos')
+	<div class="col-md-offset-1 col-md-4">
 
-                @include('partials._moreDiscussion')
-
-                @include('partials._moreOnTheme')
-
-            </div>
-        </div>
-                    </div>
+		<div class="row">
 
 
+			@include('partials._moreInfos')
 
-        @stop
+			@include('partials._moreDiscussion')
+
+			@include('partials._moreOnTheme')
+
+		</div>
+	</div>
+</div>
+
+
+
+@stop
