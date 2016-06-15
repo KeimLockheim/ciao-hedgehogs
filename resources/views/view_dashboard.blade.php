@@ -106,7 +106,7 @@
 							<button type="button" class="btn btn-xs">Changer mon mot de passe</button>
 							<h3 class="titreBox">Domaines de compétences</h3>
 							<div>
-								<ul>
+								<ul class="listeAPuce">
 									@foreach ($user->expertInDomains as $domain)
 										<li>{{$domain->name}}</li>
 									@endforeach
@@ -129,7 +129,7 @@
                 <div class="row">
 				<h2>Gestion de mon activité</h2>
 				<h3>Mes questions en attente de réponse </h3>
-				<ul class="">
+				<ul class="listeAPuce">
 					@if($questionsNotAnswered != null)
 						@foreach ($questionsNotAnswered as $question)
 							<li>{{$question->content}}</li>
@@ -137,7 +137,7 @@
 					@endif
 				</ul>
 				<h3>Mes questions répondues </h3>
-				<ul class="">
+				<ul class="listeAPuce" >
 
 					@if($questionsAnswered != null)
 						@foreach ($questionsAnswered as $question)
@@ -147,7 +147,7 @@
 
 				</ul>
 				<h3>Mes discussions</h3>
-				<ul class="myTopics">
+				<ul class="myTopics listeAPuce">
 
 
 					@if($myTopicsValidated != null)
@@ -158,7 +158,7 @@
 
 				</ul>
 				<h3>Mes discussions refusées</h3>
-				<ul class="refusedTopics">
+				<ul class="refusedTopics listeAPuce">
 					@if($refusedTopics != null)
 						@foreach ($refusedTopics as $topic)
 							<li>{{$topic->name}}</li>
