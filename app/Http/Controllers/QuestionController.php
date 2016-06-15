@@ -5,8 +5,13 @@ use App\Models\Menu;
 use App\Models\User;
 use App\Models\Question;
 use Illuminate\Support\Facades\Response;
+<<<<<<< HEAD
 use Illuminate\Http\Request;
 use Session;
+=======
+use Request;
+use App\Lib\Message;
+>>>>>>> parent of 34621ba... middle admin expert et default
 
 class QuestionController extends Controller {
 
@@ -45,7 +50,7 @@ class QuestionController extends Controller {
     //$user = User::where('id', Auth::id())->with('userProfile')->get()->first();
 
     // à effacer et remplacer avec la ligne du dessus mais pour le moment je test avec un user précis car je peux pas chopper le auth
-    $user = User::where('id', Session::get('id'))->get()->first();
+    $user = User::where('id', 1)->get()->first();
 
     $question = Question::where('id', $question_id)->with('answer', 'domain')->get()->first();
     if(!isset($question)){
