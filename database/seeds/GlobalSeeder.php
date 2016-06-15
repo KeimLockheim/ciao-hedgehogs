@@ -228,10 +228,48 @@ class GlobalSeeder extends Seeder
             'description' => 'Description',
         ]);
         
+        /*MANGER BOUGER*/
         $domManger = new Domain([
             'name' => 'Manger-bouger',
             'description' => "Manger? Avoir faim, avoir envie de manger ou avoir de l'appétit, quelles différences? Bouger? Bon pour la tête, bon pour le corps? Les bienfaits du sport et du mouvement sont en effet multiples et encore davantage quand tu le fais avec plaisir! Se sentir trop gros? Vouloir être plus maigre? Se trouver pas assez musclée? Comment arriver à être content de son corps?",
         ]);
+        $domPoids = new Domain([
+            'name' => "Poids adolescence",
+            'description' => 'Description',
+        ]);
+        $domMangerComment = new Domain([
+            'name' => "Manger: comment?",
+            'description' => 'Description',
+        ]);
+        $domMaigrir = new Domain([
+            'name' => "Maigrir, grossir",
+            'description' => 'Description',
+        ]);
+        $domAno = new Domain([
+            'name' => "Anorexie-boulimie",
+            'description' => 'Description',
+        ]);
+        $domCommentBouger = new Domain([
+            'name' => "Comment bouger?",
+            'description' => 'Description',
+        ]);
+        $domBouger = new Domain([
+            'name' => "Bouger pour sa santé",
+            'description' => 'Description',
+        ]);
+        $domBougerNul = new Domain([
+            'name' => "Bouger, c'est nul...",
+            'description' => 'Description',
+        ]);
+        $domBougerPl = new Domain([
+            'name' => "Bouger par plaisir",
+            'description' => 'Description',
+        ]);
+        $domBougerRisque = new Domain([
+            'name' => "Bouger sans risque",
+            'description' => 'Description',
+        ]);
+        
         $domEstime = new Domain([
             'name' => 'Estime de soi',
             'description' => "L'estime de soi varie comme la température de ton corps sur le thermomètre. Elle est changeante et il est possible qu'elle soit très haute ou très basse selon les périodes de la vie. Mais par tes choix et tes actes, tu as le pouvoir de l'améliorer! Teste-toi, fais les jeux, lis les infos, enregistre ton niveau d'estime quotidien, surfe sur ces pages... et tu verras qu'avoir une bonne estime de soi n'est pas insurmontable!",
@@ -362,30 +400,44 @@ class GlobalSeeder extends Seeder
         
         /*BOIRE FUMER DROGUER*/
         $domBoire->creatorUser()->associate($admin);
+        $domDrogue->creatorUser()->associate($admin);
+        $domProduits->creatorUser()->associate($admin);
+        $domConso->creatorUser()->associate($admin);
+        $domEntourage->creatorUser()->associate($admin);
+        $domSociete->creatorUser()->associate($admin);
+        $domBFEstime->creatorUser()->associate($admin);
+        $domTropInt->creatorUser()->associate($admin);
 
-        
+        /*MANGER BOUGER*/
+        $domManger->creatorUser()->associate($admin);
+        $domPoids->creatorUser()->associate($admin);
+        $domMangerComment->creatorUser()->associate($admin);
+        $domMaigrir->creatorUser()->associate($admin);
+        $domAno->creatorUser()->associate($admin);
+        $domCommentBouger->creatorUser()->associate($admin);
+        $domBouger->creatorUser()->associate($admin);
+        $domBougerNul->creatorUser()->associate($admin);
+        $domBougerPl->creatorUser()->associate($admin);
+        $domBougerRisque->creatorUser()->associate($admin);
+    
+
         $domSexualite->creatorUser()->associate($admin);
         $domReligion->creatorUser()->associate($admin);
         $domViolence->creatorUser()->associate($admin);
         $domRapports->creatorUser()->associate($admin);
 
-        $domBoire->creatorUser()->associate($admin);
-        $domManger->creatorUser()->associate($admin);
         $domEstime->creatorUser()->associate($admin);
         $domMoi->creatorUser()->associate($admin);
         $domDiscrim->creatorUser()->associate($admin);
         $domArgent->creatorUser()->associate($admin);
         $domFormations->creatorUser()->associate($admin);
         
-        $domSante->save();
-        $domStress->save();
 
         $domSexualite->save();
         $domReligion->save();
         $domViolence->save();
 
-        $domBoire->save();
-        $domManger->save();
+        
         $domEstime->save();
         $domMoi->save();
         $domDiscrim->save();
@@ -396,6 +448,7 @@ class GlobalSeeder extends Seeder
         $domRapports->save();
         
         /*SANTE*/
+        $domSante->save();
         $domEtat->parentDomain()->associate($domSante);
         $domEtat->save();
         $domOuQui->parentDomain()->associate($domSante);
@@ -422,6 +475,7 @@ class GlobalSeeder extends Seeder
         $domSanteInternet->save();
         
         /*STRESS*/
+        $domStress->save();
         $domQuestce->parentDomain()->associate($domStress);
         $domQuestce->save();
         $domMecanismes->parentDomain()->associate($domStress);
@@ -446,6 +500,44 @@ class GlobalSeeder extends Seeder
         $domScolaire->save();
         $domRessources->parentDomain()->associate($domStress);
         $domRessources->save();
+        
+        /*BOIRE FUMER DROGUER*/
+        $domBoire->save();
+        $domDrogue->parentDomain()->associate($domBoire);
+        $domDrogue->save();
+        $domProduits->parentDomain()->associate($domBoire);
+        $domProduits->save();
+        $domConso->parentDomain()->associate($domBoire);    
+        $domConso->save();
+        $domEntourage->parentDomain()->associate($domBoire);    
+        $domEntourage->save();
+        $domSociete->parentDomain()->associate($domBoire);    
+        $domSociete->save();
+        $domBFEstime->parentDomain()->associate($domBoire);
+        $domBFEstime->save();
+        $domTropInt->parentDomain()->associate($domBoire);
+        $domTropInt->save();
+        
+        /*MANGER BOUGER*/
+        $domManger->save();
+        $domPoids->parentDomain()->associate($domManger);
+        $domPoids->save();
+        $domMangerComment->parentDomain()->associate($domManger);
+        $domMangerComment->save();
+        $domMaigrir->parentDomain()->associate($domManger);
+        $domMaigrir->save();
+        $domAno->parentDomain()->associate($domManger);
+        $domAno->save();
+        $domCommentBouger->parentDomain()->associate($domManger);
+        $domCommentBouger->save();
+        $domBouger->parentDomain()->associate($domManger);
+        $domBouger->save();
+        $domBougerNul->parentDomain()->associate($domManger);
+        $domBougerNul->save();
+        $domBougerPl->parentDomain()->associate($domManger);
+        $domBougerPl->save();
+        $domBougerRisque->parentDomain()->associate($domManger);
+        $domBougerRisque->save();
         
         $t1->creatorUser()->associate($admin);
         $t1->domain()->associate($domReligion);
