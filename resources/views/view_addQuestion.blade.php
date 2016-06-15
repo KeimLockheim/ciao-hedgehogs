@@ -40,7 +40,11 @@
           <div class="form-group">
             <label for="categorie"> Catégorie (obligatoire): </label>
             <select class="form-control" name="domain" id="categorie">
+              @if($domain->parentDomain_id == null)
               <option value="{{$domain->id}}" data-id="{{$domain->id}}">{{$domain->name}}</option>
+              @else
+              <option value="{{$domain->parentDomain->id}}" data-id="{{$domain->parentDomain->id}}">{{$domain->parentDomain->name}}</option>
+              @endif
               @foreach ($parentDomains as $dom)
               @if($dom->id != $domain->id)
               <option value="{{$dom->id}}" data-id="{{$dom->id}}">{{$dom->name}}</option>
@@ -52,7 +56,11 @@
           <div class="form-group">
             <label for="theme"> Thème précis: </label>
             <select class="form-control" name="subDomain" id="theme">
+              @if($domain->parentDomain_id != null)
+              <option value="{{$domain->id}}" data-id="{{$domain->id}}">{{$domain->name}}</option>
+              @else
               <option disabled selected value> Tu peux préciser une sous-catégorie </option>
+              @endif
             </select>
           </div>
 
