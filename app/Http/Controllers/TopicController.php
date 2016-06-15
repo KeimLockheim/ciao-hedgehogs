@@ -153,9 +153,8 @@ class TopicController extends Controller {
 
       return Response::view('errors.404',['url' => redirect()->back()->getTargetUrl(),'message'=>'Erreur de saisie.'], 404);
     }
+    $topic = Topic::where('id',$inputs['topic_id'])->first();
 
-    $topic = Topic::find($inputs['topic_id'])->first();
-    $topic = 
     if (!isset($topic)) {
       return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Topic non trouvé.'], 404);
     }
