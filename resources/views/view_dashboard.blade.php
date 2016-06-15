@@ -8,15 +8,15 @@
 	<div class="container">
 		<div class="row" id="contenu">
 			<div class="col-md-12" id="breadcrums">
-				<p>Accueil <span class="interBread">></span> Profil administrateur</p>
+				<p><a href="/home">Accueil</a><span class="interBread">></span> <a href="/dashboard">Profil administrateur</a></p>
 			</div>
         </div>
 
 			<div class="col-md-7 designBox dashboard">
                 <div class="row">
 				<h2>Gestion du site ciao</h2>
-				
-				
+
+
 				<div class="col-md-4">
 					<a href="/propose/1"><button type="submit" class="btn btn-primary btnBox" name="addForum" value="add forum"><img src="{{ asset('assets/img/addforum.png') }}" alt="logo" class="imgBtn"><p>Créer un forum</p></button></a>
 					<a href="dashboard/topics"><button type="submit" class="btn btn-primary btnBox"> <img src="{{ asset('assets/img/forum.png') }}" alt="logo" class="imgBtn"><p>Gestion forum</p></button></a>
@@ -47,19 +47,19 @@
 						<p><label>Nom:</label> {{$user->userProfile->lastName}}</p>
 						<p><label>Prénom:</label> {{$user->userProfile->firstName}}</p>
 						<p><label>Pseudo:</label> {{$user->nickname}}</p>
-				
+
 					</div>
 				</div>
 			</div>
 		</div>
 
-	
+
 	<!-- EXPERT SECTION -->
 	@elseif ($user->hasGroup('expert'))
 		<div class="container">
 		<div class="row" id="contenu">
 			<div class="col-md-12" id="breadcrums">
-				<p>Accueil <span class="interBread">></span> Profil expert</p>
+				<p><a href="/home">Accueil</a><span class="interBread">></span> <a href="/dashboard">Profil Expert</a></p>
 			</div>
         </div>
 				<div class="col-md-7 designBox dashboard">
@@ -82,7 +82,7 @@
 						@if($myAnsweredQuestions != null)
 							@foreach ($myAnsweredQuestions as $questionAnswered)
 								<li><a href="domain/{{$questionAnswered->id}}/question/{{$questionAnswered->id}}">
-                                   
+
                                     {{$questionAnswered->content}}</a></li>
 							@endforeach
 						@endif
@@ -119,7 +119,7 @@
 		<div class="container">
             <div class="row" id="contenu">
 			<div class="col-md-12" id="breadcrums">
-				<p>Accueil <span class="interBread">></span> Profil utilisateur</p>
+				<p><a href="/home">Accueil</a><span class="interBread">></span> <a href="/dashboard">{{$user->name}}</a></p>
 			</div>
         </div>
 			<div class="col-md-7 designBox dashboard">
@@ -172,9 +172,9 @@
                             <h3 class="titreBox">Profil</h3>
                             <div class="col-md-12 imgProfil">
 						      <img src="{{ asset('assets/img/user.png') }}" alt="logo" class="imgUser">
-					       </div>				
+					       </div>
 					<p><label>Pseudo:</label> {{$user->nickname}}</p>
-				
+
                 </div>
 
 			</div>
