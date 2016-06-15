@@ -27,6 +27,7 @@ Pour toutes les questions sur les métiers (choix d'un métier, description, ét
 
 
           </p>
+                                    <button type="button" class="btn btn-xs">Regarder si ma question existe déjà</button>
     </div>
         </div>
 
@@ -34,7 +35,7 @@ Pour toutes les questions sur les métiers (choix d'un métier, description, ét
 
         <div class="col-md-7 designBox">
             <div class="row">
-      <form id="addQuestion">
+      <form id="addQuestion" action="/question" post="post">
 
         <div class="form-group">
               <label for="categorie"> Catégorie (obligatoire):</label>
@@ -57,7 +58,7 @@ Pour toutes les questions sur les métiers (choix d'un métier, description, ét
 
           <div class="form-group">
               <label for="question">Ma question: </label>
-                <a id="existQuestion" href="/domain/{{$domain->id}}/questions"><button type="button" class="btn btn-xs"> Regarder si ma question existe déjà</button></a>
+                <a id="existQuestion" href="/domain/{{$domain->id}}/questions"></a>
 
 
                 <textarea class="form-control" rows="4" name="content" id="question"></textarea>

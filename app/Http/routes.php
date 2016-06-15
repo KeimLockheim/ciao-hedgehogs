@@ -71,7 +71,15 @@ Route::group(['middleware' => ['web']], function () {
 
 	Route::group(['middleware' => ['auth']], function () {
 
+		//Ajoute un post dans un topic
 		Route::post('/post','PostController@store');
+
+		//Créer une question pour les experts
+		Route::post('/question','QuestionController@store');
+
+
+
+
 
 		Route::get('/logout', 'AuthController@logout');
 
