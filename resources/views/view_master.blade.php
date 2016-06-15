@@ -43,20 +43,24 @@
 
 	  		<header itemscope itemtype="https://schema.org/Organization">
                 	  	<div class="container">
+                    <div class="headerResp">
+                        <a href="#"><img src="{{ asset('assets/img/user.png') }}" class="iconResp" alt="compte" id="IconCompte"></a>
+                          <a href="#"><img src="{{ asset('assets/img/signinGris.png') }}" class="iconResp" alt="se connecter" id="IconCompte"></a>
+                        <a href="#"><img src="{{ asset('assets/img/decoGris.png') }}" class="iconResp" alt="se deconnecter" id="IconCompte"></a>
 
+                    </div>
+                            
 				<div class="row">
-
-					<div class="col-md-2 logoHeader">
+                    <div class="col-md-2 logoHeader">
                         <a href="/home"><img src="{{ asset('assets/img/logo.png') }}"  alt="logo" id="logo" itemprop="logo"></a>
 					</div>
+					
 				<div class="col-lg-offset-7 col-md-3 icon">
-					<div >
-
+                    
+					<div>
                     <a href="/urgences"><img src="{{ asset('assets/img/ambulance-xxl.png') }}" alt="urgence" class="imgHeader"></a>
 
                   	<a href="/ask/1"><button type="submit" class="btn btn-xs large">Poser ma question!</button></a>
-
-
                     </div>
                     </div>
 					</div>
