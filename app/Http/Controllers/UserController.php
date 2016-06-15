@@ -79,6 +79,9 @@ class UserController extends Controller {
    */
   public function create()
   {
+    if(Session::get('id') !== null){
+      return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Déjà connecté !'], 400);
+    }
     $secretQuestion = SecretQuestion::all();
     $data = Menu::getDomains();
     $data['secretQuestion'] = $secretQuestion;
