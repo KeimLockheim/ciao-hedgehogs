@@ -16,6 +16,7 @@
 						<link href=" {{ asset('assets/css/responsiveMenu.css') }}" rel="stylesheet">
             <link href=" {{ asset('assets/formvalidation/dist/css/formValidation.min.css') }}" rel="stylesheet">
 						<link href='https://fonts.googleapis.com/css?family=Roboto:700,500,400|Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
+          <link rel="shortcut icon" href="{{{ asset('assets/img/favicon.png') }}}">
 
       <!-- jQuery  -->
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -32,11 +33,7 @@
       <script src="{{ asset('assets/js/validation.js') }}"></script>
 			<script src="{{ asset('assets/js/main.js') }}"></script>
 
-
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets/testResp/css/component.css') }}"/>
-				<script src="{{ asset('assets/testResp/js/modernizr.custom.js') }}"></script>
-				<script src="{{ asset('assets/testResp/js/jquery.dlmenu.js') }}"></script>
-        <script src="{{ asset('assets/testResp/js/modernizr.js') }}"></script>
+        <script src="{{ asset('assets/js/modernizr.js') }}"></script>
 
 	  </head>
 
