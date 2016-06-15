@@ -400,7 +400,7 @@ width: 100%;
 
 /* Profil Admin*/
 .dashboard{
-padding-bottom: 30px;
+padding-bottom: 30px!important;
 
 }
 

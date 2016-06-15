@@ -39,7 +39,7 @@
 
 			<div class="col-md-offset-1 col-md-4">
 				<div class="row">
-					<div class="col-md-12 designBox sideBox dashboard">
+					<div class="col-md-12 designBox sideBox">
 						<h3 class="titreBox">Profil</h3>
                         <div class="col-md-12 imgProfil">
 						      <img src="{{ asset('assets/img/user.png') }}" alt="logo" class="imgUser">
@@ -122,7 +122,7 @@
 				<p>Accueil <span class="interBread">></span> Profil utilisateur</p>
 			</div>
         </div>
-			<div class="col-md-7 designBox">
+			<div class="col-md-7 designBox dashboard">
                 <div class="row">
 				<h2>Gestion de mon activité</h2>
 				<h3>Mes questions en attente de réponse </h3>
