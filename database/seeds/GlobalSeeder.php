@@ -338,17 +338,23 @@ class GlobalSeeder extends Seeder
          */
         DB::table('posts')->delete();
         $p1 = new Post([
-            'content' => 'Coucou
-            Y il a qu un professionel qui peut te repondre bien^^ par raport a ton IMC...pose la question dans La rubrique Santé;) bisous',
+            'content' => "Bonjour, 
+            comme il est dit dans le titre je voudrais savoir si je suis anorexique. 
+            Je suis en dépression depuis 4 ans mais l'en dernier j'ai été hospitalisé pendants 4 moi pour tentative de suicide, et depuis que je suis sortir j'ai des problème d'alimentation et j'ai perdu 11 kg en 5 mois. je compte tout les calories et je jeune presque tout le temps. mon imc est de 17,6.
+            répondez moi au plus vite merci :D",
         ]);
         $p2 = new Post([
             'content' =>"Salut
-            Arides a tres bien expliqué ce qu'il fait faire mais sache que chaque personne as une morphologie différente. Ci certains deviennent "gros" a vue d'oeil pour d'autres (dont moi) c'est l'inverse et il n'y a pas d'aventages... Le plus important est l'alimentation et s'hydrater correctement apres tu px ajouter un sport (par expérience je suis en sport études avk 3.30h par jour et la base est l'alimentation) ... et le plus important de tout c'est d'aimer comme tu est " ,
+            Arides a tres bien expliqué ce qu'il fait faire mais sache que chaque personne as une morphologie différente. Ci certains deviennent 'gros' a vue d'oeil pour d'autres (dont moi) c'est l'inverse et il n'y a pas d'aventages... Le plus important est l'alimentation et s'hydrater correctement apres tu px ajouter un sport (par expérience je suis en sport études avk 3.30h par jour et la base est l'alimentation) ... et le plus important de tout c'est d'aimer comme tu est." ,
         ]);
         $p3 = new Post([
-            'content' => "Coucou! Moi, je te conseille de t'inscrire quelque part, à la natation, par ex.
-            En général, ça ne coûte pas très cher et le fait d'être inscrite d'oblige à y aller.
-            Essaye aussi de faire du sport avec des ami(e)s. A deux, le temps passera plus vite que seule!",
+            'content' => "Hello,
+            Je ne vais pas dire que je suis en surpoids, mais...
+            J'aime manger, surtout les sucrerie. J'ai du ventre et j'aimerai m'en débarrasser. Sauf que j'ai la flemme de faire du sport. Pourtant je sais que pour perdre du poids c'est le seul moyen.(je ne veux pas faire de régime)
+            De plus si j'ai trop de sucre je risque d'avoir du diabète ou d'autre maladie. pleure 
+            Ce qui ne me motive pas non plus c'est que je n'ai pas de physique. 
+            Donnez-moi de vos conseille j'en serai reconnaissante sourire 
+            Merci",
         ]);
 
 
@@ -361,7 +367,7 @@ class GlobalSeeder extends Seeder
             'name' => 'Suis-je anorexique ?',
         ]);
         $t2 = new Topic([
-            'name' => 'Je me trouve grosse je voudrait pouvoir perdre du poids comment faire? ? ? ?',
+            'name' => 'Comment perdre du poid?',
         ]);
         $t3 = new Topic([
             'name' => "Pas envie de faire du sport",
@@ -540,11 +546,11 @@ class GlobalSeeder extends Seeder
         $domBougerRisque->save();
         
         $t1->creatorUser()->associate($admin);
-        $t1->domain()->associate($domManger);
+        $t1->domain()->associate($domPoids);
         $t2->creatorUser()->associate($admin);
-        $t2->domain()->associate($domManger);
+        $t2->domain()->associate($domPoids);
         $t3->creatorUser()->associate($admin);
-        $t3->domain()->associate($domManger);
+        $t3->domain()->associate($domPoids);
 
         $t1->save();
         $t2->save();
@@ -629,14 +635,14 @@ class GlobalSeeder extends Seeder
          */
         DB::table('userProfiles')->delete();
         $up1 = new UserProfile([
-            'firstName' => "Jean",
-            'lastName' => "Peuplu",
-            'email' => "jean.peuplu@example.com",
+            'firstName' => "Patricia",
+            'lastName' => "Meyer",
+            'email' => "pat.meyer@gmail.com",
         ]);
         $up2 = new UserProfile([
-            'firstName' => "Jeanette",
-            'lastName' => "Lapine",
-            'email' => "jeannette.lapine@example.com",
+            'firstName' => "Lucien",
+            'lastName' => "Demierre",
+            'email' => "luciendemierre@gmail.com",
         ]);
 
         $up1->user()->associate($expert);

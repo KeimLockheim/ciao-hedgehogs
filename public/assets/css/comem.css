@@ -576,6 +576,7 @@ h3{
     width: 60%;
 border-radius: 2px;
 box-shadow: 3px 2px 6px #555;
+    padding: 15px;
 }
 
 .divContainerAnswer{
