@@ -91,7 +91,7 @@ class Topic extends Model {
 	 */
 	public static function exists($id)
 	{
-		return self::find($id) !== null;
+		return self::find($id)->first() !== null;
 	}
 
 	/** Récupère le prochain id de la table topics

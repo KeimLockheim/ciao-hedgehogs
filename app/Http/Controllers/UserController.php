@@ -37,6 +37,9 @@ class UserController extends Controller {
     $data=[];
 
     $data = Menu::getDomains();
+    if(Session::get('id') == null){
+      return Response::view('errors.403',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Oups, accès non-autorisé !'], 403);
+    }
 
     $data['user'] = User::where('id', Session::get('id'))->with( 'expertInDomains.domainQuestions.answer', 'expertInDomains.domainQuestions.domain', 'questions.answer', 'domains', 'userProfile', 'createdTopics.domain')->get()->first();
 
