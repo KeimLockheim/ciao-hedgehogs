@@ -141,7 +141,7 @@ $("#showQuestion").on('click', function() {
 										remote: {
                         message: 'Le domaine existe déjà',
 												url: function(validator, $field, value) {
-    										return '/domain/domainCheck/' + value;
+    										return '/domain/domainCheck/' + '{'+ value +'}';
 													},
                         type: 'GET',
 												delay: 500
@@ -166,17 +166,16 @@ $("#showQuestion").on('click', function() {
       });
 
 			//gestion de l'affichage du imput choix sous-domaine
+
 			$('.sub').hide('slow');
 
-			$('#subYes').on('click', function(event) {
-				event.preventDefault();
+			$('#subYes').on('click', function() {
 				$('.sub').show('slow');
-			});
+				});
 
-			$('#subNo').on('click', function(event) {
-				event.preventDefault();
+			$('#subNo').on('click', function() {
 				$('.sub').hide('slow');
-			});
+				});
 
 
 
