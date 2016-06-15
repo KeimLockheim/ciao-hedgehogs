@@ -9,14 +9,15 @@
 
   <form id="registrationForm" action="/user" method="post">
     <div class="form-group">
-      <label for="pseudo" class="control-label">Pseudo </label> <a href="#" class="iconInfo" data-toggle="tooltip" data-placement="top" title="Un pseudo qui garantisse vraiment ton anonymat : ni nom, ni prénom, ni surnom, ni nom de compte de chat, Facebook... ">&#xea08</a>
+      <label for="pseudo" class="control-label">Pseudo </label>
+      <a href="#" class="iconInfo" data-toggle="tooltip" data-placement="top" title="Un pseudo qui garantisse vraiment ton anonymat : ni nom, ni prénom, ni surnom, ni nom de compte de chat, Facebook... ">&#xea08</a>
       <div>
         <input  class="form-control" id="pseudo" name="pseudo" placeholder="Pseudo">
       </div>
     </div>
     <div class="form-group">
-      <label for="password" class="control-label">Mot de passe <a href="#" class="iconInfo" data-toggle="tooltip" data-placement="top" title="Un mot de passe contenant des chiffres, des symboles et une combinaison de lettres majuscules et minuscules est bien plus difficile à deviner. Entre au minimum 4 caractères.">&#xea08</a>
-        </label>
+      <label for="password" class="control-label">Mot de passe</label>
+      <a href="#" class="iconInfo" data-toggle="tooltip" data-placement="top" title="Un mot de passe contenant des chiffres, des symboles et une combinaison de lettres majuscules et minuscules est bien plus difficile à deviner. Entre au minimum 4 caractères.">&#xea08</a>
       <div>
         <input type="password" class="form-control" id="password" name="password" placeholder="Mot de passe">
         <div class="progress password-progress">
@@ -290,22 +291,18 @@
       </div>
     </div>
     <div class="form-group">
-
-            <div>
                 <label class="control-label">Je suis:</label>
-                <div class="col-md-12 radio">
+                <div class="radio">
                     <label>
                         <input type="radio" name="sex" value="masculin" id="h" /> Un garçon
                     </label>
-
+                </div>
+                <div class="radio">
                     <label>
                         <input type="radio" name="sex" value="féminin" id="f" /> Une fille
                     </label>
-                </div>
-            </div>
-
-
-        </div>
+              </div>
+      </div>
     <div class="form-group">
           <label for="secret" > Choisir ma question secrète: </label>
           <div>
@@ -318,6 +315,7 @@
      </div>
       <div class="form-group">
           <label for="answer" >Ma réponse secrète: </label>
+          <a href="#" class="iconInfo" data-toggle="tooltip" data-placement="top" title="Ta réponse doit être constitué que d'un seul mot, il sera plus simple pour toi de t'en souvenir">&#xea08</a>
       <div>
             <textarea name="answerQuestion" class="form-control" placeholder="Si tu perds ton mot de passe tu pourras le récupérer en répondant à la question que tu as choisie" class="form-control" rows="2" id="answer"></textarea>
           </div>

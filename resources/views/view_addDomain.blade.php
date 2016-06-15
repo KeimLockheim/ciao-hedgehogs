@@ -19,7 +19,7 @@
 
           <div class="form-group">
               <label for="question">Nouveau domaine</label>
-              <input type="text" name="newDomain">
+              <input type="text" class="form-control" name="newDomain">
           </div>
 
           <div class="form-group">
@@ -37,18 +37,18 @@
  								 <div>
  										 <div class="radio">
  												 <label>
- 														 <input type="radio" name="parentDomain" value="oui" id="oui" /> Oui
+ 														 <input type="radio" name="parentDomain" value="oui" id="subYes" /> Oui
  												 </label>
  										 </div>
  										 <div class="radio">
  												 <label>
- 														 <input type="radio" name="parentDomain" value="non" id="non" /> Non
+ 														 <input type="radio" name="parentDomain" value="non" id="subNo" /> Non
  												 </label>
  										 </div>
  								 </div>
  						 </div>
 
-          <div class="form-group">
+          <div class="form-group sub">
               <label for="categorie">Veuillez choisir un domaine parent</label>
               <select class="form-control" name="parentDomains" id="parentDomains">
                 @foreach ($parentDomains as $domain)
@@ -63,7 +63,7 @@
               </div>
           </div>
       </form>
-      
+
         </div>
 
 

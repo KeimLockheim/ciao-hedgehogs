@@ -133,14 +133,21 @@ $("#showQuestion").on('click', function() {
               validating: 'glyphicon glyphicon-refresh'
           },
           fields: {
-              theme: {
-                  newDomain: {
+						newDomain: {
+								validators: {
+										notEmpty: {
+												message: "Merci de définir un domaine (sous-domaine, domaine)"
+										}
+								}
+              },
+              description: {
+                  validators: {
                       notEmpty: {
-                          message: "Merci d'indiquer un domaine"
+                          message: "Merci de définir une description pour le domaine"
                       }
                   }
               },
-              description: {
+							parentDomain: {
                   validators: {
                       notEmpty: {
                           message: "Merci de définir une description pour le domaine"
@@ -149,6 +156,19 @@ $("#showQuestion").on('click', function() {
               }
           }
       });
+
+			//gestion de l'affichage du imput choix sous-domaine
+			$('.sub').hide('slow');
+
+			$('#subYes').on('click', function(event) {
+				event.preventDefault();
+				$('.sub').show('slow');
+			});
+
+			$('#subNo').on('click', function(event) {
+				event.preventDefault();
+				$('.sub').hide('slow');
+			});
 
 
 

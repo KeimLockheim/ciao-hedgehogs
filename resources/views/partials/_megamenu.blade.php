@@ -178,7 +178,7 @@
                 </ul>
                 @if($userConnected)
                 <ul class="nav navbar-nav navbar-right" id="deconnecter">
-                    <li><a href="/logout"><img src="{{ asset('assets/img/deco.png') }}" alt="deco" class="imgNav">Deconnexion</a></li>
+                    <li><a href="/logout"><img src="{{ asset('assets/img/deco.png') }}" alt="deco" class="imgNav">Déconnexion</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" id="compte">
                     <li><a href="/dashboard"><img src="{{ asset('assets/img/compte.png') }}" alt="mon compte" class="imgNav">Compte</a></li>
