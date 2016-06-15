@@ -29,7 +29,7 @@
                 <div class="col-md-4">
                 <div class="col-md-12 homeSecondContainer">
                     <div class="homeSecondContainer2">
-                    <img src="{{ asset('assets/img/penPink.png') }}" alt="question" class="iconContainerHome">
+                    <img src="{{ asset('assets/img/quiz.png') }}" alt="question" class="iconContainerHome">
                     <h2>Questions</h2><p> Anonyme et gratuit : tu peux poser tes questions, nous y répondrons dans les deux jours.</p>
                         <p>Pour ceci, rends-toi dans le domaine qui t'intéresse et pose ta question.</p>
                      </div>

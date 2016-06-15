@@ -1045,6 +1045,10 @@ position:relative;
     .iphoneApp {
     text-align: center;
 }
+    
+    .large{
+         background:url(fond.jpg) no-repeat;
+    }
 
 }
 
