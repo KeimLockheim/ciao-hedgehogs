@@ -13,12 +13,6 @@ class QuestionController extends Controller {
   public function listing($domain_id)
   {
     $domain = Domain::where('id', $domain_id)->with('domainQuestions','topics', 'subDomainQuestions')->get()->first();
-    //dd($domain->isSubdomain());
-    //dd($domain->parentDomain);
-    //$subDomainQuestions = Domain::where('id', $domain_id)->with('domainQuestions','topics')->get()->first();
-    //dd($subDomainQuestions->domainQuestions);
-    //$subQuestions = $domain->subDomainQuestions;
-    //dd($subQuestions);
     $data = Menu::getDomains();
     $data['domain'] = $domain;
 
@@ -107,7 +101,7 @@ class QuestionController extends Controller {
     //Ajout dans la BD
     try{
       Question::createOne($validate->getData());
-      return Response::view('errors.200',['url' => redirect()->back()->getTargetUrl(),'message'=>'Discussion créée !'], 200);
+      return Response::view('errors.200',['url' => redirect()->back()->getTargetUrl(),'message'=>'Question posée !'], 200);
 
     }
     catch(\Exception $e){

@@ -170,26 +170,7 @@ class User extends Model {
 		}
 
 		return $unAnsweredQuestions;
-
-//		$q=[];
-//		$questionsWithAnswer=[];
-//		$answeredQuestions=[];
-//		foreach($this->domains as $d){
-//
-//			$q[]=$d->with('domainQuestions')->get();
-//		}
-//		foreach($q->domainQuestions as $qq){
-//			$questions[]=$qq->with('domain')->get()->first();
-//		}
-//		foreach($questions as $question){
-//			$questionsWithAnswer[]=$question->with('answer')->get()->first();
-//		}
-//
-//		foreach($questionsWithAnswer as $question){
-//			if($question->answer == null){
-//				$answeredQuestions[]= $question;
-//			}
-//		}
+		
 
 	}
 
