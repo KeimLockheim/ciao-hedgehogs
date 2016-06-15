@@ -4,6 +4,6 @@
 
             <a href="/ask/{{$domain->id}}"><button type="submit" class="btn btn-m"><img src="{{ asset('assets/img/quizWhite.png') }}" alt="question" class="iconButton">Poser ma question!</button></a>
 
-            <a href="/domain/{{$domain->id}}/urgences"><button type="submit" class="btn btn-m"> <img src="{{ asset('assets/img/ambulanceWhite.png') }}" alt="urgenceAdresse" class="iconButton">Urgences et adresses</button></a>
+            <a href="/domain/{{$domain->id}}/urgences"><button type="submit" class="btn btn-m"> <img src="{{ asset('assets/img/ambulanceWhite.png') }}" alt="urgenceAdresse" class="iconButton">Besoin d'aide?</button></a>
 
 			  	      </div>
