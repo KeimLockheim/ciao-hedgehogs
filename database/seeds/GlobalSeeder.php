@@ -24,9 +24,20 @@ class GlobalSeeder extends Seeder
             'name' => 'Le nom de ton premier doudou',
         ]);
         $q2 = SecretQuestion::create([
-            'name' => 'Le nom de jeune fille de ta mère',
+            'name' => 'Le nom de jeune fille de ta maman',
         ]);
-
+        $q3 = SecretQuestion::create([
+            'name' => 'Le nom de ton animal de compagnie',
+        ]);
+        $q3 = SecretQuestion::create([
+            'name' => 'Le nom de ta soeur',
+        ]);
+        $q3 = SecretQuestion::create([
+            'name' => 'Le nom de ton frère',
+        ]);
+        $q3 = SecretQuestion::create([
+            'name' => 'Le nom de ton film préféré',
+        ]);
 
         /*
          * Groups
@@ -116,11 +127,58 @@ class GlobalSeeder extends Seeder
         $domQuestce = new Domain([
             'name' => "Qu'est-ce que le stress?",
             'description' => 'Description',
+            'content'=>"<h2>Le stress, c'est quoi?</h2>
+
+			<p>Selon Hans Selye, le stress c’est la vie  et puisqu'il fait partie de la vie, il faut apprendre à l’apprivoiser.</p>
+
+			<p>Le stress est un phénomène naturel et utile. C’est l'ensemble des réponses d'un organisme soumis à des pressions ou des contraintes de la part de son environnement. Cela mobilise une certaine énergie qu’il est nécessaire de libérer pour retrouver un équilibre satisfaisant.</p>
+
+			<p>L’état de stress provient du sentiment d’être débordé-e ou de manquer de contrôle face à une situation. <strong>Il traduit une difficulté d’adaptation.</strong></p>
+
+
+			<p>schéma explicatif du stress: une balance en équilibre flèche stress entraine déséquilibre de la balnce flèche adaptation qui entraine rééquilibre de la balance</p>
+
+			<p>Et il survient lorsqu’il y a un déséquilibre entre la perception qu’une personne a :</p>
+
+			<ul>
+
+				<li>des contraintes que l’environnement lui impose</li>
+				<li>de ses propres moyens pour y faire face.</li>
+
+			</ul>
+
+			<p>21 octobre 2014</p>
+			<p>© CIAO, Traquetontrac</p>",
         ]);
         
          $domMecanismes = new Domain([
             'name' => "Mécanismes du stress",
             'description' => 'Description',
+             'content'=>"<h2>Comprendre le stress</h2>
+
+			<p>Comprendre les mécanismes du stress permet de le reconnaitre et de pourvoir agir pour le faire diminuer.</p>
+
+			<p>Le stress est dû au déséquilibre entre :</p>
+
+			<ul>
+
+				<li>d’une part les exigences de certaines situations et/ou tes propres attentes face à celles-ci,</li>
+				<li>et d’autre part tes capacités à faire face à ces situations et/ou le fait que celles-ci te mettent sous pression.</li>
+
+			</ul>
+
+
+			<p>Pour diminuer le stress, il est nécessaire de ré-équilibrer la balance:</p>
+
+			<ul>
+
+				<li>tu peux essayer de diminuer les pressions (exigences extérieures, attentes)</li>
+				<li>et/ou augmenter les ressources (capacités, possibilités d’agir sur la situation)</li>
+
+			</ul>
+
+			<p>21 octobre 2014</p>
+			<p>© CIAO, Traquetontrac</p>"
         ]);
         
          $domReponses = new Domain([
@@ -302,7 +360,7 @@ class GlobalSeeder extends Seeder
 
         $admin = new User([
             'nickname' => 'admin',
-            'birthyear' => 1934,
+            'birthyear' => 1978,
             'sex' => 'féminin',
             'localisation' => 'Vaud',
             'password' => bcrypt('admin'),
@@ -314,7 +372,7 @@ class GlobalSeeder extends Seeder
 
         $expert = new User([
             'nickname' => 'expert',
-            'birthyear' => 1999,
+            'birthyear' => 1970,
             'sex' => 'masculin',
             'localisation' => 'Neuchâtel',
             'password' => bcrypt('expert'),
@@ -324,6 +382,8 @@ class GlobalSeeder extends Seeder
         $expert->secretQuestion()->associate($q1);
         $gExpert->users()->save($expert);
         $expert->save();
+        
+    
 
         /*$default = User::create([
             'nickname' => 'default',
