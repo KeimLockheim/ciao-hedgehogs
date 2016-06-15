@@ -29,7 +29,7 @@
     </p>
 
 
-    <form id="answerQuestion" method="post">
+    <form id="answerQuestion" action="/answer" method="post">
 
       <div class="form-group">
         <label for="theme"> Thème précis: </label>
