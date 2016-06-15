@@ -5,7 +5,7 @@
 
 
       @foreach($domain->topics->slice(0, 4) as $topic)
-        <li><a href="#">{{$topic->name}}</a></li>
+        <li><a href="/domain/{{$domain->id}}/discussion/{{$topic->id}}">{{$topic->name}}</a></li>
       @endforeach
 
     </ul>
