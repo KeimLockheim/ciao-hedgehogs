@@ -153,7 +153,7 @@ class Domain extends Model
 	 */
 	public static function exists($name)
 	{
-		return self::where('name', $name) !== null;
+		return self::where('name', $name)->first() !== null;
 	}
 
 	/**
@@ -163,7 +163,7 @@ class Domain extends Model
 	 */
 	public static function existsWithId($id)
 	{
-		return self::find($id) !== null;
+		return self::find($id)->first() !== null;
 	}
 
 	/**
