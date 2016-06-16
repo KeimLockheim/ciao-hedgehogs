@@ -105,7 +105,6 @@ $(document).ready(function() {
 		$('#secreteQ').show('slow');
 		var val = $('#changePassword #pseudo').val();
 		$.getJSON('/secretQuestion/getSecretQuestion/'+ val, function(data) {
-			console.log(data);
 			$('#secreteQuestion').attr("placeholder", data.name);
 		});
 	});
