@@ -10,14 +10,14 @@
   <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
-      <p><a href="/home">Accueil </a> > {{$domain->name}} > <a href="/domain/{{$domain->id}}/questions">Liste des questions</a></p>
+      <p><a href="/home">Accueil </a> > <a href="/domain/{{$domain->id}}">{{$domain->name}}</a> > <a href="/domain/{{$domain->id}}/questions">Liste des questions</a></p>
     </div>
   </div>
 
 
   <div class="col-md-7 designBox">
     <div class="row">
-      
+
       <h2>{{$domain->name}}</h2>
 
       <p>

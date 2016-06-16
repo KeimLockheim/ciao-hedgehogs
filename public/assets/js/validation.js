@@ -1,6 +1,5 @@
 $(document).ready(function() {
-
-
+	
 	//  <--- changePassword form--->
 	$('#changePassword').formValidation({
 		framework: 'bootstrap',
