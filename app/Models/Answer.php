@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class Answer extends Model {
 
@@ -34,7 +36,8 @@ class Answer extends Model {
 		$validator->after(function ($validator) use($input) {
 			// Vérification de l'existence de la question
 			if (!self::exists($input['question_id'])) {
-				$validator->errors()->add('exists', Message::get('exists'));
+				dd('1');
+				$validator->errors()->add('exists', 'exists');
 			}
 		});
 		// Renvoi du validateur
@@ -67,7 +70,7 @@ class Answer extends Model {
 	 */
 	public static function exists($id)
 	{
-		return self::find($id)->first() !== null;
+		return self::find($id) !== null;
 	}
 
 	/**
@@ -81,7 +84,7 @@ class Answer extends Model {
 		// Définition des propriétés
 		$obj->question_id = $values['question_id'];
 		$obj->content = $values['answerQuestion'];
-		$obj->answered_by = Session::get('user_id');
+		$obj->answered_by = Session::get('id');
 		// Enregistrement de la question
 		$obj->save();
 
