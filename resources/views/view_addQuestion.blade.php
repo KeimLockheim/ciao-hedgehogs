@@ -36,7 +36,7 @@
     <div class="col-md-7 designBox">
       <div class="row">
         @if($userConnected)
-        <form id="addQuestion" action="/question" method="post">
+        <form id="addQuestion" action="/hedgehogs/question" method="post">
 
           <div class="form-group">
             <label for="categorie"> Catégorie (obligatoire): </label>

@@ -83,7 +83,7 @@
 			<ul class="lienArticle">
 				@if($myAnsweredQuestions != null)
 				@foreach ($myAnsweredQuestions as $questionAnswered)
-				<li><a href="/hedgehogsdomain/{{$questionAnswered->domain->id}}/question/{{$questionAnswered->id}}">
+				<li><a href="/hedgehogs/domain/{{$questionAnswered->domain->id}}/question/{{$questionAnswered->id}}">
 
 					{{$questionAnswered->name}}</a></li>
 					@endforeach
@@ -139,7 +139,7 @@
 				<ul class="answeredQuestions">
 					@if($questionsAnswered != null)
 					@foreach ($questionsAnswered as $question)
-					<li class="answeredQuestion"><a class="ans" href="/hedgehogsdomain/{{$question->domain->id}}/question/{{$question->id}}">{{$question->content}}</a></li>
+					<li class="answeredQuestion"><a class="ans" href="/hedgehogs/domain/{{$question->domain->id}}/question/{{$question->id}}">{{$question->content}}</a></li>
 					@endforeach
 					@endif
 
@@ -150,7 +150,7 @@
 
 					@if($myTopicsValidated != null)
 					@foreach ($myTopicsValidated as $topic)
-					<li><a href="/hedgehogsdomain/{{$topic->domain->id}}/discussion/{{$topic->id}}">{{$topic->name}}</a></li>
+					<li><a href="/hedgehogs/domain/{{$topic->domain->id}}/discussion/{{$topic->id}}">{{$topic->name}}</a></li>
 					@endforeach
 					@endif
 
