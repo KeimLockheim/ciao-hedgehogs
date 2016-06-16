@@ -34,29 +34,19 @@
 				{{$question->answer->content}}
 			</p>
 		</div>
-		<div class="form-group">
-			<div >
-				<input type="submit" class="btn btn-primary publier" value="Rendre public"/>
-			</div>
-		</div>
+		@if($question->public != true)
+			<form action="/question/setPublic" method="post">
+				<input type="hidden" name="question_id" value="{{$question->id}}">
+				<div class="form-group">
+					<div >
+						<input type="submit" class="btn btn-primary publier" value="Rendre public"/>
+					</div>
+				</div>
+			</form>
+		@endif
+
 	</div>
 
-@if($question->public == false)
-<form action="/question/setPublic" method="post">
-
-<form action="/question/setPublic" method="post">
-
-	<input type="hidden" name="question_id" value="{{$question->id}}">
-	<div class="form-group">
-		<div >
-			<button type="submit" class="btn btn-primary">Je veux rendre la question publique</button>
-		</div>
-	</div>
-
-</form>
-@endif
-
-</form>
 
 
 

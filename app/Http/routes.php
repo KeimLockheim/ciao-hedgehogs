@@ -22,9 +22,6 @@ Route::group(['middleware' => ['web']], function () {
 	//login
 	Route::post('/auth/login', 'AuthController@login');
 
-	//rendre public une question
-	Route::post('/question/setPublic/{question_id}', 'QuestionController@update');
-
 
     Route::get('/domain/{domain_id}/urgences', 'UrgencyController@indexDomain');
     Route::get('/urgences/', 'UrgencyController@index');
@@ -83,6 +80,9 @@ Route::group(['middleware' => ['web']], function () {
 		Route::get('/dashboard', 'UserController@index');
 
 		Route::post('/secretQuestion/', 'SecretQuestionController@store');
+
+		//rendre public une question
+		Route::post('/question/setPublic/{question_id}', 'QuestionController@update');
 
 
 

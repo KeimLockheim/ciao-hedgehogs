@@ -22,7 +22,6 @@ class QuestionController extends Controller {
     if(!isset($domain)){
       return Response::view('errors.404',['url' =>'/home','message'=>'Catégorie non trouvée.'], 404);
     }
-    //dd($domain);
     $data = Menu::getDomains();
     $data['domain'] = $domain;
 
@@ -46,7 +45,6 @@ class QuestionController extends Controller {
 
   public function answerQuestion($question_id)
   {
-    //$user = User::where('id', Auth::id())->with('userProfile')->get()->first();
 
     // à effacer et remplacer avec la ligne du dessus mais pour le moment je test avec un user précis car je peux pas chopper le auth
     $user = User::where('id', Session::get('id'))->get()->first();
@@ -122,7 +120,6 @@ class QuestionController extends Controller {
 
     }
     catch(\Exception $e){
-      dd($e);
       return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Problème de connexion à la base de donnée'], 400);
 
     }
