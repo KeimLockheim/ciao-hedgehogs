@@ -9,7 +9,6 @@
 	<title>Ciao.ch | @yield('title') </title> <!-- CHANGE THE TITLE HERE -->
 
 	<!-- CSS -->
-
 	<link href=" {{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
 	<link href=" {{ asset('assets/css/comem.css') }}" rel="stylesheet">
 	<link href=" {{ asset('assets/css/megaMenu.css') }}" rel="stylesheet">
@@ -24,10 +23,9 @@
 	<!-- FormValidation -->
 	<script src="{{ asset('assets/formvalidation/dist/js/formValidation.min.js') }}"></script>
 	<script src="{{ asset('assets/formvalidation/dist/js/framework/bootstrap.js') }}"></script>
-
-	<!-- FormValidation -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.3.0/zxcvbn.js"></script>
 
+	<!-- Javascript -->
 	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('assets/js/megaMenu.js') }}"></script>
 	<script src="{{ asset('assets/js/validation.js') }}"></script>
@@ -48,8 +46,8 @@
 
 				<div class="headerResp">
 					@if($userConnected)
-                    <a href="/dashboard"><img src="{{ asset('assets/img/user.png') }}" class="iconResp" alt="compte" ></a>
 					<a href="/logout"><img src="{{ asset('assets/img/signinGris.png') }}" class="iconResp" alt="se deconnecter"></a>
+					<a href="/dashboard"><img src="{{ asset('assets/img/user.png') }}" class="iconResp" alt="compte" ></a>
 					@else
 					<a class="login" data-toggle="modal" data-target="#login"><img src="{{ asset('assets/img/decoGris.png') }}" class="iconResp" alt="se connecter"></a>
 					@endif
