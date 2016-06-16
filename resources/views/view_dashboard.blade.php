@@ -136,10 +136,10 @@
 					@endif
 				</ul>
 				<h3>Mes questions répondues </h3>
-				<ul class="forValidationQuestions">
+				<ul class="answeredQuestions">
 					@if($questionsAnswered != null)
 					@foreach ($questionsAnswered as $question)
-					<li class="forValidationQuestion"><a class="forVal" href="domain/{{$question->domain->id}}/question/{{$question->id}}">{{$question->content}}</a></li>
+					<li class="answeredQuestion"><a class="ans" href="domain/{{$question->domain->id}}/question/{{$question->id}}">{{$question->content}}</a></li>
 					@endforeach
 					@endif
 

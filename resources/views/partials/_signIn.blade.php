@@ -24,6 +24,7 @@
         <input type="password" name="password" class="form-control" id="password" placeholder="Mot de passe">
       </div>
     </div>
+    <p><a href="/lost">J'ai oublié mon mot de passe</a></p>
     <div class="form-group">
       <div>
         <button type="submit" class="btn btn-primary">Je me connecte</button>

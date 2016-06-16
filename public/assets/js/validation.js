@@ -1,15 +1,21 @@
 $(document).ready(function() {
 
 	/* dashboard[user] - Afficher les 50 premiers caractères d'une question en
-		 attente de réponse
+		 attente de réponse et questions répondues
 	*/
 
+	$('.answeredQuestions li').each(function(){
+		var answeredQuestion = $(this).text();
+		var result = answeredQuestion.substr(0, 55);
+		$(this).find(".ans").html(result + " ...");
+	})
 
 	$('.forValidationQuestions li').each(function(){
 		var forValidationQuestion = $(this).text();
 		var result = forValidationQuestion.substr(0, 55);
-		$(this).find(".forVal").html(result + " ...");
+		$(this).html(result + " ...");
 	})
+
 
 	/* gestion de tous les forumulaires, fonctionnalités supplémentaires aux
 		 validations en dessous du bloc *.formavalidation({})
