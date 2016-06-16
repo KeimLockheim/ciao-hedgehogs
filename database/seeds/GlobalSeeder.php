@@ -1367,11 +1367,11 @@ Merci d'avance!",
         
         
         $ur1->domain()->associate($domDrogue);
-        $ur2->domain()->associate($domDrogue);
-        $ur3->domain()->associate($domDrogue);
+        $ur2->domain()->associate($domSante);
+        $ur3->domain()->associate($domSante);
         $ur4->domain()->associate($domDrogue);
-        $ur5->domain()->associate($domDrogue);
-        $ur6->domain()->associate($domDrogue);
+        $ur5->domain()->associate($domSante);
+        $ur6->domain()->associate($domSante);
 
         $ur1->save();
         $ur2->save();
