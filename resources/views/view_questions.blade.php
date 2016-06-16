@@ -10,7 +10,7 @@
   <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
-      <p><a href="/home">Accueil </a> > {{$domain->name}} > <a href="/domain/{{$domain->id}}/question/{{$question->id}}">Liste des questions</a></p>
+      <p><a href="/home">Accueil </a> > {{$domain->name}} > <a href="/domain/{{$domain->id}}/questions">Liste des questions</a></p>
     </div>
   </div>
 
@@ -32,21 +32,19 @@
       <h3>Liste des questions :</h3>
 
       <ul class="designForum">
-        @if($domain->isSubdomain())
-        @foreach($domain->subDomainQuestions as $question)
-        <li><a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a>
-          <p>{{$question->created_at}}</p>
-        </li>
-        @endforeach
-        @else
-        @if($domain->domainQuestions != null)
-        @foreach($domain->domainQuestions as $question)
-        <li><a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a>
-          <p>{{$question->created_at}}</p>
-        </li>
-        @endforeach
-        @endif
-        @endif
+
+            @if($domain->domainQuestions != null)
+                @foreach($domain->domainQuestions as $question)
+                <li><a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a>
+                  <p>{{$question->created_at}}</p>
+                </li>
+                @endforeach
+                  @foreach($domain->subDomainQuestions as $question)
+                    <li><a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a>
+                      <p>{{$question->created_at}}</p>
+                    </li>
+                  @endforeach
+            @endif
 
       </ul>
     </div>
