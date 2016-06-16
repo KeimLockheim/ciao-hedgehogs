@@ -33,7 +33,7 @@
 
       <ul class="designForum">
 
-            @if($domain->domainQuestions != null)
+
                 @foreach($domain->domainQuestions as $question)
                 <li><a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a>
                   <p>{{$question->created_at}}</p>
@@ -44,7 +44,7 @@
                       <p>{{$question->created_at}}</p>
                     </li>
                   @endforeach
-            @endif
+
 
       </ul>
     </div>

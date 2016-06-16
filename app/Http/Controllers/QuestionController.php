@@ -12,14 +12,14 @@ class QuestionController extends Controller {
 
   public function listing($domain_id)
   {
-    $domainCurrent = Domain::where('id', $domain_id)->with('domainQuestions.domain', 'subDomainQuestions.domain', 'parentDomain.domainQuestions.domain', 'parentDomain.subDomainQuestions.domain')->get()->first();
+    $domainCurrent = Domain::where('id', $domain_id)->with('domainQuestions.domain',  'parentDomain.domainQuestions.domain')->get()->first();
     if($domainCurrent->isSubdomain()){
       $domain = $domainCurrent->parentDomain;
     }
     else{
       $domain = $domainCurrent;
     }
-
+    //dd($domain);
     $data = Menu::getDomains();
     $data['domain'] = $domain;
 
