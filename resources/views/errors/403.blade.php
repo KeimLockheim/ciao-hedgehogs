@@ -13,7 +13,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">{{$message or "Pas le droit d'accéder à la ressource"}} <a href="{{$url or '/home'}}">Revenir en arrière</a></div>
+                <div class="title">{{$message or "Pas le droit d'accéder à la ressource"}} <a href="/hedgehogs{{$url or '/home'}}">Revenir en arrière</a></div>
             </div>
         </div>
     </body>
