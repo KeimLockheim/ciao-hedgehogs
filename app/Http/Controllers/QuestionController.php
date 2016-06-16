@@ -25,6 +25,14 @@ class QuestionController extends Controller {
     $data = Menu::getDomains();
     $data['domain'] = $domain;
 
+    if($domain->parentDomain != null){
+      $data['domainParent'] = $domain->parentDomain;
+    }
+    else{
+      $data['domainParent'] = $domain;
+    }
+
+
     return view('view_questions', $data);
   }
 
