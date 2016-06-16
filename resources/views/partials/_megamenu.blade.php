@@ -178,10 +178,10 @@
                 </ul>
                 @if($userConnected)
                 <ul class="nav navbar-nav navbar-right" id="deconnecter">
-                    <li><a href="{{url('/hedgehogs/logout')}}"><img src="{{ asset('assets/img/deco.png') }}" alt="deco" class="imgNav">Déconnexion</a></li>
+                    <li><a href="{{url('logout')}}"><img src="{{ asset('assets/img/deco.png') }}" alt="deco" class="imgNav">Déconnexion</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" id="compte">
-                    <li><a href="{{url('/hedgehogs/dashboard')}}"><img src="{{ asset('assets/img/compte.png') }}" alt="mon compte" class="imgNav">Compte</a></li>
+                    <li><a href="{{url('/dashboard')}}"><img src="{{ asset('assets/img/compte.png') }}" alt="mon compte" class="imgNav">Compte</a></li>
                 </ul>
                 @else
                 <ul class="nav navbar-nav navbar-right" id="connecter">
