@@ -1178,7 +1178,10 @@ Merci beaucoup ;-D",
 
 
         $q1->questionUser()->associate($default);
-        $q1->domain()->associate($domPuberteG);
+        $q1->domain()->associate($domSante);
+        $q1->subDomain()->associate($domPuberteG);
+
+        
 
         $q3->questionUser()->associate($default);
         $q3->domain()->associate($domPoids);

@@ -583,11 +583,11 @@ box-shadow: 3px 2px 6px #555;
     
     background-color: #ff7e82;
     width: 60%;
-     float: right;
+    float: right;
     border-radius: 2px;
-box-shadow: 3px 2px 6px #555;
-color: white;
-        margin-bottom: 25px;
+    box-shadow: 3px 2px 6px #555;
+    color: white;
+    margin-bottom: 25px;
     padding: 15px;
 
 }
@@ -905,7 +905,10 @@ padding-bottom: 10px;}
     border-radius: 2px;
     padding: 5px 10px 5px 10px;
 }
-
+.designForum li label:hover, .designForum li label:focus{
+    
+    color: #fff;
+}
 .designForum li a {
     color: #484848;
 }

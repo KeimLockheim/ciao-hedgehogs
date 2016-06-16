@@ -35,7 +35,7 @@
 
 
                 @foreach($domain->domainQuestions as $question)
-                <li><a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a>
+                <li><a href="domain/{{$domain->id}}/question/{{$question->id}}"><label>{{$question->name}}</label></a>
                   <p>{{$question->created_at}}</p>
                 </li>
                 @endforeach
