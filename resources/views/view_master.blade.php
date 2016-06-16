@@ -48,8 +48,8 @@
 
 				<div class="headerResp">
 					@if($userConnected)
+                    <a href="/dashboard"><img src="{{ asset('assets/img/user.png') }}" class="iconResp" alt="compte" ></a>
 					<a href="/logout"><img src="{{ asset('assets/img/signinGris.png') }}" class="iconResp" alt="se deconnecter"></a>
-					<a href="/dashboard"><img src="{{ asset('assets/img/user.png') }}" class="iconResp" alt="compte" ></a>
 					@else
 					<a class="login" data-toggle="modal" data-target="#login"><img src="{{ asset('assets/img/decoGris.png') }}" class="iconResp" alt="se connecter"></a>
 					@endif
