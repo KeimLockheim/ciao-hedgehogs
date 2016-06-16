@@ -68,7 +68,7 @@ class QuestionController extends Controller {
     if(!isset($domain)){
       return Response::view('errors.404',['url' =>'/home','message'=>'Catégorie non trouvée.'], 404);
     }
-    $question = Question::where('id', $question_id)->with('questionUser', 'answer')->get()->first();
+    $question = Question::where('id', $question_id)->with('questionUser', 'answer.answererUser')->get()->first();
     if(!isset($question)){
       return Response::view('errors.404',['url' =>'/home','message'=>'Question non trouvée.'], 404);
     }
@@ -87,7 +87,7 @@ class QuestionController extends Controller {
    */
   public function create()
   {
-    
+
   }
 
   /**
@@ -126,7 +126,7 @@ class QuestionController extends Controller {
    */
   public function edit($id)
   {
-    
+
   }
 
   /**
@@ -137,7 +137,7 @@ class QuestionController extends Controller {
    */
   public function update($id)
   {
-    
+
   }
 
   /**
@@ -148,9 +148,9 @@ class QuestionController extends Controller {
    */
   public function destroy($id)
   {
-    
+
   }
-  
+
 }
 
 ?>

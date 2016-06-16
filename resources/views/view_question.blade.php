@@ -26,7 +26,6 @@
 		</div>
 
 		<div class="divContainerAnswer rep">
-			<label class="labelMessage">Répondu par: <span itemprop="creator">{{$question->answer->answered_by}}</span></label>
 
 			<label class="date"><time itemprop="dateCreated">{{$question->answer->created_at}}</time></label>
 
