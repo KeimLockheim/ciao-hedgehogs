@@ -149,12 +149,18 @@ class User extends Model {
 	// retourne les questions auxquelles un expert a répondu
 	public function myAnsweredQuestions(){
 		$answers = [];
+		$questions = [];
 		if($this->answers != null){
 			foreach($this->answers as $answer){
-				$answers[]=$answer->with('question')->get();
+				$answers[]=$answer->with('question.domain')->first();
 			}
 		}
-		return $answers;
+		if($answers != null){
+			foreach($answers as $answer){
+				$questions[]=$answer->question;
+			}
+		}
+		return $questions;
 	}
 
 	// retourne les questions auxquelles l'expert peut répondre

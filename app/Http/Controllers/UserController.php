@@ -21,8 +21,6 @@ class UserController extends Controller {
 
     //Vérifie l'existence du user
     $isAvailable = User::exists($nickname);
-    $isAvailable = !$isAvailable;
-
     return json_encode(['valid' => $isAvailable]);
   }
 
@@ -46,7 +44,6 @@ class UserController extends Controller {
     $data['unansweredQuestionsExpert'] = $data['user']->unansweredQuestionsExpert();
 
     $data['myAnsweredQuestions'] = $data['user']->myAnsweredQuestions();
-    //dd($data['myAnsweredQuestions']);
 
     $data['questionsNotAnswered'] = $data['user']->questionsNotAnswered();
     $data['questionsAnswered'] = $data['user']->questionsAnswered();

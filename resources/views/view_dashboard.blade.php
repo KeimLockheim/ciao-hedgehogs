@@ -70,8 +70,10 @@
 
 				@if($unansweredQuestionsExpert != null)
 				@foreach ($unansweredQuestionsExpert as $questionNoAnswer)
-				<li><strong>{{$questionNoAnswer->questionUser->nickname}}</strong> a posé une question</li>
-				<a href="/dashboard/answers/{{$questionNoAnswer->id}}"><button type="button" class="btn btn-xs">Répondre</button></a>
+				<li><strong>{{$questionNoAnswer->questionUser->nickname}}</strong> a posé une question
+					<a href="/dashboard/answers/{{$questionNoAnswer->id}}"><button type="button" class="btn btn-xs expertAnswerTo">Répondre</button></a>
+				</li>
+
 				@endforeach
 				@endif
 
@@ -104,8 +106,8 @@
 					<h3 class="titreBox">Domaines de compétences</h3>
 					<div>
 						<ul>
-							@foreach ($user->expertInDomains as $domain)
-							<li>{{$domain->name}}</li>
+							@foreach ($user->expertInDomains as $dom)
+							<li>{{$dom->name}}</li>
 							@endforeach
 						</ul>
 					</div>

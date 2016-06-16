@@ -23,7 +23,6 @@ Route::group(['middleware' => ['web']], function () {
 	Route::post('/auth/login', 'AuthController@login');
 
 
-
     Route::get('/domain/{domain_id}/urgences', 'UrgencyController@indexDomain');
     Route::get('/urgences/', 'UrgencyController@index');
 
