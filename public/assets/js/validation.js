@@ -136,7 +136,7 @@ $(document).ready(function() {
 					remote: {
 						message: 'Le domaine existe déjà',
 						url: function(validator, $field, value) {
-							return '/domain/domainCheck/' + '{'+ value +'}';
+							return '/hedgehogs/domain/domainCheck/' + '{'+ value +'}';
 						},
 						type: 'GET',
 						delay: 500
@@ -404,7 +404,7 @@ $(document).ready(function() {
 					remote: {
 						message: 'Le pseudo est déjà utilisé',
 						url: function(validator, $field, value) {
-							return '/user/nicknameCheck/' + value;
+							return '/hedgehogs/user/nicknameCheck/' + value;
 						},
 						type: 'GET',
 						delay: 500
