@@ -7,7 +7,7 @@
 <div class="row" id="contenu">
 
   <div class="col-md-12" id="breadcrums">
-    <p><a href="/dashboard">Dashboard </a> > Profil expert <strong>{{$user->nickname}}</strong> > Répondre à une question</p>
+    <p><a href="/dashboard">Dashboard </a> > Profil expert <strong>{{$user->userProfile->firstName}}</strong> > Répondre à une question</p>
   </div>
 </div>
 
