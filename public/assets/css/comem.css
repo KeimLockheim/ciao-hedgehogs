@@ -631,6 +631,10 @@ margin-right: 10px;
 .answerTo:hover, .answerTo:focus{
 width: 100px;}
 
+.expertAnswerTo{
+width: 100px;
+margin-right: 10px;
+}
 /* accueil */
 
 .imgHome{
