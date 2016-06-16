@@ -10,7 +10,7 @@
   <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
-      <p><a href="/hedgehogs/home">Accueil</a> > <a href="/hedgehogs/domain/{{$domain->id}}"> {{$domain->name}}</a> > Poser une question</p>
+      <p><a href="{{url('/home')}}">Accueil</a> > <a href="{{url('/domain/'.$domain->id)}}"> {{$domain->name}}</a> > Poser une question</p>
     </div>
   </div>
 
@@ -27,7 +27,7 @@
 
 
         </p>
-        <a id="existQuestion" href="/hedgehogs/domain/{{$domain->id}}/questions"><button type="button" class="btn btn-xs">Regarder si ma question existe déjà</button></a>
+        <a id="existQuestion" href="{{url('/domain/'.$domain->id.'/questions')}}"><button type="button" class="btn btn-xs">Regarder si ma question existe déjà</button></a>
       </div>
     </div>
 
@@ -36,7 +36,7 @@
     <div class="col-md-7 designBox">
       <div class="row">
         @if($userConnected)
-        <form id="addQuestion" action="/hedgehogs/question" method="post">
+        <form id="addQuestion" action="{{url('/question')}}" method="post">
 
           <div class="form-group">
             <label for="categorie"> Catégorie (obligatoire): </label>

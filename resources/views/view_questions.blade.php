@@ -10,7 +10,7 @@
   <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
-      <p><a href="/hedgehogs/home">Accueil </a> > <a href="/hedgehogs/domain/{{$domain->id}}">{{$domain->name}}</a> > <a href="/hedgehogs/domain/{{$domain->id}}/questions">Liste des questions</a></p>
+      <p><a href="{{url('/home')}}">Accueil </a> > <a href="{{url('/domain/'.$domain->id)}}">{{$domain->name}}</a> > <a href="/{{url('/domain/'.$domain->id.'/questions')}}">Liste des questions</a></p>
     </div>
   </div>
 
@@ -35,13 +35,13 @@
 
 
                 @foreach($domain->domainQuestions as $question)
-                <li><a href="/hedgehogs/domain/{{$domain->id}}/question/{{$question->id}}"><label>{{$question->name}}</label></a>
+                <li><a href="{{url('/domain/'.$domain->id.'/question/'.$question->id)}}"><label>{{$question->name}}</label></a>
                   <p>{{$question->created_at}}</p>
                 </li>
                 @endforeach
 
                   @foreach($domain->subDomainQuestions as $question)
-                    <li><a href="/hedgehogs/domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a>
+                    <li><a href="{{url('/domain/'.$domain->id.'/question/'.$question->id)}}">{{$question->name}}</a>
                       <p>{{$question->created_at}}</p>
                     </li>
                   @endforeach

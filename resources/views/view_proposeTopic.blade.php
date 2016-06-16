@@ -8,7 +8,7 @@
   <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
-      <p><a href="/hedgehogs/home">Accueil</a> > <a href="/hedgehogs/domain/{{$domain->id}}"></a>{{$domain->name}} > Proposer une discussion</p>
+      <p><a href="{{url('/home')}}">Accueil</a> > <a href="{{url('/domain/'.$domain->id)}}"></a>{{$domain->name}} > Proposer une discussion</p>
     </div>
   </div>
 </div>
@@ -31,7 +31,7 @@
     <div class="row">
       @if ($userConnected)
 
-      <form  id="proposeTopic" action="/hedgehogs/topic" method="post">
+      <form  id="proposeTopic" action="{{url('/topic')}}" method="post">
         <div class="form-group">
           <input type="hidden" name="domain_id" value="{{$domain->id}}">
         </div>

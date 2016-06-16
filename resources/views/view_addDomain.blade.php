@@ -7,7 +7,7 @@
 
   <div class="row" id="contenu">
     <div class="col-md-12" id="breadcrums">
-      <p><a href="/hedgehogs/dashboard">Dashboard </a> > Ajouter un domaine d'expertise</p>
+      <p><a href="{{url('/dashboard')}}">Dashboard </a> > Ajouter un domaine d'expertise</p>
     </div>
   </div>
 

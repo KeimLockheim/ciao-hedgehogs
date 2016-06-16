@@ -7,7 +7,7 @@
 <div class="row" id="contenu">
 
   <div class="col-md-12" id="breadcrums">
-    <p><a href="/hedgehogs/dashboard">Dashboard </a> > Profil expert <strong>{{$user->userProfile->firstName}}</strong> > Répondre à une question</p>
+    <p><a href="{{url('/dashboard')}}">Dashboard </a> > Profil expert <strong>{{$user->userProfile->firstName}}</strong> > Répondre à une question</p>
   </div>
 </div>
 
@@ -30,7 +30,7 @@
 
 
 
-    <form id="answerQuestion" method="post" action="/hedgehogs/answer">
+    <form id="answerQuestion" method="post" action="{{url('/answer')}}">
 
       <div class="form-group">
         <label for="theme"> Thème précis: </label>

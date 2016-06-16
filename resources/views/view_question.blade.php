@@ -9,7 +9,7 @@
 
 		<div class="col-md-12" id="breadcrums">
 
-			<p><a href="/hedgehogs/home">Accueil</a> > <a href="/hedgehogs/domain/{{$domain->id}}">{{$domain->name}}</a> > <a href="/hedgehogs/domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a></p>
+			<p><a href="{{url('/home')}}">Accueil</a> > <a href="{{url('/domain/'.$domain->id)}}">{{$domain->name}}</a> > <a href="{{url('/domain/'.$domain->id.'/question/'.$question->id)}}">{{$question->name}}</a></p>
 		</div>
 
 	</div>

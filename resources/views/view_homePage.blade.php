@@ -65,7 +65,7 @@
 								<li>créer et participer à des discussions</li>
 								<li>poster des témoignages</li>
 							</ul>
-							<p> <a href="/user/create"><button type="submit" class="btn btn-m btnEspacePerso" name="compte">Créer un compte</button></a>
+							<p> <a href="{{url('/user/create')}}"><button type="submit" class="btn btn-m btnEspacePerso" name="compte">Créer un compte</button></a>
 							</p>
 
 						</div>
