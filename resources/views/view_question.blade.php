@@ -39,7 +39,7 @@
 				<input type="hidden" name="question_id" value="{{$question->id}}">
 				<div class="form-group">
 					<div >
-						<input type="submit" class="btn btn-primary publier" value="Rendre public"/>
+						<input type="submit" class="btn btn-primary publier"/>
 					</div>
 				</div>
 			</form>
