@@ -1,17 +1,6 @@
 // Dropdown Menu Fade
 jQuery(document).ready(function(){
 
-    //menu responsif
-    $(document).mouseup(function (e){
-    var container = $("#wrapper");
-
-    if (!container.is(e.target)
-        && container.has(e.target).length === 0)
-    {
-      $('.menu').css({"transform": "translate3d(-240px, 0, 0)"});
-      $('#wrapper').unbind('click');
-    }
-});
 
     init();
     $(window).on('resize', init);
@@ -63,3 +52,18 @@ function init(){
         $("nav").show();
         }
 }
+
+/*
+//menu responsif - gestion click en dehors du menu pour le fermer
+//prob: n'arrive pas à unbind l'action
+$(document).mouseup(function (e){
+var container = $("#wrapper");
+
+if (!container.is(e.target)
+    && container.has(e.target).length === 0)
+{
+  $('.menu').css({"transform": "translate3d(-240px, 0, 0)"});
+  $('#wrapper').unbind('click');
+}
+});
+*/
