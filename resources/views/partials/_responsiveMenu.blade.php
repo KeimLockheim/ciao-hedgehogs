@@ -17,7 +17,7 @@
                       <label class="menu-toggle" for="menu-3-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domSante as $sub)
-                            <li><a href="/hedgehogs/domain/{{$sub->id}}">{{$sub->name}}</a></li>
+                            <li><a href="{{url('/hedgehogs/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
                         @endforeach
                       </ul>
                     </div>
@@ -28,7 +28,7 @@
                       <label class="menu-toggle" for="menu-3-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domStress as $sub)
-                          <li><a href="/hedgehogs/domain/{{$sub->id}}">{{$sub->name}}</a></li>
+                          <li><a href="{{url('/hedgehogs/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
                         @endforeach
                       </ul>
                     </div>
@@ -39,7 +39,7 @@
                       <label class="menu-toggle" for="menu-3-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domBoire as $sub)
-                          <li><a href="/hedgehogs/domain/{{$sub->id}}">{{$sub->name}}</a></li>
+                          <li><a href="{{url('/hedgehogs/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
                         @endforeach
                       </ul>
                     </div>
@@ -50,7 +50,7 @@
                       <label class="menu-toggle" for="menu-3-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domManger as $sub)
-                          <li><a href="/hedgehogs/domain/{{$sub->id}}">{{$sub->name}}</a></li>
+                          <li><a href="{{url('/hedgehogs/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
                         @endforeach
                       </ul>
                     </div>
@@ -73,7 +73,7 @@
                       <label class="menu-toggle" for="menu-4-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domEstime as $sub)
-                            <li><a href="/hedgehogs/{{$sub->id}}">{{$sub->name}}</a></li>
+                            <li><a href="{{url('/hedgehogs/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
                         @endforeach
                       </ul>
                     </div>
@@ -84,7 +84,7 @@
                       <label class="menu-toggle" for="menu-4-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domMoi as $sub)
-                            <li><a href="/hedgehogs/{{$sub->id}}">{{$sub->name}}</a></li>
+                            <li><a href="{{url('/hedgehogs/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
                         @endforeach
                       </ul>
                     </div>
@@ -106,7 +106,7 @@
                       <label class="menu-toggle" for="menu-5-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domSex as $sub)
-                           <li><a href="/hedgehogs/domain/{{$sub->id}}">{{$sub->name}}</a></li>
+                           <li><a href="{{url('/hedgehogs/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
                         @endforeach
                       </ul>
                     </div>
@@ -128,7 +128,7 @@
                       <label class="menu-toggle" for="menu-6-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domViolences as $sub)
-                          <li><a href="/hedgehogs/{{$sub->id}}">{{$sub->name}}</a></li>
+                          <li><a href="{{url('/hedgehogs/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
                         @endforeach
                       </ul>
                     </div>
@@ -138,7 +138,7 @@
                       <label class="menu-toggle" for="menu-6-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domDiscrim as $sub)
-                            <li><a href="/hedgehogs/{{$sub->id}}">{{$sub->name}}</a></li>
+                            <li><a href="{{url('/hedgehogs/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
                         @endforeach
                       </ul>
                     </div>
@@ -160,7 +160,7 @@
                       <label class="menu-toggle" for="menu-7-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domReligions as $sub)
-                       <li><a href="/hedgehogs/{{$sub->id}}">{{$sub->name}}</a></li>
+                       <li><a href="{{url('/hedgehogs/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
                          @endforeach
                       </ul>
                     </div>
@@ -182,7 +182,7 @@
                       <label class="menu-toggle" for="menu-8-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domArgent as $sub)
-                            <li><a href="/hedgehogs/{{$sub->id}}">{{$sub->name}}</a></li>
+                            <li><a href="{{url('/hedgehogs/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
                         @endforeach
                       </ul>
                     </div>
@@ -192,7 +192,7 @@
                       <label class="menu-toggle" for="menu-8-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domFormations as $sub)
-                          <li><a href="/hedgehogs/{{$sub->id}}">{{$sub->name}}</a></li>
+                          <li><a href="{{url('/hedgehogs/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
                         @endforeach
                       </ul>
                     </div>

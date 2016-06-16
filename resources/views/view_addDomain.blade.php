@@ -14,7 +14,7 @@
   <div class="col-md-7 designBox">
 
     <h2>Ajouter un domaine</h2>
-    <form id="addDomain" method="post" action="/hedgehogs/domain">
+    <form id="addDomain" method="post" action="{{url('/domain')}}">
 
       <div class="form-group">
         <label for="question">Nouveau domaine</label>

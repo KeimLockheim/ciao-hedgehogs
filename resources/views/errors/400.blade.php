@@ -13,7 +13,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">{{$message or 'Problème de connexion.'}} <a href="/hedgehogs{{$url or '/hedgehogs/home'}}">Revenir en arrière</a></div>
+                <div class="title">{{$message or 'Problème de connexion.'}} <a href="{{$url or '/hedgehogs/home'}}">Revenir en arrière</a></div>
             </div>
         </div>
     </body>
