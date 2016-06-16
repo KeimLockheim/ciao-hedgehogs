@@ -72,14 +72,20 @@ class QuestionController extends Controller {
     if(!isset($domain)){
       return Response::view('errors.404',['url' =>'/home','message'=>'Catégorie non trouvée.'], 404);
     }
-    $question = Question::where('id', $question_id)->with('questionUser', 'answer.answererUser')->where('public','=',1)->get()->first();
+
+    $question = Question::where('id', $question_id)->with('questionUser', 'answer.answererUser')->get()->first();
     if(!isset($question)){
       return Response::view('errors.404',['url' =>'/home','message'=>'Question non trouvée.'], 404);
     }
+    $domainParent = $question->domain;
+
+
+    
 
     $data = Menu::getDomains();
     $data['domain'] = $domain;
     $data['question'] = $question;
+    $data['domainParent'] = $domainParent;
 
     return view('view_question', $data);
   }
@@ -139,9 +145,12 @@ class QuestionController extends Controller {
    * @param  int  $id
    * @return Response
    */
-  public function update($id)
+  public function update($question_id)
   {
+    $question = Question::where('id',$question_id)->first();
+    $question->public = true;
 
+    dd($question);
   }
 
   /**

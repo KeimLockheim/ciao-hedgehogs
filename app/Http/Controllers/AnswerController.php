@@ -2,6 +2,7 @@
 
 use App\Lib\Message;
 use App\Models\Answer;
+use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 
@@ -87,7 +88,7 @@ class AnswerController extends Controller {
    */
   public function update($id)
   {
-    
+
   }
 
   /**
