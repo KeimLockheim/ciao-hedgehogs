@@ -38,10 +38,19 @@ class DomainController extends Controller {
 
   public function showTopics($domain_id)
   {
-    $domain = Domain::where('id', $domain_id)->with('topics')->get()->first();
+    $domainCurrent = Domain::where('id', $domain_id)->with('topics',  'parentDomain.topics')->get()->first();
+    dd($domainCurrent);
+    if($domainCurrent->isSubdomain()){
+      $domain = $domainCurrent->parentDomain;
+    }
+    else{
+      $domain = $domainCurrent;
+    }
     if(!isset($domain)){
       return Response::view('errors.404',[],404);
     }
+    dd($domain->topics);
+
     // récupère [$highlightedTopics, $notHighlightedTopics] pour un domaine précis?
     $data = Menu::getDomains();
     $data['domain'] = $domain;

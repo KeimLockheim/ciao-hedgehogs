@@ -83,13 +83,7 @@ class TopicController extends Controller {
     return view('view_topic', $data);
   }
 
-  public function listAdmin()
-  {
 
-    $data = [];
-
-    return view::make('view_topic', $data);
-  }
 
   /**
    * Show the form for creating a new resource.
