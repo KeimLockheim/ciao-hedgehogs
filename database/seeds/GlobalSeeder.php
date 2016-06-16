@@ -277,10 +277,34 @@ class GlobalSeeder extends Seeder
             'description' => 'Description',
         ]);
         
-        
+        /*RELIGION*/
         $domReligion = new Domain([
             'name' => 'Religions',
             'description' => "Cette rubrique traite des principales religions: le bouddhisme, le christianisme, le judaïsme, l'Islam.Que tu sois un peu croyant, très religieux, pas pratiquant ou sans croyance aucune, tu y trouveras différentes informations sur les traditions et les croyances des principales religions, ainsi que  les textes de référence propres à chaque religion.",
+        ]);
+        $domQQ = new Domain([
+            'name' => 'Quelques clarifications',
+            'description' => 'Description',
+        ]);
+        $domBou = new Domain([
+            'name' => 'Bouddhistes',
+            'description' => 'Description',
+        ]);
+        $domCh = new Domain([
+            'name' => 'Chrétiens',
+            'description' => 'Description',
+        ]);
+        $domHin = new Domain([
+            'name' => 'Hindous',
+            'description' => 'Description',
+        ]);
+        $domJu = new Domain([
+            'name' => 'Juifs',
+            'description' => 'Description',
+        ]);
+        $domMu = new Domain([
+            'name' => 'Musulmans',
+            'description' => 'Description',
         ]);
 
         /*BOIRE FUMER DROGUER*/
@@ -433,15 +457,63 @@ class GlobalSeeder extends Seeder
             'description' => 'Description',
         ]);
         
+        /*ARGENT*/
         $domArgent = new Domain([
             'name' => 'Argent',
             'description' => "Comment gérer ton argent? Comment élaborer ton budget? Comment mieux consommer? Ca n'est pas toujours facile de bien gérer son argent. Mais c'est très important, surtout si on en a peu, pour pouvoir en profiter le mieux possible. Tu verras à travers ce thème que certains pièges peuvent être facilement évités, comme les désagréments qui vont avec.",
         ]);
+      
+        $domBu = new Domain([
+            'name' => "Budget",
+            'description' => 'Description',
+        ]);
+        $domCo = new Domain([
+            'name' => "Consommation",
+            'description' => 'Description',
+        ]);
+        $domDet = new Domain([
+            'name' => "Dettes",
+            'description' => 'Description',
+        ]);
+        $domPou = new Domain([
+            'name' => "Poursuites",
+            'description' => 'Description',
+        ]);
+        $domJeux = new Domain([
+            'name' => "Jeux de hasard",
+            'description' => 'Description',
+        ]);
+        
+        /*FORMATION*/
         $domFormations = new Domain([
             'name' => 'Formation et travail',
             'description' => "Choisir une formation n'est pas toujours facile. Quelle filière choisir? Qu'est-ce qu'un apprentissage? Qui va financer ta formation? Entrer dans le monde du travail n'est pas toujours simple non plus. Pour rendre cela plus confortable, tu peux par exemple te renseigner sur les droits ou obligations de l'employé ou de l'employeur ou encore sur les différents types de contrat de travail. Etre bien renseigné, c'est déjà un atout pour bien commencer ta formation ou ta vie professionnelle!",
         ]);
-
+        $domFor = new Domain([
+            'name' => "Formation-professions",
+            'description' => 'Description',
+        ]);
+        $domChoix = new Domain([
+            'name' => "Choix d'un métier",
+            'description' => 'Description',
+        ]);
+        $domFin = new Domain([
+            'name' => "Le financement de la formation",
+            'description' => 'Description',
+        ]);
+        $domRe = new Domain([
+            'name' => "Recherche d'emploi",
+            'description' => 'Description',
+        ]);
+        $domCV = new Domain([
+            'name' => "Curriculum Vitae",
+            'description' => 'Description',
+        ]);
+        $domCD = new Domain([
+            'name' => "Conditions de travail",
+            'description' => 'Description',
+        ]);
+   
 
 
 
@@ -607,21 +679,35 @@ class GlobalSeeder extends Seeder
         $domLoisJ->creatorUser()->associate($admin);
         $domDis->creatorUser()->associate($admin);
         $domPourquoi->creatorUser()->associate($admin);
-
-
-        
+       
+        /*RELIGION*/
         $domReligion->creatorUser()->associate($admin);
+        $domQQ->creatorUser()->associate($admin);
+        $domBou->creatorUser()->associate($admin);
+        $domCh->creatorUser()->associate($admin);
+        $domHin->creatorUser()->associate($admin);
+        $domJu->creatorUser()->associate($admin);
+        $domMu->creatorUser()->associate($admin);
 
+        /*ARGENT*/
         $domArgent->creatorUser()->associate($admin);
+        $domBu->creatorUser()->associate($admin);
+        $domCo->creatorUser()->associate($admin);
+        $domDet->creatorUser()->associate($admin);
+        $domPou->creatorUser()->associate($admin);
+        $domJeux->creatorUser()->associate($admin);
+
+        /*FORMATION*/
         $domFormations->creatorUser()->associate($admin);
-        
+        $domFor->creatorUser()->associate($admin);
+        $domChoix->creatorUser()->associate($admin);
+        $domFin->creatorUser()->associate($admin);
+        $domRe->creatorUser()->associate($admin);
+        $domCV->creatorUser()->associate($admin);
+        $domCD->creatorUser()->associate($admin);
 
-        $domReligion->save();
 
-        
-        $domArgent->save();
-        $domFormations->save();
-
+    
         
         
         /*SANTE*/
@@ -777,6 +863,44 @@ class GlobalSeeder extends Seeder
         $domPourquoi->parentDomain()->associate($domDiscrim);
         $domPourquoi->save();
 
+        /*RELIGION*/
+        $domReligion->save();
+        $domCh->parentDomain()->associate($domReligion);
+        $domCh->save();
+        $domHin->parentDomain()->associate($domReligion);
+        $domHin->save();
+        $domJu->parentDomain()->associate($domReligion);
+        $domJu->save();
+        $domMu->parentDomain()->associate($domReligion);
+        $domMu->save();
+            
+        /*ARGENT*/
+        $domArgent->save();
+        $domBu->parentDomain()->associate($domArgent);
+        $domBu->save();
+        $domCo->parentDomain()->associate($domArgent);
+        $domCo->save();
+        $domDet->parentDomain()->associate($domArgent);
+        $domDet->save();
+        $domPou->parentDomain()->associate($domArgent);
+        $domPou->save();
+        $domJeux->parentDomain()->associate($domArgent);
+        $domJeux->save();
+        
+        /*FORMATION*/
+        $domFormations->save();
+        $domFor->parentDomain()->associate($domFormations);
+        $domFor->save();
+        $domChoix->parentDomain()->associate($domFormations);
+        $domChoix->save();
+        $domFin->parentDomain()->associate($domFormations);
+        $domFin->save();
+        $domRe->parentDomain()->associate($domFormations);
+        $domRe->save();
+        $domCV->parentDomain()->associate($domFormations);
+        $domCV->save();
+        $domCD->parentDomain()->associate($domFormations);
+        $domCD->save();
         
         $t1->creatorUser()->associate($admin);
         $t1->domain()->associate($domPoids);
