@@ -46,6 +46,7 @@ class UserController extends Controller {
     $data['unansweredQuestionsExpert'] = $data['user']->unansweredQuestionsExpert();
 
     $data['myAnsweredQuestions'] = $data['user']->myAnsweredQuestions();
+    dd($data['myAnsweredQuestions']);
 
     $data['questionsNotAnswered'] = $data['user']->questionsNotAnswered();
     $data['questionsAnswered'] = $data['user']->questionsAnswered();

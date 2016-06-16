@@ -151,7 +151,7 @@ class User extends Model {
 		$answers = [];
 		if($this->answers != null){
 			foreach($this->answers as $answer){
-				$answers[]=$answer->with('question')->first();
+				$answers[]=$answer->with('question')->get();
 			}
 		}
 		return $answers;

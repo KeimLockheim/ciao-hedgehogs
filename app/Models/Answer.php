@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Session;
 
 class Answer extends Model {
 
@@ -35,8 +36,8 @@ class Answer extends Model {
 		// Ajout des contraintes supplémentaires
 		$validator->after(function ($validator) use($input) {
 			// Vérification de l'existence de la question
-			if (!self::exists($input['question_id'])) {
-				dd('1');
+			if (!Question::exists($input['question_id'])) {
+				//dd('1');
 				$validator->errors()->add('exists', 'exists');
 			}
 		});
@@ -88,7 +89,7 @@ class Answer extends Model {
 		// Enregistrement de la question
 		$obj->save();
 
-		$question_related = DB::table('questions')->find($values['question_id'])->first();
+		$question_related = Question::where('id',$values['question_id'])->first();
 		$question_related->name = $values['titleQuestion'];
 		if(!empty($values['theme'])){
 			$question_related->subDomain_id = $values['theme'];

@@ -39,6 +39,7 @@ class AnswerController extends Controller {
 
     // Si la validation échoue
     if ($validate->fails()) {
+
       return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Erreur de saisie'], 400);
     }
 
@@ -46,7 +47,7 @@ class AnswerController extends Controller {
     try{
       Answer::createOne($validate->getData());
       Message::success('saved');
-      return Response::view('errors.200',['url' => redirect()->back()->getTargetUrl(),'message'=>'Discussion créée !'], 200);
+      return Response::view('errors.200',['url' => '/dashboard','message'=>'Question répondue !'], 200);
 
     }
     catch(\Exception $e){

@@ -36,7 +36,7 @@
         <label for="theme"> Thème précis: </label>
         <select class="form-control" name="theme" id="answerSubDomain">
           @if($question->subDomain != null)
-          <option selected value="{{$question->id}}">{{$question->subDomain->name}}</option>
+          <option selected value="{{$question->subDomain->id}}">{{$question->subDomain->name}}</option>
           @else
           <option disabled selected value> {{$user->userProfile->firstName}}, vous pouvez préciser une sous-catégorie. </option>
           @endif

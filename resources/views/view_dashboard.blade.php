@@ -81,7 +81,7 @@
 			<ul class="lienArticle">
 				@if($myAnsweredQuestions != null)
 				@foreach ($myAnsweredQuestions as $questionAnswered)
-				<li><a href="domain/{{$questionAnswered->id}}/question/{{$questionAnswered->id}}">
+				<li><a href="domain/{{$questionAnswered->domain->id}}/question/{{$questionAnswered->id}}">
 
 					{{$questionAnswered->name}}</a></li>
 					@endforeach
