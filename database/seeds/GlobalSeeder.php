@@ -10,6 +10,8 @@ use \App\Models\Topic;
 use \App\Models\Question;
 use \App\Models\Answer;
 use App\Models\UserProfile;
+use App\Models\Urgency;
+
 
 class GlobalSeeder extends Seeder
 {
@@ -1244,6 +1246,61 @@ Merci beaucoup ;-D",
 
         $up1->save();
         $up2->save();
+        
+        /*URGENCES*/
+        $ur1 = new Urgency([
+            'name' => "Fondation Le Tremplin",
+            'telephoneNumber' => '026 543 34 56',
+            'email' => "tremplin@gmail.com",
+            'webSite'=>"www.tremplin.ch",
+        ]);
+        $ur2 = new Urgency([
+            'name' => "Fri-Santé",
+            'telephoneNumber' => '026 555 43 65',
+            'email' => "frisante@gmail.com",
+            'webSite'=>"www.frisante.ch",
+        ]);
+        $ur3 = new Urgency([
+            'name' => "Vivre sans fumer",
+            'telephoneNumber' => '032 543 34 56',
+            'email' => "fumer@gmail.com",
+            'webSite'=>"www.fumer.ch",
+        ]);
+        $ur4 = new Urgency([
+            'name' => "Mrs. Véronique Bachmann Psychologue",
+            'telephoneNumber' => '079 555 34 56',
+            'email' => "vero_b@gmail.com",
+            'webSite'=>"www.veroniquebachman.ch",
+        ]);
+        $ur5 = new Urgency([
+            'name' => "Profa planning familial",
+            'telephoneNumber' => '026 345 22 43',
+            'email' => "pf@gmail.com",
+            'webSite'=>"www.pf.ch",
+        ]);
+        $ur6 = new Urgency([
+            'name' => "SOS Futures Mamans",
+            'telephoneNumber' => '049 789 43 44',
+            'email' => "sosfm@gmail.com",
+            'webSite'=>"www.sosfm.ch",
+        ]);
+        
+        
+        $ur1->domain()->associate($domDrogue);
+        $ur2->domain()->associate($domDrogue);
+        $ur3->domain()->associate($domDrogue);
+        $ur4->domain()->associate($domDrogue);
+        $ur5->domain()->associate($domDrogue);
+        $ur6->domain()->associate($domDrogue);
+
+        $ur1->save();
+        $ur2->save();
+        $ur3->save();
+        $ur4->save();
+        $ur5->save();
+        $ur6->save();
+
+
 
 
 

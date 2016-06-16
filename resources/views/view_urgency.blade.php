@@ -22,8 +22,7 @@
 			@foreach($domain->urgencies as $urgency)
 			<div class="col-md-5 boxUrgences">
 				<div class="row carteVisite">
-					<h2>{{$urgency->title}}</h2>
-					<h4>{{$urgency->name}}</h4>
+					<h3>{{$urgency->name}}</h3>
 					<div class="containCarte">
 						<p><img src="{{ asset('assets/img/phone.png') }}" alt="phone" class="imgUrgency"><label>{{$urgency->telephoneNumber}}</label></p>
 
