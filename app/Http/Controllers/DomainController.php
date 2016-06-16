@@ -38,9 +38,15 @@ class DomainController extends Controller {
 
   public function showTopics($domain_id)
   {
-    $domainCurrent = Domain::where('id', $domain_id)->with('topics')->with('parentDomain.topics')->get()->first();
+    $domainCurrent = Domain::where('id', $domain_id)->with(['topics' => function ($query) {
+      $query->where('validated_by', '<>', null)->where('refusedReason', '=', null);
 
-    dd($domainCurrent);
+    }])->with(['parentDomain','parentDomain.topics' => function ($query) {
+          $query->where('validated_by', '<>', null)->where('refusedReason', '=', null);
+        }
+    ])->get()->first();
+
+
     if($domainCurrent->isSubdomain()){
       $domain = $domainCurrent->parentDomain;
     }
@@ -50,7 +56,7 @@ class DomainController extends Controller {
     if(!isset($domain)){
       return Response::view('errors.404',[],404);
     }
-    dd($domain->topics);
+    //dd($domain->topics);
 
     // récupère [$highlightedTopics, $notHighlightedTopics] pour un domaine précis?
     $data = Menu::getDomains();
