@@ -35,7 +35,7 @@
 			</p>
 		</div>
 		@if($question->public != true)
-			<form action="/hedgehogs/question/setPublic" method="post">
+			<form action="#" method="post">
 				<input type="hidden" name="question_id" value="{{$question->id}}">
 				<div class="form-group">
 					<div >
