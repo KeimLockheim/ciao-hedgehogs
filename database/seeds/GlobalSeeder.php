@@ -31,13 +31,13 @@ class GlobalSeeder extends Seeder
         $q3 = SecretQuestion::create([
             'name' => 'Le nom de ton animal de compagnie',
         ]);
-        $q3 = SecretQuestion::create([
+        $q4 = SecretQuestion::create([
             'name' => 'Le nom de ta soeur',
         ]);
-        $q3 = SecretQuestion::create([
+        $q5 = SecretQuestion::create([
             'name' => 'Le nom de ton frère',
         ]);
-        $q3 = SecretQuestion::create([
+        $q6 = SecretQuestion::create([
             'name' => 'Le nom de ton film préféré',
         ]);
 
@@ -751,19 +751,46 @@ class GlobalSeeder extends Seeder
         $gExpert->users()->save($expert);
 
 
-        $default = new User([
+        $default1 = new User([
             'nickname' => 'jojo2016',
-            'birthyear' => 1999,
+            'birthyear' => 2002,
             'sex' => 'masculin',
             'localisation' => 'Fribourg',
             'password' => bcrypt('default'),
             'secretQuestionAnswer' => bcrypt('Titi'),
         ]);
+        
+        $default2 = new User([
+            'nickname' => 'libellule',
+            'birthyear' => 2000,
+            'sex' => 'feminin',
+            'localisation' => 'Vaud',
+            'password' => bcrypt('default'),
+            'secretQuestionAnswer' => bcrypt('Chappuis'),
+        ]);
+        
+        $default3 = new User([
+            'nickname' => 'sweetGirl',
+            'birthyear' => 2004,
+            'sex' => 'feminin',
+            'localisation' => 'Vaud',
+            'password' => bcrypt('default'),
+            'secretQuestionAnswer' => bcrypt('Laura'),
+        ]);
 
-        $default->secretQuestion()->associate($q1);
-        $gDefault->users()->save($default);
+        $default1->secretQuestion()->associate($q1);
+        $default2->secretQuestion()->associate($q2);
+        $default3->secretQuestion()->associate($q3);
 
-        $default->save();
+        
+        $gDefault->users()->save($default1);
+        $gDefault->users()->save($default2);
+        $gDefault->users()->save($default3);
+
+        $default1->save();
+        $default2->save();
+        $default3->save();
+
         
 
         /*
@@ -777,16 +804,15 @@ class GlobalSeeder extends Seeder
             répondez moi au plus vite merci :D",
         ]);
         $p2 = new Post([
-            'content' =>"Salut
-            Arides a tres bien expliqué ce qu'il fait faire mais sache que chaque personne as une morphologie différente. Ci certains deviennent 'gros' a vue d'oeil pour d'autres (dont moi) c'est l'inverse et il n'y a pas d'aventages... Le plus important est l'alimentation et s'hydrater correctement apres tu px ajouter un sport (par expérience je suis en sport études avk 3.30h par jour et la base est l'alimentation) ... et le plus important de tout c'est d'aimer comme tu est." ,
+            'content' =>"je me trouve grosse je voudrait pouvoir perdre du poids comment faire? ? ? ?" ,
         ]);
         $p3 = new Post([
             'content' => "Hello,
             Je ne vais pas dire que je suis en surpoids, mais...
             J'aime manger, surtout les sucrerie. J'ai du ventre et j'aimerai m'en débarrasser. Sauf que j'ai la flemme de faire du sport. Pourtant je sais que pour perdre du poids c'est le seul moyen.(je ne veux pas faire de régime)
-            De plus si j'ai trop de sucre je risque d'avoir du diabète ou d'autre maladie. pleure 
+            De plus si j'ai trop de sucre je risque d'avoir du diabète ou d'autre maladie. 
             Ce qui ne me motive pas non plus c'est que je n'ai pas de physique. 
-            Donnez-moi de vos conseille j'en serai reconnaissante sourire 
+            Donnez-moi de vos conseille j'en serai reconnaissante. 
             Merci",
         ]);
 
@@ -805,6 +831,8 @@ class GlobalSeeder extends Seeder
         $t3 = new Topic([
             'name' => "Pas envie de faire du sport",
         ]);
+        
+        
 
         /*SANTE*/
         $domSante->creatorUser()->associate($admin);
@@ -1121,11 +1149,11 @@ class GlobalSeeder extends Seeder
         $domCD->parentDomain()->associate($domFormations);
         $domCD->save();
         
-        $t1->creatorUser()->associate($admin);
+        $t1->creatorUser()->associate($default2);
         $t1->domain()->associate($domManger);
-        $t2->creatorUser()->associate($admin);
+        $t2->creatorUser()->associate($default3);
         $t2->domain()->associate($domManger);
-        $t3->creatorUser()->associate($admin);
+        $t3->creatorUser()->associate($default2);
         $t3->domain()->associate($domManger);
 
         $t1->save();
@@ -1173,31 +1201,77 @@ Est-ce possible d'avoir recourt à une aide pour la croissance ?
 Ou est-ce que ça veut dire que je dois grossir pour avoir de la poitrine ?",
         ]);
         $q3 = new Question([
-            'name' => "Bonjour!
+            'name'=>"Maigrir vite",
+            'content' => "Bonjour!
 Ma question est de savoir comment pourrais-je maigrir vite et sans pilule, médicament ou autres? Je fais 1m56 pour 56 kilos, et je me sens mal dans ma peau, je fais du fitness depuis le mois de février, j'y vais 2 fois par semaine (je n'ai pas beaucoup de temps à cause de l'école) et je ne vois pas de résultat.Je bois de l'eau, je mange sainement et ce que je mange entre les repas n'est que des fruits...
 
 Je ne sais plus comment faire, pouvez-vous me donnez des conseils?
 
 Merci beaucoup ;-D",
         ]);
+        
+        $q4 = new Question([
+            'name'=>"Les filles prennent plus de poids",
+            'content' => "Pourquoi les filles grossissent plus vites que les garçons ? ::-) :-?",
+        ]);
+    
+        $q5 = new Question([
+            'name'=>"Bientôt une prise de sang... Le médecin va voir que j'ai fumé?",
+            'content' => "Bonjour,
+
+Alors en fait j'ai du THC (tétrahydrocannabinol) dans le sang vu que j ai fumé d le la beuh (cannabis) et dans environ 1 semaine je dois aller faire un bilan médical chez mon médecin de famille.
+
+C'est sûr qu'il va me faire une prise de sang et je ne voudrais pas qu'il en parle  à ma mère. Et ça serait plutôt gênant d'aller lui dire de ne pas en parler car c'est mon médecin de famille..
+
+Je voulais aussi savoir:
+
+Si par exemple je fume de l'herbe (cannabis) 2 jour avant de faire les prise de sang est ce que ça se voit plus que si j'avais fumé il y a 1-2 semaines?
+Et est ce qu'on peut voir la quantité de THC dans le sang?
+Et est ce que le médecin va en parler ou il ne va rien demander du tout à cause du secret médical..?
+S'il vous plait répondez moi le plus précisément possible",
+        ]);
+        
+        $q6 = new Question([
+            'name'=>"Sommeil et puberté",
+            'content' => "Bonjour,
+J'aimerais savoir si la répartition des heures de sommeil a une importance; par exemple, si je dors 9h de 22h à 7h, est-ce que cela a le même effet que si je dors 9h de 2h à 11h ?
+On m'a parfois dit que, pour la croissance, seules les heures de sommeil avant minuit comptent: est-ce vrai ?
+Merci d'avance!",
+        ]);
+        
 
 
-        $q1->questionUser()->associate($default);
+        $q1->questionUser()->associate($default1);
         $q1->domain()->associate($domSante);
         $q1->subDomain()->associate($domPuberteG);
 
+
+        $q2->questionUser()->associate($default3);
+        $q2->domain()->associate($domSante);
+        $q2->subDomain()->associate($domPuberteF);
         
+        $q3->questionUser()->associate($default2);
+        $q3->domain()->associate($domSante);
+        $q3->subDomain()->associate($domPoids);
+        
+        $q4->questionUser()->associate($default3);
+        $q4->domain()->associate($domSante);
+        $q4->subDomain()->associate($domPoids);
 
-        $q3->questionUser()->associate($default);
-        $q3->domain()->associate($domPoids);
-
-        $q2->questionUser()->associate($default);
-        $q2->domain()->associate($domPuberteF);
-
+        $q5->questionUser()->associate($default2);
+        $q5->domain()->associate($domSante);
+        $q5->subDomain()->associate($domOuQui);
+        
+        $q6->questionUser()->associate($default3);
+        $q6->domain()->associate($domSante);
+        $q6->subDomain()->associate($domPuberteF);
 
         $q1->save();
         $q2->save();
         $q3->save();
+        $q4->save();
+        $q5->save();
+        $q6->save();
 
         /*
          * Answer
@@ -1243,12 +1317,15 @@ Merci beaucoup ;-D",
             'lastName' => "Demierre",
             'email' => "luciendemierre@gmail.com",
         ]);
+        
+      
 
         $up1->user()->associate($expert);
         $up2->user()->associate($admin);
 
         $up1->save();
         $up2->save();
+
         
         /*URGENCES*/
         $ur1 = new Urgency([
