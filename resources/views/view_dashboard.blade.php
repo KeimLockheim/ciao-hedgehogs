@@ -79,7 +79,7 @@
 
 
 			</ul>
-			<h3>Mes questions répondues: </h3>
+			<h3>Questions répondues: </h3>
 			<ul class="lienArticle">
 				@if($myAnsweredQuestions != null)
 				@foreach ($myAnsweredQuestions as $questionAnswered)
