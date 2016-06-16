@@ -148,6 +148,7 @@ class QuestionController extends Controller {
     $question->public = true;
 
     dd($question);
+    return Response::view('errors.200',['url' =>'/dashboard/topics/','message'=>'Question publique.'], 200);
   }
 
   /**
