@@ -729,7 +729,7 @@ class GlobalSeeder extends Seeder
             'sex' => 'féminin',
             'localisation' => 'Vaud',
             'password' => bcrypt('admin'),
-            'secretQuestionAnswer' => bcrypt('lala'),
+            'secretQuestionAnswer' => bcrypt('Gurtner'),
         ]);
         $admin->secretQuestion()->associate($q2);
         $gAdministrator->users()->save($admin);
@@ -741,7 +741,7 @@ class GlobalSeeder extends Seeder
             'sex' => 'masculin',
             'localisation' => 'Neuchâtel',
             'password' => bcrypt('expert'),
-            'secretQuestionAnswer' => bcrypt('hihi'),
+            'secretQuestionAnswer' => bcrypt('Lilou'),
         ]);
 
         $expert->secretQuestion()->associate($q1);
@@ -749,7 +749,20 @@ class GlobalSeeder extends Seeder
 
         $expert->save();
 
+        $default = new User([
+            'nickname' => 'jojo2016',
+            'birthyear' => 1999,
+            'sex' => 'masculin',
+            'localisation' => 'Fribourg',
+            'password' => bcrypt('default'),
+            'secretQuestionAnswer' => bcrypt('Titi'),
+        ]);
 
+        $default->secretQuestion()->associate($q1);
+        $gDefault->users()->save($default);
+
+        $default->save();
+        
 
         /*
          * Posts
@@ -1145,13 +1158,13 @@ class GlobalSeeder extends Seeder
         ]);
 
 
-        $q1->questionUser()->associate($admin);
+        $q1->questionUser()->associate($default);
         $q1->domain()->associate($domPuberteG);
 
-        $q3->questionUser()->associate($admin);
+        $q3->questionUser()->associate($default);
         $q3->domain()->associate($domPoids);
 
-        $q2->questionUser()->associate($expert);
+        $q2->questionUser()->associate($default);
         $q2->domain()->associate($domSexualite);
         $q2->subDomain()->associate($domRelation);
 
@@ -1168,8 +1181,7 @@ class GlobalSeeder extends Seeder
             'content' => "Bonjour,
             L'apparition de la pilosité varie d'une personne à une autre et survient lorsque la puberté est en place. Dans votre famille, il semble que ce phénomène soit précoce.
             Il n'est pas possible de la précipiter, aussi nous vous conseillons de laisser au temps le temps de faire son travail de maturité et bientôt votre souhait sera votre réalité. Sourire
-            Nous vous souhaitons une belle semaine.
-            L'équipe CIAO ",
+            Nous vous souhaitons une belle semaine.",
         ]);
         $a2 = new Answer([
             'content' => "Bonjour,
