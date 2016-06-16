@@ -41,6 +41,16 @@
 		</div>
 	</div>
 
+	<form action="/question/setPublic" method="post">
+	<input type="hidden" name="question_id" value="{{$question->id}}">
+	<div class="form-group">
+		<div >
+			<button type="submit" class="btn btn-primary">Je veux rendre la question publique</button>
+		</div>
+	</div>
+</form>
+
+
 
 	<div class="col-md-offset-1 col-md-4">
 

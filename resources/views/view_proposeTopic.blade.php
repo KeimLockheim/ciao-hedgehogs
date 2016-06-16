@@ -51,7 +51,7 @@
           </div>
         </div>
 
-      </form>
+      </form>    
       @else
       <h2>
         Tu dois être connecté pour pouvoir proposer un sujet de disucssion
