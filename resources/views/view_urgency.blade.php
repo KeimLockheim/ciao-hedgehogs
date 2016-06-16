@@ -9,7 +9,7 @@
 	<div class="row" id="contenu">
 
 		<div class="col-md-12" id="breadcrums">
-			<p><a href="/home">Accueil</a> > <a href="/domain/{{$domain->id}}">{{$domain->name}}</a> > Urgences et adresses</p>
+			<p><a href="/hedgehogs/home">Accueil</a> > <a href="/hedgehogs/domain/{{$domain->id}}">{{$domain->name}}</a> > Urgences et adresses</p>
 		</div>
 	</div>
 
@@ -28,7 +28,7 @@
 
 						<p><img src="{{ asset('assets/img/mail.png') }}" alt="mail" class="imgUrgency"><label>{{$urgency->email}}</label></p>
 
-						<p><img src="{{ asset('assets/img/web.png') }}" alt="web" class="imgUrgency"><label><a href="{{$urgency->webSite}}">{{$urgency->webSite}}</a></label></p>
+						<p><img src="{{ asset('assets/img/web.png') }}" alt="web" class="imgUrgency"><label><a href="/hedgehogs/{{$urgency->webSite}}">{{$urgency->webSite}}</a></label></p>
 					</div>
 
 				</div>

@@ -7,7 +7,7 @@
 
   <h2>S'inscrire</h2>
 
-  <form id="registrationForm" action="/user" method="post">
+  <form id="registrationForm" action="/hedgehogs/user" method="post">
     <div class="form-group">
       <label for="pseudo" class="control-label">Pseudo </label>
       <a href="#" class="iconInfo" data-toggle="tooltip" data-placement="top" title="Un pseudo qui garantisse vraiment ton anonymat : ni nom, ni prénom, ni surnom, ni nom de compte de chat, Facebook... ">&#xea08</a>

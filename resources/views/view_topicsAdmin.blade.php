@@ -7,7 +7,7 @@
 <div class="row" id="contenu">
 
   <div class="col-md-12" id="breadcrums">
-    <p><a href="/dashboard">Dashboard</a> > Admin > Liste des discussions admin</p>
+    <p><a href="/hedgehogs/dashboard">Dashboard</a> > Admin > Liste des discussions admin</p>
   </div>
 </div>
 
@@ -18,7 +18,7 @@
 
   <ul class="lienArticle">
     @foreach ($topicsToValidate as $topicToValidate)
-    <li><a href="/dashboard/topics/validate/{{ $topicToValidate->id }}">{{ $topicToValidate->name }}</a></li>
+    <li><a href="/hedgehogs/dashboard/topics/validate/{{ $topicToValidate->id }}">{{ $topicToValidate->name }}</a></li>
     @endforeach
   </ul>
 
@@ -26,7 +26,7 @@
 
   <ul class="lienArticle">
     @foreach ($topicsValidated as $topicValidated)
-    <li><a href="/dashboard/topics/validate/{{$topicValidated->id}}">{{ $topicValidated->name }}</a></li>
+    <li><a href="/hedgehogs/dashboard/topics/validate/{{$topicValidated->id}}">{{ $topicValidated->name }}</a></li>
     @endforeach
   </ul>
 </div>
