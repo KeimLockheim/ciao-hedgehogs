@@ -790,7 +790,8 @@ width: 100%;
 }
 
 
-
+.lienArticle{
+}
 .lienArticle li a{
     color: #ff5a5f;
 }
@@ -799,6 +800,11 @@ width: 100%;
     color: #484848;
 }
 
+.lienArticle div{
+    text-align: left;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
 
 #bottomMenu{
     margin-top: 30px;

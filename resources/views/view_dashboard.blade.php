@@ -71,7 +71,7 @@
 				@if($unansweredQuestionsExpert != null)
 				@foreach ($unansweredQuestionsExpert as $questionNoAnswer)
 				<li><strong>{{$questionNoAnswer->questionUser->nickname}}</strong> a posé une question
-					<a href="/dashboard/answers/{{$questionNoAnswer->id}}"><button type="button" class="btn btn-xs expertAnswerTo">Répondre</button></a>
+					<a href="/dashboard/answers/{{$questionNoAnswer->id}}"><div><button type="button" class="btn btn-xs expertAnswerTo">Répondre</button></div></a>
 				</li>
 
 				@endforeach
@@ -139,7 +139,7 @@
 				<ul>
 					@if($questionsAnswered != null)
 					@foreach ($questionsAnswered as $question)
-					<li><a href="/question/Answered">{{$question->content}}</a></li>
+					<li><a href="domain/{{$question->domain->id}}/question/{{$question->id}}">{{$question->content}}</a></li>
 					@endforeach
 					@endif
 
