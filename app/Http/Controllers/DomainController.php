@@ -38,7 +38,8 @@ class DomainController extends Controller {
 
   public function showTopics($domain_id)
   {
-    $domainCurrent = Domain::where('id', $domain_id)->with('topics',  'parentDomain.topics')->get()->first();
+    $domainCurrent = Domain::where('id', $domain_id)->with('topics')->with('parentDomain.topics')->get()->first();
+
     dd($domainCurrent);
     if($domainCurrent->isSubdomain()){
       $domain = $domainCurrent->parentDomain;
