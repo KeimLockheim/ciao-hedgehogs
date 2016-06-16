@@ -16,11 +16,11 @@
 	<div class="col-md-12 designBox">
 
 
-		<h1>Urgences sur {{$domain->name}}</h1>
+		<h1>Liste des adresses d'urgences {{$domain->name}}</h1>
 
 		<div class="row">
 			@foreach($domain->urgencies as $urgency)
-			<div class="col-md-5 boxUrgences">
+				<div class="col-md-offset-1 col-md-5 boxUrgences">
 				<div class="row carteVisite">
 					<h3>{{$urgency->name}}</h3>
 					<div class="containCarte">

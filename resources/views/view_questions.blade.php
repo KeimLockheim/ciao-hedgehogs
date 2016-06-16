@@ -39,15 +39,12 @@
                   <p>{{$question->created_at}}</p>
                 </li>
                 @endforeach
-<<<<<<< HEAD
 
-=======
                   @foreach($domain->subDomainQuestions as $question)
                     <li><a href="/domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a>
                       <p>{{$question->created_at}}</p>
                     </li>
                   @endforeach
->>>>>>> origin/master
 
 
       </ul>

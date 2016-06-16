@@ -75,7 +75,7 @@ class GlobalSeeder extends Seeder
         
         $domOuQui = new Domain([
             'name' => "Où, qui consulter?",
-            'description' => 'Description',
+            'description' => "Cette rubrique t'aidera si tu souhaite trouver un medecin. Peut-être que tu ne veux pas demander d'aide à tes parents, ou simplement que tu ne peux pas. Alors nous espérons que cette rubrique te sera utile.",
             'content'=>"<h2>Consulter sans les parents</h2>
 
 			<p>Les adolescents, dès l'âge de 14 -15 ans, ont le droit de consulter un médecin sans en parler à un de leurs  parents. Malgré tout, il est en général préférable de parler à tes parents ou à quelqu'un de ton entourage de ton besoin de consulter. L'entourage (notamment tes parents) représente un soutien très utile dans des situations difficiles.</p>
@@ -627,7 +627,7 @@ class GlobalSeeder extends Seeder
         
         $domAr = new Domain([
             'name' => "L'argent",
-            'description' => "Description",
+            'description' => "Comment gérer ton argent? Comment élaborer ton budget? Comment mieux consommer? Ca n'est pas toujours facile de bien gérer son argent. Mais c'est très important, surtout si on en a peu, pour pouvoir en profiter le mieux possible. Tu verras à travers ce thème que certains pièges peuvent être facilement évités, comme les désagréments qui vont avec.",
             'content'=>"<h2>À quoi sert l'argent?</h2>
 
 			<p>L'argent est présent partout dans nos sociétés. Sur le plan économique, l'argent constitue un moyen d'échange. Il permet d'établir les prix des marchandises. On peut le conserver, l'économiser pour le dépenser plus tard.</p>
@@ -728,7 +728,7 @@ class GlobalSeeder extends Seeder
         $admin = new User([
             'nickname' => 'admin',
             'birthyear' => 1978,
-            'sex' => 'féminin',
+            'sex' => 'masculin',
             'localisation' => 'Vaud',
             'password' => bcrypt('admin'),
             'secretQuestionAnswer' => bcrypt('Gurtner'),
@@ -740,13 +740,15 @@ class GlobalSeeder extends Seeder
         $expert = new User([
             'nickname' => 'expert',
             'birthyear' => 1970,
-            'sex' => 'masculin',
+            'sex' => 'féminin',
             'localisation' => 'Neuchâtel',
             'password' => bcrypt('expert'),
             'secretQuestionAnswer' => bcrypt('Lilou'),
         ]);
 
         $expert->secretQuestion()->associate($q1);
+
+        
 
         $gExpert->users()->save($expert);
 
@@ -1149,6 +1151,9 @@ class GlobalSeeder extends Seeder
         $domCD->parentDomain()->associate($domFormations);
         $domCD->save();
         
+        
+        $domSante->users()->save($expert);
+
         $t1->creatorUser()->associate($default2);
         $t1->domain()->associate($domManger);
         $t2->creatorUser()->associate($default3);
@@ -1321,6 +1326,7 @@ Merci d'avance!",
       
 
         $up1->user()->associate($expert);
+
         $up2->user()->associate($admin);
 
         $up1->save();
