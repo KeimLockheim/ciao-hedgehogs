@@ -1148,13 +1148,32 @@ class GlobalSeeder extends Seeder
         DB::table('questions')->delete();
 
         $q1 = new Question([
-            'content' => "Comment faire pour avoir une barbe et une moustache à 14 ans ?",
+            'name' => "Comment faire pour avoir une barbe et une moustache à 14 ans ?",
+            'content' => "Bonjour l'équipe ciao
+
+Voilà ma question: est que on peut avoir une barbe à 14 ans sachant que d'après des sites c'est de famille et mon père a une moustache et de temps en temps une barbe de 3 jours?
+
+et si oui comment faire pour l'avoir car j aimerais beaucoup en avoir ou une ou même un début de barbe (sur les côtés en gros ) sachant aussi que je rase ma moustache car j'en ai une ( je la rase un coup de temps en temps 2 semaine je crois )?",
         ]);
         $q2 = new Question([
-            'content' => "Je vomis et j'ai des vertiges. Suis-je enceinte ?",
+            'name' => "Je n'ai pas mes règles, ma poitrine ne se développe pas et j'ai 15 ans.",
+            'content' => "Bonjour,
+
+J'approche maintenant à mes 15 ans, je n'ai pas encore mes règles, et ma poitrine n'est pas développée, et je suis allée chercher sur un site, pour voir si c'était normal.
+
+D'après ce site, la personne doit avoir accumulé 20% de graisse au minimum afin que la poitrine puisse se développer mais je suis assez fine et sportive, je suis très complexée par ma poitrine et je me sens très en retard comparé à la plupart des filles de mon âge et plus petites.
+
+Est-ce possible d'avoir recourt à une aide pour la croissance ?
+
+Ou est-ce que ça veut dire que je dois grossir pour avoir de la poitrine ?",
         ]);
         $q3 = new Question([
-            'content' => "Comment faire pour vite perdre du poids ?",
+            'name' => "Bonjour!
+Ma question est de savoir comment pourrais-je maigrir vite et sans pilule, médicament ou autres? Je fais 1m56 pour 56 kilos, et je me sens mal dans ma peau, je fais du fitness depuis le mois de février, j'y vais 2 fois par semaine (je n'ai pas beaucoup de temps à cause de l'école) et je ne vois pas de résultat.Je bois de l'eau, je mange sainement et ce que je mange entre les repas n'est que des fruits...
+
+Je ne sais plus comment faire, pouvez-vous me donnez des conseils?
+
+Merci beaucoup ;-D",
         ]);
 
 
@@ -1165,8 +1184,7 @@ class GlobalSeeder extends Seeder
         $q3->domain()->associate($domPoids);
 
         $q2->questionUser()->associate($default);
-        $q2->domain()->associate($domSexualite);
-        $q2->subDomain()->associate($domRelation);
+        $q2->domain()->associate($domPuberteF);
 
 
         $q1->save();
