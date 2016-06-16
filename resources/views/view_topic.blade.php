@@ -8,7 +8,7 @@
 
   <div class="row" id="contenu">
     <div class="col-md-12" id="breadcrums">
-      <p><a href="/home">Accueil</a> > <a href="/domain/{{$domain->id}}">{{$domain->name}}</a> > Discussion</p>
+      <p><a href="/hedgehogs/home">Accueil</a> > <a href="/hedgehogs/domain/{{$domain->id}}">{{$domain->name}}</a> > Discussion</p>
     </div>
   </div>
 
@@ -40,7 +40,7 @@
 
     </div>
 
-    <form id="answerTopic" action="/post" method="post">
+    <form id="answerTopic" action="/hedgehogs/post" method="post">
 
       <div class="form-group">
         <input type="hidden" id="parentPost" name="parentPost_id" value="">

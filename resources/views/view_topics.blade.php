@@ -7,7 +7,7 @@
   <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
-      <p><a href="/home">Accueil</a> > <a href="/domain/{{$domain->id}}">{{$domain->name}}</a> > <a href="/domain/{{$domain->id}}/discussions">Liste des discussions</a></p>
+      <p><a href="/hedgehogs/home">Accueil</a> > <a href="/hedgehogs/domain/{{$domain->id}}">{{$domain->name}}</a> > <a href="/hedgehogs/domain/{{$domain->id}}/discussions">Liste des discussions</a></p>
     </div>
   </div>
 
@@ -20,9 +20,6 @@
       <p>
         Ci-dessous, tu peux voir toutes les discussions en rapport avec cette thématique. N’hésite pas à participer et partager tes expériences et connaissances.
       </p>
-
-
-    </p>
   </div>
 </div>
 
@@ -35,13 +32,13 @@
 
 
       @foreach($domain->topics as $topic)
-      <li><a href="domain/{{$domain->id}}/discussion/{{$topic->id}}">{{$topic->name}}</a>
+      <li><a href="/hedgehogs/domain/{{$domain->id}}/discussion/{{$topic->id}}">{{$topic->name}}</a>
         <p>{{$topic->created_at}}</p>
       </li>
       @endforeach
 
     </ul>
-    <a href="/propose/{{$domain->id}}"><button type="submit" class="btn btn-m"><img src="{{ asset('assets/img/forum.png') }}" alt="question" class="iconButton">Proposer une discussion!</button></a>
+    <a href="/hedgehogs/propose/{{$domain->id}}"><button type="submit" class="btn btn-m"><img src="{{ asset('assets/img/forum.png') }}" alt="question" class="iconButton">Proposer une discussion!</button></a>
   </div>
 </div>
 

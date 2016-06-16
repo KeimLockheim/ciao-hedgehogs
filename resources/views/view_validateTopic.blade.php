@@ -9,7 +9,7 @@
 	<div class="row" id="contenu">
 
 		<div class="col-md-12" id="breadcrums">
-			<p><a href="/dashboard">Dashboard</a> > Valider une discussion</p>
+			<p><a href="/hedgehogs/dashboard">Dashboard</a> > Valider une discussion</p>
 		</div>
 	</div>
 
@@ -17,7 +17,7 @@
 		<div class="row">
 
 			<h2>Valider un sujet de discussion entre jeunes</h2>
-			<form id="validateTopic" action="/topic/update" method="POST">
+			<form id="validateTopic" action="/hedgehogs/topic/update" method="POST">
 				<input type="hidden" name="topic_id" value="{{$topic->id}}">
 				<div class="form-group">
 					<label for="question">Le sujet proposé:</label>

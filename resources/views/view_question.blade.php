@@ -9,7 +9,7 @@
 
 		<div class="col-md-12" id="breadcrums">
 
-			<p><a href="/home">Accueil</a> > <a href="/domain/{{$domain->id}}">{{$domain->name}}</a> > <a href="domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a></p>
+			<p><a href="/hedgehogs/home">Accueil</a> > <a href="/hedgehogs/domain/{{$domain->id}}">{{$domain->name}}</a> > <a href="/hedgehogs/domain/{{$domain->id}}/question/{{$question->id}}">{{$question->name}}</a></p>
 		</div>
 
 	</div>
@@ -35,7 +35,7 @@
 			</p>
 		</div>
 		@if($question->public != true)
-			<form action="/question/setPublic" method="post">
+			<form action="/hedgehogs/question/setPublic" method="post">
 				<input type="hidden" name="question_id" value="{{$question->id}}">
 				<div class="form-group">
 					<div >
