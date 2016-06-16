@@ -41,7 +41,8 @@
 		</div>
 	</div>
 
-	<form action="/question/setPublic" method="post">
+@if($question->public == false)
+<form action="/question/setPublic" method="post">
 	<input type="hidden" name="question_id" value="{{$question->id}}">
 	<div class="form-group">
 		<div >
@@ -49,6 +50,7 @@
 		</div>
 	</div>
 </form>
+@endif
 
 
 

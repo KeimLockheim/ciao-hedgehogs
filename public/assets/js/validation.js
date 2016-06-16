@@ -4,15 +4,17 @@ $(document).ready(function() {
 		 attente de réponse
 	*/
 
-	/* gestion de tous les forumulaires, fonctionnalités supplémentaires aux
-		 validations en dessous du bloc *.formavalidation({})
-	*/
 
 	$('.forValidationQuestions li').each(function(){
 		var forValidationQuestion = $(this).text();
 		var result = forValidationQuestion.substr(0, 55);
-		$(this).html(result + " ...");
+		$(this).find(".forVal").html(result + " ...");
 	})
+
+	/* gestion de tous les forumulaires, fonctionnalités supplémentaires aux
+		 validations en dessous du bloc *.formavalidation({})
+	*/
+
 
 
 	//  <--- changePassword form--->
