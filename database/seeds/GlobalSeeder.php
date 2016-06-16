@@ -828,7 +828,7 @@ class GlobalSeeder extends Seeder
             'name' => 'Suis-je anorexique ?',
         ]);
         $t2 = new Topic([
-            'name' => 'Comment perdre du poid?',
+            'name' => 'Comment perdre du poids?',
         ]);
         $t3 = new Topic([
             'name' => "Pas envie de faire du sport",
