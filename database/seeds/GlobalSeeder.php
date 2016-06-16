@@ -403,11 +403,36 @@ class GlobalSeeder extends Seeder
             'description' => 'Description',
         ]);
         
-
+        /*DISCRIMINATION RACISME*/
         $domDiscrim = new Domain([
             'name' => 'Discrimination et racismes',
             'description' => "Dans ce thème, CIAO essaie de répondre aux interrogations des jeunes sur des phénomènes qui les interpellent beaucoup et les divisent : le racisme et les discriminations. Pourquoi ça existe? Est-ce justifié? Est-ce inévitable? Et d'abord, ça commence où le racisme? Comment lutter contre? Comment argumenter? Comment se défendre quand on est attaqué? Tu trouveras donc des informations pour comprendre ce qu'est le racisme et ce que sont les discriminations. Nous essayons d'expliquer leurs mécanismes. Nous expliquons aussi en détail le cadre légal dans lequel nous vivons qui définit les droits et les devoirs de chacun sur le territoire de la Suisse.",
         ]);
+        $domRac = new Domain([
+            'name' => "Racismes",
+            'description' => 'Description',
+        ]);
+        $domPrin = new Domain([
+            'name' => "Principales formes racisme",
+            'description' => 'Description',
+        ]);
+        $domLoisR = new Domain([
+            'name' => "Lois contre le racisme",
+            'description' => 'Description',
+        ]);
+        $domLoisJ = new Domain([
+            'name' => "Lois et jugements",
+            'description' => 'Description',
+        ]);
+        $domDis = new Domain([
+            'name' => "Discrimintation",
+            'description' => 'Description',
+        ]);
+        $domPourquoi = new Domain([
+            'name' => "Pourquoi? comment?",
+            'description' => 'Description',
+        ]);
+        
         $domArgent = new Domain([
             'name' => 'Argent',
             'description' => "Comment gérer ton argent? Comment élaborer ton budget? Comment mieux consommer? Ca n'est pas toujours facile de bien gérer son argent. Mais c'est très important, surtout si on en a peu, pour pouvoir en profiter le mieux possible. Tu verras à travers ce thème que certains pièges peuvent être facilement évités, comme les désagréments qui vont avec.",
@@ -574,11 +599,19 @@ class GlobalSeeder extends Seeder
         $domEnMoi->creatorUser()->associate($admin);
         $domRue->creatorUser()->associate($admin);
 
-        
+        /*DISCRIMINATION ET RACISME*/
+        $domDiscrim->creatorUser()->associate($admin);
+        $domRac->creatorUser()->associate($admin);
+        $domPrin->creatorUser()->associate($admin);
+        $domLoisR->creatorUser()->associate($admin);
+        $domLoisJ->creatorUser()->associate($admin);
+        $domDis->creatorUser()->associate($admin);
+        $domPourquoi->creatorUser()->associate($admin);
+
+
         
         $domReligion->creatorUser()->associate($admin);
 
-        $domDiscrim->creatorUser()->associate($admin);
         $domArgent->creatorUser()->associate($admin);
         $domFormations->creatorUser()->associate($admin);
         
@@ -586,7 +619,6 @@ class GlobalSeeder extends Seeder
         $domReligion->save();
 
         
-        $domDiscrim->save();
         $domArgent->save();
         $domFormations->save();
 
@@ -729,6 +761,21 @@ class GlobalSeeder extends Seeder
         $domEnMoi->save();
         $domRue->parentDomain()->associate($domViolence);
         $domRue->save();
+        
+        /*DISCRIMINATION ET RACISME*/
+        $domDiscrim->save();
+        $domRac->parentDomain()->associate($domDiscrim);
+        $domRac->save();
+        $domPrin->parentDomain()->associate($domDiscrim);
+        $domPrin->save();
+        $domLoisR->parentDomain()->associate($domDiscrim);
+        $domLoisR->save();
+        $domLoisJ->parentDomain()->associate($domDiscrim);
+        $domLoisJ->save();
+        $domDis->parentDomain()->associate($domDiscrim);
+        $domDis->save();
+        $domPourquoi->parentDomain()->associate($domDiscrim);
+        $domPourquoi->save();
 
         
         $t1->creatorUser()->associate($admin);
