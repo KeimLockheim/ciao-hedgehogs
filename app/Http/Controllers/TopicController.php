@@ -75,16 +75,33 @@ class TopicController extends Controller {
     if(!isset($topic)){
       return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Discussion non trouvée.'], 404);
     }
-    $domain = Domain::find($domain_id);
+    $domain = Domain::where('id', $domain_id)->with(['topics' => function ($query) {
+      $query->where('validated_by', '<>', null)->where('refusedReason', '=', null);
+
+    }])->with(['parentDomain','parentDomain.topics' => function ($query) {
+      $query->where('validated_by', '<>', null)->where('refusedReason', '=', null);
+    }
+    ])->get()->first();
+
+
     if(!isset($domain)){
       return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Catégorie non trouvée.'], 404);
     }
+
+    if($domain->isSubdomain()){
+      $domainParent = $domain->parentDomain;
+    }
+    else{
+      $domainParent = $domain;
+    }
+
     $posts = $topic->posts->sortBy('created_at');
 
     $data = Menu::getDomains();
     $data['topic'] = $topic;
     $data['domain'] = $domain;
     $data['posts'] = $posts;
+    $data['domainParent'] = $domainParent;
 
     return view('view_topic', $data);
   }
