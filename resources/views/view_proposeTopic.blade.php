@@ -27,9 +27,9 @@
     </div>
   </div>
 
-
   <div class="col-md-7 designBox">
     <div class="row">
+      @if ($userConnected)
 
       <form  id="proposeTopic" action="/topic" method="post">
         <div class="form-group">
@@ -52,9 +52,22 @@
         </div>
 
       </form>
-
+      @else
+      <h2>
+        Tu dois être connecté pour pouvoir proposer un sujet de disucssion
+      </h2>
+      <div class="form-group">
+        <div>
+          <a class="login" data-toggle="modal" data-target="#login"><button type="submit" class="btn btn-primary">Se connecter</button></a>
+        </div>
+      </div>
+      @endif
     </div>
   </div>
+
+
+
+
 
   <div class="col-md-offset-1 col-md-4">
 

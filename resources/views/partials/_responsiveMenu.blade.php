@@ -116,26 +116,26 @@
             </li>
 
             <li>
-              <label for="menu-5-2">Violences</label>
-              <input type="checkbox" id="menu-5-2" name="menu-5-2" class="menu-checkbox">
+              <label for="menu-6-2">Violences</label>
+              <input type="checkbox" id="menu-6-2" name="menu-6-2" class="menu-checkbox">
               <div class="menu">
-                <label class="menu-toggle" for="menu-3-2"><span>Toggle</span></label>
+                <label class="menu-toggle" for="menu-6-2"><span>Toggle</span></label>
                 <ul>
                   <li>
                     <label for="menu-5-2-3">Violences</label>
-                    <input type="checkbox" id="menu-5-2-3" name="menu-5-2-3" class="menu-checkbox">
+                    <input type="checkbox" id="menu-6-2-3" name="menu-6-2-3" class="menu-checkbox">
                     <div class="menu">
-                      <label class="menu-toggle" for="menu-5-2-3"><span>Toggle</span></label>
+                      <label class="menu-toggle" for="menu-6-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domViolences as $sub)
                           <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
                         @endforeach
                       </ul>
                     </div>
-                    <label for="menu-5-2-3">Discrimination et racismes</label>
-                    <input type="checkbox" id="menu-5-2-3" name="menu-5-2-3" class="menu-checkbox">
+                    <label for="menu-6-2-3">Discrimination et racismes</label>
+                    <input type="checkbox" id="menu-6-2-3" name="menu-6-2-3" class="menu-checkbox">
                     <div class="menu">
-                      <label class="menu-toggle" for="menu-5-2-3"><span>Toggle</span></label>
+                      <label class="menu-toggle" for="menu-6-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domDiscrim as $sub)
                             <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
@@ -149,15 +149,15 @@
 
             <li>
               <label for="menu-3-2">Religion</label>
-              <input type="checkbox" id="menu-3-2" name="menu-3-2" class="menu-checkbox">
+              <input type="checkbox" id="menu-7-2" name="menu-7-2" class="menu-checkbox">
               <div class="menu">
-                <label class="menu-toggle" for="menu-3-2"><span>Toggle</span></label>
+                <label class="menu-toggle" for="menu-7-2"><span>Toggle</span></label>
                 <ul>
                   <li>
                     <label for="menu-3-2-3">Religions</label>
-                    <input type="checkbox" id="menu-3-2-3" name="menu-3-2-3" class="menu-checkbox">
+                    <input type="checkbox" id="menu-7-2-3" name="menu-7-2-3" class="menu-checkbox">
                     <div class="menu">
-                      <label class="menu-toggle" for="menu-3-2-3"><span>Toggle</span></label>
+                      <label class="menu-toggle" for="menu-7-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domReligions as $sub)
                        <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
@@ -170,26 +170,26 @@
             </li>
 
             <li>
-              <label for="menu-3-2">Avenir</label>
-              <input type="checkbox" id="menu-3-2" name="menu-3-2" class="menu-checkbox">
+              <label for="menu-8-2">Avenir</label>
+              <input type="checkbox" id="menu-8-2" name="menu-8-2" class="menu-checkbox">
               <div class="menu">
-                <label class="menu-toggle" for="menu-3-2"><span>Toggle</span></label>
+                <label class="menu-toggle" for="menu-8-2"><span>Toggle</span></label>
                 <ul>
                   <li>
-                    <label for="menu-3-2-3">Argent</label>
-                    <input type="checkbox" id="menu-3-2-3" name="menu-3-2-3" class="menu-checkbox">
+                    <label for="menu-8-2-3">Argent</label>
+                    <input type="checkbox" id="menu-8-2-3" name="menu-8-2-3" class="menu-checkbox">
                     <div class="menu">
-                      <label class="menu-toggle" for="menu-3-2-3"><span>Toggle</span></label>
+                      <label class="menu-toggle" for="menu-8-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domArgent as $sub)
                             <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
                         @endforeach
                       </ul>
                     </div>
-                    <label for="menu-3-2-3">Formation et travail</label>
-                    <input type="checkbox" id="menu-3-2-3" name="menu-3-2-3" class="menu-checkbox">
+                    <label for="menu-8-2-3">Formation et travail</label>
+                    <input type="checkbox" id="menu-8-2-3" name="menu-8-2-3" class="menu-checkbox">
                     <div class="menu">
-                      <label class="menu-toggle" for="menu-3-2-3"><span>Toggle</span></label>
+                      <label class="menu-toggle" for="menu-8-2-3"><span>Toggle</span></label>
                       <ul>
                         @foreach($domFormations as $sub)
                           <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
