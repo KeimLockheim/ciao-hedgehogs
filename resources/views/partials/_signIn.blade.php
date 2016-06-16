@@ -11,7 +11,7 @@
 
   <h2>Se connecter</h2>
 
-  <form action="/auth/login" method="post" id="signIn">
+  <form action="/hedgehogs/auth/login" method="post" id="signIn">
     <div class="form-group">
       <label for="nickname" class="control-label">Pseudo</label>
       <div>
@@ -24,7 +24,7 @@
         <input type="password" name="password" class="form-control" id="password" placeholder="Mot de passe">
       </div>
     </div>
-    <p><a href="/lost">J'ai oublié mon mot de passe</a></p>
+    <p><a href="/hedgehogs/lost">J'ai oublié mon mot de passe</a></p>
     <div class="form-group">
       <div>
         <button type="submit" class="btn btn-primary">Je me connecte</button>
@@ -32,7 +32,7 @@
     </div>
   </form>
       <div>
-          <a href="/user/create"><button class="btn btn-primary">Créer un compte</button></a>
+          <a href="/hedgehogs/user/create"><button class="btn btn-primary">Créer un compte</button></a>
       </div>
 </div>
         <div class="modal-footer">

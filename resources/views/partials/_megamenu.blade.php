@@ -3,7 +3,7 @@
 
                 <ul class="nav navbar-nav">
 
-                    <li><a href="/home"><img src="{{ asset('assets/img/home.png') }}" alt="home" class="imgNav"><p>Accueil</p></a></li>
+                    <li><a href="/hedgehogs/home"><img src="{{ asset('assets/img/home.png') }}" alt="home" class="imgNav"><p>Accueil</p></a></li>
                     <!------------------------>
 
                     <li class="dropdown menu-large">
@@ -11,10 +11,10 @@
                         <ul class="dropdown-menu megamenu row">
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu"><a href="/domain/1">Santé</a></li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="/hedgehogs/domain/1">Santé</a></li>
                                     <li class="divider"></li>
                                     @foreach($domSante as $sub)
-                                    <li><a href="/domain/{{$sub->id}}">{{$sub->name}}</a></li>
+                                    <li><a href="/hedgehogs/domain/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
                                 </ul>
                             </li>
@@ -23,7 +23,7 @@
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Stress</a></li>
                                     <li class="divider"></li>
                                     @foreach($domStress as $sub)
-                                    <li><a href="/domain/{{$sub->id}}">{{$sub->name}}</a></li>
+                                    <li><a href="/hedgehogs/domain/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
                                 </ul>
@@ -33,7 +33,7 @@
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Boire, fumer, se droguer</a></li>
                                     <li class="divider"></li>
                                     @foreach($domBoire as $sub)
-                                    <li><a href="domain/{{$sub->id}}">{{$sub->name}}</a></li>
+                                    <li><a href="/hedgehogs/domain/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
                                 </ul>
                             </li>
@@ -42,7 +42,7 @@
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Manger-bouger</a></li>
                                     <li class="divider"></li>
                                     @foreach($domManger as $sub)
-                                    <li><a href="/domain/{{$sub->id}}">{{$sub->name}}</a></li>
+                                    <li><a href="/hedgehogs/domain/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
                                 </ul>
                             </li>
@@ -62,7 +62,7 @@
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Estime de soi</a></li>
                                     <li class="divider"></li>
                                     @foreach($domEstime as $sub)
-                                    <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
+                                    <li><a href="/hedgehogs/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
 
@@ -73,7 +73,7 @@
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Moi, toi et les autres</a></li>
                                     <li class="divider"></li>
                                     @foreach($domMoi as $sub)
-                                    <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
+                                    <li><a href="/hedgehogs/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
 
@@ -91,7 +91,7 @@
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Sexualité</a></li>
                                     <li class="divider"></li>
                                     @foreach($domSex as $sub)
-                                    <li><a href="/domain/{{$sub->id}}">{{$sub->name}}</a></li>
+                                    <li><a href="/hedgehogs/domain/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
 
@@ -109,7 +109,7 @@
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Violence</a></li>
                                     <li class="divider"></li>
                                     @foreach($domViolences as $sub)
-                                    <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
+                                    <li><a href="/hedgehogs/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
 
@@ -120,7 +120,7 @@
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Discrimination et racismes</a></li>
                                     <li class="divider"></li>
                                     @foreach($domDiscrim as $sub)
-                                    <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
+                                    <li><a href="/hedgehogs/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
 
@@ -138,7 +138,7 @@
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Religions</a></li>
                                     <li class="divider"></li>
                                     @foreach($domReligions as $sub)
-                                    <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
+                                    <li><a href="/hedgehogs/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
 
@@ -156,7 +156,7 @@
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Argent</a></li>
                                     <li class="divider"></li>
                                     @foreach($domArgent as $sub)
-                                    <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
+                                    <li><a href="/hedgehogs/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
 
@@ -167,7 +167,7 @@
                                     <li class="dropdown-header titreMegaMenu"><a href="#">Formation et travail</a></li>
                                     <li class="divider"></li>
                                     @foreach($domFormations as $sub)
-                                    <li><a href="{{$sub->id}}">{{$sub->name}}</a></li>
+                                    <li><a href="/hedgehogs/{{$sub->id}}">{{$sub->name}}</a></li>
                                     @endforeach
 
                                 </ul>
@@ -178,10 +178,10 @@
                 </ul>
                 @if($userConnected)
                 <ul class="nav navbar-nav navbar-right" id="deconnecter">
-                    <li><a href="/logout"><img src="{{ asset('assets/img/deco.png') }}" alt="deco" class="imgNav">Déconnexion</a></li>
+                    <li><a href="/hedgehogs/logout"><img src="{{ asset('assets/img/deco.png') }}" alt="deco" class="imgNav">Déconnexion</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right" id="compte">
-                    <li><a href="/dashboard"><img src="{{ asset('assets/img/compte.png') }}" alt="mon compte" class="imgNav">Compte</a></li>
+                    <li><a href="/hedgehogs/dashboard"><img src="{{ asset('assets/img/compte.png') }}" alt="mon compte" class="imgNav">Compte</a></li>
                 </ul>
                 @else
                 <ul class="nav navbar-nav navbar-right" id="connecter">
