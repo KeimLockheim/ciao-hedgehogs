@@ -66,10 +66,15 @@ class DomainController extends Controller {
 
   public function show($domain_id)
   {
-    $domain = Domain::where('id', $domain_id)->with('topics')->get()->first();
+    $domain = Domain::where('id', $domain_id)->with(['topics' => function ($query) {
+    $query->where('validated_by', '<>', null)->where('refusedReason', '=', null);
+
+  }])->get()->first();
+
     if(!isset($domain)){
       return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Domaine non trouvé'], 404);
     }
+
 
     $data = Menu::getDomains();
     $data['domain'] = $domain;

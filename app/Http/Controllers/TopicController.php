@@ -23,7 +23,7 @@ class TopicController extends Controller {
 
     //trouver la liste des topics à valider et la liste des topics validés [$topicsToValidate, $topicsValidated]
     $topicsToValidate = $topics->where('validated_by', null);
-    $topicsValidated = $topics->diff($topicsToValidate);
+    $topicsValidated = $topics->where('validated_by','<>', null);
 
     $data = Menu::getDomains();
     $data['topicsToValidate'] = $topicsToValidate;
@@ -49,7 +49,8 @@ class TopicController extends Controller {
 
   public function validateTopic($topic_id)
   {
-    $topic = Topic::where('id', $topic_id)->with('posts')->get()->first();
+    $topic = Topic::where([['id', $topic_id],['validated_by','=', null],])->with('posts')->get()->first();
+
     if(!isset($topic)){
       return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Discussion non trouvée.'], 404);
     }
@@ -65,7 +66,12 @@ class TopicController extends Controller {
 
   public function show($domain_id, $topic_id)
   {
-    $topic = Topic::where('id', $topic_id)->with('posts','creatorUser')->get()->first();
+    $topic = Topic::where([
+        ['id', $topic_id],
+        ['validated_by','<>', null],
+        ['refusedReason','=',null],
+    ])->with('posts','creatorUser')->get()->first();
+
     if(!isset($topic)){
       return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Discussion non trouvée.'], 404);
     }
@@ -82,8 +88,6 @@ class TopicController extends Controller {
 
     return view('view_topic', $data);
   }
-
-
 
   /**
    * Show the form for creating a new resource.
