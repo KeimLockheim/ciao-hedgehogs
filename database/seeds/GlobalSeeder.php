@@ -747,9 +747,9 @@ class GlobalSeeder extends Seeder
         ]);
 
         $expert->secretQuestion()->associate($q1);
+
         $gExpert->users()->save($expert);
 
-        $expert->save();
 
         $default = new User([
             'nickname' => 'jojo2016',
@@ -1142,6 +1142,9 @@ class GlobalSeeder extends Seeder
         $p1->save();
         $p2->save();
         $p3->save();
+        
+        $expert->save();
+
 
 
         /*
