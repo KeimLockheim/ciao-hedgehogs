@@ -6,12 +6,12 @@
 <div class="module-container">
 
   <div class="col-md-11" id="breadcrums">
-    <p><a href="/home">Accueil</a> > Changer son mot de passe</p>
+    <p><a href="/hedgehogs/home">Accueil</a> > Changer son mot de passe</p>
   </div>
 
   <h2>Changement de mot de passe</h2>
 
-  <form id="changePassword" action="/password" method="post">
+  <form id="changePassword" action="/hedgehogs/password" method="post">
     <div class="form-group">
       <label for="pseudo" class="control-label">Ton pseudo</label>
       <div>

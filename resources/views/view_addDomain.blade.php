@@ -7,14 +7,14 @@
 
   <div class="row" id="contenu">
     <div class="col-md-12" id="breadcrums">
-      <p><a href="/dashboard">Dashboard </a> > Ajouter un domaine d'expertise</p>
+      <p><a href="/hedgehogs/dashboard">Dashboard </a> > Ajouter un domaine d'expertise</p>
     </div>
   </div>
 
   <div class="col-md-7 designBox">
 
     <h2>Ajouter un domaine</h2>
-    <form id="addDomain" method="post" action="/domain">
+    <form id="addDomain" method="post" action="/hedgehogs/domain">
 
       <div class="form-group">
         <label for="question">Nouveau domaine</label>

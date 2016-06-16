@@ -9,7 +9,7 @@
 	<div class="row" id="contenu">
 
 		<div class="col-md-12" id="breadcrums">
-			<p><a href="/home">Accueil</a> > <a href="/domain/{{$domain->id}}">{{$domain->name}}</a></p>
+			<p><a href="/hedgehogs/home">Accueil</a> > <a href="/hedgehogs/domain/{{$domain->id}}">{{$domain->name}}</a></p>
 		</div>
 	</div>
 

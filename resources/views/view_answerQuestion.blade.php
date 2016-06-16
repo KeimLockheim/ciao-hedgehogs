@@ -30,7 +30,7 @@
 
 
 
-    <form id="answerQuestion" method="post" action="/answer">
+    <form id="answerQuestion" method="post" action="/hedgehogs/answer">
 
       <div class="form-group">
         <label for="theme"> Thème précis: </label>

@@ -8,7 +8,7 @@
 <div class="container">
 	<div class="row" id="contenu">
 		<div class="col-md-12" id="breadcrums">
-			<p><a href="/home">Accueil</a> > <a href="/dashboard">Profil administrateur</a></p>
+			<p><a href="/hedgehogs/home">Accueil</a> > <a href="/hedgehogs/dashboard">Profil administrateur</a></p>
 		</div>
 	</div>
 
@@ -18,8 +18,8 @@
 
 
 			<div class="col-md-4">
-				<a href="/propose/1"><button type="submit" class="btn btn-primary btnBox" name="addForum" value="add forum"><img src="{{ asset('assets/img/addforum.png') }}" alt="logo" class="imgBtn"><p>Créer un forum</p></button></a>
-				<a href="dashboard/topics"><button type="submit" class="btn btn-primary btnBox"> <img src="{{ asset('assets/img/forum.png') }}" alt="logo" class="imgBtn"><p>Gestion forum</p></button></a>
+				<a href="/hedgehogs/propose/1"><button type="submit" class="btn btn-primary btnBox" name="addForum" value="add forum"><img src="{{ asset('assets/img/addforum.png') }}" alt="logo" class="imgBtn"><p>Créer un forum</p></button></a>
+				<a href="/hedgehogsdashboard/topics"><button type="submit" class="btn btn-primary btnBox"> <img src="{{ asset('assets/img/forum.png') }}" alt="logo" class="imgBtn"><p>Gestion forum</p></button></a>
 			</div>
 
 			<div class="col-md-4">
@@ -27,7 +27,7 @@
 				<button type="submit" class="btn btn-primary btnBox"><img src="{{ asset('assets/img/addUser.png') }}" alt="logo" class="imgBtn"><p>Ajouter expert</p></button>
 			</div>
 			<div class="col-md-4">
-				<a href="/addDomain"><button type="submit" class="btn btn-primary btnBox"><img src="{{ asset('assets/img/addDom.png') }}" alt="logo" class="imgBtn"><p>Ajouter domaine</p></button></a>
+				<a href="/hedgehogs/addDomain"><button type="submit" class="btn btn-primary btnBox"><img src="{{ asset('assets/img/addDom.png') }}" alt="logo" class="imgBtn"><p>Ajouter domaine</p></button></a>
 				<button type="submit" class="btn btn-primary btnBox"><img src="{{ asset('assets/img/addAmb.png') }}" alt="logo" class="imgBtn"><p>Ajouter adresse</p></button>
 			</div>
 
@@ -59,7 +59,7 @@
 <div class="container">
 	<div class="row" id="contenu">
 		<div class="col-md-12" id="breadcrums">
-			<p><a href="/home">Accueil</a> > <a href="/dashboard">Profil Expert</a></p>
+			<p><a href="/hedgehogs/home">Accueil</a> > <a href="/hedgehogs/dashboard">Profil Expert</a></p>
 		</div>
 	</div>
 	<div class="col-md-7 designBox dashboard">
@@ -71,7 +71,7 @@
 				@if($unansweredQuestionsExpert != null)
 				@foreach ($unansweredQuestionsExpert as $questionNoAnswer)
 				<li><strong>{{$questionNoAnswer->questionUser->nickname}}</strong> a posé une question
-					<a href="/dashboard/answers/{{$questionNoAnswer->id}}"><div><button type="button" class="btn btn-xs expertAnswerTo">Répondre</button></div></a>
+					<a href="/hedgehogs/dashboard/answers/{{$questionNoAnswer->id}}"><div><button type="button" class="btn btn-xs expertAnswerTo">Répondre</button></div></a>
 				</li>
 
 				@endforeach
@@ -83,7 +83,7 @@
 			<ul class="lienArticle">
 				@if($myAnsweredQuestions != null)
 				@foreach ($myAnsweredQuestions as $questionAnswered)
-				<li><a href="domain/{{$questionAnswered->domain->id}}/question/{{$questionAnswered->id}}">
+				<li><a href="/hedgehogsdomain/{{$questionAnswered->domain->id}}/question/{{$questionAnswered->id}}">
 
 					{{$questionAnswered->name}}</a></li>
 					@endforeach
@@ -121,7 +121,7 @@
 	<div class="container">
 		<div class="row" id="contenu">
 			<div class="col-md-12" id="breadcrums">
-				<p><a href="/home">Accueil</a> > <a href="/dashboard">{{$user->name}}</a></p>
+				<p><a href="/hedgehogs/home">Accueil</a> > <a href="/hedgehogs/dashboard">{{$user->name}}</a></p>
 			</div>
 		</div>
 		<div class="col-md-7 designBox dashboard">
@@ -139,7 +139,7 @@
 				<ul class="answeredQuestions">
 					@if($questionsAnswered != null)
 					@foreach ($questionsAnswered as $question)
-					<li class="answeredQuestion"><a class="ans" href="domain/{{$question->domain->id}}/question/{{$question->id}}">{{$question->content}}</a></li>
+					<li class="answeredQuestion"><a class="ans" href="/hedgehogsdomain/{{$question->domain->id}}/question/{{$question->id}}">{{$question->content}}</a></li>
 					@endforeach
 					@endif
 
@@ -150,7 +150,7 @@
 
 					@if($myTopicsValidated != null)
 					@foreach ($myTopicsValidated as $topic)
-					<li><a href="domain/{{$topic->domain->id}}/discussion/{{$topic->id}}">{{$topic->name}}</a></li>
+					<li><a href="/hedgehogsdomain/{{$topic->domain->id}}/discussion/{{$topic->id}}">{{$topic->name}}</a></li>
 					@endforeach
 					@endif
 

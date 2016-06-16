@@ -10,7 +10,7 @@
   <div class="row" id="contenu">
 
     <div class="col-md-12" id="breadcrums">
-      <p><a href="/home">Accueil</a> > <a href="/domain/{{$domain->id}}"> {{$domain->name}}</a> > Poser une question</p>
+      <p><a href="/hedgehogs/home">Accueil</a> > <a href="/hedgehogs/domain/{{$domain->id}}"> {{$domain->name}}</a> > Poser une question</p>
     </div>
   </div>
 
@@ -27,7 +27,7 @@
 
 
         </p>
-        <a id="existQuestion" href="/domain/{{$domain->id}}/questions"><button type="button" class="btn btn-xs">Regarder si ma question existe déjà</button></a>
+        <a id="existQuestion" href="/hedgehogs/domain/{{$domain->id}}/questions"><button type="button" class="btn btn-xs">Regarder si ma question existe déjà</button></a>
       </div>
     </div>
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,8 +46,8 @@
 
 				<div class="headerResp">
 					@if($userConnected)
-					<a href="/logout"><img src="{{ asset('assets/img/signinGris.png') }}" class="iconResp" alt="se deconnecter"></a>
-					<a href="/dashboard"><img src="{{ asset('assets/img/user.png') }}" class="iconResp" alt="compte" ></a>
+					<a href="/hedgehogs/logout"><img src="{{ asset('assets/img/signinGris.png') }}" class="iconResp" alt="se deconnecter"></a>
+					<a href="/hedgehogs/dashboard"><img src="{{ asset('assets/img/user.png') }}" class="iconResp" alt="compte" ></a>
 					@else
 					<a class="login" data-toggle="modal" data-target="#login"><img src="{{ asset('assets/img/decoGris.png') }}" class="iconResp" alt="se connecter"></a>
 					@endif
@@ -55,15 +55,15 @@
 
 				<div class="row">
 					<div class="col-md-2 logoHeader">
-						<a href="/home"><img src="{{ asset('assets/img/logo.png') }}"  alt="logo" id="logo" itemprop="logo"></a>
+						<a href="/hedgehogs/home"><img src="{{ asset('assets/img/logo.png') }}"  alt="logo" id="logo" itemprop="logo"></a>
 					</div>
 
 					<div class="col-lg-offset-7 col-md-3 icon">
 
 						<div>
-							<a href="/urgences"><img src="{{ asset('assets/img/ambulance-xxl.png') }}" alt="urgence" class="imgHeader"></a>
+							<a href="/hedgehogs/urgences"><img src="{{ asset('assets/img/ambulance-xxl.png') }}" alt="urgence" class="imgHeader"></a>
 
-							<a href="/ask/1"><button type="submit" class="btn btn-xs large">Poser ma question!</button></a>
+							<a href="/hedgehogs/ask/1"><button type="submit" class="btn btn-xs large">Poser ma question!</button></a>
 						</div>
 					</div>
 				</div>
