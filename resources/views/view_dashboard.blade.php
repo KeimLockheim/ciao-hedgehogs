@@ -121,7 +121,7 @@
 	<div class="container">
 		<div class="row" id="contenu">
 			<div class="col-md-12" id="breadcrums">
-				<p><a href="{{url('/home')}}">Accueil</a> > <a href="{{url('/dashboard')}}">{{$user->name}}</a></p>
+				<p><a href="{{url('/home')}}">Accueil</a> > <a href="{{url('/dashboard')}}"> {{$user->nickname}}</a></p>
 			</div>
 		</div>
 		<div class="col-md-7 designBox dashboard">

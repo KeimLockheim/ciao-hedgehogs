@@ -23,12 +23,12 @@ class AuthController extends Controller
         }
         //Vérifie le mdp
         if (!Hash::check($password,$user->password)) {
-            return Response::view('errors.400',['message' => 'Erreur de saisie.'], 400);
+            return Response::view('errors.400',['message' => 'Erreur de saisie.','url'=>'/home'], 400);
         }
         // Persistance de l'authentification
         Session::put('id', $user->id);
 
-        return redirect('dashboard');
+        return Response::view('errors.200',['message' => 'Connecté !','url'=>'/dashboard'], 200);
     }
 
     public function logout()
