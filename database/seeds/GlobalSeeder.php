@@ -74,6 +74,18 @@ class GlobalSeeder extends Seeder
         $domOuQui = new Domain([
             'name' => "Où, qui consulter?",
             'description' => 'Description',
+            'content'=>"<h2>Consulter sans les parents</h2>
+
+			<p>Les adolescents, dès l'âge de 14 -15 ans, ont le droit de consulter un médecin sans en parler à un de leurs  parents. Malgré tout, il est en général préférable de parler à tes parents ou à quelqu'un de ton entourage de ton besoin de consulter. L'entourage (notamment tes parents) représente un soutien très utile dans des situations difficiles.</p>
+
+			<p>Les consultations ne sont pas anonymes mais confidentielles. Tout médecin est soumis au <a>secret médical</a>. Il ne doit pas transmettre de renseignements concernant les personnes qui le consultent, sauf cas très spécifiques comme les abus sexuels, les risques suicidaires, par exemple.</p>
+
+			<p>Si tes parents t'accompagnent à une consultation, ils peuvent t'attendre à l'extérieur si tu le préfères. Tu peux aussi discuter avec le médecin de l'information qui sera donnée ensuite à tes parents.</p>
+
+			<p><a href>Un exemple de consultation en video</a></p>
+
+			<p>9 avril 2015</p>
+			<p>© CIAO - CSJ</p>",
         ]);
         $domApparence = new Domain([
             'name' => "Apparence, de l'importance?",
@@ -240,6 +252,25 @@ class GlobalSeeder extends Seeder
         $domAnatomie = new Domain([
             'name' => 'Anatomie et reproduction',
             'description' => 'Description',
+            'content' =>"<h2>Sexualité et reproduction</h2>
+
+			<p>Ce qui caractérise les organismes vivants, c'est qu'ils sont capables de se reproduire.</p>
+
+			<p>La sexualité fait partie du système reproducteur qui assure la survie de notre espèce. C'est pourquoi se reproduire est quelque chose de concrètement facile à réaliser, tout en étant d'une fascinante complexité.</p>
+
+			<p>On peut faire un enfant avec ou sans amour, avec ou sans plaisir, ou le plus distraitement du monde: ça fonctionne...</p>
+
+			<p>26 janvier 2015 </p>
+			<p>© CIAO-PROFA</p>
+
+			<hr>
+
+		  		<h4>Tu veux en savoir plus?</h4>
+
+		  		<ul class='lienArticle'>
+		  			<li><a>Quelle chance avais-tu de naître?</a></li>
+		  		</ul>
+",
         ]);
         $domFilles = new Domain([
             'name' => 'Filles: corps et puberté',
@@ -267,6 +298,37 @@ class GlobalSeeder extends Seeder
         $domContreMoi = new Domain([
             'name' => 'Violences contre moi',
             'description' => 'Description',
+            'content'=>"<h2>Pourquoi se faire du mal?</h2>
+
+			<p>Lorsqu'on se sent agressé ou frustré, on développe à son tour de l'agressivité, on attaque pour se défendre. L'attaque se dirige contre l'extérieur, mais pas toujours : il arrive aussi que l'agressivité se retourne contre soi.</p>
+
+			<p>C'est parfois difficile de bien saisir ce qui fait souffrir, c'est confus. On n'arrive pas à mettre le doigt sur une seule cause, mais on se sent mal, avec un sentiment d'être nul ou de ne compter pour personne. On peut en vouloir à ses parents, à ses frères et sœurs, à son copain ou sa copine, au monde entier. On en veut parfois à son corps que l'on n'aime pas.</p>
+
+			<p>Lorsqu'on a un conflit avec quelqu'un, on peut souvent le régler par une bonne explication. Par contre, lorsqu'on a le sentiment de ne pas compter pour l'autre, de ne pas arriver à s'aimer, il y a beaucoup d'émotions négatives qui s'accumulent à l'intérieur de soi. Si on n'arrive pas à dire ce que l'on ressent, il arrive qu'on le transforme en agressivité contre soi.</p>
+
+			<p>Cette agressivité peut prendre plusieurs formes :</p>
+
+			<ul>
+
+				<li><a>L'automutilation</a></li>
+				<li><a>Les troubles alimentaires</a></li>
+				<li><a>Les consommations abusives</a></li>
+				<li><a>Les tentatives de suicide et le suicide.</a></li>
+
+			</ul>
+
+
+			<p>8 septembre 2014</p>
+			<p>© CIAO</p>
+
+			<hr>
+
+		  		<h4>Tu veux en savoir plus?</h4>
+
+		  		<ul class='lienArticle'>
+		  			<li><a>Le psy c'est qui?</a></li>
+		  		</ul>
+",
         ]);
         $domEnMoi = new Domain([
             'name' => 'Violence en moi',
@@ -284,7 +346,17 @@ class GlobalSeeder extends Seeder
         ]);
         $domQQ = new Domain([
             'name' => 'Quelques clarifications',
-            'description' => 'Description',
+            'description' => "<h2>Religions, spiritualité, sectes ?</h2>
+
+			<p>Les définitions de ce que l'on peut entendre sur les mots comme religion, spiritualité ou secte sont multiples. Vous trouverez dans les pages suivantes des propositions de clarifications.</p>
+
+			<p>Pour que le 21e siècle, annoncé comme 'spirituel', ne soit pas avant tout conflictuel, il importe qu'en tous lieux (écoles, familles, médias, communautés religieuses, etc.) une connaissance sereine et non naïve des religions, spiritualités et sectes soit transmise. Et cela sans dédaigner (refuser, rejeter) les traditions chrétiennes qui nous ont portées jusqu'à ce jour, ni les autres traditions philosophiques et religieuses qui, de manière respectueuse, se sont établies parmi nous.</p>
+
+
+
+			<p>13 mai 2015 </p>
+			<p>© Association J'y crois moi non plus - Extrait de Panorama des religions, Éditions Agora, Lausanne</p>
+",
         ]);
         $domBou = new Domain([
             'name' => 'Bouddhistes',
@@ -331,6 +403,16 @@ class GlobalSeeder extends Seeder
         $domSociete = new Domain([
             'name' => "La société",
             'description' => 'Description',
+            'content'=>"<h2>Les lois</h2>
+
+			<p><strong>Chaque pays édicte des lois concernant la consommation de drogues</strong> : lois sur le tabac, sur l'alcool et sur les drogues illégales. Ces lois permettent de déterminer les taxes auxquels les produits sont soumis, de restreindre ou d'interdire l'usage de certains produits, d'en limiter l'usage à certains endroits ou pour un groupe déterminé, de fixer les critères concernant la publicité pour les produits, etc.</p>
+
+			<p><strong>Certaines substances sont interdites</strong> parce qu'elles sont dangereuses pour la santé. Et puis les lois sont le reflet de la société à une époque donnée, car certains produits, bien que dangereux, ne sont pas interdits parce qu'ils sont intégrés à sa culture.</p>
+
+
+			<p>13 mai 2015</p>
+			<p>© CIAO - Addiction Suisse</p>
+",
         ]);
         $domBFEstime = new Domain([
             'name' => "Boire, fumer...et estime de soi",
@@ -349,6 +431,37 @@ class GlobalSeeder extends Seeder
         $domPoids = new Domain([
             'name' => "Poids adolescence",
             'description' => 'Description',
+            'content'=>"
+			<h2>Je grandis tout d'un coup: c'est la croissance!</h2>
+
+			<p>Entre 5 et 10 ans, les enfants grandissent en moyenne de 5 cm par an. Brusquement, au début de la puberté (en moyenne 11 ans chez les filles et 13 ans chez les garçons), la croissance en taille s'accélère, et cela pendant 2 à 3 ans: c'est ce que l'on appelle le <strong>pic de croissance</strong>, période durant laquelle on prend facilement plus de 5 cm par an.</p>
+
+			<p>Après ce pic de croissance, la taille ne se modifie plus beaucoup et la croissance s'arrête entre 2 et 5 ans après les premiers signes pubertaires.</p>
+
+			<p><strong>Le pic de croissance a lieu plus tôt chez les filles et est moins important chez elles que chez les garçons.</strong></p>
+
+			<p>L'augmentation de taille n'est pas la même pour toutes les parties du corps.</p>
+
+
+			<ul>
+
+				<li>La tête, par exemple, ne grandit pas. Les bras et les jambes s'allongent avant le torse.</li>
+				<li>La largeur des épaules et du bassin augmente vite mais de manière différente chez les filles et les garçons.</li>
+				<li>Les hanches, c'est-à-dire les os du bassin et les muscles qui les entourent, s'élargissent plus chez les filles et les épaules plus chez les garçons.</li>
+
+			</ul>
+
+			<p>La croissance en taille se fait en même temps que le développement des organes sexuels et la sexualisation du corps (les poils, les seins chez les filles, la voix chez les garçons).</p>
+
+			<p>Cette croissance correspond à une modification des os qui changent aussi de structure et des muscles qui les accompagnent.</p>
+
+			<p><strong>C'est une période durant laquelle les os peuvent être plus fragiles, il faut donc faire attention lorsque l'on pratique un sport.</strong></p>
+
+			<p>La peau avec la couche graisseuse (on dit aussi adipeuse) qui lui donne sa souplesse enveloppe les parties du corps et suit donc le processus de développement. En même temps, la morphologie corporelle se modifie: <strong>on quitte progressivement son 'côté enfant' pour prendre sa silhouette et son visage d'adulte</strong>. Les traits du visage, par exemple, s'accusent avec le développement du nez.</p>
+
+			<p>13 mai 2015 </p>
+			<p>© CIAO - SSEJ - CSJ</p>
+",
         ]);
         $domMangerComment = new Domain([
             'name' => "Manger: comment?",
@@ -387,10 +500,27 @@ class GlobalSeeder extends Seeder
         $domEstime = new Domain([
             'name' => 'Estime de soi',
             'description' => "L'estime de soi varie comme la température de ton corps sur le thermomètre. Elle est changeante et il est possible qu'elle soit très haute ou très basse selon les périodes de la vie. Mais par tes choix et tes actes, tu as le pouvoir de l'améliorer! Teste-toi, fais les jeux, lis les infos, enregistre ton niveau d'estime quotidien, surfe sur ces pages... et tu verras qu'avoir une bonne estime de soi n'est pas insurmontable!",
+            
         ]);
         $domEstimeDeSoi = new Domain([
             'name' => "L'estime de soi exactement",
             'description' => 'Description',
+            'content' => "<p>L’estime de soi globale est un sentiment de valeur en tant que personne et non pas dans un domaine particulier. <strong>En effet l’estime de soi est composée de différentes dimensions</strong> qui n’ont pas toutes la même importance d’une personne à l’autre, ni d’une période de sa vie à une autre. Ainsi par exemple, tu peux accorder aujourd’hui une importance particulière à ton apparence, ce que tu ne faisais pas lorsque tu étais enfant.</p>
+
+			<p>La personne qui a une bonne image d’elle-même dans la plupart des différents domaines  - ou dans les domaines qui sont particulièrement importants pour elle - a une bonne estime de soi globale.</p>
+
+			<p>29 avril 2015 </p>
+			<p>© CIAO, Lausanne Région, Addiction Suisse</p>
+
+			<hr>
+
+		  		<h4>Liens vers des jeux et test :</h4>
+
+		  		<ul class='lienArticle'>
+		  			<li><a>Je suis une star</a></li>
+		  			<li><a>S'aimer soi-même</a></li>
+		  		</ul>
+",
         ]);
         $domUne = new Domain([
             'name' => "Une ou des estimes de soi?",
@@ -416,7 +546,19 @@ class GlobalSeeder extends Seeder
         ]);
         $domAm = new Domain([
             'name' => "Amour",
-            'description' => 'Description',
+            'description' => "
+			<h2>C'est quoi l'amour ?</h2>
+
+			<p><strong>L'amour, c'est ce petit quelque chose en plus qui se produit quand tu es avec une certaine personne et qui n'arrive pas quand tu es avec les autres</strong>. Mais définir l'amour précisément est délicat parce que c'est un sentiment unique et particulier entre deux personnes. L'amour se nourrit de la différence et du respect de l'un pour l'autre. </p>
+
+			<p>Pourtant, connaître l'amour pour la première fois peut être déstabilisant: tu as l'impression de ne plus rien contrôler, de perdre la tête. Cela peut en même temps te faire ressentir toute une gamme de sentiments intenses (joie, bonheur, mélancolie, peur, tristesse, etc). Tu te découvres de la fantaisie, tu vois de la poésie là où tu n'en voyais pas avant, tu te sens des ailes pour réaliser des projets... Ensemble, vous êtes bien et vous vous faites du bien.</p>
+
+			
+
+			<p>7 septembre 2015</p>
+			<p>© CIAO - TELME</p>
+
+",
         ]);
         $domAmi = new Domain([
             'name' => "Amitié",
@@ -443,6 +585,24 @@ class GlobalSeeder extends Seeder
         $domLoisR = new Domain([
             'name' => "Lois contre le racisme",
             'description' => 'Description',
+            'content' => "<h2>Qui décide des lois?</h2>
+
+			<p><em>Lois: « Une règle ou un ensemble de règles obligatoires décidées par l'autorité souveraine d'une société et sanctionnée par la force publique ». (Dictionnaire Petit Robert 2010).</em></p>
+
+			<p><strong>Mais encore:</strong></p>
+
+			<p>Dans le système démocratique que nous connaissons en Suisse les lois sont votées par le <a>parlement</a>, qui est lui-même élu démocratiquement par le peuple. Dans un système démocratique, c'est donc le peuple qui est le souverain: il élit ses représentants au <a>gouvernement</a> et au parlement et vote les modifications de la constitution ainsi que certaines lois, par voie de <a>référendum</a></p>
+
+			<p>En effet, en Suisse, certaines lois, peuvent même être soumises au vote populaire (droit de vote) si un certain nombre de citoyens le demandent. On appelle cette demande un référendum. Cette manière de faire est un des mécanismes de la démocratie directe.</p>
+
+			<p>Les lois d'un pays sont obligatoires, ce qui veut dire que les citoyens d'un pays et l'ensemble des personnes qui se trouvent sur le territoire de la Suisse doivent respecter les lois suisses. Si elle ne le font pas elles peuvent être sanctionnées par la force publique, soit principalement la police et les tribunaux.</p>
+
+			<p>Pour aller plus loin: qui a le droit de vote en Suisse? En principe les citoyens d'un pays, mais de plus en plus, en tout cas ou niveau local, le étrangers résidents légalement depuis une certaine durée ont également ce droit.</p>
+
+
+
+			<p>8 septembre 2014 </p>
+			<p>© CIAO - FED - COSM-NE</p>",
         ]);
         $domLoisJ = new Domain([
             'name' => "Lois et jugements",
@@ -461,6 +621,33 @@ class GlobalSeeder extends Seeder
         $domArgent = new Domain([
             'name' => 'Argent',
             'description' => "Comment gérer ton argent? Comment élaborer ton budget? Comment mieux consommer? Ca n'est pas toujours facile de bien gérer son argent. Mais c'est très important, surtout si on en a peu, pour pouvoir en profiter le mieux possible. Tu verras à travers ce thème que certains pièges peuvent être facilement évités, comme les désagréments qui vont avec.",
+        ]);
+        
+        $domAr = new Domain([
+            'name' => "L'argent",
+            'description' => "Description",
+            'content'=>"<h2>À quoi sert l'argent?</h2>
+
+			<p>L'argent est présent partout dans nos sociétés. Sur le plan économique, l'argent constitue un moyen d'échange. Il permet d'établir les prix des marchandises. On peut le conserver, l'économiser pour le dépenser plus tard.</p>
+
+			<p>L'argent a plusieurs fonctions, dont les principales sont:</p>
+
+			<ul>
+
+				<li><strong>Assurer la sécurité en permettant de répondre à des besoins de base</strong>: se nourrir, se loger, mais aussi se former, se cultiver.</li>
+				<li><strong>Permettre la liberté et l'indépendance</strong>: faire des choix, réaliser des objectifs ou des projets, se faire plaisir, faire plaisir.</li>
+				<li><strong>Donner du pouvoir</strong>: montrer le statut social, l'appartenance à un groupe, etc. Ce qui peut aussi créer des inégalités, des conflits.</li>
+
+			</ul>
+
+			<p>Le manque d'argent peut être source d'insécurité, ne permet plus de faire des projets, peut conduire à une exclusion sociale (honte, etc.).</p>
+
+			<p>L'argent: un bien, un mal? C'est toi qui décideras comment te situer par rapport à cela et à tous les biens proposés dans nos sociétés de consommation.</p>
+
+
+			<p>28 août 2014 </p>
+			<p>© CIAO - Jet Service - Service social polyvalent du CSP Vaud</p>
+",
         ]);
       
         $domBu = new Domain([
@@ -504,6 +691,20 @@ class GlobalSeeder extends Seeder
         $domRe = new Domain([
             'name' => "Recherche d'emploi",
             'description' => 'Description',
+            'content'=>"<h2>Trouver du travail</h2>
+
+			<p>Si tu cherches un emploi, parles-en autour de toi, contacte les entreprises de la branche qui t'intéresse, réponds aux annonces des journaux ou des panneaux d'affichage des magasins et consulte Internet. Tu peux aussi mettre des annonces dans les immeubles de ton quartier, les centres de loisirs etc...</p>
+
+			<p>Fais savoir autour de toi que tu cherches un petit travail. Comme il n'est pas facile de trouver un emploi, surtout lorsqu'on est jeune et sans expérience, le bouche à oreille peut faire la différence.</p>
+
+			<p>Il est possible de s'inscrire dans des agences de placement temporaire, mais il faut savoir que celles-ci ne sont en général pas intéressées par les personnes de moins de 18 ans.</p>
+
+			<p>Lorsque tu obtiens un entretien d'embauche, soigne ta présentation, mets en avant tes qualités personnelles et professionnelles et non... tes défauts. Cela peut faire toute la différence! </p>
+
+
+			<p>7 septembre 2015</p>
+			<p>© CIAO - Jet service - CSP</p>
+",
         ]);
         $domCV = new Domain([
             'name' => "Curriculum Vitae",
@@ -691,6 +892,7 @@ class GlobalSeeder extends Seeder
 
         /*ARGENT*/
         $domArgent->creatorUser()->associate($admin);
+        $domAr->creatorUser()->associate($admin);
         $domBu->creatorUser()->associate($admin);
         $domCo->creatorUser()->associate($admin);
         $domDet->creatorUser()->associate($admin);
@@ -876,6 +1078,8 @@ class GlobalSeeder extends Seeder
             
         /*ARGENT*/
         $domArgent->save();
+        $domAr->parentDomain()->associate($domArgent);
+        $domAr->save();
         $domBu->parentDomain()->associate($domArgent);
         $domBu->save();
         $domCo->parentDomain()->associate($domArgent);
@@ -903,11 +1107,11 @@ class GlobalSeeder extends Seeder
         $domCD->save();
         
         $t1->creatorUser()->associate($admin);
-        $t1->domain()->associate($domPoids);
+        $t1->domain()->associate($domManger);
         $t2->creatorUser()->associate($admin);
-        $t2->domain()->associate($domPoids);
+        $t2->domain()->associate($domManger);
         $t3->creatorUser()->associate($admin);
-        $t3->domain()->associate($domPoids);
+        $t3->domain()->associate($domManger);
 
         $t1->save();
         $t2->save();
