@@ -1,5 +1,20 @@
 $(document).ready(function() {
-	
+
+	/* dashboard[user] - Afficher les 50 premiers caractères d'une question en
+		 attente de réponse
+	*/
+
+	/* gestion de tous les forumulaires, fonctionnalités supplémentaires aux
+		 validations en dessous du bloc *.formavalidation({})
+	*/
+
+	$('.forValidationQuestions li').each(function(){
+		var forValidationQuestion = $(this).text();
+		var result = forValidationQuestion.substr(0, 55);
+		$(this).html(result + " ...");
+	})
+
+
 	//  <--- changePassword form--->
 	$('#changePassword').formValidation({
 		framework: 'bootstrap',

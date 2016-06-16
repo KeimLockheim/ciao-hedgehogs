@@ -128,10 +128,10 @@
 			<div class="row">
 				<h2>Gestion de mon activité</h2>
 				<h3>Mes questions en attente de réponse </h3>
-				<ul>
+				<ul class="forValidationQuestions">
 					@if($questionsNotAnswered != null)
 					@foreach ($questionsNotAnswered as $question)
-					<li>{{$question->content}}</li>
+					<li class="forValidationQuestion">{{$question->content}}</li>
 					@endforeach
 					@endif
 				</ul>
