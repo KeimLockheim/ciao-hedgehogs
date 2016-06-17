@@ -1,6 +1,5 @@
 <?php namespace App\Http\Controllers;
 
-use App\Lib\Message;
 use App\Models\Menu;
 use App\Models\Topic;
 use App\Models\Domain;
@@ -133,11 +132,9 @@ class TopicController extends Controller {
     //Ajout dans la BD
     try{
       Topic::createOne($validate->getData());
-      Message::success('saved');
       return Response::view('errors.200',['url' => redirect()->back()->getTargetUrl(),'message'=>'Discussion créée !'], 200);
     }
     catch(\Exception $e){
-      Message::error('error');
       return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Problème de connexion à la base de donnée'], 400);
     }
   }

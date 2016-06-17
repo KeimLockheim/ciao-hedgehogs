@@ -3,7 +3,6 @@
 use App\Models\Post;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Http\Request;
-use App\Lib\Message;
 
 class PostController extends Controller {
 
@@ -45,7 +44,6 @@ class PostController extends Controller {
     //Ajout dans la BD
     try{
       Post::createOne($validate->getData());
-      Message::success('saved');
       return redirect()->back();
 
     }

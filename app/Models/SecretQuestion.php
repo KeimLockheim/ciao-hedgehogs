@@ -33,7 +33,7 @@ class SecretQuestion extends Model {
 			// Vérification de la non existence de la question secrete
 			if (self::exists($input['name'])) {
 
-				$validator->errors()->add('exists', Message::get('exists'));
+				$validator->errors()->add('exists', 'exists');
 			}
 
 		});

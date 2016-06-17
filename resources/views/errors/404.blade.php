@@ -13,7 +13,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">{{$message or 'Page non trouvée.'}} <a href="{{$url or url('/home')}}">Revenir en arrière</a></div>
+                <div class="title">{{$message or 'Page non trouvée.'}} <a href="{{$url}}">Revenir en arrière</a></div>
             </div>
         </div>
     </body>

@@ -38,7 +38,7 @@ class Urgency extends Model
 
             // Vérification de l'existence du domain
             if (!self::exists($input['domain_id'])) {
-                $validator->errors()->add('exists', Message::get('exists'));
+                $validator->errors()->add('exists', 'exists');
             }
 
         });

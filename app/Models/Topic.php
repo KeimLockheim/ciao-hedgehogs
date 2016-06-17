@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Lib\Message;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
@@ -36,7 +35,7 @@ class Topic extends Model {
 			// Vérification de l'existence de l'utilisateur
 			if ($user == null) {
 
-				$validator->errors()->add('exists', Message::get('exists'));
+				$validator->errors()->add('exists', 'exists');
 			}
 
 

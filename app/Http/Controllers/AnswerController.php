@@ -1,6 +1,5 @@
 <?php namespace App\Http\Controllers;
 
-use App\Lib\Message;
 use App\Models\Answer;
 use App\Models\Question;
 use Illuminate\Http\Request;
@@ -47,12 +46,10 @@ class AnswerController extends Controller {
     //Ajout dans la BD
     try{
       Answer::createOne($validate->getData());
-      Message::success('saved');
       return Response::view('errors.200',['url' => '/dashboard','message'=>'Question répondue !'], 200);
 
     }
     catch(\Exception $e){
-      Message::error('error');
       return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Problème de connexion à la base de donnée'], 400);
 
     }

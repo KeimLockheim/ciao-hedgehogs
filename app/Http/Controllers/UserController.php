@@ -1,6 +1,5 @@
 <?php namespace App\Http\Controllers;
 
-use App\Lib\Message;
 use App\Models\Domain;
 use App\Models\Menu;
 use App\Models\SecretQuestion;
@@ -101,14 +100,12 @@ class UserController extends Controller {
     //Ajout dans la BD
     try{
       User::createOne($validate->getData());
-      Message::success('saved');
 
       return Response::view('errors.200',['url' => '/home','message'=>'Compte créée !'], 200);
 
     }
     catch(\Exception $e){
 
-      Message::error('error');
       return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Problème de connexion à la base de donnée'], 400);
     }
   }

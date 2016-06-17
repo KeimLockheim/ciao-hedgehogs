@@ -26,13 +26,13 @@ class QuestionController extends Controller {
     $data['domain'] = $domain;
 
     if($domain->parentDomain != null){
-      $data['domainParent'] = $domain->parentDomain;
+      $domainParent = $domain->parentDomain;
     }
     else{
-      $data['domainParent'] = $domain;
+      $domainParent = $domain;
     }
 
-
+    $data['domainParent'] = $domainParent;
     return view('view_questions', $data);
   }
 
@@ -40,7 +40,7 @@ class QuestionController extends Controller {
   {
     $domain = Domain::where('id', $domain_id)->get()->first();
     if(!isset($domain)){
-      return Response::view('errors.404',['url' =>'/home','message'=>'Catégorie non trouvée.'], 404);
+      return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Catégorie non trouvée.'], 404);
     }
     $parentDomains = Domain::parentDomains();
 
@@ -59,10 +59,10 @@ class QuestionController extends Controller {
 
     $question = Question::where('id', $question_id)->with('answer', 'domain')->get()->first();
     if(!isset($question)){
-      return Response::view('errors.404',['url' =>'/home','message'=>'Question non trouvée.'], 404);
+      return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Question non trouvée.'], 404);
     }
     if(isset($question->answer)){
-      return Response::view('errors.400',['url' =>'/home','message'=>'Question déjà répondue.'], 400);
+      return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Question déjà répondue.'], 400);
     }
 
     $data = Menu::getDomains();
@@ -76,14 +76,21 @@ class QuestionController extends Controller {
   {
     $domain = Domain::where('id', $domain_id)->with('parentDomain')->get()->first();
     if(!isset($domain)){
-      return Response::view('errors.404',['url' =>'/home','message'=>'Catégorie non trouvée.'], 404);
+      return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Catégorie non trouvée.'], 404);
     }
 
     $question = Question::where('id', $question_id)->with('questionUser', 'answer.answererUser')->get()->first();
     if(!isset($question)){
-      return Response::view('errors.404',['url' =>'/home','message'=>'Question non trouvée.'], 404);
+      return Response::view('errors.404',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Question non trouvée.'], 404);
     }
-    $domainParent = $question->domain;
+
+    if($domain->parentDomain != null){
+      $domainParent = $domain->parentDomain;
+    }
+    else{
+      $domainParent = $domain;
+    }
+
 
 
     
@@ -92,7 +99,6 @@ class QuestionController extends Controller {
     $data['domain'] = $domain;
     $data['question'] = $question;
     $data['domainParent'] = $domainParent;
-
     return view('view_question', $data);
   }
 

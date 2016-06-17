@@ -35,12 +35,12 @@ class Post extends Model {
 			// Vérification de l'existence du post parent si spécifié
 			if(!empty($input['parentPost_id'])){
 				if (!self::exists($input['parentPost_id'])) {
-					$validator->errors()->add('exists', Message::get('exists'));
+					$validator->errors()->add('exists', 'exists');
 				}
 			}
 			// Vérification de l'existence du topic
 			if (!Topic::exists($input['topic_id'])) {
-				$validator->errors()->add('exists', Message::get('exists'));
+				$validator->errors()->add('exists', 'exists');
 			}
 
 		});

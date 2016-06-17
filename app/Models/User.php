@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Lib\Message;
 use Illuminate\Database\Eloquent\Model;
 use Validator;
 use Illuminate\Http\Request;
@@ -43,12 +42,12 @@ class User extends Model {
 			// Vérification de la non existence de l'utilisateur
 			if (self::exists($input['pseudo'])) {
 
-				$validator->errors()->add('exists', Message::get('exists'));
+				$validator->errors()->add('exists', 'exists');
 			}
 			// Vérification de l'existence de la question secrète
 			if (!secretQuestion::exists($input['secretQuestion'])) {
 
-				$validator->errors()->add('exists', Message::get('exists'));
+				$validator->errors()->add('exists', 'exists');
 			}
 
 		});

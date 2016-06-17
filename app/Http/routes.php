@@ -16,7 +16,10 @@
 Route::group(['middleware' => ['web']], function () {
 
 	// password perdu
-	Route::get(' lost', 'PasswordController@index');
+	Route::get('lost', 'PasswordController@index');
+
+	// enregistrement du nouveau mot de passe
+	Route::post('/password/', 'PasswordController@update');
 
 
 	//login
@@ -70,8 +73,7 @@ Route::group(['middleware' => ['web']], function () {
 
 		// enregistrement de topic
 		Route::post('/topic', 'TopicController@store');
-		// enregistrement du nouveau mot de passe
-		Route::post('/password/', 'PasswordController@update');
+
 
 		//Ajoute un post dans un topic
 		Route::post('/post','PostController@store');

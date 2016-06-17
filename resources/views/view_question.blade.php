@@ -25,6 +25,7 @@
 			<p class="ContainerAnswerQuestion" itemprop="text">{{$question->content}}</p>
 		</div>
 
+		@if($question->answer != null)
 		<div class="divContainerAnswer rep">
 			<label class="labelMessage">Répondu par: <span itemprop="creator">{{$question->answer->answererUser->nickname}}</span></label>
 
@@ -34,7 +35,8 @@
 				{{$question->answer->content}}
 			</p>
 		</div>
-		@if($question->public != true)
+		@endif
+		{{--@if($question->public != true)
 			<form action="#" method="post">
 				<input type="hidden" name="question_id" value="{{$question->id}}">
 				<div class="form-group">
@@ -43,7 +45,7 @@
 					</div>
 				</div>
 			</form>
-		@endif
+		@endif--}}
 
 	</div>
 

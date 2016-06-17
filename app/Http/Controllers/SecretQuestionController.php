@@ -4,7 +4,6 @@ use App\Models\SecretQuestion;
 use App\Models\User;
 use Illuminate\Support\Facades\Response;
 use Request;
-use App\Lib\Message;
 
 class SecretQuestionController extends Controller {
 
@@ -61,11 +60,9 @@ class SecretQuestionController extends Controller {
     //Ajout dans la BD
     try{
       SecretQuestion::createOne($validate->getData());
-      Message::success('saved');
       return Response::view('errors.200',['url' => redirect()->back()->getTargetUrl(),'message'=>'Discussion créée !'], 200);
     }
     catch(\Exception $e){
-      Message::error('error');
       return Response::view('errors.400',['url' =>redirect()->back()->getTargetUrl(),'message'=>'Problème de connexion à la base de donnée'], 400);
 
     }
