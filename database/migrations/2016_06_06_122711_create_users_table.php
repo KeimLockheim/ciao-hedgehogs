@@ -13,7 +13,7 @@ class CreateUsersTable extends Migration {
 			$table->string('password');
 			$table->smallInteger('birthyear');
 			$table->enum('sex', array('féminin', 'masculin'));
-			$table->enum('localisation', array('Neuchâtel', 'Vaud', 'Genêve', 'Jura', 'Berne', 'Valais'));
+			$table->string('localisation');
 			$table->string('secretQuestionAnswer');
 			$table->timestamps();
 		});

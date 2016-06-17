@@ -10,7 +10,7 @@ class CreateDomainsTable extends Migration {
 		Schema::create('domains', function(Blueprint $table) {
 			$table->increments('id');
 			$table->string('name')->unique();
-			$table->string('description');
+			$table->string('description', 2000);
 			$table->string('content', 20000)->nullable();
 			$table->timestamps();
 		});

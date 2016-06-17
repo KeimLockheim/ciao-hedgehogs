@@ -765,7 +765,7 @@ class GlobalSeeder extends Seeder
         $default2 = new User([
             'nickname' => 'libellule',
             'birthyear' => 2000,
-            'sex' => 'feminin',
+            'sex' => 'féminin',
             'localisation' => 'Vaud',
             'password' => bcrypt('default'),
             'secretQuestionAnswer' => bcrypt('Chappuis'),
@@ -774,7 +774,7 @@ class GlobalSeeder extends Seeder
         $default3 = new User([
             'nickname' => 'sweetGirl',
             'birthyear' => 2004,
-            'sex' => 'feminin',
+            'sex' => 'féminin',
             'localisation' => 'Vaud',
             'password' => bcrypt('default'),
             'secretQuestionAnswer' => bcrypt('Laura'),
@@ -1336,37 +1336,37 @@ Merci d'avance!",
         /*URGENCES*/
         $ur1 = new Urgency([
             'name' => "Fondation Le Tremplin",
-            'telephoneNumber' => '026 543 34 56',
+            'telephoneNumber' => '0265433456',
             'email' => "tremplin@gmail.com",
             'webSite'=>"www.tremplin.ch",
         ]);
         $ur2 = new Urgency([
             'name' => "Fri-Santé",
-            'telephoneNumber' => '026 555 43 65',
+            'telephoneNumber' => '0265554365',
             'email' => "frisante@gmail.com",
             'webSite'=>"www.frisante.ch",
         ]);
         $ur3 = new Urgency([
             'name' => "Vivre sans fumer",
-            'telephoneNumber' => '032 543 34 56',
+            'telephoneNumber' => '0325433456',
             'email' => "fumer@gmail.com",
             'webSite'=>"www.fumer.ch",
         ]);
         $ur4 = new Urgency([
             'name' => "Mrs. Véronique Bachmann Psychologue",
-            'telephoneNumber' => '079 555 34 56',
+            'telephoneNumber' => '0795553456',
             'email' => "vero_b@gmail.com",
             'webSite'=>"www.veroniquebachman.ch",
         ]);
         $ur5 = new Urgency([
             'name' => "Profa planning familial",
-            'telephoneNumber' => '026 345 22 43',
+            'telephoneNumber' => '0263452243',
             'email' => "pf@gmail.com",
             'webSite'=>"www.pf.ch",
         ]);
         $ur6 = new Urgency([
             'name' => "SOS Futures Mamans",
-            'telephoneNumber' => '049 789 43 44',
+            'telephoneNumber' => '0497894344',
             'email' => "sosfm@gmail.com",
             'webSite'=>"www.sosfm.ch",
         ]);
