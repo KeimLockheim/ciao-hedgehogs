@@ -18,7 +18,7 @@
 
 
 			<div class="col-md-4">
-				<a href="{{url('/propose/1')}}"><button type="submit" class="btn btn-primary btnBox" name="addForum" value="add forum"><img src="{{ asset('assets/img/addforum.png') }}" alt="logo" class="imgBtn"><p>Créer un forum</p></button></a>
+				<a href="{{url('/propose/1')}}"><button type="submit" class="btn btn-primary btnBox" name="addForum" value="add forum"><img src="{{ asset('assets/img/addforum.png') }}" alt="logo" class="imgBtn"><p>Créer discussion</p></button></a>
 				<a href="{{url('/dashboard/topics')}}"><button type="submit" class="btn btn-primary btnBox"> <img src="{{ asset('assets/img/forum.png') }}" alt="logo" class="imgBtn"><p>Gestion forum</p></button></a>
 			</div>
 
