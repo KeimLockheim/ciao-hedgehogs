@@ -15,18 +15,23 @@
 	</div>
 
 	<div class="col-md-7 designBox" itemscope itemtype="https://schema.org/Question">
+        <div class="row">
 		<h2>Question / Réponse</h2>
 		<h3 itemprop="about">@if($domain->parentDomain !== null) {{$domain->parentDomain->name}} @endif  {{$domain->name}}</h3>
-		<div class="divContainerQuestion">
+		<div class="col-md-12 divContainerQuestion">
+                        <div class="row">
+
 			<label class="labelMessage">Quesiton posée par: <span itemprop="creator">{{$question->questionUser->nickname}}</span></label>
 
 			<label class="date"><time itemprop="dateCreated">{{$question->created_at}}</time></label>
 
 			<p class="ContainerAnswerQuestion" itemprop="text">{{$question->content}}</p>
 		</div>
+            </div>
 
 		@if($question->answer != null)
-		<div class="divContainerAnswer rep">
+		<div class="col-md-12 divContainerAnswer rep">
+            <div class="row">
 			<label class="labelMessage">Répondu par: <span itemprop="creator">{{$question->answer->answererUser->nickname}}</span></label>
 
 			<label class="date"><time itemprop="dateCreated">{{$question->answer->created_at}}</time></label>
@@ -35,6 +40,7 @@
 				{{$question->answer->content}}
 			</p>
 		</div>
+            	</div>
 		@endif
 		{{--@if($question->public != true)
 			<form action="#" method="post">
@@ -48,6 +54,7 @@
 		@endif--}}
 
 	</div>
+        </div>
 
 
 

@@ -1090,5 +1090,12 @@ padding-bottom: 10px;}
     .icon div{
     margin-top: 10px;
 }
+    
+    .divContainerAnswer{
+        width: 100%;
+    }
+    .divContainerQuestion{
+        width: 100%;
+    }
 }
 
