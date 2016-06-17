@@ -13,19 +13,25 @@
   </div>
 
   <div class="col-md-7 designBox">
+        <div class="row">
+
+      
     <h2>Discussion</h2>
     <h3 itemprop="about">{{$topic->name}}</h3>
     <div class="forum">
-      <div class="divContainerQuestion">
+      <div class="col-md-12 divContainerQuestion">
+          <div class="row">
         <label class="labelMessage" itemprop="creator">{{$topic->creatorUser->nickname}}</label>
 
         <label class="date"><time itemprop="dateCreated">{{$topic->created_at}}</time></label>
 
         <p class="ContainerAnswerQuestion firstPost">{{$posts->first()->content}}</p>
       </div>
+    </div>
 
       @foreach($posts->splice(1) as $post)
-      <div class="divContainerAnswer rep">
+      <div class="col-md-12 divContainerAnswer rep">
+          <div class="row">
         <label class="labelMessage" itemprop="creator">{{$post->writterUser->nickname}}</label>
 
         <label class="date"><time itemprop="dateCreated">{{$post->created_at}}</time></label>
@@ -35,10 +41,12 @@
         <div class="btnForum">
           <a href="#"><button type="button" data-nickname="{{$post->writterUser->nickname}}" class="btn btn-xs large answerTo">Répondre</button></a>
         </div>
+        </div>
       </div>
       @endforeach
-
     </div>
+
+  
 
     <form id="answerTopic" action="{{url('/post')}}" method="post">
 
@@ -53,13 +61,16 @@
       </div>
       <div class="form-group">
         <div class="col-md-3 btnForum">
+            <div class="row">
           <button type="submit" class="btn btn-xs">Envoyer</button>
         </div>
       </div>
+    </div>
 
     </form>
+</div>
+    </div>
 
-  </div>
 
 
   <div class="col-md-offset-1 col-md-4">
