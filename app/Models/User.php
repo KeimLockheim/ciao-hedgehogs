@@ -45,7 +45,7 @@ class User extends Model {
 				$validator->errors()->add('exists', 'exists');
 			}
 			// Vérification de l'existence de la question secrète
-			if (!secretQuestion::exists($input['secretQuestion'])) {
+			if (!SecretQuestion::exists($input['secretQuestion'])) {
 
 				$validator->errors()->add('exists', 'exists');
 			}

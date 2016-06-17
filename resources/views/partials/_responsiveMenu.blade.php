@@ -148,13 +148,13 @@
             </li>
 
             <li>
-              <label for="menu-3-2">Religion</label>
+              <label for="menu-7-2">Religion</label>
               <input type="checkbox" id="menu-7-2" name="menu-7-2" class="menu-checkbox">
               <div class="menu">
                 <label class="menu-toggle" for="menu-7-2"><span>Toggle</span></label>
                 <ul>
                   <li>
-                    <label for="menu-3-2-3">Religions</label>
+                    <label for="menu-7-2-3">Religions</label>
                     <input type="checkbox" id="menu-7-2-3" name="menu-7-2-3" class="menu-checkbox">
                     <div class="menu">
                       <label class="menu-toggle" for="menu-7-2-3"><span>Toggle</span></label>
