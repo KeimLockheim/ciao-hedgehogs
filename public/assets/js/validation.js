@@ -387,7 +387,6 @@ $(document).ready(function() {
 		},
 		fields: {
 			pseudo: {
-				threshold: 3,
 				validators: {
 					notEmpty: {
 						message: "Ciao, moi c'est Gustave et toi ton pseudo c'est quoi? ;-)"
