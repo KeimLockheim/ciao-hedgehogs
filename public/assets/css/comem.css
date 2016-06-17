@@ -82,6 +82,11 @@ a:link{
     text-decoration: none;
 }
 
+.btn-primary.active, .btn-primary:active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #ff5a5f!important;
+    border-color: #ff5a5f !important;
+}
 
 footer h4{
      font-weight: bold;

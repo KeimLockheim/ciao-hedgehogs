@@ -20,7 +20,7 @@
                             </li>
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu"><a href="#">Stress</a></li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="{{url('/domain/14')}}">Stress</a></li>
                                     <li class="divider"></li>
                                     @foreach($domStress as $sub)
                                     <li><a href="{{url('/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
@@ -30,7 +30,7 @@
                             </li>
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu"><a href="#">Boire, fumer, se droguer</a></li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="{{url('/domain/27')}}">Boire, fumer, se droguer</a></li>
                                     <li class="divider"></li>
                                     @foreach($domBoire as $sub)
                                     <li><a href="{{url('/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
@@ -39,7 +39,7 @@
                             </li>
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu"><a href="#">Manger-bouger</a></li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="{{url('/domain/35')}}">Manger-bouger</a></li>
                                     <li class="divider"></li>
                                     @foreach($domManger as $sub)
                                     <li><a href="{{url('/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
@@ -59,7 +59,7 @@
                         <ul class="dropdown-menu megamenu row">
                             <li class="col-sm-4">
                                 <ul>
-                                    <li class="dropdown-header titreMegaMenu"><a href="#">Estime de soi</a></li>
+                                    <li class="dropdown-header titreMegaMenu"><a href="{{url('/domain/50')}}">Estime de soi</a></li>
                                     <li class="divider"></li>
                                     @foreach($domEstime as $sub)
                                     <li><a href="{{url('/domain/'.$sub->id)}}">{{$sub->name}}</a></li>
